@@ -1,0 +1,412 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "账号设置";
+}
+
+
+<link href="@AppSetting.Rss_Image/content/static/student/css/usercenter/index.css" rel="stylesheet" type="text/css">
+
+<div class="page-container">
+    <div class="page-content clearfix">
+        <div class="cont-left">
+            <h3 class="account-set">个人设置</h3>
+            <ul>
+                <li class=""><a href="/account/password">修改密码</a></li>
+                <li class=" current"><a href="/account/setting">账号设置</a></li>
+            </ul>
+        </div>
+        <div class="cont-right">
+            <div class="area">
+                <h3 class="title">第三方帐号绑定</h3>
+                <div class="account-info">
+                    当前登录帐号：<span>18217454933</span>
+                    <br>绑定后，你可以同时使用以下方式登录“新起点”
+                </div>
+                <ul class="account-bind">
+                    <li class="unbind mobile">已绑定手机号：&emsp;&emsp;18217454933<a href="javascript:void(0)" id="updateMobile">更换手机号</a></li>
+                    @*<li class="xinlang"><a href="https://api.weibo.com/oauth2/authorize?client_id=3565412927&amp;redirect_uri=http%3A%2F%2Fwww.zheyibu.com%2Faccount%2Fthirdaccountbind&amp;response_type=code&amp;display=default">绑定新浪微博</a></li>
+                    <li class="qq"><a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&amp;client_id=100503934&amp;redirect_uri=http://www.zheyibu.com/account/thirdaccountbind/&amp;state=3aa20e5cb0184e8898739a414c3bea38&amp;scope=get_user_info,add_share,list_album,upload_pic,check_page_fans,add_t,add_pic_t,del_t,get_repost_list,get_info,get_other_info,get_fanslist,get_idolist,add_idol,del_idol,add_one_blog,add_topic,get_tenpay_addr">绑定QQ</a></li>
+                    <li class="webchat"><a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxc22d029b45177211&amp;redirect_uri=http%3A%2F%2Fwww.zheyibu.com%2Faccount%2Fwechatbind&amp;response_type=code&amp;scope=snsapi_login&amp;state=3d6be0a4035d839573b04816624a415e#wechat_redirect">绑定微信</a></li>*@
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function() {
+        $.validator.addMethod("blank", function(value, element) {
+            return this.optional(element) || !/^\s+|\s+$/.test(value);
+        });
+        $.validator.addMethod("telphone", function(value, element) {
+            if (!/^0?(13|14|15|17|18)[0-9]{9}$/.test(value)) {
+                $('#sendCode').removeClass("active").addClass("inactive");
+            }
+            return this.optional(element) || /^0?(13|14|15|17|18)[0-9]{9}$/.test(value);
+        }, "手机号格式错误");
+        var thirdAccountBind = 'False',
+            thirdAccountBindSuccess = 'False',
+            bindResponseMessage = '',
+            rebindButtonInfo = '';
+        if (thirdAccountBind == 'True') {
+            if (thirdAccountBindSuccess == "True") {
+                bindSuccess(bindResponseMessage);
+            } else {
+                bindStatus(bindResponseMessage, rebindButtonInfo);
+            }
+        }
+
+        function bindStatus(info, buttonInfo) {
+            var data = '<div class="pop">\
+                            <div class="bind-account">\
+                            <p class="info">' + info + '</p>\
+                            <p>' + "" + '</p>\
+                            <a href="" class="qws-close">' + buttonInfo + '</a>\
+                            </div>\
+                        </div>';
+            var applyPop = $(this).layerAlertMask({
+                title: '绑定提示',
+                width: '524',
+                height: '224',
+                setContent: data
+            });
+        }
+
+        function bindSuccess(info) {
+            var data = '<div class="pop">\
+                            <div class="bind-account">\
+                                <p class="info">' + info + '</p>\
+                                <a href="javascript:void(0)" onclick="window.location.href=window.location.pathname;" class="qws-close">关闭</a>\
+                            </div>\
+                        </div>';
+            var applyPop = $(this).layerAlertMask({
+                title: '绑定提示',
+                width: '524',
+                height: '224',
+                setContent: data
+            });
+        }
+        $('#xlweibo').one('click', function() {
+            $.ajax({
+                url: '/account/UnBindThirdAccount',
+                data: {
+                    thirdAccountType: 'Sina'
+                },
+                type: 'post',
+                success: function(data) {
+                    var data = '<div class="pop">\
+                                    <div class="bind-account">\
+                                    <p class="info">新浪微博' + data.msg + '</p>\
+                                    <a href="javascript:void(0)" onclick="window.location.href=window.location.pathname;" class="qws-close">关闭</a>\
+                                    </div>\
+                                </div>';
+                    var applyPop = $(this).layerAlertMask({
+                        title: '绑定提示',
+                        width: '524',
+                        height: '224',
+                        setContent: data
+                    });
+                }
+            })
+        });
+        $('#qq').one('click', function() {
+            $.ajax({
+                url: '/account/UnBindThirdAccount',
+                data: {
+                    thirdAccountType: 'Tencent'
+                },
+                type: 'post',
+                success: function(data) {
+                    var data = '<div class="pop">\
+                                    <div class="bind-account">\
+                                    <p class="info">QQ' + data.msg + '</p>\
+                                    <a href="javascript:void(0)" onclick="window.location.href=window.location.pathname;" class="qws-close">关闭</a>\
+                                    </div>\
+                                </div>';
+                    var applyPop = $(this).layerAlertMask({
+                        title: '绑定提示',
+                        width: '524',
+                        height: '224',
+                        setContent: data
+                    });
+                }
+            })
+        });
+        $('#wechat').one('click', function() {
+            $.ajax({
+                url: '/account/UnBindThirdAccount',
+                data: {
+                    thirdAccountType: 'WeChat'
+                },
+                type: 'post',
+                success: function(data) {
+                    var data = '<div class="pop">\
+                                    <div class="bind-account">\
+                                    <p class="info">微信' + data.msg + '</p>\
+                                    <a href="javascript:void(0)" onclick="window.location.href=window.location.pathname;" class="qws-close">关闭</a>\
+                                    </div>\
+                                </div>';
+                    var applyPop = $(this).layerAlertMask({
+                        title: '绑定提示',
+                        width: '524',
+                        height: '224',
+                        setContent: data
+                    });
+                }
+            })
+        });
+        $("#mobilebind").click(function() {
+            var data = '<div class="pop">\
+                            <form class="bind-account reg-info reg-1" id="register-form">\
+                                <div class="regBind">\
+                                <input type="hidden" name = "UserId" value="136526">\
+                                 <p><label for="mobile">手机号：</label><input id="mobile" type="text" name="mobile" placeholder="请输入常用手机号码" /></p>\
+                                 <p>\
+                                        <label for="code">验证码：</label><input id="code" type="text" name="ValidateCode" /><img id="imgValidateCode" src="/validate/getvalidatecode/" alt="验证码"><a id="refresh" href="javascript:;">看不清？换一张</a>\
+                                 </p>\
+                                 <p><label for="mobileValidateCode">短信验证码：</label><input id="mobileValidateCode" type="text" name="mobileValidateCode" placeholder="请输入手机验证码" /><span class="sendCode inactive" id="sendCode">获取验证码</span></p>\
+                                 <input type="submit" id="bindDone" class="done" value="完成绑定"/>\
+                                </div>\
+                            </form>\
+                        </div>';
+            var mobile = $(this).layerAlertMask({
+                title: '账号绑定',
+                width: '584',
+                height: '380',
+                setContent: data
+            });
+            var validator = $("#register-form").validate({
+                errorPlacement: function(error, element) { //错误提示在什么地方
+                    if (element.attr('name') == 'ValidateCode') {
+                        $('#code-error').remove();
+                        error.insertAfter("#refresh");
+                    } else if (element.attr('name') == 'mobileValidateCode') {
+                        error.insertAfter("#sendCode");
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                rules: {
+                    mobile: {
+                        required: true,
+                        telphone: true,
+                        remote: {
+                            url: '/Account/CheckMobileExisted',
+                            type: 'post',
+                            data: {
+                                mobile: function() {
+                                    return $("#mobile").val();
+                                }
+                            },
+                            complete: function(r) {
+                                if (r.responseText != "false") {
+                                    $('#sendCode').addClass("active").removeClass("inactive");
+                                    $('.reg-1').on("click", ".sendCode.active", function() {
+                                        if (validator.element("#mobile")) {
+                                            $.ajax({
+                                                type: "POST",
+                                                url: '/Account/SendMobileNoVerificationCode',
+                                                data: {
+                                                    mobile: $('#mobile').val()
+                                                }
+                                            });
+                                            var intNum = 60,
+                                                _this = $(this),
+                                                timeMaker = setInterval(function() {
+                                                    if (intNum) {
+                                                        _this.text(intNum + 's后重试');
+                                                        _this.removeClass("active").addClass("inactive");
+                                                        intNum--;
+                                                    } else {
+                                                        clearInterval(timeMaker);
+                                                        _this.text("获取验证码");
+                                                        _this.addClass("active").removeClass("inactive");
+                                                    }
+                                                }, 1000);
+                                        }
+                                    });
+                                } else {
+                                    $('#sendCode').removeClass("active").addClass("inactive");
+                                }
+                            }
+                        }
+                    },
+                    mobileValidateCode: {
+                        required: true,
+                        remote: {
+                            url: '/Account/CheckMobileValidateCodeIsRight',
+                            type: 'post',
+                            data: {
+                                code: function() {
+                                    return $("#mobileValidateCode").val();
+                                },
+                                mobile: function() {
+                                    return $('#mobile').val();
+                                }
+                            }
+                        }
+                    },
+                    ValidateCode: "required",
+                },
+                messages: {
+                    mobile: {
+                        required: "手机号不能为空",
+                        telphone: "手机号格式错误",
+                        remote: "该手机号已存在"
+                    },
+                    ValidateCode: "验证码不为空",
+                    mobileValidateCode: {
+                        required: "请输入验证码",
+                        remote: "验证码不正确",
+                    }
+                },
+                submitHandler: function(form) {
+                    //验证码验证
+                    $.ajax({
+                        type: "POST",
+                        url: "/account/BindNewMobile",
+                        data: $("#register-form").serialize(),
+                        success: function(r) {
+                            if (r.code == 1) {
+                                //成功
+                                location.href = location.href;
+                            } else if (r.code == 0) {
+                                alert("密码错误");
+                            } else {
+                                location.href = location.href;
+                            }
+                        }
+
+                    });
+                }
+            });
+            originUrl = $('#imgValidateCode').attr('src');
+            $('#refresh').click(function() {
+                $('#imgValidateCode').attr('src', originUrl + '?' + new Date());
+            });
+        });
+        $("#updateMobile").click(function() {
+            var data = '<div class="pop">\
+                            <form class="bind-account reg-info reg-2" id="register-form" >\
+                                <div class="regBind">\
+                                 <p><label for="mobile">手机号：</label><input id="mobile" type="text" name="mobile" placeholder="请输入常用手机号码" /></p>\
+                                <input type="hidden" name = "UserId" value="136526">\
+                                 <p><label for="mobileValidateCode">短信验证码：</label><input id="mobileValidateCode" type="text" name="mobileValidateCode" placeholder="请输入手机验证码" /><span class="sendCode inactive" id="sendCode">获取验证码</span></p>\
+                                 <input type="submit" id="bindDone" class="done" value="完成"/>\
+                                </div>\
+                            </form>\
+                        </div>';
+            var mobile = $(this).layerAlertMask({
+                title: '账号绑定',
+                width: '584',
+                height: '316',
+                setContent: data
+            });
+            var validator = $("#register-form").validate({
+                errorPlacement: function(error, element) { //错误提示在什么地方
+                    if (element.attr('name') == 'ValidateCode') {
+                        $('#code-error').remove();
+                        error.insertAfter("#refresh");
+                    } else if (element.attr('name') == 'mobileValidateCode') {
+                        error.insertAfter("#sendCode");
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                rules: {
+                    mobile: {
+                        required: true,
+                        telphone: true,
+                        remote: {
+                            url: '/Account/CheckMobileExisted',
+                            type: 'post',
+                            data: {
+                                mobile: function() {
+                                    return $("#mobile").val();
+                                }
+                            },
+                            complete: function(r) {
+                                if (r.responseText != "false") {
+                                    $('#sendCode').addClass("active").removeClass("inactive");
+                                    $('.reg-2').on("click", ".sendCode.active", function() {
+                                        if (validator.element("#mobile")) {
+                                            $.ajax({
+                                                type: "POST",
+                                                url: '/Account/SendMobileNoVerificationCode',
+                                                data: {
+                                                    mobile: $('#mobile').val()
+                                                }
+                                            });
+                                            var intNum = 60,
+                                                _this = $(this),
+                                                timeMaker = setInterval(function() {
+                                                    if (intNum) {
+                                                        _this.text(intNum + 's后重试');
+                                                        _this.removeClass("active").addClass("inactive");
+                                                        intNum--;
+                                                    } else {
+                                                        clearInterval(timeMaker);
+                                                        _this.text("获取验证码");
+                                                        _this.addClass("active").removeClass("inactive");
+                                                    }
+                                                }, 1000);
+                                        }
+                                    });
+                                } else {
+                                    $('#sendCode').removeClass("active").addClass("inactive");
+                                }
+                            }
+                        }
+                    },
+                    mobileValidateCode: {
+                        required: true,
+                        remote: {
+                            url: '/Account/CheckMobileValidateCodeIsRight',
+                            type: 'post',
+                            data: {
+                                code: function() {
+                                    return $("#mobileValidateCode").val();
+                                },
+                                mobile: function() {
+                                    return $('#mobile').val();
+                                }
+                            }
+                        }
+                    }
+                },
+                messages: {
+                    mobile: {
+                        required: "手机号不能为空",
+                        telphone: "手机号格式错误",
+                        remote: "该手机号已存在"
+                    },
+                    mobileValidateCode: {
+                        required: "请输入验证码",
+                        remote: "验证码不正确",
+                    }
+                },
+                submitHandler: function(form) {
+                    //验证码验证
+                    $.ajax({
+                        type: "POST",
+                        url: "/account/BindChangeMobile",
+                        data: $("#register-form").serialize(),
+                        success: function(r) {
+                            if (r.code == 1) {
+                                //成功
+                                location.href = location.href;
+                            } else if (r.code == 0) {
+                                alert("密码错误");
+                            } else {
+                                location.href = location.href;
+                            }
+                        }
+
+                    });
+                }
+            });
+        });
+    })
+</script>

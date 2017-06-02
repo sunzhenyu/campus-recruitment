@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Databases>
+  <Database Name="Campus.Recruitment.DB" Platform="MySql" Description="就业联盟">
+    <Connections>
+      <Add Name="1" ConfigEncrypt="-1" ConnectionString="server=localhost;Port=3306;database=campus_recruitment;uid=root;pwd=123456;"/>
+    </Connections>
+  </Database>
+</Databases>

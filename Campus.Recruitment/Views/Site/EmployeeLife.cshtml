@@ -1,0 +1,279 @@
+﻿@using Campus.Recruitment.Models
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "员工生活";
+}
+
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/Content/static/student/css/about/index.css">
+
+<div class="container">
+    <div class="inn-container">
+        <div class="left-nav">
+            <ul>
+                <li class="nav-list-title" style="width:254px;height:50px;">新起点校园招聘网</li>
+                <li class="nav-list" style="width:254px;height:50px;"><a href="/site/about">关于我们</a></li>
+                <li class="nav-list" style="width:254px;height:50px;"><a href="/site/news">新闻报道</a></li>
+                <li class="nav-list active" style="width:254px;height:50px;"><a href="/site/employee-life">员工生活</a></li>
+                <li class="nav-list" style="width:254px;height:50px;"><a target="_blank" href="http://company.zheyibu.com/359515/jobs-1.html">加入我们</a></li>
+                <li class="nav-list" style="width:254px;height:50px;"><a href="/site/contact">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="right-content-about">
+            <div class="about-info">
+                <div class="info life-info">
+                    <p class="title">员工生活</p>
+                    <div class="life">
+                        <div class="life-title">理解我们的事业吗</div>
+                        <div class="life-img">
+                            <div class="life">
+                                <div class="life-img flexslider" id="slides1">
+                                    <div class="flex-viewport">
+                                    </div>
+                                    <ul class="flex-direction-nav">
+                                        <li>
+                                            <a class="flex-prev" href="javascript:;"></a>
+                                        </li>
+                                        <li>
+                                            <a class="flex-next" href="javascript:;"></a>
+                                        </li>
+                                    </ul>
+                                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                                        <ul class="slides" style="width: 3200%; transition-duration: 0s; transform: translate3d(-594px, 0px, 0px);">
+                                            <li class="clone" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174427_740x483.jpg" width="594" height="392">
+                                                <p class="intro">广外</p>
+                                            </li>
+                                            <li class="flex-active-slide" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174405_740x483.jpg" width="594" height="392">
+                                                <p class="intro">广工</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140930093137_740x483.jpg" width="594" height="392">
+                                                <p class="intro">复旦简历指导、模拟面试</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140930093131_740x483.jpg" width="594" height="392">
+                                                <p class="intro">复旦简历指导、模拟面试</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140930093115_740x483.jpg" width="594" height="392">
+                                                <p class="intro">复旦简历指导、模拟面试</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140930092858_740x483.JPG" width="594" height="392">
+                                                <p class="intro">HR论坛</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929175031_740x483.JPG" width="594" height="392">
+                                                <p class="intro">HR论坛1</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174908_740x483.jpg" width="594" height="392">
+                                                <p class="intro">邀请函</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174842_740x483.jpg" width="594" height="392">
+                                                <p class="intro">武汉新起点推广</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174705_740x483.JPG" width="594" height="392">
+                                                <p class="intro">南大简历指导讲座</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174613_740x483.jpg" width="594" height="392">
+                                                <p class="intro">暨大</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174510_740x483.jpg" width="594" height="392">
+                                                <p class="intro">华师</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174459_740x483.jpg" width="594" height="392">
+                                                <p class="intro">华农</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174450_740x483.jpg" width="594" height="392">
+                                                <p class="intro">华工</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174427_740x483.jpg" width="594" height="392">
+                                                <p class="intro">广外</p>
+                                            </li>
+                                            <li class="clone" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929174405_740x483.jpg" width="594" height="392">
+                                                <p class="intro">广工</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="flex-direction-nav">
+                                        <li><a class="flex-prev" href="#">Previous</a></li>
+                                        <li><a class="flex-next" href="#">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="life">
+                        <div class="life-title">我们的生活不可思议</div>
+                        <div class="life-img">
+                            <div class="life">
+                                <div class="life-img flexslider" id="slides2">
+                                    <div class="flex-viewport">
+                                    </div>
+                                    <ul class="flex-direction-nav">
+                                        <li>
+                                            <a class="flex-prev" href="javascript:;"></a>
+                                        </li>
+                                        <li>
+                                            <a class="flex-next" href="javascript:;"></a>
+                                        </li>
+                                    </ul>
+                                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                                        <ul class="slides" style="width: 2400%; transition-duration: 0s; transform: translate3d(-594px, 0px, 0px);">
+                                            <li class="clone" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172657_740x483.jpg" width="594" height="392">
+                                                <p class="intro">接力1</p>
+                                            </li>
+                                            <li class="flex-active-slide" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172917_740x483.JPG" width="594" height="392">
+                                                <p class="intro">沙滩派对3</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929173141_740x483.JPG" width="594" height="392">
+                                                <p class="intro">2014年足球冠军--上海分公司</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929173109_740x483.jpg" width="594" height="392">
+                                                <p class="intro">广州分公司的犀利前锋</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172959_740x483.jpg" width="594" height="392">
+                                                <p class="intro">2014年足球冠亚军合影</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172944_740x483.jpg" width="594" height="392">
+                                                <p class="intro">蜈蚣脚2</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172932_740x483.jpg" width="594" height="392">
+                                                <p class="intro">蜈蚣脚1</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172903_740x483.jpg" width="594" height="392">
+                                                <p class="intro">沙滩派对2</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172755_740x483.jpg" width="594" height="392">
+                                                <p class="intro">沙滩派对1</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172721_740x483.jpg" width="594" height="392">
+                                                <p class="intro">接力2</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172657_740x483.jpg" width="594" height="392">
+                                                <p class="intro">接力1</p>
+                                            </li>
+                                            <li class="clone" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172917_740x483.JPG" width="594" height="392">
+                                                <p class="intro">沙滩派对3</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="flex-direction-nav">
+                                        <li><a class="flex-prev" href="#">Previous</a></li>
+                                        <li><a class="flex-next" href="#">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="life">
+                        <div class="life-title">有些时刻不可忘记</div>
+                        <div class="life-img">
+                            <div class="life">
+                                <div class="life-img flexslider" id="slides3">
+                                    <div class="flex-viewport">
+                                    </div>
+                                    <ul class="flex-direction-nav">
+                                        <li>
+                                            <a class="flex-prev" href="javascript:;"></a>
+                                        </li>
+                                        <li>
+                                            <a class="flex-next" href="javascript:;"></a>
+                                        </li>
+                                    </ul>
+                                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                                        <ul class="slides" style="width: 2000%; transition-duration: 0s; transform: translate3d(-594px, 0px, 0px);">
+                                            <li class="clone" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172345_740x483.jpg" width="594" height="392">
+                                                <p class="intro">神贴奖</p>
+                                            </li>
+                                            <li class="flex-active-slide" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929183408_740x483.jpg" width="594" height="392">
+                                                <p class="intro">最佳团队</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20141018094439_740x483.jpg" width="594" height="392">
+                                                <p class="intro"></p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20141018094412_740x483.JPG" width="594" height="392">
+                                                <p class="intro"></p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20141018094357_740x483.jpg" width="594" height="392">
+                                                <p class="intro"></p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20141018094349_740x483.jpg" width="594" height="392">
+                                                <p class="intro"></p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929183224_740x483.jpg" width="594" height="392">
+                                                <p class="intro">值班经理奖</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172424_740x483.jpg" width="594" height="392">
+                                                <p class="intro">一步销售先锋奖</p>
+                                            </li>
+                                            <li style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929172345_740x483.jpg" width="594" height="392">
+                                                <p class="intro">神贴奖</p>
+                                            </li>
+                                            <li class="clone" style="width: 594px; float: left; display: block;">
+                                                <img src="\Content\upload\e\359515\photo\20140929183408_740x483.jpg" width="594" height="392">
+                                                <p class="intro">最佳团队</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="flex-direction-nav">
+                                        <li><a class="flex-prev" href="#">Previous</a></li>
+                                        <li><a class="flex-next" href="#">Next</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+ $(function() {
+        var count = '3';
+        for (var i = 1; i <= count; i++) {
+            $('#slides' + i).flexslider({
+                animation: "slide",
+                direction: "horizontal",
+                slideshowSpeed: 300000,
+                directionNav: true,
+                controlNav: false,
+                mousewheel: false
+            });
+        }
+    })
+</script>

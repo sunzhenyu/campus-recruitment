@@ -1,0 +1,35 @@
+﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@model List<CustomerProject>
+
+<div id="info-project" class="info-holder">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="info-item">
+                <div class="info-col">
+                    <div class="date">@item.Start_project.ToString("yyyy.MM") - @item.End_project.ToString("yyyy.MM")</div>
+                    <div class="meta">
+                        <span>@item.Project_name</span>
+                        <span>@item.Project_job_name</span>
+                    </div>
+                    <div class="action-col" style="display: none;">
+                        <a title="编辑" href="javascript:;" rel="edit" itemid="@item.Id" itemtype="project" class="edit-btn J_ActionBtn"></a>
+                        <a title="删除" href="javascript:;" rel="delete" itemid="@item.Id" itemtype="project" class="del-btn J_ActionBtn"></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="desc">
+                        @item.Project_job_desc
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+    else
+    {
+        <div class="no-data-prompt">
+            填写项目经历
+        </div>
+    }
+</div>

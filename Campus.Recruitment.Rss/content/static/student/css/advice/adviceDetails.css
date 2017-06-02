@@ -1,0 +1,86 @@
+﻿#homepage-container{background-color:#f5f5f5}
+#homepage-container .homepage-container{width:1000px;margin:0 auto;padding-top:20px}
+.homepage-container .search-result{font-size:0;padding-bottom:38px}
+.homepage-container .search-result .advice-left{display:inline-block;vertical-align:top;width:712px}
+.search-result .advice-left .left-top{background-color:#fff}
+.search-result .advice-left .left-header{overflow:hidden;padding:20px 20px 0}
+.search-result .advice-left .left-header p{float:left;width:86px;line-height:28px;border:1px solid #ddd;color:#999;text-align:center;cursor:pointer}
+.search-result .advice-left .left-header p:hover{color:#f0564e}
+.search-result .advice-left .left-header p:nth-child(2){margin-left:-1px}
+.search-result .advice-left .left-header p.current{background:#f5f5f5;color:#f0564e}
+.search-result .advice-left .left-advice{clear:both;background:#fff;padding:0 40px}
+.search-result .advice-left .left-advice .list-title{border:none;font-size:14px;padding:20px 0 10px 0}
+.advice-left .left-advice .list-title .light{color:#f0564e}
+.advice-left .left-advice .list-title a{float:right;text-decoration:none}
+.advice-left .left-advice .list-title a:hover{color:#7cbf59}
+.search-result .advice-left .left-advice li{font-size:0;padding-bottom:42px}
+.advice-content .details-title{font-size:18px;line-height:4;overflow:hidden}
+.advice-content .details-title .title-name{display:inline-block;float:none;width:496px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:800;color:#666;font-size:18px}
+.advice-content .details-title span{display:inline-block;font-size:14px;color:#999;vertical-align:middle}
+.advice-content .details-paragraph a{color:#2860a0;text-decoration:none}
+.advice-content .details-paragraph a:hover{text-decoration:underline}
+.advice-content .details-paragraph .details-subtitle{font-weight:700;line-height:2;text-indent:0}
+.advice-content .details-paragraph p{font-size:14px;line-height:1.5;text-align:justify;color:#333;text-indent:2em}
+.advice-content .details-paragraph .details-source{font-size:14px;text-indent:0;line-height:2;margin-top:30px}
+.advice-content .details-paragraph .img-title{display:block;margin:30px auto;width:444px;height:244px;max-width:100%;max-height:100%}
+.details-tag .tags{float:left;line-height:2;font-size:14px}
+.details-tag .tags a{display:inline-block;font-size:12px;color:#999;padding:0 8px;background-color:#eee}
+.details-tag .tags a:hover{text-decoration:none;background-color:#e4e4e4}
+.details-tag .actions{float:right;width:266px;line-height:24px;text-align:right}
+.details-tag .actions i.active,.details-tag .actions i.inactive{display:inline-block;width:22px;height:22px;vertical-align:top;margin-top:2px;cursor:pointer;background:url(../../images/icon/advice-icon.png) 0 -362px no-repeat}
+.details-tag .actions i.inactive{background:url(../../images/icon/advice-icon.png) 0 -397px no-repeat}
+.details-tag .actions span{display:inline-block;font-size:14px;margin:0 10px;vertical-align:top;margin-top:2px}
+.details-tag .actions .bdsharebuttonbox{display:inline-block;vertical-align:top}
+.advice-content .details-paragraph .img-footer{width:156px;height:124px;margin:30px 0 50px}
+.advice-content .details-paragraph .details-page{text-align:center}
+.details-paragraph .details-page .page-next,.details-paragraph .details-page .page-pre{display:inline-block;vertical-align:top;width:100px;margin-right:16px;line-height:28px;font-size:14px;color:#999;border:1px solid #ddd}
+.details-paragraph .details-page .page-next:hover,.details-paragraph .details-page .page-pre:hover{text-decoration:none;border:1px solid #7cbf59;color:#7cbf59}
+.details-paragraph .page-relevent li.relevent-title{margin-top:44px;font-size:16px;padding:0;line-height:4}
+.details-paragraph .page-relevent li.relevent-list{border:none;display:inline-block;padding:0;width:336px;line-height:2;font-size:16px;color:#2860a0;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.details-paragraph .page-relevent .relevent-list i{display:inline-block;width:12px;height:6px;line-height:0;font-size:42px;font-style:normal;vertical-align:middle}
+.details-paragraph .page-relevent .relevent-list a{list-style-type:disc}
+.homepage-container .search-result .advice-right{display:inline-block;vertical-align:top;width:274px;margin-left:14px}
+.advice-right .article-right,.advice-right .book-right,.advice-right .hotlink-right{background-color:#fff;padding:10px 20px 5px;color:#666;margin-bottom:15px}
+.advice-right .article-right .article-header{line-height:2.5;font-size:14px;color:#333}
+.advice-right .article-right .article-header a{float:right;color:#999;text-decoration:none}
+.advice-right .article-right .article-header a:hover{color:#7cbf59}
+.advice-right .article-right ul{padding:10px 0}
+.advice-right .article-right li{display:inline-block;width:100%;line-height:2;font-size:14px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.advice-right .article-right li a{text-decoration:none;color:#666}
+.advice-right .article-right li a:hover{text-decoration:underline;color:#7cbf59}
+.article-right .article-header form{margin:10px 0}
+.article-right .article-header .search-article{float:left;width:186px;margin-right:-3px;height:28px;line-height:28px;text-indent:20px;outline:0;border:1px solid #ddd}
+.article-right .article-header .search-article:focus{border-color:#7cbf59}
+.article-right .article-header .article-btn{float:left;width:50px;height:30px;margin-right:-20px;outline:0;background:url(../../images/icon/advice-icon.png) 18px 7px no-repeat;background-color:#7cbf59}
+.article-right .hot-article{padding-top:20px;clear:both;font-size:0}
+.article-right .hot-article i{display:inline-block;width:20px;height:30px;margin-right:6px;vertical-align:top;background:url(../../images/icon/advice-icon.png) 0 -30px no-repeat}
+.article-right .hot-article .hot-title{display:inline-block;vertical-align:-20px;font-size:14px}
+.article-right .hot-article .hot_1,.article-right .hot-article .hot_2,.article-right .hot-article .hot_3,.article-right .hot-article .hot_4,.article-right .hot-article .hot_5,.article-right .hot-article .hot_common{float:left;width:14px;height:14px;margin-top:7px;border-radius:50%;margin-right:10px;background:#999;color:#fff;font-style:normal;font-size:12px;line-height:14px;text-align:center}
+.article-right .hot-article .hot_1{background:#f60}
+.article-right .hot-article .hot_2{background:#ff7519}
+.article-right .hot-article .hot_3{background:#ff8533}
+.article-right .hot-article .hot_4{background:#ff944c}
+.article-right .hot-article .hot_5{background:#ffa366}
+.advice-right .book-right i,.advice-right .hotlink-right i{display:inline-block;vertical-align:top;width:22px;height:30px;margin-right:6px;background:url(../../images/icon/advice-icon.png) 2px -68px no-repeat}
+.advice-right .book-right i{background:url(../../images/icon/advice-icon.png) 2px -107px no-repeat}
+.advice-right .book-right p,.advice-right .hotlink-right p{display:inline-block;width:200px;font-size:14px;line-height:2.5;vertical-align:middle;color:#333}
+.advice-right .hotlink-right .current{color:#7cbf59}
+.advice-right .hotlink-right a{display:inline-block;text-decoration:none;color:#666;line-height:2;margin-right:10px;font-size:14px}
+.advice-right .hotlink-right a:hover{color:#7cbf59}
+.book-review{height:260px;width:100%;font-size:0}
+.book-review .icon-next,.book-review .icon-pre{display:inline-block;height:60px;width:20px;vertical-align:138px;background:url(../../images/icon/advice-icon.png) 0 -192px no-repeat;cursor:pointer}
+.book-review .icon-pre:hover{background:url(../../images/icon/advice-icon.png) 0 -138px no-repeat}
+.book-review .icon-next{background:url(../../images/icon/advice-icon.png) 0 -296px no-repeat}
+.book-review .icon-next:hover{background:url(../../images/icon/advice-icon.png) 0 -243px no-repeat}
+.book-review .mid-desc{position:relative;display:inline-block;width:194px;height:262px;overflow:hidden}
+.book-review .book-img{position:absolute;top:0;left:0;width:400px}
+.book-review .book-img .book-show{cursor:pointer;opacity:1;transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease}
+.book-review .book-img li{position:relative;display:inline-block;width:194px;height:246px;text-align:center;cursor:pointer}
+.book-review .book-img img{margin:20px 0 10px;width:104px;height:146px;max-height:100%;max-width:100%}
+.book-review .book-img p{line-height:1.5;color:#999;font-size:14px;height:22px}
+.book-review .book-img .book-title{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;color:#333;height:28px;line-height:2}
+.book-review .book-img .book-mask{display:inline-block;position:absolute;bottom:0;left:0;height:246px;width:100%;text-decoration:none;opacity:0;filter:alpha(opacity=0);transition:all 1s ease;-webkit-transition:all 1s ease;-moz-transition:all 1s ease}
+.book-review .book-img .book-mask p{width:160px;margin:0 auto}
+.book-review .book-img .book-mask .book-add{text-align:justify;font-size:12px;color:#666}
+.book-review .book-img li:hover .book-show{opacity:0;filter:alpha(opacity=0)}
+.book-review .book-img li:hover .book-mask{opacity:1;filter:alpha(opacity=100)}

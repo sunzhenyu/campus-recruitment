@@ -1,0 +1,249 @@
+﻿@using Campus.Recruitment.Models
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "职业锚";
+}
+
+
+<link rel="stylesheet" href="@AppSetting.Rss_Image/Content/static/student/css/zhiyemao/index.css" />
+<link rel="stylesheet" href="@AppSetting.Rss_Image/Content/static/lib/css/base/loading.css" />
+<link rel="stylesheet" href="@AppSetting.Rss_Image/Content/static/lib/css/student/login-layer.css" />
+
+<div id="homepage-container">
+    <div class="homepage-container">
+        <!-- 主内容区 start -->
+        <form id="anchor-data" method="post">
+            <input type="hidden" name="AssessmentId" id="AssessmentId" value="2" />
+            <div class="anchor-header">
+                <!--测试名称（职业锚（职业定位）测评） -->
+                <h2>职业锚（职业定位）测评</h2>
+                <!--测试描述（职业锚问卷（Career Anchor Questionaire）是国外职业测评运用最广泛、最有效的工具之一。职业锚问卷是一种职业生涯规划咨询、自我了解的工具，能够协助组织或个人进行更理想的职业生涯发展规划。职业锚倾向没有好坏，请根据第一感觉，不假思索迅速答题。） -->
+                <p>职业锚问卷（Career Anchor Questionaire）是国外职业测评运用最广泛、最有效的工具之一。职业锚问卷是一种职业生涯规划咨询、自我了解的工具，能够协助组织或个人进行更理想的职业生涯发展规划。职业锚倾向没有好坏，请根据第一感觉，不假思索迅速答题。</p>
+            </div>
+            <div class="anchor-list0">
+                <div class="anchor-container">
+                    <p>本测试一共40个关于职业的描述，请为每题选择一个代表你真实想法的选项。</p>
+                    <p class="p_btn btn-start-test">开始测试</p>
+                    <p class="p_zhu">
+                        已有<span class="did" data-did="1130371">1130371</span>人测试过
+                    </p>
+                </div>
+                <div class="about-anchor">
+                    <h3>关于职业锚</h3>
+                    <p>职业锚理论（Career Anchor Theory）产生于在职业生涯规划领域具有“教父”级地位的美国麻省理工大学斯隆商学院、美国著名的职业指导专家埃德加·H·施恩（Edgar.H.Schein）教授领导的专门研究小组，是对该学院毕业生的职业生涯研究中演绎成的。斯隆管理学院的44名MBA毕业生，自愿形成一个小组接受施恩教授长达12年的职业生涯研究，包括面谈、跟踪调查、公司调查、人才测评、问卷等多种方式，最终分析总结出了职业锚(又称职业定位)理论。</p>
+                    <p>
+                        职业锚测评是通过对你过去行为的分析和未来目标的探索，帮你认清一个你没有深入探索和认真体会的清晰、真实的自我，从而帮助你在面临职业选择时，做出与自己价值观、内心真实自我相匹配的职业决策。
+                    </p>
+                </div>
+            </div>
+        </form>
+        <!-- 主内容区 end -->
+    </div>
+</div>
+
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/loading.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/student/login-layer.js"></script>
+<script>
+    //设置当前页码开始index
+    var index = 1,
+        flagAjax = true,
+        ticks = null,
+        $temp = $('<p>挑出与你日常想法最为吻合的3个选项</p><p class="notice-advice">系统为您列出分数最高的8个描述，此处为多选项。</p><div class="know-that">我知道了</div>'),
+        $noteTips = $('<div class="noteTips"><p class="tips">职业锚倾向没有好坏，请根据第一感觉，不假思索迅速答题。</p><div class="rules"><p>答题规则</p><p>1. 每道题目有8秒答题时间，请在规定时间内选择答案。</p><p>2. 8秒后，若选择了答案将自动进入下一道题，若没有选择答案则本次测试失效。</p></div><a class="knowTips">我知道了</a></div>'),
+        $failureTips = $('<div class="noteTips"><p class="tips">由于你未在规定时间之内选择答案，所以评测失效。</p><div class="rules"><p>答题规则</p><p>1. 每道题目有8秒答题时间，请在规定时间内选择答案。</p><p>2. 8秒后，若选择了答案将自动进入下一道题，若没有选择答案则本次测试失效。</p></div><a href="http://www.zheyibu.com/ceshi/zhiyemao/" class="knowTipss">返回评测首页</a></div>');
+    $('#anchor-data').on('click', '.con-option-item', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+            if (index == 40) {
+                $(this).siblings('input').val($(this).attr('data-value'));
+                //$('.submit-option').css('display','inline-block');
+                clearTimeout(ticks);
+                var result = [];
+                $.each($('#anchor-data .list-content .active'), function(i, v) {
+                    var _dataId = $(v).attr('data-value');
+                    result.push(_dataId);
+                });
+                if (flagAjax) {
+                    flagAjax = false;
+                    $.ajax({
+                        url: '/Ceshi/SaveZhiyemao',
+                        type: 'POST',
+                        data: {
+                            AssessmentId: $("#AssessmentId").val(),
+                            Result: result
+                        },
+                        success: function(r) {
+                            $('.anchor-list40').hide().after(r);
+                        }
+                    })
+                }
+                return false;
+            } else {
+                //设置input值
+                $(this).siblings('input').val($(this).attr('data-value'));
+                index++;
+                do_next();
+            }
+        })
+        .on('click', '.con-option-last', function() {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $(this).find('input').val('');
+            } else {
+                $(this).addClass('active');
+                $(this).find('input').val('on');
+            }
+        })
+        .on('click', '.option-pre', function() {
+            do_pre();
+        })
+        //提交答案
+        //.on('click', '.submit-option', function () {
+        //    clearTimeout(ticks);
+        //    var result = [];
+        //    $.each($('#anchor-data .list-content .active'), function (i, v) {
+        //        var _dataId = $(v).attr('data-value');
+        //        result.push(_dataId);
+        //    });
+        //    $.ajax({
+        //        url: '/Ceshi/SaveZhiyemao',
+        //        type: 'POST',
+        //        data: {
+        //            AssessmentId: $("#AssessmentId").val(),
+        //            Result: result
+        //        },
+        //        success: function (r) {
+        //            $('.anchor-list40').hide().after(r);
+        //        }
+        //    })
+        //})
+        .on('click', '.last-option', function() {
+            if ($('.anchor-list41').find('.active').length !== 3) {
+                $(this).layerAlertMask({
+                    'width': 502,
+                    'height': '244',
+                    setContent: $temp
+                });
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    data: {
+                        ResultId: $("#ResultId").val(),
+                        Result: (function() {
+                            var result = [];
+                            $.each($('.anchor-list41 .active'), function(i, v) {
+                                result.push($(v).attr('data-id'));
+                            });
+                            return result;
+                        }())
+                    },
+                    url: '/Ceshi/SaveZhiyemaoReview',
+                    success: function(r) {
+                        location.href = '/Ceshi/result/' + r.ResultId;
+                    }
+                })
+            }
+        })
+        //设置“我知道了”事件
+    $(document).on('click', '.knowTips', function() {
+            $('#layer-alert-mask').remove();
+            $('.anchor-header').remove();
+            loadCss.dispose();
+            loadCss = loadDelay($('.btn-start-test')).setPosition('.p_btn');
+            var data = {};
+            data.assessmentId = $("#AssessmentId").val();
+            $.post('/Ceshi/ChangeTestedCount', data, function() {});
+            $.ajax({
+                url: "/Ceshi/GetAssessmentQuestion",
+                type: 'get',
+                data: data,
+                success: function(r) {
+                    loadCss.dispose();
+                    $('.anchor-list0').after(r);
+                    do_next();
+                }
+            });
+        })
+        .on('click', '.know-that', function() {
+            $('.layer-alert-header i').trigger('click');
+        })
+        .on('click', '.anchor-result-login', function() {
+            $(this).loginLayer();
+        })
+        .on('click', '.btn-start-test div', function(event) {
+            event.stopPropagation();
+            return false;
+        })
+        .on('click', '.btn-start-test', function() {
+            loadCss = loadDelay($(this)).setPosition('.p_btn');
+            $(this).layerAlertMask({
+                height: '310',
+                setContent: $noteTips,
+                title: "重要提醒",
+                onLayerMask: function() {
+                    loadCss.dispose();
+                }
+            });
+        });
+
+    function do_next() {
+
+        setTimeout(function() {
+            $('.anchor-list' + (index - 1)).hide();
+            $('.anchor-list' + index).show();
+            $('.anchor-list' + index).find('.list-content').append("<div class='mask-layer-settime'><span>2秒后开始答题~~~</span></div>");
+        }, 50);
+
+        var i = 6;
+        $('.note-tips span').text(i);
+        clearTimeout(ticks);
+
+        setTimeout(function() {
+            $(".mask-layer-settime").remove(); // 移除2秒遮层
+            //6秒时间设置
+
+            ticks = setInterval(function foo() {
+                i--;
+                if (i < 0) {
+                    clearTimeout(ticks);
+                    $(this).layerAlertMask({
+                        height: '310',
+                        setContent: $failureTips,
+                        title: "测评失效",
+                        closeIcon: false
+                    });
+                } else {
+                    $('.note-tips span').text(i);
+                }
+            }, 1000);
+        }, 2000);
+
+    }
+
+    function do_pre() {
+        $('.anchor-list' + (index - 1)).show();
+        $('.anchor-list' + index).hide();
+        index--;
+    }
+
+    function countUp(elem, endVal, startVal, duration, decimal) {
+        //传入参数依次为 数字要变化的元素，最终显示数字，数字变化开始值，变化持续时间，小数点位数
+        var startTime = 0,
+            dec = Math.pow(10, decimal),
+            progress, value;
+
+        function startCount(timestamp) {
+            if (!startTime) startTime = timestamp;
+            progress = timestamp - startTime;
+            value = startVal + (endVal - startVal) * (progress / duration);
+            value = (value > endVal) ? endVal : value;
+            value = Math.floor(value * dec) / dec;
+            elem.innerHTML = value.toFixed(decimal);
+            progress < duration && requestAnimationFrame(startCount)
+        }
+        requestAnimationFrame(startCount)
+    }
+    countUp($(".did")[0], $(".did").attr("data-did"), 0, 1000, 0);
+</script>
+

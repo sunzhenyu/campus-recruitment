@@ -1,0 +1,179 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "注册第二步";
+}
+<link rel="stylesheet" href="/content/static/enterprise/css/homepage/index.css">
+@*<link href="/content/static/css/corp/etp-gb.css" rel="stylesheet" type="text/css">*@
+<link rel="stylesheet" href="/content/static/lib/css/normalize.css">
+<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+
+<script src="/content/static/zheyibu/components/jQuery/jquery.min.js" type="text/javascript"></script>
+<script src="/content/static/zheyibu/components/validate/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/init.js"></script>
+<script src="~/Content/jquery.form.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            jqueryform: 'jquery/form/3.49.0/form',
+            validator: 'arale/validator/0.9.7/validator'
+        }
+    });
+
+</script>
+<link href="/content/static/zheyibu/static/css/dialog.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/layer.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/selectui.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/blue-skin.css" rel="stylesheet" type="text/css">
+<link href="/content/static/css/corp/register.css" rel="stylesheet" type="text/css">
+<script src="/content/static/js/corp/additional-methods.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/register.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/corp-data.js" type="text/javascript"></script>
+<script src="/content/static/zheyibu/components/layer/layer.js"></script>
+<script src="/content/static/zheyibu/components/layer/layer-pick.js"></script>
+<script src="/content/static/zheyibu/components/selectui/selectui.js"></script>
+<script src="/content/static//zheyibu/static/js/jquery.slimscroll.js"></script>
+<link href="~/Content/static/zheyibu/static/css/layer2.css" rel="stylesheet" />
+<link href="/Content/static/enterprise/debug/css/base-info.css" rel="stylesheet" />
+<script src="~/Content/static/js/sea-modules/jquery/form/3.49.0/form.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#Industry').click(function () {
+            Pick.industryPick({
+                trigger: $(this),
+                hidden: $(this).siblings('input:hidden'),
+                type: 'multi',
+                mostSelectCount: 3
+            })
+            $('.show-mode-table').slimscroll({
+                height: 'auto',
+                alwaysVisible: true, //是否 始终显示组件,
+                railVisible: true //是否 显示轨道
+            }).bind('slimscroll', function (e, pos) {
+                if ($(this).height() == $(this).parent().height()) {
+                    $(this).height($(this).height() - 2);
+                }
+            });
+        })
+
+        $('#city').click(function () {
+            Pick.cityPick({
+                trigger: $(this),
+                hidden: $(this).siblings('input:hidden'),
+                type: 'multi',
+                mostSelectCount: 20,
+                title: '请选择公司所在城市'
+            })
+        })
+
+        $('[data-widget="selectui"]').selectui();
+    })
+</script>
+
+<div class="container">
+    <div class="reg-wrap">
+        <div class="reg-title reg-title-step2"></div>
+        <div class="reg-content">
+            <div class="reg-form">
+                <form id="reg-step2" method="post" action="/account/register-three" novalidate="novalidate" enctype="multipart/form-data">
+                    <input type="hidden" name="Id" id="Id" value="@ViewBag.Id">
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>公司名称</label>
+                        <input type="text" name="Name" id="name" class="ui-text valid" aria-required="true" aria-invalid="false">
+                    </div>
+                    <div class="ui-form-item logoPosition">
+                        <label class="item-label"><em>*</em>公司Logo</label>
+
+                        <div class="uploader1 success">
+                            <img src="~/Content/static/images/avatar/etp.jpg" id="logo_icon" alt="logo" style="width:150px;height:150px;">
+                            <div class="u-mask" style="margin-left: 105px;">
+                                <input id="upload1" type="file" name="file" accept="image/png, image/gif, image/jpg, image/jpeg">上传公司Logo
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>所属行业</label>
+                        <input type="text" value="" id="Industry" name="showIndustry" class="ui-text icon-choose valid" aria-required="true" aria-invalid="false">
+                        <input type="hidden" name="Industry" value="">
+                    </div>
+                    <div class="ui-form-item form-item-scale">
+                        <label class="item-label"><em>*</em>公司规模</label>
+                        <select class="{required:true} valid" data-widget="selectui" id="scale" name="Scale" value="0" aria-required="true" aria-invalid="false" style="display: none;">
+                            <option value="">请选择</option>
+                            <option value="1">少于50人</option>
+                            <option value="2">50-150人</option>
+                            <option value="3">150-500人</option>
+                            <option value="4">500-2000人</option>
+                            <option value="5">2000人以上</option>
+                        </select>
+
+                    </div>
+                    <div class="ui-form-item form-item-mode">
+                        <label class="item-label"><em>*</em>公司性质</label>
+                        <select class="{required:true} valid" data-widget="selectui" id="mode" name="Mode" value="0" aria-required="true" aria-invalid="false" style="display: none;">
+                            <option value="">请选择</option>
+                            <option value="1">外资</option>
+                            <option value="2">合资</option>
+                            <option value="3">国有企业</option>
+                            <option value="4">民营/股份制企业</option>
+                            <option value="5">事业单位</option>
+                            <option value="6">政府/非盈利机构</option>
+                            <option value="7">上市公司</option>
+                            <option value="8">其他</option>
+                        </select>
+
+                    </div>
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>所在地区</label>
+                        <input type="text" value="" id="city" name="showCity" class="ui-text icon-choose valid" aria-required="true" aria-invalid="false">
+                        <input type="hidden" name="City" value="">
+                    </div>
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>公司地址</label>
+                        <input type="text" name="Address" class="ui-text valid" aria-required="true" aria-invalid="false">
+                    </div>
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>公司网址</label>
+                        <input type="text" name="WebSite" class="ui-text valid" aria-required="true" aria-invalid="false">
+                    </div>
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>联系人</label>
+                        <input type="text" name="ContactMan" class="ui-text valid" aria-required="true" aria-invalid="false">
+                    </div>
+                    <div class="ui-form-item">
+                        <label class="item-label"><em>*</em>联系电话</label>
+                        <input type="text" class="ui-text-s valid" name="ContactAreaCode" id="areacode" placeholder="区号" aria-required="true" aria-invalid="false">
+                        <input type="text" class="ui-text-m valid" name="ContactTelephone" id="telphone" placeholder="电话号码" aria-required="true" aria-invalid="false">
+                        <input type="text" class="ui-text-s" name="ContactExt" id="ext" placeholder="分机(选填)">
+                    </div>
+                    <div class="ui-form-item">
+                        <label class="item-label">手机号码</label>
+                        <input type="text" class="ui-text valid" name="ContactMobile" aria-invalid="false">
+                    </div>
+                    <div class="ui-form-item ui-form-item-submit">
+                        <input type="submit" value="完成注册" class="ui-btn ui-btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    $('#upload1').change(function (e) {
+        var file = e.target.files || e.dataTransfer.files;
+        if (file) {
+            var reader = new FileReader();
+            reader.readAsDataURL(file[0]);
+            reader.onload = function () {
+                $("#logo_icon").attr("src", this.result);
+            }
+        }
+    });
+</script>

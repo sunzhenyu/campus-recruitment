@@ -1,0 +1,138 @@
+﻿@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "简历管理详情";
+}
+
+<!-- css for resume -->
+<link href="/content/static/css/corp/resume-manage.css" rel="stylesheet">
+<link href="/content/static/css/corp/showBox.css" rel="stylesheet">
+<link href="/content/static/css/corp/dialog.css" rel="stylesheet">
+<link href="/content/static/js/jquery/plugin/Pikaday/pikaday.css" rel="stylesheet">
+<link href="/content/static/css/corp/resumeViewer.css" rel="stylesheet">
+<link href="/content/static/enterprise/debug/css/style.css" rel="stylesheet" type="text/css">
+<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+
+<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/init.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            validator: 'arale/validator/0.9.7/validator'
+        }
+    });
+</script>
+<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="/content/static/zheyibu/components/validate/jquery.validate.min.js"></script>
+<script src="/content/static/js/corp/jquery.from.3.49.0.js"></script>
+<script src="/content/static/zheyibu/components/cuplayer/images/swfobject.js"></script>
+<script src="/content/static/js/corp/formui.js"></script>
+<script src="/content/static/js/corp/showBox.js"></script>
+<script src="/content/static/js/corp/dialog.js"></script>
+<script src="/content/static/js/jquery/plugin/Pikaday/pikaday.js"></script>
+<script src="/content/static/js/corp/resume-manage.js"></script>
+<script src="/content/static/js/corp/jquery.nicescroll.min.js"></script>
+<script src="/content/static/js/corp/resumeViewer.js"></script>
+<script src="/content/static/enterprise/debug/js/slider.js"></script>
+
+<div id="hidContainer" style="display:none;"></div>
+<div id="containerDiv">
+    <div id="g-container">
+        <div class="resume-section-head" data-id="303093">
+            <ul>
+                <li class="head-part1">当前简历：孙振宇</li>
+                <li class="head-part2">应聘职位：运营</li>
+                <li class="head-part3">投递时间：2017-05-11 13:08</li>
+            </ul>
+        </div>
+        <div class="resume-section-content">
+            <div class="content-left">
+                <div class="content-left-head">
+                    <div class="left-head-title"><span class="title-name">孙振宇</span><span class="title-other">男 21</span></div>
+                    <div class="left-head-content">
+                        <div class="content-photo"><img src="/content/static/images/avatar/avatar-s-1.jpg" alt="photo"></div>
+                        <div class="content-list">
+                            <ul>
+                                <li class="content-part"><span class="list-label">现居住地：</span>武汉</li>
+                                <li class="content-part"><span class="list-label">政治面貌：</span>团员</li>
+                                <li class="content-part"><span class="list-label">户口地：</span>咸宁</li>
+                                <li class="content-part"><span class="list-label">身高：</span>175cm</li>
+                                <li class="content-part"><span class="list-label">生源地：</span>咸宁</li>
+                                <li class="content-part">
+                                    <span class="list-label">手机：</span><span class="u-mobile">18217454933<span> (已验证)</span></span>
+                                </li>
+                                <li class="content-part"><span class="list-label">职业锚类型：</span>未测试</li>
+                                <li class="content-part"><span class="list-label">邮箱：</span><span class="u-email">675125116@qq.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-left-stuPhoto">
+                    <h3 class="resume-section-hd">生活相册</h3>
+                    <div style="margin: 0 auto;width: 672px;">
+                        <div style="width:30px;display: inline-block;height: 70px;cursor: pointer;margin-right:3px;" id="btn-left"></div>
+                        <div style="width:596px;height: 70px;overflow: hidden;display: inline-block;" class="leftLoop">
+                            <ul id="slide-pic" style="position: relative; -webkit-margin-before: 0px; -webkit-margin-after: 0px; font-size: 0px; -webkit-padding-start: 0px; line-height: 70px; width: 240px;">
+                                <li style="width: 110px;height: 70px;margin-right: 10px;text-align: center;display: inline-block;vertical-align: middle;text-align: center;cursor:pointer;"><img src="http://upload.zheyibu.com/Upload/s/136526/lifephoto/2017050917184019861641_108xauto.jpg" alt="" style="max-width: 100%;max-height: 100%;vertical-align: middle"></li>
+                                <li style="width: 110px;height: 70px;margin-right: 10px;text-align: center;display: inline-block;vertical-align: middle;text-align: center;cursor:pointer;"><img src="http://upload.zheyibu.com/Upload/s/136526/lifephoto/2017050917183182313731_108xauto.jpg" alt="" style="max-width: 100%;max-height: 100%;vertical-align: middle"></li>
+                            </ul>
+                        </div>
+                        <div style="width:30px;display: inline-block;height: 70px;cursor: pointer;margin-left:3px;" id="btn-right"></div>
+                    </div>
+                </div>
+                <div class="content-left-career">
+                    <h3 class="resume-section-hd">职业理想</h3>
+                    <div class="container">
+                        <div class="intention-block">
+                            <p><span class="color-999">期望工作：</span><span class="right-content">全职</span></p>
+                            <p><span class="color-999">期望城市：</span><span class="right-content">上海,武汉,西安,昆明</span></p>
+                            <p><span class="color-999">期望薪资：</span><span class="right-content">不限</span></p>
+                            <p><span class="color-999">期望职位：</span><span class="right-content">未填写</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-left-education">
+                    <h3 class="resume-section-hd">教育经历</h3>
+                    <div class="container">
+                        <div class="intention-block">
+                            <div class="block-left color-999">2014.9 - 2017.6</div>
+                            <p><span class="block-right-top">江汉大学</span><span>计算机科学与技术</span></p>
+                            <p><span class="block-right-bottom">大专</span><span class="block-right-padding color-999">班级排名 未填写</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-left-job">
+                    <h3 class="resume-section-hd">实习/工作经历</h3>
+                    <div class="container">
+                        <div class="intention-block">
+                            <div class="block-left color-999">2015.05-2017.07</div>
+                            <p>测试 无</p>
+                            <p class="color-999">如果投了简历，请忽略</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-left-language">
+                    <h3 class="resume-section-hd">语言能力</h3>
+                    <div class="container">
+                        <div class="intention-block">
+                            <div class="block-left color-999">英语</div>
+                            <p><span class="color-999">听说：</span>良好<span class="block-right-padding color-999">读写：</span>一般<span class="block-right-padding color-999">证书：</span>全国公共英语三级</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="right-title-unit">感兴趣</div>
+                <ul>
+                    <li class="right-click-btn1 m-interview">面试</li>
+                    <li class="right-click-btn2 m-inproper">不合适</li>
+                </ul>
+                <div class="applicant-operates"><a href="http://upload.zheyibu.com/api/stuupload/downloadresume?applyIds=303093&amp;key=A8FEEE2CF60914F3" class="solo-action-link m-download" title="下载"><i class="a-o-download"></i>下载简历</a><a href="javascript:;" class="solo-action-link" id="forward-btn" data-url="" title="转发"><i class="a-o-transpond"></i>转发简历</a><a href="javascript:;" class="solo-action-link legend-btn" id="legend-btn" data-action="legend" title="备注"><i class="a-o-legend"></i>备注简历</a><a href="javascript:;" class="solo-action-link legend-btn" data-action="collect" title="星标简历"><i class="a-o-collect"></i><span class="">星标简历</span></a><a href="javascript:;" class="solo-action-link" data-action="delete" title="删除"><i class="a-o-delete"></i>删除简历</a></div>
+            </div>
+        </div>
+    </div>
+</div>

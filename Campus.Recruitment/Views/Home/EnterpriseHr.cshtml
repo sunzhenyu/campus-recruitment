@@ -1,0 +1,247 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "企业推荐-对话Hr";
+}
+
+<link href="@AppSetting.Rss_Image/Content/static/student/css/company/position.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/student/css/company/hr.css" rel="stylesheet" />
+
+<div id="company-container-in cf">
+    <input id="EtpId" name="EtpId" type="hidden" value="889561" />
+    <!-- 公司主页Banner start -->
+    <div id="company-container">
+        <div class="company-banner">
+            <div class="com-title-content">
+                <div class="com-banner-logo">
+                    <img src="/Content/Upload/e/889561/150x150.jpg?time=20170503222711" alt="大参林医药集团股份有限公司校园招聘" class="photo" width="120" height="120">
+                </div>
+                <p title="大参林医药集团股份有限公司" class="com-name">
+                    大参林医药集团股份有限公司
+                    <i title="新起点认证企业"></i>
+                </p>
+                <div class="com-follow-on">
+                    <p class="pos-follow-logo inactive">关注</p>
+                </div>
+            </div>
+            <img class="enterprise-bg" src="static/Images/xyt/qi_bg2.jpg" alt="公司背景">
+        </div>
+        <div class="company-nav-outer">
+            <div class="company-nav">
+                <div class="center-pos">
+                    <a href="/enterprise/0">公司详情</a>
+                    <a href="/enterprise/0/job">校招职位（5）</a>
+                    <a href="/enterprise/0/hr" class="cur">对话HR</a>
+                    <a href="/enterprise/0/interview-comment" class="cur">面试评价</a>
+                </div>
+            </div>
+            <div id="nav-up-summary"></div>
+        </div>
+    </div>
+    <!--EndDonut-->
+    <!-- 公司主页Banner end -->
+    <!-- 公司详情内容区 start -->
+    <div class="company-container cf">
+        <!-- 对话HR start -->
+        <div class="in">
+            <div class="form-talk-hr">
+                <p class="form-hr-title">对话HR</p>
+                <p class="form-aside-mark">您好，我是大参林医药集团股份有限公司的HR。很高兴认识你，若有问题可向我提问，我会第一时间给予回复。</p>
+                <input id="EnterpriseId" name="EnterpriseId" type="hidden" value="889561" />
+                <textarea id="hr-talk-id"></textarea>
+                <span class="hr-talk-btn">提交问题</span>
+                <p class="form-aside-mark">为了保护你的隐私，问题将以匿名形式发布。HR回复后将用站内信通知你。</p>
+            </div>
+            <div class="com-school-position">
+                <p class="school-pos-name">全部对话</p>
+                <ul class="school-pos-container">
+                    <li>
+                        <div class="pos-content">
+                            <div class="pos-detail">
+                                <p class="pos-ask">
+                                    <span>梁**：</span> 您好，请问招聘持续到什么时候？
+                                </p>
+                                <p class="pos-reply">梁同学您好，2017届的校园招聘将会持续到12月末。</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="page-footer">
+                    <li class="current">
+                        <a href="">1</a>
+                    </li>
+                    <input id="hdPageCount" name="hdPageCount" type="hidden" value="1" />
+                </ul>
+            </div>
+        </div>
+        <div class="container-divide"></div>
+        <div class="right-float">
+            <div class="com-title-name">
+                <div class="cf">
+                    <span class="title">基本信息</span>
+                    <span class="title-line"></span>
+                </div>
+                <div class="summary">
+                    <p class="summary-list">行业：<span>制药/生物工程,医疗/护理/卫生</span></p>
+                    <p class="summary-list">性质：<span>民营/股份制企业</span></p>
+                    <p class="summary-list">规模：<span>2000人以上</span></p>
+                    <p class="summary-list">
+                        公司网址：
+                        <a href="" target="_blank" rel="external nofollow"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 对话HR end -->
+    <!-- 公司详情内容区 end -->
+</div>
+
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/student/login-layer.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/jquery.bxslider.min.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/coding.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/global.js"></script>
+
+<script>
+    var weiboLoginRediretUri =
+        'http%3a%2f%2fwww.zheyibu.com%2fhome%2fStuThirdLogin%2f%3freturnUrl%3dhttp%3a%2f%2fcompany.zheyibu.com%2f889561',
+        qqLoginRediretUri =
+        'http%3a%2f%2fwww.zheyibu.com%2fhome%2fStuThirdLogin%2f%3freturnUrl%3dhttp%3a%2f%2fcompany.zheyibu.com%2f889561',
+        wechatLoginRediretUri =
+        'http%3a%2f%2fwww.zheyibu.com%2fhome%2fWeChatLogin%2f%3freturnUrl%3dhttp%3a%2f%2fcompany.zheyibu.com%2f889561';
+    $(function() {
+        var isLogin = global.getCookie("Login"),
+            replyContent = '<p class="qa-answer-reply">该问题近两个月已被提交过，请在列表中查找</p>';
+        $(".hr-talk-btn").one("click", function() {
+            var _this = $(this),
+                argumentCaller = arguments.callee,
+                questionAjax = function() {
+                    return $.ajax({
+                        type: "post",
+                        url: "/company/createquestion/",
+                        data: {
+                            EnterpriseId: '889561',
+                            Question: question
+                        },
+                        success: function(r) {
+                            if (!r.result) {
+                                _this.one("click", argumentCaller);
+                                _this.layerAlertMask({
+                                    height: "210",
+                                    width: "532",
+                                    setContent: replyContent
+                                });
+                            } else {
+                                $("#hr-talk-id").val("");
+                                $(".school-pos-container").html(r.content);
+                                _this.one("click", argumentCaller);
+                            }
+                        }
+                    })
+                };
+            if (!!isLogin) {
+                var question = $("#hr-talk-id").val(),
+                    theFirstQa = $('.no-result').length === 1 ? true : false;
+                if (!!question) {
+                    if (theFirstQa) {
+                        questionAjax();
+                        $('.no-result').remove();
+                    } else {
+                        questionAjax();
+                    }
+                }
+            } else {
+                _this.one("click", argumentCaller);
+                _this.loginLayer({
+                    reUrl: {
+                        weiboLoginRediretUri: weiboLoginRediretUri,
+                        qqLoginRediretUri: qqLoginRediretUri,
+                        wechatLoginRediretUri: wechatLoginRediretUri
+                    },
+                    onLayerMask: function() {
+                        location.href = location.href;
+                    }
+                });
+            }
+        });
+        $(".pos-follow-logo.inactive").on("click", function() {
+            var _this = $(this),
+                followFun = function() {
+                    return $.ajax({
+                        type: "POST",
+                        url: '/company/follow/',
+                        data: {
+                            id: $("#EtpId").val()
+                        },
+                        success: function(r) {
+                            if (r.result == 1) {
+                                _this.text("√ 已关注").removeClass("inactive").addClass("active")
+                            }
+                        },
+                        error: function(r) {
+                            console.log(r)
+                        }
+                    })
+                };
+            if (!!isLogin) {
+                followFun()
+            } else {
+                _this.loginLayer({
+                    reUrl: {
+                        weiboLoginRediretUri: weiboLoginRediretUri,
+                        qqLoginRediretUri: qqLoginRediretUri,
+                        wechatLoginRediretUri: wechatLoginRediretUri
+                    },
+                    onLayerMask: function() {
+                        location.href = location.href;
+                        followFun();
+                    }
+                })
+            }
+        });
+        // 员工生活轮播组件
+        var bxSlide = $('.staff-title').bxSlider({
+            controls: false,
+            speed: 800,
+            auto: true,
+            pause: 5000,
+            pager: false,
+        });
+        $('.nextEl').click(function() {
+            bxSlide.goToNextSlide();
+        });
+        $('.preEl').click(function() {
+            bxSlide.goToPrevSlide();
+        });
+        var docHeight = $(document).height();
+        $(window).on('scroll', function() {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > 378) {
+                $('.right-float').css({
+                    position: 'fixed',
+                    top: 58,
+                    bottom: 'auto'
+                });
+                $(".company-nav").css({
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 5,
+                    backgroundColor: "#f5f5f5"
+                });
+            } else {
+                $('.right-float').removeAttr('style');
+                $(".company-nav").removeAttr("style");
+            }
+        });
+        // 小步爱打听
+        $('.xiaobu-icon').length !== 0 ? (function() {
+            $('.xiaobu-icon').on('mouseenter', function() {
+                $('.com-xiaobu-right').css('display', 'block');
+            }).on('mouseleave', function() {
+                $('.com-xiaobu-right').css('display', 'none');
+            })
+        }()) : '';
+    })
+</script>

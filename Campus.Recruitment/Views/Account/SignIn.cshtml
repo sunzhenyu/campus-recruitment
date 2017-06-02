@@ -1,0 +1,85 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "登录";
+}
+
+<link href="@AppSetting.Rss_Image/content/static/student/css/login/login.css" rel="stylesheet" />
+
+<div id="homepage-container">
+    <div class="lg-reg-bg">
+        <p class="reg-title">大学生找工作，赢在新起点！</p>
+        <form action='/account/sign-in-check' id="register-form" method="post">
+            <p class="reg-name">学生用户登录</p>
+            <div class="reg-info">
+                <input id="mobile" name="mobile" type="text" value="" placeholder="手机">
+                <input id="Password" name="Password" type="password" placeholder="密码">
+                <p class="auto-login"><span class="active">自动登录</span><a href="javascript:;">忘记密码</a></p>
+                <input type="hidden" name="RememberMe" value="true" />
+                <input class="form-btn" type="submit" value="立即登录" />
+            </div>
+            <div class="reg-other">
+                <div class="reg-top">
+                    <p>还没有新起点帐号？</p>
+                    <a href="/account/register-one">立即注册</a>
+                    @*<a href="http://www.zheyibu.com/account/findaccount/" class="for-account">账号找回</a>*@
+                </div>
+                <div class="login-other">
+                    <p>使用以下账号登录：</p>
+                    <a class="weibo" href="https://api.weibo.com/oauth2/authorize?client_id=3565412927&redirect_uri=http%3A%2F%2Fwww.zheyibu.com%2Fhome%2FStuThirdLogin&response_type=code&display=default"></a>
+                    <a class="qq" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100503934&redirect_uri=http://www.zheyibu.com/home/StuThirdLogin/&state=8532329630d24cd5b3f1628cc33db069&scope=get_user_info,add_share,list_album,upload_pic,check_page_fans,add_t,add_pic_t,del_t,get_repost_list,get_info,get_other_info,get_fanslist,get_idolist,add_idol,del_idol,add_one_blog,add_topic,get_tenpay_addr"></a>
+                    <a class="wechat" href="https://open.weixin.qq.com/connect/qrconnect?appid=wxc22d029b45177211&redirect_uri=http%3A%2F%2Fwww.zheyibu.com%2Fhome%2FWeChatLogin&response_type=code&scope=snsapi_login&state=3d6be0a4035d839573b04816624a415e#wechat_redirect"></a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.validate.min.js"></script>
+
+<script>
+    $(function() {
+        $('#register-form').on('click', '.auto-login span', function() {
+            var _this = $(this);
+            if (_this.hasClass('active')) {
+                _this.removeClass('active');
+                $('input[name="RememberMe"]').val(false);
+            } else {
+                _this.addClass('active');
+                $('input[name="RememberMe"]').val(true);
+            }
+
+        });
+        $("#register-form").validate({
+            rules: {
+                mobile: {
+                    required: true,
+                    remote: {
+                        url: '/account/is-exist-mobile',
+                        type: 'post',
+                        data: {
+                            mobile: function () {
+                                return $("#username").val();
+                            }
+                        }
+                    }
+                },
+                Password: {
+                    required: true,
+                },
+            },
+            messages: {
+                mobile: {
+                    required: "用户名不能为空",
+                    //remote: "该帐号不存在"
+                },
+                Password: {
+                    required: "密码不能为空"
+                }
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
+    });
+</script>

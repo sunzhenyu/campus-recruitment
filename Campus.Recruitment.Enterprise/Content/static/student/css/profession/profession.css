@@ -1,0 +1,78 @@
+#profession-container{background-color:#f9f9f9;overflow:hidden}
+.sort-list-item{background-color:#f8f8f8;line-height:70px}
+.profession-banner{min-height:290px;background:url(../../images/background/profession-banner.jpg) 50% 0 no-repeat;background-size:cover}
+.profession-banner .banner-con{width:1000px;margin:0 auto;padding-top:34px;padding-bottom:92px}
+.profession-banner .banner-con .pro-title{font-size:24px;line-height:2}
+.profession-banner .banner-con .pro-content{line-height:1.5;max-height:3em;overflow:hidden}
+.profession-banner .banner-con .pro-content a{text-decoration:none;color:#333}
+.profession-banner .banner-con .read-more{float:right;text-decoration:none;color:#333;margin-top:20px}
+#openAll{float:right;margin-top:10px;color:#333;text-decoration:none}
+[data-widget="city"]{margin-left:26px}
+.profession-container{position:relative;height:100%;width:994px;margin:-92px auto 32px;background-color:#fff}
+.profession-container .container-nav{font-size:0;margin-right:-10px}
+.profession-container .container-nav .nav-title{display:inline-block;vertical-align:top;width:330px;text-decoration:none;border-right:1px solid #ddd;border-top:1px solid #ddd;border-bottom:1px solid #ddd;background-color:#eee;line-height:50px;color:#666;font-size:18px;text-align:center;cursor:pointer}
+.profession-container .container-nav .active{background-color:#fff;border-top:2px solid #7cbf59;border-left:1px solid transparent;border-bottom:1px solid transparent;color:#7cbf59}
+.profession-container .container-sort{position:relative;padding:22px 30px;font-size:0;z-index:5}
+.profession-container .container-sort .sort-condition{position:relative;display:inline-block;vertical-align:middle;width:196px;line-height:34px;height:34px;margin-right:24px;border:1px solid #ddd;text-indent:20px;font-size:14px;cursor:pointer;background-color:#fff}
+.profession-container .container-sort .sort-condition[data-widget="city"]{width:176px;padding:0 10px}
+.profession-container .container-sort .sort-condition .city-text{display:block;width:100%;height:100%;cursor:pointer;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.profession-container .container-sort .sort-condition i{float:right;width:14px;height:10px;margin:12px 20px;background:url(../../images/icon/profession-icon.png) 0 -53px no-repeat;transition:all .5s ease;-webkit-transition:all .5s ease;-moz-transition:all .5s ease}
+.profession-container .container-sort .sort-condition:hover i{transform:rotate(180deg);-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg)}
+.profession-container .sort-list{padding:0 10px 30px}
+.profession-container .sort{vertical-align:middle;font-size:14px;margin-left:20px;padding-left:20px;cursor:pointer;background:url(../../images/icon/profession-icon.png) 0 -118px no-repeat}
+.profession-container .active{color:#f0564e;background:url(../../images/icon/profession-icon.png) 0 -82px no-repeat}
+.profession-container .sort-list .all{float:right;margin-right:20px}
+.profession-container .sort-list .all em{font-style:normal;color:#7cbf59}
+.profession-container .profession-result li{position:relative;padding:0 30px;line-height:54px;font-size:0}
+.profession-container .overMask{position:absolute;left:0;top:0;height:100%;width:100%}
+.profession-container .profession-result .job-name{display:inline-block;vertical-align:top;max-width:670px;text-decoration:none}
+.profession-container .profession-result .job-name:hover{color:#7cbf59;text-decoration:underline}
+.profession-container .profession-result .result-content{padding:16px 0;border:1px solid #eee;border-left:3px solid #a9e0b3;margin-bottom:10px;cursor:pointer   }
+.profession-result img{width:52px;height:52px;max-height:100%;max-width:100%;vertical-align:-32px;border:1px solid #eee;margin-left:22px}
+.profession-result .job-detail{display:inline-block;vertical-align:top;width:670px;line-height:2;padding-left:16px;font-size:0;color:#999}
+.profession-result .job-detail a{position:relative;display:inline-block;max-width:460px;vertical-align:top;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-decoration:none;font-size:14px;color:#999;z-index:1}
+.profession-result .job-detail .company-follow{position:relative;z-index:1;display:inline-block;width:38px;height:16px;vertical-align:-4px;margin-left:4px;background:url(../../images/icon/company-follow.png) no-repeat}
+.profession-result .result-salary{display:inline-block;vertical-align:top;width:140px;text-align:right;font-size:16px;line-height:2.5;color:#ff9822;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.profession-result .job-detail .job-name{font-size:16px;color:#333}
+.profession-result .job-detail i{position:relative;z-index:1;display:inline-block;vertical-align:top;height:20px;width:20px;vertical-align:-5px;background:url(../../images/icon/search-icon.png) 4px -258px no-repeat}
+.job-detail .xq-divide i{height:16px;width:auto;margin-left:10px;margin-top:8px;background:#fbc817;padding:1px 4px;color:#fff;line-height:16px;font-style:normal;font-size:12px}
+.profession-result .job-detail span{font-size:14px}
+.profession-result .job-detail .white-space{padding:0 20px;font-size:14px}
+.result-content .city-list-item{position:relative;font-size:14px;z-index:2}
+.result-content .city-list-item span{padding-left:18px;padding-right:18px;color:#333;background:url(../../images/icon/job-details-icon.png) 107px -271px no-repeat;cursor:pointer}
+.result-content .city-list-item span.active{background:url(../../images/icon/job-details-icon.png) 107px -299px no-repeat}
+.result-content .citylist-details{display:inline-block;height:0;font-size:14px;overflow:hidden;line-height:1.5}
+.result-content .citylist-details a{color:#666;text-decoration:none;padding:2px 4px;background-color:#f2f2f2;margin:0 2px}
+.page-footer{text-align:center;font-size:0;margin:30px;padding-bottom:20px}
+.page-footer li{display:inline-block;vertical-align:top;margin:0 5px}
+.page-footer a{display:inline-block;width:28px;line-height:28px;height:28px;text-align:center;vertical-align:middle;text-decoration:none;border:1px solid #ddd;font-size:14px;background:#fff;color:#888}
+.page-footer .omitPage{font-size:14px}
+.page-footer .current a{background:#7cbf59;color:#fff}
+.pre-page a{background:url(../../images/icon/search-icon.png) -34px -251px no-repeat}
+.pre-page a:hover{background:url(../../images/icon/search-icon.png) -34px -289px no-repeat;background-color:#7cbf59}
+.next-page a{background:url(../../images/icon/search-icon.png) -67px -251px no-repeat}
+.next-page a:hover{background:url(../../images/icon/search-icon.png) -67px -289px no-repeat;background-color:#7cbf59}
+.profession-container .ajax-bg{display:none;position:absolute;top:0;left:0;height:100%;width:100%;background:url(../../images/icon/profession-dot-bg.png) repeat;z-index:3}
+.profession-container .ajax-loading{width:100%;height:100%;background:url(../../images/icon/profession-loading.gif) 50% 30% no-repeat}
+.footer-banner{display:block;margin:32px auto;padding-bottom:36px;height:100px;width:1000px;background:url(../../images/background/profession-footer-login.jpg) 50% 0 no-repeat}
+.footer-banner.active{background:url(../../images/background/profession-footer-in.jpg) 50% 0 no-repeat}
+#profession-container ul[data-id=select]{color:#999;width:460px;padding:10px;font-size:0;line-height:normal;text-indent:0;background-color:#fff;border:1px solid #7cbf59}
+#profession-container ul[data-id=select] li{display:inline-block;vertical-align:top;width:110px;font-size:14px;line-height:2;text-indent:10px;cursor:pointer}
+#profession-container ul[data-id=select] li:hover{color:#7cbf59}
+#citySelect{text-indent:0}
+#positionTemp,#salaryTemp{width:196px;border:1px solid #7cbf59;height:auto;background-color:#fff}
+#positionTemp li,#salaryTemp li{line-height:34px;color:#999;text-indent:20px}
+#positionTemp li:hover,#salaryTemp li:hover{background-color:#f5f5f5;color:#7cbf59}
+.search-no-data{min-height:360px;margin:0 30px;font-size:0;border-top:1px solid #eee}
+.search-no-data .prompt{display:inline-block;vertical-align:top;width:418px;height:94px;margin-top:94px;background:url(../../images/icon/profession-icon.png) 333px -204px no-repeat}
+.search-no-data .suggest{display:inline-block;vertical-align:top;width:270px;margin-left:20px;margin-top:100px;line-height:1.5;font-size:14px}
+.search-no-data .suggest .pro-title{font-size:24px;color:#666}
+.search-no-data .suggest .pro-sub{color:#666}
+.search-no-data .suggest p{color:#999}
+.rcode{position:absolute;right:-42px;top:-1px;width:40px;height:40px;border:1px solid #eee;background:url(../../images/icon/share.png) no-repeat 6px 6px #fff;cursor:pointer}
+.rcode .qrcodeIn{display:none;position:absolute;left:-214px;top:-174px;border:1px solid #7cbf59;background-color:#fff;text-align:center;z-index:6;padding-bottom:6px}
+.rcode .qrcodeIn:before{position:absolute;right:-16px;bottom:14px;content:'';width:0;height:0;border:8px solid transparent;border-left-color:#7cbf59}
+.rcode .qrcodeIn:after{position:absolute;right:-15px;bottom:14px;content:'';width:0;height:0;border:8px solid transparent;border-left-color:#fff}
+.rcode:hover .qrcodeIn{display:block}
+.rcode .qrcodeIn p{line-height:2}
+#encode{margin:0 10px}

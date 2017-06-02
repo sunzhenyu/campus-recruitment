@@ -1,0 +1,100 @@
+﻿body,html{height:100%}
+#xjh-container{background-color:#f5f5f5;padding:20px 0;min-height:-moz-calc(100% - 260px);min-height:-webkit-calc(100% - 260px);min-height:calc(100% - 260px)}
+#xjh-container .xjh-container{width:1000px;margin:0 auto}
+.result-left .left-footer-reg div{display:inline-block;width:710px;height:80px;line-height:80px;color:#999;text-indent:40px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;background:url(../../images/background/xjh-left-banner.jpg) no-repeat}
+.left-footer-reg div span{display:block;width:554px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.result-left .left-footer-reg a{color:#7cbf59;font-size:18px;font-weight:700;text-decoration:underline}
+.result-left .left-footer-reg .free-remark{float:right;width:124px;margin-top:22px;margin-right:20px;line-height:38px;background:#7cbf59;font-weight:400;color:#fff;font-size:18px;text-align:center;text-indent:0;text-decoration:none}
+.left-top .free-mark-xjh{padding:0 20px;background:#fff}
+.filter-search-bg{background-color:#f9f9f9}
+.left-top .free-remark-filter{position:relative;font-size:0;padding:10px 0;margin:10px 0}
+.left-top .free-remark-filter .selectlist{position:relative;left:10px;display:inline-block;vertical-align:top;margin-right:12px;width:154px;height:30px;color:#666;font-size:14px;background:#fff;cursor:pointer}
+#cityName{display:inline-block;width:100%;height:100%;line-height:30px;text-indent:20px}
+.xjh-container .search-result{font-size:0}
+.xjh-container .search-result .result-left{display:inline-block;vertical-align:top;width:710px;font-size:14px;background-color:#fff}
+.search-result .result-left .left-header{overflow:hidden;padding:20px 20px 0}
+.search-result .result-left .left-header p{float:left;width:86px;line-height:28px;border:1px solid #ddd;color:#999;text-align:center;cursor:pointer}
+.search-result .result-left .left-header p:hover{color:#f0564e}
+.search-result .result-left .left-header p:nth-child(2){margin-left:-1px}
+.search-result .result-left .left-header p.current{background:#f5f5f5;color:#f0564e}
+.left-top .free-remark-filter .selectlist-view{width:auto}
+.input-select-view{font-size:0;position:relative;background-color:#eee}
+.input-select-view input{display:inline-block;width:152px;line-height:30px;height:30px;border:1px solid #ddd;text-indent:20px;cursor:pointer;font-size:14px}
+.input-select-view input:focus{outline:none;border-color:#7cbf59;margin-bottom:-2px}
+.startX{position:absolute;left:114px;width:40px;height:32px;background:url(../../images/icon/icon-x.png) center center no-repeat}
+.startY{position:absolute;left:276px;width:40px;height:32px;background:url(../../images/icon/icon-x.png) center center no-repeat}
+.left-top .free-remark-filter .input-select-view span{display:inline-block;vertical-align:sub;text-indent:0;font-size:20px}
+.search-result .result-left .left-result{clear:both;background-color:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.search-result .result-left .left-result li{height:82px;line-height:82px;font-size:0;cursor:pointer;background:url(../../images/icon/xjh-bg-icon.png) 58px 0 no-repeat}
+.result-left .left-result li:last-child .result-content{border:none}
+.result-left .left-result .xjh-index-logo{display:inline-block;vertical-align:middle;width:44px;height:48px;margin-right:48px}
+.result-left .left-result .index .xjh-index-logo{background:url(../../images/icon/xjh-icon-logo.png) 1px 0 no-repeat}
+.xjh-index-logo .logo-time{color:#fff;font-size:14px;line-height:20px;text-align:center}
+.search-result .result-left .left-result .result-content{display:inline-block;width:578px;border-bottom:1px solid #f5f5f5}
+.search-result .result-left .left-result li:hover a{color:#7cbf59}
+.search-result .result-left .left-result img{width:52px;height:52px;max-height:100%;max-width:100%;vertical-align:middle}
+.search-result .result-left .left-result .job-detail{display:inline-block;width:578px;vertical-align:middle;line-height:2;font-size:14px;color:#999}
+.search-result .result-left .left-result .job-detail a{text-decoration:none;color:#999}
+.search-result .result-left .left-result .result-salary{display:inline-block;vertical-align:top}
+.search-result .result-left .left-result .job-elle{display:inline-block;vertical-align:top;max-width:470px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.result-left .left-result .job-detail .group-detail{display:inline-block;vertical-align:middle;max-width:470px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.result-left .left-result .job-detail .job-name{font-size:16px;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.result-left .left-result .job-detail .job-name a{color:#333}
+.result-left .left-result .job-detail i{display:inline-block;height:20px;width:20px;vertical-align:text-bottom;background:url(../../images/icon/xjh-icon-logo.png) 0 -338px no-repeat}
+.result-left .left-result .job-detail .white-space{padding:0 10px}
+.result-left .left-result .job-detail .xjh-mark-time{float:right;padding-left:20px;background:url(../../images/icon/xjh-icon-logo.png) -22px -334px no-repeat}
+.search-result .page-footer{text-align:center;font-size:0;padding:20px;background:#fff}
+.search-result .page-footer li{display:inline-block;vertical-align:top;margin:0 5px}
+.search-result .page-footer a{display:inline-block;width:28px;line-height:28px;height:28px;text-align:center;vertical-align:middle;text-decoration:none;border:1px solid #ddd;font-size:14px;background:#fff;color:#888}
+.search-result .page-footer .omitPage{font-size:14px}
+.search-result .page-footer .current a{background:#7cbf59;color:#fff}
+.page-footer .pre-page a{background:url(../../images/icon/search-icon.png) -34px -251px no-repeat}
+.page-footer .pre-page a:hover{background:url(../../images/icon/search-icon.png) -34px -289px no-repeat;background-color:#7cbf59}
+.page-footer .next-page a{background:url(../../images/icon/search-icon.png) -67px -251px no-repeat}
+.page-footer .next-page a:hover{background:url(../../images/icon/search-icon.png) -67px -289px no-repeat;background-color:#7cbf59}
+.search-result .left-top .no-result{margin:10px 20px;border-top:1px solid #f5f5f5;height:448px}
+.search-result .left-top .no-result .bg{float:left;margin:66px 0 0 192px;width:132px;height:132px;background:url(../../images/icon/search-icon.png) 26px -312px no-repeat}
+.search-result .left-top .no-result p{display:inline-block;color:#666;width:226px;line-height:1.5}
+.search-result .left-top .no-result .sorry{margin-top:100px;font-size:24px}
+.xjh-container .search-result .result-right{display:inline-block;vertical-align:top;width:276px;margin-left:14px}
+.result-right .week-hot-position{background-color:#fff;padding:10px 20px 5px;margin-bottom:15px;color:#666}
+.result-right .week-hot-position li{margin:20px 0}
+.result-right .week-hot-position img{max-height:100%;max-width:100%;cursor:pointer;border:1px solid #ddd}
+.result-right .week-hot-position .job-list{display:inline-block;vertical-align:top;width:164px;margin-left:12px}
+.result-right .week-hot-position .job-list .job-name{display:inline-block;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;text-decoration:none;color:#333}
+.result-right .week-hot-position .job-list .job-name:hover{text-decoration:underline}
+.result-right .week-hot-position .job-list .comany-name{display:inline-block;width:100%;line-height:1.5;color:#999;font-size:12px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;text-decoration:none}
+.result-right .week-hot-position .job-list .comany-name:hover{text-decoration:underline}
+.result-right .week-hot-position .job-list .salary{font-size:12px;line-height:1.5;color:#cdaf37}
+.result-right .article-right .article-header,.result-right .week-hot-position .article-header{line-height:2;font-size:14px;border-bottom:1px solid #f5f5f5}
+.result-right .article-right{background-color:#fff;padding:10px 20px 5px;color:#666}
+.result-right .article-right .article-header{line-height:2;font-size:14px;border-bottom:1px solid #f5f5f5}
+.result-right .article-right .article-header a{float:right;color:#999;text-decoration:none}
+.result-right .article-right .article-header a:hover{color:#7cbf59}
+.result-right .article-right ul{padding:10px 0}
+.result-right .article-right li{display:inline-block;width:100%;line-height:2;font-size:14px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.result-right .article-right li a{text-decoration:none;color:#666}
+.result-right .article-right li a:hover{text-decoration:underline;color:#7cbf59}
+#xjh-container .footer-notice-line{width:710px;color:#999;margin-bottom:46px}
+#xjh-container .footer-notice-line .notice-title{margin-top:10px;line-height:3}
+.free-mark-xjh .xjh-no-result{padding:100px 160px 150px 200px;font-size:0}
+.free-mark-xjh .xjh-no-result .xjh-noResult-logo{display:inline-block;width:46px;height:46px;background:url(../../images/icon/xjh-icon-logo.png) 0 -380px no-repeat}
+.free-mark-xjh .xjh-no-result p{display:inline-block;vertical-align:top;width:214px;margin-left:16px;line-height:1.5;color:#999;font-size:16px}
+.ui-select{position:relative;border:1px solid #ddd;line-height:30px;background:#fff;text-indent:20px;z-index:1;cursor:pointer}
+.ui-select-result{ overflow: hidden;text-overflow: ellipsis;white-space: nowrap}
+.ui-select .select-result{line-height:16px;padding:6px 10px;border:1px solid #d9d9d9;background-color:#fff;border-radius:3px;position:relative;font-size:12px;cursor:pointer}
+.ui-select:hover{border-color:#7cbf59}
+.ui-select .select-result:before{content:'';display:inline-block;position:absolute;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid #999;top:10px;right:10px}
+.ui-select .select-result:after{content:'';display:inline-block;position:absolute;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid #FFF;top:9px;right:10px}
+.ui-hide ul{display:none}
+.ui-select ul{position:absolute;width:100%;top:30px;left:-1px;right:0;margin:0;padding:0;border:1px solid #7cbf59;border-top:0 none;overflow:auto;white-space:nowrap;color:#87919e;z-index:1;background:#fff}
+.ui-select ul li{height:34px;background-color:#fff;padding-right:27px;line-height:34px;font-size:14px;list-style:none;cursor:pointer}
+.ui-select ul li:nth-child(1){padding-top:2px}
+.ui-select ul li:hover{color:#7cbf59}
+.free-mark-xjh .xjh-city{z-index:2;border:1px solid #ddd}
+.free-mark-xjh .xjh-city:hover{border:1px solid #7cbf59;border-bottom:1px solid transparent}
+#xjh-search{position:relative;margin-top:20px}
+#xjh-search > input[type="text"]{display:block;margin-left:20px;width:664px;line-height:38px;height:38px;text-indent:20px;font-size:14px;border:1px solid #ddd;}
+#xjh-search > input[type="text"]:focus{outline:none;border-color:#7cbf59}
+#xjh-search > input[type="submit"]{position:absolute;right:20px;top:0;width:116px;line-height:40px;text-align:center;text-indent:20px;font-size:16px;color:#FFF;background:url(../../images/icon/xjh-search.png) 24px 12px no-repeat;background-color:#7cbf59;cursor:pointer}
+#xjh-search > input[type="submit"]:focus{outline:none}

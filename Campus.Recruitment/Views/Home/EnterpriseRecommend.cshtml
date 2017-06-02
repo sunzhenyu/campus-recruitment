@@ -1,0 +1,258 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "企业推荐-详情";
+}
+
+
+<link rel="stylesheet" href="@AppSetting.Rss_Image/Content/static/zheyibu/static/css/global.css" />
+<script src="@AppSetting.Rss_Image/Content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/zheyibu/static/js/global.js"></script>
+<link href="@AppSetting.Rss_Image/Content/static/zheyibu/static/css/common.css" rel="stylesheet" />
+<script src="@AppSetting.Rss_Image/Content/static/zheyibu/static/js/coding.js"></script>
+
+<link href="@AppSetting.Rss_Image/Content/static/student/css/company/position.css" rel="stylesheet" />
+<script src="@AppSetting.Rss_Image/Content/static/student/js/company/company.js" type="text/javascript"></script>
+
+  <!-- 公司主页Banner start -->
+<div id="company-container">
+    <div class="company-banner">
+        <div class="com-title-content">
+            <div class="com-banner-logo">
+                <img src="/Content/Upload/e/889561/150x150.jpg?time=20170503162731" alt="大参林校园招聘" class="photo" width="120" height="120">
+            </div>
+            <p title="大参林医药集团股份有限公司" class="com-name">
+                大参林医药集团股份有限公司
+                <i title="新起点认证企业"></i>
+            </p>
+            <div class="com-follow-on">
+                <p class="pos-follow-logo inactive">关注</p>
+            </div>
+        </div>
+        <img class="enterprise-bg" src="/Content/static/Images/xyt/qi_bg2.jpg" alt="公司背景">
+    </div>
+    <div class="company-nav-outer">
+        <div class="company-nav">
+            <div class="center-pos">
+                <a href="/enterprise/0" class="cur">公司详情</a>
+                <a href="/enterprise/0/job" >校招职位（5）</a>
+                <a href="/enterprise/0/hr">对话HR</a>
+                <a href="/enterprise/0/interview-comment">面试评价</a>
+            </div>
+        </div>
+        <div id="nav-up-summary"></div>
+    </div>
+</div>
+<style>
+    body {
+        background-color: #fff;
+    }
+</style>
+<div class="index-com">
+    <div class="company-container cf">
+        <!-- 公司简介 start -->
+        <div class="com-summary">
+            <div class="com-intro-details">
+                <div class="com-title-name">
+                    <span class="title">公司简介</span>
+                    <span class="title-line"></span>
+                </div>
+                <div class="intro-details">
+                    大参林医药集团股份有限公司，行业前三甲。
+                    <br />
+                    <br /> 公司成立于1993年，1998年开始跨区域发展，2004年将总部移至广州，2006年实施全国发展战略。经过20年的发展，截止2013年12月，大参林已经发展成为：广泛覆盖广东、广西、福建、江西、浙江、河南等6个省份，旗下拥有25个营运区1400多家门店、14000多名员工、6大配送中心及4家制药厂，集生产、物流、销售为一体的集团化企业，年销售额超过40亿元。
+                </div>
+                <p class="com-fold-show">展开</p>
+            </div>
+            <div id="nav-com-position"></div>
+            <div class="com-intro-details">
+                <div class="com-title-name">
+                    <span class="title">校招职位</span>
+                    <span class="title-line"></span>
+                </div>
+                <div class="com-position-list">
+                    <ul class="list">
+                        <li class="list-item">
+                            <a href="http://www.zheyibu.com/./job/7215385.html" target="_blank" class="title-name" title="">总裁秘书</a>
+                            <p>薪资：4000-7000</p>
+                            <p>城市：<span>广州</span>&nbsp;&nbsp;职位：<span>全职</span>&nbsp;&nbsp;<span class="rg">2017-04-20</span></p>
+                        </li>
+                        <li class="list-item">
+                            <a href="http://www.zheyibu.com/./job/7215280.html" target="_blank" class="title-name" title="">出纳</a>
+                            <p>薪资：2500-3500</p>
+                            <p>城市：<span>广州</span>&nbsp;&nbsp;职位：<span>全职</span>&nbsp;&nbsp;<span class="rg">2017-04-20</span></p>
+                        </li>
+                    </ul>
+                    <a href="http://company.zheyibu.com/889561/jobs-1.html" target="_blank" class="read-more">查看全部职位</a>
+                </div>
+            </div>
+            <div id="nav-com-place"></div>
+            <div class="com-intro-details">
+                <div class="com-title-name">
+                    <span class="title">联系我们</span>
+                    <span class="title-line"></span>
+                </div>
+                <div class="com-map">
+                    <div id="comMap">
+                    </div>
+                    <div class="map-name">
+                        <div class="map-name">
+                            <ul class="map-list-name">
+                                <li data-address="荔湾区" data-city="广州" class="list">
+                                    <p><i class="add-icon"></i>广州</p>
+                                    <p>荔湾区</p>
+                                </li>
+                            </ul>
+                            <p class="add-demo">该公司共有1个地址</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="com-contact">
+                    <li class="contact-us">关注我们：</li>
+                    <li class="con-weibo ">
+                        <a href=""></a>
+                    </li>
+                    <li class="con-qq ">
+                        <a></a>
+                    </li>
+                    <li class="con-renren ">
+                        <a></a>
+                    </li>
+                    <li class="con-wechat ">
+                        <a class="wechat-hover"><img src="http://open.weixin.qq.com/qr/code/?username=" /></a>
+                    </li>
+                    <li class="con-office"><span>企业官网：</span><a href="http://www.bokesoft.com" target="_blank" rel="external nofollow">http://www.bokesoft.com</a></li>
+                </ul>
+            </div>
+            <div class="nav-bg">
+                <div class="nav-bg-line"></div>
+                <ul id="com-left-nav">
+                    <li class="current"><a href="#nav-up-summary">公司简介</a></li>
+                    <li><a href="#nav-com-position">校招职位</a></li>
+                    <li><a href="#nav-com-place">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 公司简介 end -->
+        <div class="container-divide"></div>
+        <div class="right-float">
+            <div class="com-title-name">
+                <div class="cf">
+                    <span class="title">基本信息</span>
+                    <span class="title-line"></span>
+                </div>
+                <div class="summary">
+                    <p class="summary-list">行业：<span>制药/生物工程,医疗/护理/卫生</span></p>
+                    <p class="summary-list">性质：<span>民营/股份制企业</span></p>
+                    <p class="summary-list">规模：<span>2000人以上</span></p>
+                    <p class="summary-list">
+                        公司网址：
+                        <a href="" target="_blank" rel="external nofollow"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="com-other-pos">
+    <p class="com-sub-title">相关热招公司推荐</p>
+    <ul class="com-opos">
+        <li>
+            <a href="http://company.zheyibu.com/889727/"><img src="/Content/Upload/e/889727/150x150.jpg?time=20170503155705" width="145" height="145" alt="广东合鑫医药有限公司" /></a>
+            <a class="pos-name" href="http://company.zheyibu.com/889727/">广东合鑫医药有...</a>
+        </li>
+        <li>
+            <a href="http://company.zheyibu.com/925079/"><img src="/Content/Upload/e/925079/150x150.jpg?time=20170503155705" width="145" height="145" alt="广州赛莱拉干细胞科技股份有限公司" /></a>
+            <a class="pos-name" href="http://company.zheyibu.com/925079/">广州赛莱拉干细...</a>
+        </li>
+        <li>
+            <a href="http://company.zheyibu.com/902806/"><img src="/Content/Upload/e/902806/150x150.jpg?time=20170503155705" width="145" height="145" alt="绿百草生物科技有限公司" /></a>
+            <a class="pos-name" href="http://company.zheyibu.com/902806/">绿百草生物科技...</a>
+        </li>
+        <li>
+            <a href="http://company.zheyibu.com/883095/"><img src="/Content/Upload/e/883095/150x150.jpg?time=20170503155705" width="145" height="145" alt="广州丝贝朗企业管理咨询有限公司" /></a>
+            <a class="pos-name" href="http://company.zheyibu.com/883095/">广州丝贝朗企业...</a>
+        </li>
+        <li>
+            <a href="http://company.zheyibu.com/677779/"><img src="/Content/Upload/e/677779/150x150.jpg?time=20170503155705" width="145" height="145" alt="广州宇晟生物科技有限公司" /></a>
+            <a class="pos-name" href="http://company.zheyibu.com/677779/">广州宇晟生物科...</a>
+        </li>
+        <li>
+            <a href="http://company.zheyibu.com/1269807/"><img src="/Content/Upload/e/1269807/150x150.jpg?time=20170503155705" width="145" height="145" alt="广州市和睦家越秀门诊部有限公司" /></a>
+            <a class="pos-name" href="http://company.zheyibu.com/1269807/">广州市和睦家越...</a>
+        </li>
+    </ul>
+</div>
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=tF1AwVI6rcIGkuts9qsMpAnefCDswGIC" type="text/javascript"></script>
+<script>
+    var weiboLoginRediretUri =
+        'http%3a%2f%2fwww.zheyibu.com%2fhome%2fStuThirdLogin%2f%3freturnUrl%3dhttp%3a%2f%2fcompany.zheyibu.com%2f889561',
+        qqLoginRediretUri =
+        'http%3a%2f%2fwww.zheyibu.com%2fhome%2fStuThirdLogin%2f%3freturnUrl%3dhttp%3a%2f%2fcompany.zheyibu.com%2f889561',
+        wechatLoginRediretUri =
+        'http%3a%2f%2fwww.zheyibu.com%2fhome%2fWeChatLogin%2f%3freturnUrl%3dhttp%3a%2f%2fcompany.zheyibu.com%2f889561';
+    $(function() {
+        // 百度地图API功能
+        var map = new BMap.Map("comMap");
+        var top_left_control = new BMap.ScaleControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT
+        }); // 左上角，添加比例尺
+        var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
+        //var top_right_navigation = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL }); //右上角，仅包含平移和缩放按钮
+        map.enableScrollWheelZoom(true);
+        map.addControl(top_left_control);
+        map.addControl(top_left_navigation);
+        //map.addControl(top_right_navigation);
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        //设置地点坐标的文字说明
+        var address = '荔湾区',
+            city = "广州";
+        $('.map-name').on('click', '.list', function() {
+                address = $(this).attr('data-address');
+                city = $(this).attr('data-city');
+                myGeo.getPoint(address, function(point) {
+                    if (point) {
+                        map.centerAndZoom(point, 16);
+                        map.addOverlay(new BMap.Marker(point));
+                        var marker = new BMap.Marker(point); // 创建标注
+                        map.addOverlay(marker);
+                        var opts = {
+                            width: 200, // 信息窗口宽度
+                            height: 70, // 信息窗口高度
+                            title: '新起点', // 信息窗口标题
+                            enableMessage: false //设置允许信息窗发送短息
+                        }
+                        var infoWindow = new BMap.InfoWindow(address, opts); // 创建信息窗口对象
+                        marker.addEventListener("click", function() {
+                            map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        });
+                    } else {
+                        alert("您选择地址没有解析到结果!");
+                    }
+                }, city);
+            })
+            // 将地址解析结果显示在地图上,并调整地图视野
+        myGeo.getPoint(address, function(point) {
+            if (point) {
+                map.centerAndZoom(point, 16);
+                map.addOverlay(new BMap.Marker(point));
+                var marker = new BMap.Marker(point); // 创建标注
+                map.addOverlay(marker);
+                var opts = {
+                    width: 200, // 信息窗口宽度
+                    height: 70, // 信息窗口高度
+                    title: "新起点校园", // 信息窗口标题
+                    enableMessage: false //设置允许信息窗发送短息
+                }
+                var infoWindow = new BMap.InfoWindow(address, opts); // 创建信息窗口对象
+                marker.addEventListener("click", function() {
+                    map.openInfoWindow(infoWindow, point); //开启信息窗口
+                });
+            } else {
+                alert("公司地址没有解析到结果!");
+            }
+        }, city);
+    });
+</script>

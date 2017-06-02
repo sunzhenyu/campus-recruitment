@@ -1,0 +1,30 @@
+﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@model List<CustomerItSkill>
+
+<div id="info-it" class="info-holder">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="info-item">
+                <div class="info-col">
+                    <input type="hidden" class="skillId" value="2002">
+                    <div class="date">@item.Skill_name_txt</div>
+                    <div class="meta">
+                        <h3>技能掌握熟练程度：<span>@item.Skill_level</span></h3>
+                    </div>
+                    <div class="action-col">
+                        <a title="编辑" href="javascript:;" rel="edit" itemid="@item.Id" itemtype="it" class="edit-btn J_ActionBtn"></a>
+                        <a title="删除" href="javascript:;" rel="delete" itemid="@item.Id" itemtype="it" class="del-btn J_ActionBtn"></a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="no-data-prompt">
+            填写IT技能
+        </div>
+    }
+</div>

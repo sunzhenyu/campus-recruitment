@@ -1,0 +1,603 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "模块名称";
+}
+
+
+<link href="@AppSetting.Rss_Image/Content/static/student/css/profession/profession.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/student/city-picker.css" rel="stylesheet" />
+
+<div id="profession-container">
+    <div class="profession-banner">
+        <div class="banner-con">
+            <p class="pro-title">法语</p>
+            <div class="pro-content">
+                <div class="con-height">
+                    <p style="text-indent:28px;text-autospace:ideograph-numeric;text-autospace:ideograph-other;text-align:justify;vertical-align:">
+                        <span style="font-size: 14px;font-family: 宋体">小编一直很羡慕能将一门外语讲的非常利索的童鞋，什么<span style="font-family:Times New Roman">26</span><span style="font-family:宋体">个字符的随机组合排列，什么主谓宾违和放置、什么大小舌颤音，这都不是一般人能掌握的啊！你们这么牛，家里人造吗？就冲这一口流利的什么什么语，小编也会觉得你们找工作根本就不是事！其实很多学语言的同学会抱怨专业不好找工作，那我们就来一起看看，学语言的毕业生都有哪些就业的方向。</span></span>
+                    </p>
+                    <p style="text-indent:28px;text-autospace:ideograph-numeric;text-autospace:ideograph-other;text-align:justify;vertical-align:"><span style="font-size: 14px;font-family: 宋体">首先，对于学霸型童鞋，语言功底扎实，考虑翻译类型的机会是极好的，比如作为很多同学奋斗目标的“同传”，就被业界形容为“不缺钱，就缺人”。此外，近几年，语言培训市场的需求也越来越被开发出来，学语言的同学考虑各种培训机构、中小学高校的教师职位都是不错的。另外像外贸行业的跟单、销售、文员、商务等职位，商务企业的文员、编辑类等需要语言基础的职位也都是我们能够选择的方向。可能有一些童鞋不想靠学到的这门语言吃饭，其实凭借我们出色的语言能力，找工作的时候相比其他同学我们也是有优势的。另外要提醒学习小语种的同学，也完全不需要担心过于冷门的问题，随着现在国际交流的加强，我们作为专业人才的需求度也会越来越被市场发掘。</span></p>
+                    <p>
+                        <br />
+                    </p>
+                </div>
+            </div>
+            <a href="javascript:;" id="openAll" class="btnUnfold">[+展开全部]</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            $('#profession-container').on('click', '#openAll', function() {
+                var allH = $('.con-height').height();
+                $(this).prev('.pro-content').animate({
+                    maxHeight: allH
+                }, 300);
+                $(this).remove();
+            });
+        });
+    </script>
+    <div class="profession-container">
+        <div class="rcode">
+            <div class="qrcodeIn">
+                <p>扫描二维码分享专业职位</p>
+                <div id="encode"></div>
+            </div>
+        </div>
+        <div class="container-sort">
+            <div class="sort-list-item">
+                <span class="sort-condition" data-widget="city"><input class="city-text" placeholder="工作城市" readonly /></span>
+                <span class="sort-condition" data-widget="positon"><span class="position-text">工作性质</span><i></i></span>
+                <span class="sort-condition" data-widget="salary"><span class="salary-text">薪资范围</span><i></i></span>
+                <span data-ref="" class="sort active">默认排序</span>
+                <span data-ref="deploytimedesc" class="sort">时间排序</span>
+                <input type="hidden" name="pyCity" />
+                <input type="hidden" name="posType" />
+                <input type="hidden" name="salary" />
+                <input type="hidden" name="func" />
+            </div>
+        </div>
+        <div class="sort-result">
+            <ul class="profession-result">
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    小语种实习生（法语，日语，德语等）
+                                </a>
+                                <i class="shixi-icon">实习</i>
+                            </div>
+                            <a class="com-name"> 上海罗莱家用纺织品有限公司</a>
+                            <span class="white-space">上海</span><span>2017-04-29</span>
+                        </div>
+                        <div class="result-salary">2001-4000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\upload\e/1343953/thumbnail.jpg">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语运营助理
+                                </a>
+                            </div>
+                            <a class="com-name" href="enterprise/0" target="_blank">深圳市活石科技有限公司</a>
+                            <span class="white-space">深圳</span><span>2017-03-05</span>
+                        </div>
+                        <div class="result-salary">4000-6000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    外贸/跟单/外贸助理/国际贸易
+                                </a>
+                            </div>
+                            <a href="enterprise/0" class="com-name"> 上海弗格森制冷设备有限公司</a>
+                            <span class="white-space">上海</span><span>2017-05-02</span>
+                        </div>
+                        <div class="result-salary">3000-4499元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jy.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语老师
+                                </a>
+                            </div>
+                            <a href="enterprise/0" class="com-name"> 宁波市江北区申江外语培训学校</a>
+                            <span class="white-space">浙江</span><span>2017-05-05</span>
+                        </div>
+                        <div class="result-salary">4500-5999元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语客服
+                                </a>
+                            </div>
+                            <a href="enterprise/0" class="com-name"> 宁波江北甜蜜时空电子商务有限公司</a>
+                            <span class="white-space">浙江</span><span>2017-05-05</span>
+                        </div>
+                        <div class="result-salary">3000-4499元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语业务员
+                                </a>
+                            </div>
+                            <a href="enterprise/0" class="com-name"> 广州市虎头电池集团有限公司</a>
+                            <span class="white-space">广东</span><span>2017-05-05</span>
+                        </div>
+                        <div class="result-salary">4166-8333元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语电子商务专员
+                                </a>
+                            </div>
+                            <a href="enterprise/0" class="com-name"> 深圳市南伽科技信息有限公司</a>
+                            <span class="white-space">深圳</span><span>2017-05-05</span>
+                        </div>
+                        <div class="result-salary">2500-3000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    亚马逊 法语客服
+                                </a>
+                            </div>
+                            <a href="enterprise/0" class="com-name"> 深圳市森迪斯科技有限公司</a>
+                            <span class="white-space">四川</span><span>2017-05-04</span>
+                        </div>
+                        <div class="result-salary">4000-10000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    客服专员（德语/法语/意大利语）
+                                </a>
+                            </div>
+                            <a class="com-name"> 深圳市逸凡科技有限公司</a>
+                            <span class="white-space">深圳</span><span>2017-05-04</span>
+                        </div>
+                        <div class="result-salary">4000-7000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语亚马逊运营 应届生  月综合薪资4000以上
+                                </a>
+                            </div>
+                            <a class="com-name"> 安徽碧树进出口贸易有限责任公司</a>
+                            <span class="white-space">安徽</span><span>2017-05-05</span>
+                        </div>
+                        <div class="result-salary">4000-6000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语专业实习生
+                                </a>
+                                <i class="shixi-icon">实习</i>
+                            </div>
+                            <a class="com-name"> 赛科工业科技开发（武汉）有限公司</a>
+                            <span class="white-space">武汉</span><span>2017-04-30</span>
+                        </div>
+                        <div class="result-salary">1000-2000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语翻译实习生
+                                </a>
+                                <i class="shixi-icon">实习</i>
+                            </div>
+                            <a class="com-name"> 上海新欧尚超市有限公司外高桥店</a>
+                            <span class="white-space">上海</span><span>2017-04-30</span>
+                        </div>
+                        <div class="result-salary">2001-4000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语实习生
+                                </a>
+                                <i class="shixi-icon">实习</i>
+                            </div>
+                            <a class="com-name"> 深圳市易佰网络科技有限公司</a>
+                            <span class="white-space">湖北</span><span>2017-04-29</span>
+                        </div>
+                        <div class="result-salary">2500-4000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语外链实习生
+                                </a>
+                                <i class="shixi-icon">实习</i>
+                            </div>
+                            <a class="com-name"> 敦煌网</a>
+                            <span class="white-space">北京</span><span>2017-04-29</span>
+                        </div>
+                        <div class="result-salary">2001-4000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语电子商务专员
+                                </a>
+                            </div>
+                            <a class="com-name"> 重庆晓道信息科技有限公司</a>
+                            <span class="white-space">重庆</span><span>2017-04-29</span>
+                        </div>
+                        <div class="result-salary">4000-8000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    日语销售 英语销售 法语德语销售外贸专员
+                                </a>
+                            </div>
+                            <a class="com-name"> 深圳市南岸电子商务有限公司</a>
+                            <span class="white-space">深圳</span><span>2017-04-30</span>
+                        </div>
+                        <div class="result-salary">6000-7999元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/fdc.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    境外法语翻译 赴阿尔及利亚
+                                </a>
+                            </div>
+                            <a class="com-name"> 中鼎国际工程有限责任公司</a>
+                            <span class="white-space">其他省市</span><span>2017-04-24</span>
+                        </div>
+                        <div class="result-salary">8000-9999元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jsj.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语德语英语应届生实习生亚马逊运营专员
+                                </a>
+                                <i class="shixi-icon">实习</i>
+                            </div>
+                            <a class="com-name"> 深圳市南岸电子商务有限公司</a>
+                            <span class="white-space">深圳</span><span>2017-04-20</span>
+                        </div>
+                        <div class="result-salary">6001-8000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/my.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语市场--国际贸易助理
+                                </a>
+                            </div>
+                            <a class="com-name"> 深圳市联盛泰科光电有限公司</a>
+                            <span class="white-space">深圳</span><span>2017-04-09</span>
+                        </div>
+                        <div class="result-salary">3000-6000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+                <li>
+                    <div class="result-content">
+                        <img src="\Content\static\student/images/article/jy.png">
+                        <div class="job-detail">
+                            <div class="xq-divide">
+                                <a class="job-name" href="/model/0/0" target="_blank">
+                                    法语行政专员
+                                </a>
+                            </div>
+                            <a class="com-name"> SGS通标标准技术服务有限公司上海分公司</a>
+                            <span class="white-space">上海</span><span>2017-04-29</span>
+                        </div>
+                        <div class="result-salary">5000-6000元/月</div>
+                    </div>
+                    <a href="/model/0/0" target="_blank" class="overMask"></a>
+                </li>
+            </ul>
+            <ul class="page-footer">
+                <li class="current"><a href="1">1</a></li>
+                <li>
+                    <a href="2">2</a>
+                </li>
+                <li>
+                    <a href="3">3</a>
+                </li>
+                <li>
+                    <a href="4">4</a>
+                </li>
+                <li>
+                    <a href="5">5</a>
+                </li>
+                <li class="omitPage">...</li>
+                <li><a href="100">100</a></li>
+                <li class="next-page">
+                    <a href="2"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="ajax-bg">
+            <div class="ajax-loading"></div>
+        </div>
+    </div>
+    <a href="/account/register/" class="footer-banner"></a>
+</div>
+
+
+<script src="@AppSetting.Rss_Image/content/static/lib/js/student/city-picker.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.qrcode.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/student/downslide.js"></script>
+<script>
+    $(function() {
+        //排序数据
+        var data = {};
+        data.majorCode = '050204',
+            data.major = '法语',
+            data.pyCity = '',
+            data.posType = '',
+            data.salary = '',
+            data.func = '',
+            data.page = '1',
+            data.orderType = ''; //时间排序:deploytimedesc
+        var templateZhineng = $('<ul data-id="select"><li data-id="">不限</li><li data-id="1">会计/出纳</li><li data-id="2">财务</li><li data-id="3">审计</li><li data-id="20">人力资源</li><li data-id="22">行政</li><li data-id="4">金融</li><li data-id="7">产品</li><li data-id="8">运营</li><li data-id="18">编辑/文案</li><li data-id="30">设计/创意</li><li data-id="5">技术研发</li><li data-id="37">技术支持</li><li data-id="10">项目管理</li><li data-id="9">质量管理</li><li data-id="19">管理</li><li data-id="11">销售</li><li data-id="12">商务拓展</li><li data-id="15">市场营销</li><li data-id="13">渠道/分销</li><li data-id="31">工程</li><li data-id="17">生产/制造</li><li data-id="26">采购</li><li data-id="25">贸易/进出口</li><li data-id="27">物流/供应链</li><li data-id="28">医疗/健康</li><li data-id="14">客户服务</li><li data-id="6">咨询顾问</li><li data-id="16">公关</li><li data-id="21">法律</li><li data-id="23">教师</li><li data-id="24">培训</li><li data-id="34">翻译</li><li data-id="29">艺术</li><li data-id="32">物业管理</li><li data-id="33">科研</li><li data-id="35">公务员</li><li data-id="36">其他</li></ul>'),
+            //cityTemplate = $('<div id="citySelect"><div class="citylist listfirst"><h3>热门城市：</h3><ul><li data-id="0">全国</li><li data-id="1001">北京</li><li data-id="1003">上海</li><li data-id="2016001">广州</li><li data-id="2016003">深圳</li><li data-id="2007001">南京</li><li data-id="2014001">武汉</li><li data-id="2023001">西安</li><li data-id="2008001">杭州</li><li data-id="1002">天津</li><li data-id="1004">重庆</li></ul></div><div class="citylist listlast"><h3>其他省市：</h3><ul><li data-index="0" data-id="2016">广东</li><li data-index="1" data-id="2007">江苏</li><li data-index="2" data-id="2008">浙江</li><li data-index="3" data-id="2012">山东</li><li data-index="4" data-id="2023">陕西</li><li data-index="5" data-id="2019">四川</li><li data-index="6" data-id="2014" class="flag">湖北</li><li data-index="7" data-id="2015">湖南</li><li data-index="8" data-id="2001">河北</li><li data-index="9" data-id="2013">河南</li><li data-index="10" data-id="2010">福建</li><li data-index="11" data-id="2009">安徽</li><li data-index="12" data-id="2002">山西</li><li data-index="13" data-id="2011" class="flag">江西</li><li data-index="14" data-id="2020">贵州</li><li data-index="15" data-id="2004">辽宁</li><li data-index="16" data-id="2005">吉林</li><li data-index="17" data-id="2006">黑龙江</li><li data-index="18" data-id="2003">内蒙古</li><li data-index="19" data-id="2024">甘肃</li><li data-index="20" data-id="2017" class="flag">广西</li><li data-index="21" data-id="2021">云南</li><li data-index="22" data-id="2018">海南</li><li data-index="23" data-id="2026">宁夏</li><li data-index="24" data-id="2027">新疆</li><li data-index="25" data-id="2025">青海</li><li data-index="26" data-id="2022">西藏</li><li data-index="27" data-id="2028" class="flag">香港</li><li data-index="28" data-id="2029">澳门</li><li data-index="29" data-id="2030">台湾</li><li data-index="30" data-id="2099">海外</li></ul></div></div>'),
+            positonTemplate = $('<ul id="positionTemp"><li data-id="0">不限</li><li data-id="1">全职</li><li data-id="2">实习</li></ul>'),
+            salaryTemplate = $('<ul id="salaryTemp"><li data-id="0">不限</li><li data-id="1" class="selected">面议</li><li data-id="2">2000以下</li><li data-id="3">2000及以上</li><li data-id="4">3000及以上</li><li data-id="5">5000及以上</li><li data-id="6">8000及以上</li><li data-id="7">10000及以上</li></ul>');
+        $('#profession-container').on('mouseenter', '[data-widget="zhineng"]', function() {
+                _this = $(this);
+                _this.downslide({
+                    target: templateZhineng,
+                    trigger: '[data-widget="zhineng"]',
+                    positionElement: '[data-widget="zhineng"]',
+                    inputVal: '.zhineng-text',
+                    hiddenInput: 'input[name="func"]',
+                    callback: function() {
+                        _this.removeAttr('style');
+                        data.func = $('input[name="func"]').val();
+                        data.page = '1';
+                        searchProfession();
+                    }
+                });
+                _this.css({
+                    'border-color': '#7cbf59',
+                    'border-bottom-color': 'transparent'
+                });
+            })
+            .on('mouseleave', '[data-widget="zhineng"]', function() {
+                templateZhineng.remove();
+                _this.removeAttr('style');
+            })
+            .on('click', '[data-widget="city"]', function() {
+                var options = {
+                    trigger: '.city-text',
+                    inputVal: '.city-text',
+                    hinput: 'input[name="pyCity"]',
+                    numLimit: 5,
+                    callback: function() {
+                        data.pyCity = $('input[name="pyCity"]').val();
+                        data.page = '1';
+                        searchProfession();
+                    }
+                };
+                $(this).city_picker(options);
+            })
+            .on('mouseenter', '[data-widget="positon"]', function() {
+                _this = $(this);
+                _this.downslide({
+                    target: positonTemplate,
+                    trigger: '[data-widget="positon"]',
+                    positionElement: '[data-widget="positon"]',
+                    hiddenInput: 'input[name="posType"]',
+                    inputVal: '.position-text',
+                    callback: function() {
+                        _this.removeAttr('style');
+                        data.posType = $('input[name="posType"]').val();
+                        data.page = '1';
+                        searchProfession();
+                    }
+                });
+                _this.css({
+                    'border-color': '#7cbf59',
+                    'border-bottom-color': 'transparent'
+                });
+            })
+            .on('mouseleave', '[data-widget="positon"]', function() {
+                positonTemplate.remove();
+                _this.removeAttr('style');
+            })
+            .on('mouseenter', '[data-widget="salary"]', function() {
+                _this = $(this);
+                _this.downslide({
+                    target: salaryTemplate,
+                    trigger: '[data-widget="salary"]',
+                    positionElement: '[data-widget="salary"]',
+                    hiddenInput: 'input[name="salary"]',
+                    inputVal: '.salary-text',
+                    callback: function() {
+                        _this.removeAttr('style');
+                        data.salary = $('input[name="salary"]').val();
+                        data.page = '1';
+                        searchProfession();
+                    }
+                });
+                _this.css({
+                    'border-color': '#7cbf59',
+                    'border-bottom-color': 'transparent'
+                });
+            })
+            .on('mouseleave', '[data-widget="salary"]', function() {
+                salaryTemplate.remove();
+                _this.removeAttr('style');
+            })
+            .on('click', '.result-content img', function() {
+                $(this).parent().find('.com-name')[0].click();
+            })
+            .on('click', '.container-sort .sort', function() {
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active');
+                    $(this).siblings().removeClass('active');
+                }
+                data.orderType = $(this).attr('data-ref');
+                data.page = '1';
+                searchProfession();
+            })
+            .on('click', '.page-footer a', function(e) {
+                e.preventDefault();
+                data.page = $(this).attr('href');
+                $('html,body').animate({
+                    scrollTop: '0px'
+                }, 300);
+                searchProfession();
+            })
+            .on('click', '.city-list-item span', function() {
+                if ($(this).hasClass('active')) {
+                    $(this).text('收起城市列表').removeClass('active');
+                    $(this).parent().next('.citylist-details').animate({
+                        height: 28
+                    }, 300);
+                } else {
+                    $(this).text('展开城市列表').addClass('active');
+                    $(this).parent().next('.citylist-details').animate({
+                        height: 0
+                    }, 300);
+                }
+            })
+
+        function searchProfession() {
+            $.ajax({
+                type: 'POST',
+                url: '/majorposition/MajorPosLists/',
+                data: data,
+                beforeSend: function() {
+                    $('.ajax-bg').show();
+                },
+                success: function(r) {
+                    $('.sort-result').html(r);
+                    $('.ajax-bg').hide();
+                },
+                error: function() {
+                    $('.ajax-bg').hide();
+                    console.log('后台请求数据失败');
+                }
+            });
+        }
+        $('.rcode').mouseover(function() {
+            $('#encode').empty();
+            try {
+                jQuery('#encode').qrcode({
+                    render: "canvas",
+                    width: 178,
+                    height: 178,
+                    text: "http://m.zheyibu.com/MicroSiteNew/job/majorjobs.html?majorId=" + '050204' + "&majorName=" + escape('法语') + "&cityCode=" + $('input[name="pyCity"]').val()
+                });
+            } catch (e) {
+                if (!!$('input[name="pyCity"]').val() && $('input[name="pyCity"]').val() !== '0') {
+                    jQuery('#encode').qrcode({
+                        render: "table",
+                        width: 189,
+                        height: 189,
+                        text: "http://m.zheyibu.com/MicroSiteNew/job/majorjobs.html?majorId=" + '050204' + "&majorName=" + escape('法语') + "&cityCode=" + $('input[name="pyCity"]').val()
+                    });
+                } else {
+                    jQuery('#encode').qrcode({
+                        render: "table",
+                        width: 178,
+                        height: 178,
+                        text: "http://m.zheyibu.com/MicroSiteNew/job/majorjobs.html?majorId=" + '050204' + "&majorName=" + escape('法语') + "&cityCode=" + $('input[name="pyCity"]').val()
+                    });
+                }
+            }
+        });
+    })
+</script>

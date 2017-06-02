@@ -1,0 +1,33 @@
+#login-header{position:relative;background:#fff}
+#login-header .login-header{width:1000px;margin:0 auto;line-height:76px;text-align:right;overflow:hidden}
+.login-header .left-logo{float:left;width:170px;height:76px;background:url(../../images/icon/zheyibu-logo.png) 0 18px no-repeat}
+.login-header .right-login{display:inline-block;vertical-align:middle;font-size:16px}
+.login-header .right-login a{text-decoration:none;color:#7cbf59}
+.homepage-footer{position:relative;text-align:center;background:#fff;color:#333;height:100px}
+.homepage-footer a{display:inline-block;margin-top:30px;margin-bottom:10px;text-decoration:none;color:#333}
+.homepage-footer .copyright{font-size:13px;color:#999}
+#homepage-container{min-height:760px}
+.lg-reg-bg{height:796px;background:url(../../images/background/lg-reg-bg.jpg) 50% 0 no-repeat;background-size:cover;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/background/lg-reg-bg.jpg', sizingMethod='scale');-ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../images/background/lg-reg-bg.jpg', sizingMethod='scale')"}
+.lg-reg-bg p.reg-title{text-align:center;line-height:126px;font-size:34px;color:#6e4f36}
+#register-form{width:760px;height:530px;margin:0 auto;padding-top:40px;background-color:#fff;font-size:0;border-radius:3px}
+#register-form .reg-banner{width:582px;height:60px;margin:0 auto;font-size:14px;color:#666;text-align:center;background:url(../../images/background/reg-banner.png) 4px 26px no-repeat}
+#register-form .reg-banner .reg{float:left;margin-left:30px}
+#register-form .reg-banner .done{float:right;margin-right:30px}
+#register-form .reg-name{margin-left:84px;margin-top:44px;margin-bottom:35px;font-size:18px}
+#register-form .reg-info{font-size:14px}
+#register-form .reg-info p{line-height:40px;height:40px;margin-bottom:20px;color:#999}
+.reg-info p label{display:inline-block;vertical-align:top;margin-right:5px;width:212px;text-align:right}
+.reg-info input{width:282px;height:38px;line-height:38px\9;border:1px solid #ddd;text-indent:12px}
+.reg-info input:focus{border-color:#7cbf59;outline:#7cbf59 auto 1px}
+#code{width:90px}
+#mobileValidateCode{width:188px;}
+.sendCode{display:inline-block;vertical-align:top;width:94px;height:40px;line-height:40px;text-align:center}
+.sendCode.active{background-color:#7cbf59;color:#fff;cursor:pointer}
+.sendCode.inactive{background-color:#f2f2f2;color:#999}
+.reg-info p img{width:78px;height:38px;vertical-align:middle;margin:0 8px;max-height:100%;max-width:100%}
+.reg-info p a{text-decoration:none;color:#2860a0}
+#register-form .protocal{font-size:14px;color:#999;margin-left:216px;padding-left:18px;background:url(../../images/icon/login-register.png) 0 -374px no-repeat}
+#register-form .protocal.active{background:url(../../images/icon/login-register.png) 0 -351px no-repeat}
+#register-form .protocal a{color:#999}
+#register-btn{display:inline-block;width:284px;line-height:40px;height:40px;color:#fff;font-size:18px;text-align:center;background:#7cbf59;margin-left:216px;margin-top:20px;outline:0}
+#code-error,#mobile-error,#mobileValidateCode-error,#password-error{padding-left:20px;margin-left:10px;text-align:left;color:#ff7562;background:url(../../images/icon/login-register.png) 0 12px no-repeat}

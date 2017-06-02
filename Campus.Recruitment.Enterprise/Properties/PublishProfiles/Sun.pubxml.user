@@ -1,0 +1,1771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\ISS Manage Site\Campus\Enterprise</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Config/Database.xml">
+      <publishTime>05/23/2017 13:35:05</publishTime>
+    </File>
+    <File Include="App_Config/DataCommand/DataCommand_Enterprise.xml">
+      <publishTime>05/24/2017 15:56:00</publishTime>
+    </File>
+    <File Include="App_Config/DataCommand/DataCommand_Position.xml">
+      <publishTime>05/24/2017 21:44:17</publishTime>
+    </File>
+    <File Include="App_Config/DataCommand/DataCommand_System.xml">
+      <publishTime>05/19/2017 14:12:36</publishTime>
+    </File>
+    <File Include="App_Config/DataCommand/DataCommand_Templete.xml">
+      <publishTime>05/19/2017 14:12:36</publishTime>
+    </File>
+    <File Include="App_Config/DataCommand/DataCommand_UserManager.xml">
+      <publishTime>05/19/2017 14:12:36</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 08:43:40</publishTime>
+    </File>
+    <File Include="bin/App_Config/Database.xml">
+      <publishTime>05/23/2017 13:35:05</publishTime>
+    </File>
+    <File Include="bin/App_Config/DataCommand/DataCommand_Enterprise.xml">
+      <publishTime>05/24/2017 15:56:00</publishTime>
+    </File>
+    <File Include="bin/App_Config/DataCommand/DataCommand_Position.xml">
+      <publishTime>05/24/2017 21:44:17</publishTime>
+    </File>
+    <File Include="bin/Autofac.dll">
+      <publishTime>04/04/2017 06:35:00</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>04/10/2017 15:40:32</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>03/22/2017 07:11:18</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.BLL.dll">
+      <publishTime>05/25/2017 00:23:13</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.DAL.dll">
+      <publishTime>05/25/2017 00:23:12</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.Enterprise.dll">
+      <publishTime>05/25/2017 00:23:32</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.Entities.dll">
+      <publishTime>05/25/2017 00:23:12</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.IBLL.dll">
+      <publishTime>05/25/2017 00:23:12</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.IDAL.dll">
+      <publishTime>05/25/2017 00:23:12</publishTime>
+    </File>
+    <File Include="bin/Campus.Recruitment.Utility.dll">
+      <publishTime>05/25/2017 00:23:12</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/KeChong.Framework.dll">
+      <publishTime>05/19/2017 14:54:42</publishTime>
+    </File>
+    <File Include="bin/log4net.config">
+      <publishTime>05/20/2017 21:11:03</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>11/07/2016 14:16:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>04/03/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>04/03/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>04/03/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/13/2015 13:16:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>02/13/2015 13:16:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>02/13/2015 13:16:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>02/13/2015 13:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>02/13/2015 13:16:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>02/13/2015 13:16:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>02/13/2015 13:16:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/23/2012 15:23:58</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>11/08/2016 10:18:14</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>06/17/2016 18:29:12</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/03/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/27/2012 13:00:52</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/Smart.Cryptography.dll">
+      <publishTime>12/30/2016 15:13:53</publishTime>
+    </File>
+    <File Include="bin/Smart.Utilitys.ConfigEncryption.dll">
+      <publishTime>12/30/2016 15:29:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/10/2013 17:28:38</publishTime>
+    </File>
+    <File Include="Content/admin/Scripts/Ueditor/net/upload/2015-12-14/1f55a4f7-39fd-4731-8a68-99cf8bf2c9ca.jpg">
+      <publishTime>05/20/2017 10:44:38</publishTime>
+    </File>
+    <File Include="Content/admin/Scripts/Ueditor/net/upload/2015-12-14/81f48d39-7bd1-44f7-8852-cf2ea9e77772.jpg">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/admin/Scripts/Ueditor/net/upload/2015-12-14/bf7c06be-bdab-41f8-bbb2-529cafe9b7e3.jpg">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/admin/Scripts/Ueditor/net/upload/2015-12-14/d6b30507-0f10-4176-afd2-4a4bc028f90c.jpg">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/admin/Scripts/Ueditor/net/upload/2017-05-05/17f2d9d2-b134-442f-9a64-cc0ac16667d0.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/16/2017 10:12:38</publishTime>
+    </File>
+    <File Include="Content/static/css/base/base.css">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/dialog.css">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/etp-gb.css">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/global-corp.css">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/global-v3.css">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/bg/loading.gif">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/etp/zheyibu-etp.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/arr-d.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/corp-icons.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/corp-tags-ico.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/corp-warning-icon.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/duihao.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/fire-job.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-collect-l.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-collect-s.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-dialog-close.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-L-R.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-legend.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-list-select.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon-resume-operates.png">
+      <publishTime>05/20/2017 10:44:40</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/icon.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/iocn-legend-hover-1.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/jianli-search.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/master_icon.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/post-error-ioc.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/star.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/tips-box-close-hover.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/tips-box-close.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/img/icon/tips-ioc.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/position-manage.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/position-v2.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/profile.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/register.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/resume-manage.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/resumeViewer.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/corp/showBox.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/bg/micro-video-resume.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/bg/myobj-zylx.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/bg/photo.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/btn/resume-file-btn-bg.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/checkui.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/icon-nav-end.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/icon-nav-start.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/icon-player-btn.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/loading.gif">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/m-close.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/nav-li-point.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/nav-li-right.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/new-resume-iocs.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/popipt.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/resume-video.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/student-pic.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/warning-icon.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/wechat-notice.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/img/icon/wechat-notice2.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/resumeform/zyb-resume-form.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/zyb-apply-finished.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/zyb-new20150121.css">
+      <publishTime>05/20/2017 15:27:45</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/zyb-rec-job.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/zyb-resume-new.css">
+      <publishTime>05/20/2017 15:27:58</publishTime>
+    </File>
+    <File Include="Content/static/css/zyb/zyb-user.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/activity/activity.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/homepage/enter.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/homepage/index.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/lib/homepage_search.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/lib/majorPicker.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/resume/resumeDetails.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/css/search/searchpage.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/css/account.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/css/corphome.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/css/dialog.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/css/form.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/css/style.css">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/img/ad_ctr.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/img/corp-dem.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/js/slider.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/debug/js/topu.dialog.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/background/part1-bg1.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/background/part1-bg2.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/background/part1-bg3.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/background/part1-bg4.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/background/part1-bg5.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/icon/home-logo-light.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/icon/home-search-icon.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/icon/homepage-icon.png">
+      <publishTime>05/24/2017 21:26:49</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/icon/keep-icon.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/images/icon/zheyibu-etp.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/js/lib/cycleBanner.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/js/lib/homepage_search.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/js/lib/majorPicker.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/lib/components/form/form.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/lib/components/form/uploader/webuploader.js">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/static/img/account/icon-success.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/static/img/profile/auth.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/enterprise/static/img/register/reg-title-bg.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/html/demo/quickmark/jquery.qrcode.min.js">
+      <publishTime>05/20/2017 19:36:42</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/avatar-s-1.jpg">
+      <publishTime>05/20/2017 14:47:27</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/college-b.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/etp.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/fav-book.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/hr-invite.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/QR-code1.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/QR-code2.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/avatar/select-job.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/corp/nav-num-bg.png">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/VideoResume/conney-1.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/VideoResume/jay-1.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/VideoResume/tod-1.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/VideoResume/vupload_c2.gif">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/images/xyt/qi_bg2.jpg">
+      <publishTime>05/20/2017 10:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/additional-methods.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/corp-data.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/dialog.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/formui.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/init.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/jquery.from.3.49.0.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/jquery.nicescroll.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/pageCode.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/position-manage.js">
+      <publishTime>05/24/2017 22:12:23</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/publisher.js">
+      <publishTime>05/23/2017 14:26:16</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/register.js">
+      <publishTime>05/24/2017 14:18:15</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/resume-manage.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/resumeViewer.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/corp/showBox.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/jquery/jquery/jquery-1.7.2.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/jquery/mvc/jquery.unobtrusive-ajax.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/jquery/plugin/Pikaday/pikaday.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/jquery/plugin/Pikaday/pikaday.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/base/1.1.1/base.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/class/1.1.0/class.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/dialog/1.2.3/dialog.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/dialog/1.3.0/confirmbox.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/dialog/1.3.0/dialog.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/dialog/dialog.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/events/1.1.0/events.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/iframe-shim/1.0.2/iframe-shim.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/overlay/1.1.3/mask.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/overlay/1.1.3/overlay.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/overlay/1.1.4/mask.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/overlay/1.1.4/overlay.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/position/1.0.1/position.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/templatable/0.9.1/templatable.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/templatable/0.9.2/templatable.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/validator/0.9.7/validator.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/arale/widget/1.1.1/widget.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/corp/confirm/1.0.0/confirm.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/corp/dialog/dialog.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/corp/formUI/1.0.0/formui.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/corp/resumes/1.0.0/resumes.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/corp/schoolLayer/1.0.0/schoolfilterdata.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/corp/schoolLayer/1.0.1/schoollayer.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/gallery/handlebars/1.0.2/handlebars.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/gallery/handlebars/1.0.2/runtime.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/autocomplete/1.1.0/autocomplete.css">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/autocomplete/1.1.0/autocomplete.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/autocomplete/1.11.4/autoComplete.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/autocomplete/1.11.4/jquery-ui.css">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/form/3.49.0/form.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/jquery/1.7.2/jquery.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/lightbox/lightbox.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/lightbox/themes/default/images/jquery-lightbox-theme.png">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/lightbox/themes/default/images/loading.gif">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/lightbox/themes/default/jquery.lightbox.css">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/placeholder/1.0.0/placeholder.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/scity/1.0.0/scity.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/jquery/slimscroll/jquery.slimscroll.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/checkbox-ui/checkui.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/jqueryui/1.10.4/jqueryui.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/layer/1.0.3/dialog-data.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/layer/1.0.3/layer.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/layer/1.0.4/layer.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/layer/plugin/pick/1.0.3/layer-pick-com.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/layer/plugin/pick/1.0.3/layer-pick.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/schoolLayer/1.0.0/schoolfilterdata.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/selectui/selectui.js">
+      <publishTime>05/22/2017 00:51:46</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/topucdialog/1.1.5/topucdialog.css">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/topucdialog/1.1.5/topucdialog.js">
+      <publishTime>05/20/2017 13:44:41</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/module/topucdialog/1.1.5/topucdialogdata.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/validate/jquery.validate.min.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/zyb/datePicker/DatePicker.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/zyb/datePicker/datePicker.new.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/zyb/popup/1.0.0/topu.dialog.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/zyb/prompt/1.0.0/prompt.js">
+      <publishTime>05/20/2017 13:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/sea-modules/zyb/resume/1.0.3/resume.js">
+      <publishTime>05/22/2017 21:54:33</publishTime>
+    </File>
+    <File Include="Content/static/js/webuploader/webuploader.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/webuploader/webuploader.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/zyb/job-details-update.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/js/zyb/navigation.js">
+      <publishTime>05/20/2017 13:32:41</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/base/datepicker.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/base/jquery-ui.min.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/base/jquery.mCustomScrollbar.min.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/base/loading.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/normalize.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/student/city-picker.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/student/cityinit.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/student/datePicker.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/student/header-footer.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/student/layerAlertMask.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/css/student/login-layer.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/img/loading.gif">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/coding.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/datepicker.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/global.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery-1.11.3.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery-ui.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.autocomplete.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.bxslider.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.lazyload.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.mCustomScrollbar.concat.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.mousewheel.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.qrcode.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/jquery.validate.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/loading.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/transit.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/base/uaredirect.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/jquery.slimscroll.min.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/My97DatePicker/calendar.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/My97DatePicker/skin/datePicker.gif">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/My97DatePicker/skin/default/datepicker.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/My97DatePicker/skin/default/img.gif">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/My97DatePicker/skin/WdatePicker.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/enterprise/js/My97DatePicker/WdatePicker.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/city-picker.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/cityinit.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/datePicker.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/downslide.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/layerAlertMask.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/login-layer.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/lib/js/student/shortcutMenu.js">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/about/index.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/advice/advice.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/advice/adviceDetails.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/company/hr.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/company/position.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/company/s-fb.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/index/homepage.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/landpage/userCenter.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/login/login.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/login/register.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/login/registerStep.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/profession/profession.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/searchJob/fulltime.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/searchJob/industry.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/searchJob/jobDetails.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/searchJob/searchJob.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/searchJob/uiSelect.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/usercenter/index.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/xuanjianghui/details.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/xuanjianghui/index.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/css/zhiyemao/index.css">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/article/fdc.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/article/homepage-default-logo.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/article/jsj.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/article/jy.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/article/kjjr.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/article/my.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/anchor_bg.png">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/B-1.jpg">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/B-2.jpg">
+      <publishTime>05/20/2017 10:44:42</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/B-3.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/B-4.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/contact.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/footer-banner.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/footer-rg-banner.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/homepage-banner-footer.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/left-footer-reg.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/lg-reg-bg.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/pageside.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/profession-banner.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/profession-footer-login.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/reg-banner.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/background/zheyibu-map.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/404.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/about-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/about-logo11.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/advice-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/anchor-option-list.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/collect-follow.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/company-bg-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/email-mobile-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/feedback.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/feedsuccess.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/go-top.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/homepage-icon-header.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/homepage_icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/homepage_icon1.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/homepage_icon2.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/hr-answer-reply.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/icon-x.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/item-icons.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/job-details-dot.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/job-details-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/job_wechat.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/keys-success-tips.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/layer-login-dialog.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/layer-top-X.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/life-pre-next.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/line-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/login-register.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/mobile-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/overlay_dot.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/profession-dot-bg.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/profession-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/qq-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/search-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/share.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/userCenter.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/webchat-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/xiaobu.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/xinlang-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/xjh-bg-icon.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/xjh-detail-title.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/xjh-icon-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/xjh-search.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/images/icon/zheyibu-logo.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/js/company/company.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/js/homepage/homepage.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/js/searchJob/func.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/js/searchJob/industry.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/js/searchJob/searchJob.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/student/js/searchJob/uiSelect.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/baidu/baiducc.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/baidu/baiduee.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/cuplayer/images/swfobject.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/google/gtm.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/jQuery/jquery.min.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/jQuery/jquery.signalR-2.0.0.min.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/layer/layer-pick.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/layer/layer.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/selectui/selectui.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/components/validate/jquery.validate.min.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/blue-skin.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/common.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/DatePicker.new.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/dialog.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/global.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/layer.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/layer2.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/pop.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/css/selectui.css">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/img/icon/a-ok.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/img/icon/apply-success-zhiye.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/img/icon/fire-job.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/img/icon/icon-dialog-close.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/img/icon/icon-fromui-checkbox.png">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/js/coding.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/js/global.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/static/zheyibu/static/js/jquery.slimscroll.js">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5655/thumb.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5661/thumb.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5662/thumb.jpg">
+      <publishTime>05/20/2017 10:44:43</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5663/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5664/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5670/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5671/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5679/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5680/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5684/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5685/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5688/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5689/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5690/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/article/5693/thumb.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635791497111385395.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635791497252626012.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635890657327212542.png">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635890706390437638.png">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635932275724731850.png">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635956489343017840.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635963342326777086.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635963422771306584.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635963432195858357.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/635981491425593777.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636032263565023050.png">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636045489195559924.png">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636166121057963734.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636178552977810974.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636196690316138776.png">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636203567278210037.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636245914269671000.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636245915947453947.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636282883219275576.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/CompanyRecommend/636282884989722685.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1070019/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1087508/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1258742/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1266355/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1269807/150x150.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1301356/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1320523/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1330442/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1330990/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1330990/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1341631/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1343953/thumbnail.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1358366/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1361280/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1362717/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1362717/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1364366/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1389006/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1398773/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/1398773/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/219096/80x80.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/222295/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/259278/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/355470/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/50x50.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172345_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172424_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172657_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172721_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172755_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172903_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172917_740x483.JPG">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172932_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172944_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929172959_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929173109_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929173141_740x483.JPG">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174405_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174427_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174450_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174459_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174510_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174613_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174705_740x483.JPG">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174842_740x483.jpg">
+      <publishTime>05/20/2017 10:44:44</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929174908_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929175031_740x483.JPG">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929183224_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140929183408_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140930092858_740x483.JPG">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140930093115_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140930093131_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20140930093137_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20141018094349_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20141018094357_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20141018094412_740x483.JPG">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/359515/photo/20141018094439_740x483.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/626604/80x80.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/677779/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/786871/50x50.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/866255/50x50.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/878190/50x50.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/883095/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/886374/50x50.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/889561/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/889727/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/893089/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/902806/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/904974/80x80.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/e/925079/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/101185/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/102280/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/128592/150x150.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/136526/lifephoto/2017050917183182313731_108xauto.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/136526/lifephoto/2017050917183182313731_150xauto.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/136526/lifephoto/2017050917183182313731_740xauto.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/136526/lifephoto/2017050917184019861641_108xauto.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/136526/lifephoto/2017050917184019861641_150xauto.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="Content/Upload/s/136526/lifephoto/2017050917184019861641_740xauto.jpg">
+      <publishTime>05/20/2017 10:44:45</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>05/16/2017 10:12:38</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/16/2017 10:12:38</publishTime>
+    </File>
+    <File Include="log4net.config">
+      <publishTime>05/20/2017 21:11:03</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/20/2017 21:08:35</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>05/16/2017 10:12:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>05/16/2017 10:12:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>05/16/2017 10:12:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>05/16/2017 10:12:40</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>05/16/2017 10:12:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>05/16/2017 10:12:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>05/16/2017 10:12:45</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/16/2017 10:12:44</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>05/16/2017 10:12:44</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>05/16/2017 10:12:44</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>05/16/2017 10:12:44</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>05/20/2017 19:36:43</publishTime>
+    </File>
+    <File Include="Views/Account/Password.cshtml">
+      <publishTime>05/24/2017 16:15:13</publishTime>
+    </File>
+    <File Include="Views/Account/RegisterOne.cshtml">
+      <publishTime>05/24/2017 13:46:22</publishTime>
+    </File>
+    <File Include="Views/Account/RegisterThree.cshtml">
+      <publishTime>05/24/2017 14:23:18</publishTime>
+    </File>
+    <File Include="Views/Account/RegisterTwo.cshtml">
+      <publishTime>05/24/2017 14:08:29</publishTime>
+    </File>
+    <File Include="Views/Account/Setting.cshtml">
+      <publishTime>05/24/2017 15:04:32</publishTime>
+    </File>
+    <File Include="Views/Account/SignIn.cshtml">
+      <publishTime>05/24/2017 21:21:39</publishTime>
+    </File>
+    <File Include="Views/Home/CollegesInfo.cshtml">
+      <publishTime>05/18/2017 11:00:35</publishTime>
+    </File>
+    <File Include="Views/Home/Extension.cshtml">
+      <publishTime>05/18/2017 12:36:17</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/18/2017 12:46:19</publishTime>
+    </File>
+    <File Include="Views/Position/Index.cshtml">
+      <publishTime>05/24/2017 23:43:45</publishTime>
+    </File>
+    <File Include="Views/Position/Publish.cshtml">
+      <publishTime>05/25/2017 00:22:41</publishTime>
+    </File>
+    <File Include="Views/Position/PublishOne.cshtml">
+      <publishTime>05/17/2017 21:47:34</publishTime>
+    </File>
+    <File Include="Views/Position/PublishSuccess.cshtml">
+      <publishTime>05/24/2017 17:00:19</publishTime>
+    </File>
+    <File Include="Views/Position/PublishTwo.cshtml">
+      <publishTime>05/17/2017 21:47:43</publishTime>
+    </File>
+    <File Include="Views/Resume/Detail.cshtml">
+      <publishTime>05/17/2017 22:23:09</publishTime>
+    </File>
+    <File Include="Views/Resume/Index.cshtml">
+      <publishTime>05/18/2017 14:42:38</publishTime>
+    </File>
+    <File Include="Views/Resume/Invitation.cshtml">
+      <publishTime>05/18/2017 10:30:01</publishTime>
+    </File>
+    <File Include="Views/Seminar/Edit.cshtml">
+      <publishTime>05/17/2017 23:12:03</publishTime>
+    </File>
+    <File Include="Views/Seminar/Index.cshtml">
+      <publishTime>05/18/2017 13:02:24</publishTime>
+    </File>
+    <File Include="Views/Shared/_Header.cshtml">
+      <publishTime>05/24/2017 13:23:35</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/24/2017 14:32:36</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginHeader.cshtml">
+      <publishTime>05/24/2017 21:17:48</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>05/16/2017 22:17:40</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>05/16/2017 10:12:38</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/16/2017 10:12:38</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/25/2017 00:23:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

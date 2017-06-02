@@ -1,0 +1,23 @@
+#dvMsgBox{display:none;position:fixed;font-size:12px;width:300px;overflow:hidden;z-index:999;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;font-family:微软雅黑}
+#dvMsgBox .top{background-color:#85b0dc;position:relative;width:100%}
+#dvMsgBox .top .title{height:100%;color:#FFF;vertical-align:middle;font-size:16px;overflow:hidden;line-height:16px;min-height:16px;padding:15px}
+#dvMsgBox .top .closeBtn{position:absolute;top:13px;right:13px;display:inline-block;width:20px;height:20px;background:url(img/icon/icon-dialog-close.png) no-repeat}
+#dvMsgBox .body{background:#fff;padding:20px 18px 0 25px}
+#dvMsgBox .body .ct{color:#333;font-size:12px;vertical-align:middle}
+#dvMsgBox .body .ct h2{font-size:16px;line-height:30px}
+#dvMsgBox .body .ct .d-tips{color:#999;padding-left:58px}
+#dvMsgBox .body .ct .pro{width:280px;border:solid 1px #6593cf;height:25px;background:#fff;line-height:23px;overflow:hidden}
+#dvMsgBox .body .ct .pro .bg{width:0;height:100%;background:#c9dffc}
+#dvMsgBox .bottom{background:#fff;padding:0 10px 10px 0}
+#dvMsgBox .bottom .right{height:100%;padding-right:6px}
+input.btn{width:54px;height:25px;line-height:25px;font-size:12px;border-radius:3px;font-family:微软雅黑;cursor:pointer;color:#fff;border:none;text-align:center;margin:0 auto}
+#dvMsgBox .btn input.OK_btn{background:#027cff}
+#dvMsgBox .btn input.Cancel_btn{color:#333}
+#dvMsgBox .icon{width:46px;height:46px;float:left;padding-right:10px;background:url(img/icon/icon48.png) no-repeat}
+#dvMsgBox .error{background-position:0 0}
+#dvMsgBox .succee{background-position:-48px 0}
+#dvMsgBox .warning{background-position:-96px 0}
+#dvMsgBox .clear{clear:both}
+#dvMsgBox .height{height:20px;line-height:20px}
+#ShowBolightBox{display:none;-moz-opacity:.15;filter:alpha(opacity=10);opacity:.15;background:#000;z-index:100;position:absolute;left:0;top:0}
+#dvMsgBtns{text-align:center;width:100%}

@@ -1,0 +1,239 @@
+﻿@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "搞笑信息";
+}
+
+<link rel="stylesheet" href="/content/static/enterprise/css/homepage/index.css">
+<link href="/content/static/css/corp/etp-gb.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/content/static/lib/css/normalize.css">
+<link href="/content/static/lib/css/normalize.css" rel="stylesheet" type="text/css">
+<link href="/content/static/enterprise/css/search/searchpage.css" rel="stylesheet" type="text/css">
+<link href="/content/static/enterprise/css/lib/homepage_search.css" rel="stylesheet" type="text/css">
+<link href="/content/static/enterprise/css/lib/majorPicker.css" rel="stylesheet" type="text/css">
+<script src="/content/static/lib/js/base/jquery-1.11.3.min.js"></script>
+<script src="/content/static/lib/js/enterprise/js/jquery.slimscroll.min.js"></script>
+
+<div class="clearfix"></div>
+<div class="part-content">
+    <div class="contentpart">
+        <!-- 活动title -->
+        <div id="search-title">您的位置：校园招聘网（企业端）&gt;高校查询（Beta）</div>
+        <!-- 活动 start -->
+        <div id="search-content">
+            <div class="contentHeader">
+                <p id="mainTitle">你想招聘的学生分布在哪些高校？</p>
+                <p id="subTitle">本工具可帮助企业了解或查询目标招聘生源所在的高校分布情况，为HR的校招工作提供参考</p>
+            </div>
+            <!-- 高校信息查询工具 start -->
+            <div class="part2">
+                <div class="part2-th">
+                    <div class="th-list divide"><span>汉语言文学</span><i></i></div>
+                    <div class="th-list level"><span>高校级别</span><i></i></div>
+                    <div class="th-list area"><span>高校所在地区</span><i></i></div>
+                    <div class="btn-search">查询</div>
+                </div>
+                <input type="hidden" name="majorClass" value="050101">
+                <input type="hidden" name="schoolLevel">
+                <input type="hidden" name="schoolArea">
+            </div>
+            <!-- 高校信息查询工具 end -->
+            <!-- 查询结果详情列表 start -->
+            <div id="search-list">
+                <div class="listHead">全国共有 498 所高校开设了 汉语言文学 专业：</div>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.bnu.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/156/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.bnu.edu.cn/" target="_blank" class="name-title">北京师范大学</a>
+                            <p class="name-desc">北京,师范,985,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="教育学,公共事业管理,学前教育,特殊教育,教育技术学,哲学,思想政治教育,社会工作,心理学,法学,体育教育,运动训练,体育经济,汉语言文学,传播学,英语,日语,俄语,影视学 ,数字媒体艺术,音乐学,美术学,书法学,艺术设计学,舞蹈学,历史学,数学与应用数学,统计学,物理学,化学,天文学,地理科学,   资源环境与城乡规划管理,地理信息系统  ,资源科学与工程,电子信息科学与技术,计算机科学与技术,管理科学,信息管理与信息系统">
+                            汉语言文学,教育学,公共事业管理,学前教育,特殊教育,教育技术学,哲学,思想政治教育,社会工作,心理学,法学,体育教育,运... 共开设 39 个（类）专业
+                        </div>
+                        <a href="http://www.bnu.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.bfsu.edu.cn/" target="_blank" class="left-logo"><img src="/content/static/images/avatar/college-b.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.bfsu.edu.cn/" target="_blank" class="name-title">北京外国语大学</a>
+                            <p class="name-desc">北京,综合,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="金融学,经济与贸易,法学,政治学,中国语言文学,外国语言文学,新闻传播学,计算机,管理科学与工程,工商管理,电子商务">
+                            金融学,经济与贸易,法学,政治学,中国语言文学,外国语言文学,新闻传播学,计算机,管理科学与工程,工商管理,电... 共开设 11 个（类）专业
+                        </div>
+                        <a href="http://www.bfsu.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.uibe.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/161/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.uibe.edu.cn/" target="_blank" class="name-title">对外经济贸易大学</a>
+                            <p class="name-desc">北京,财经,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="保险学,法学,国际经济与贸易,经济学,金融学,工商管理,财务管理,市场营销,会计学,人力资源管理,金融工程,行政管理,汉语言文学,法语,意大利语,日语,朝鲜语,西班牙语,俄语,阿拉伯语,电子商务,信息管理与信息系统,英语,德语">
+                            汉语言文学,保险学,法学,国际经济与贸易,经济学,金融学,工商管理,财务管理,市场营销,会计学,人力资源管理,金融工程,行... 共开设 24 个（类）专业
+                        </div>
+                        <a href="http://www.uibe.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.cuc.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/164/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.cuc.edu.cn/" target="_blank" class="name-title">中国传媒大学</a>
+                            <p class="name-desc">北京,综合,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="广播电视学,编辑出版学,广播电视编导,影视摄影与制作,新闻学,传播学,网络与新媒体,音乐学,戏剧影视导演,表演,录音艺术,戏剧影视美术设计,数字媒体艺术,戏剧影视文学,动画,数字媒体技术,通信工程,广播电视工程,电子信息工程,自动化,网络工程,光电信息科学与工程,信息与计算科学,计算机科学与技术,信息安全,汉语言文学,汉语国际教育,汉语言,法学,播音与主持艺术,英语,俄语,法语,西班牙语,日语,朝鲜语,土耳其语,印地语,德语,葡萄牙语,广告学,公共关系学,视觉传达设计,文化产业管理,行政管理,信息管理与信息系统,经济学,国际经济与贸易,国际文化贸易,工商管理,会计学,市场营销">
+                            汉语言文学,广播电视学,编辑出版学,广播电视编导,影视摄影与制作,新闻学,传播学,网络与新媒体,音乐学,戏剧影视导演,表... 共开设 52 个（类）专业
+                        </div>
+                        <a href="http://www.cuc.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.ruc.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/168/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.ruc.edu.cn/" target="_blank" class="name-title">中国人民大学</a>
+                            <p class="name-desc">北京,综合,985,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="环境工程,环境科学,公共事业管理,资源与环境经济学,信息安全,计算机科学与技术,数学与应用数学,信息管理与信息系统,软件工程,宗教学,伦理学,哲学,汉语言,汉语言文学,历史学,考古学,美术学,音乐表演,视觉传达设计,环境设计,动画,绘画,法语,德语,日语,俄语,英语,传播学,广告学,广播电视学,新闻学,农村区域发展,农林经济管理,社会工作,社会学,城市管理,土地资源管理,行政管理,信息资源管理,档案学,保险学,信用管理,金融工程,金融学,税收学,财政学,统计学,应用统计学,经济统计学,管理科学,财务管理,会计学,贸易经济,市场营销,工商管理,人力资源管理,劳动与社会保障,劳动关系,法学,中国共产党历史,政治学与行政学,外交学,国际政治,人文科学试验班 ,经济学,国际经济与贸易,国民经济管理,能源经济,应用心理学,化学,材料物理,物理学">
+                            汉语言文学,环境工程,环境科学,公共事业管理,资源与环境经济学,信息安全,计算机科学与技术,数学与应用数学,信息管理与... 共开设 72 个（类）专业
+                        </div>
+                        <a href="http://www.ruc.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.cupl.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/170/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.cupl.edu.cn/" target="_blank" class="name-title">中国政法大学</a>
+                            <p class="name-desc">北京,政法,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="法学,侦查学,政治学与行政学,国际政治,公共事业管理,行政管理,经济学,工商管理,国际商务,哲学,汉语言文学,英语,德语,翻译,社会学,社会工作,应用心理学,思想政治教育,新闻学">
+                            汉语言文学,法学,侦查学,政治学与行政学,国际政治,公共事业管理,行政管理,经济学,工商管理,国际商务,哲学,英语,德语,翻... 共开设 19 个（类）专业
+                        </div>
+                        <a href="http://www.cupl.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.cufe.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/171/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.cufe.edu.cn/" target="_blank" class="name-title">中央财经大学</a>
+                            <p class="name-desc">北京,财经,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="财政学,资产评估,金融学,金融工程,会计学,财务管理,税收学,保险学,劳动与社会保障,统计学,经济统计学,信息与计算科学,国际经济与贸易,国际商务,贸易经济,经济学,国民经济管理,工商管理,市场营销,人力资源管理,物流管理,工程管理,房地产开发与管理,投资学,管理科学      ,信息管理与信息系统,电子商务,计算机科学与技术,信息安全,英语,日语,翻译,书法学,视觉传达设计,广告学,文化产业管理,新闻学,汉语言文学,应用心理学,社会工作,社会学,体育经济与管理,城市管理,国际政治,公共事业管理,行政管理">
+                            汉语言文学,财政学,资产评估,金融学,金融工程,会计学,财务管理,税收学,保险学,劳动与社会保障,统计学,经济统计学,信息... 共开设 46 个（类）专业
+                        </div>
+                        <a href="http://www.cufe.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.muc.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/173/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.muc.edu.cn/" target="_blank" class="name-title">中央民族大学</a>
+                            <p class="name-desc">北京,民族,985,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="民族学,哲学,宗教学,经济学,国际经济与贸易,财政学,金融学,法学,社会学,政治学与行政学,教育学,体育教育,民族传统体育,汉语言文学,对外汉语,中国少数民族语言文学,英语,俄语,新闻学,广告学,音乐学,作曲与作曲技术理论,音乐表演,绘画,美术学,艺术设计学,舞蹈学,舞蹈编导,表演,历史学,文物与博物馆学,数学与应用数学,信息与计算科学,物理学,应用物理学,化学,生物科学,生物技术,光信息科学与技术,环境科学,生态学,统计学,自动化,电子信息工程,通信工程,计算机科学与技术,制药工程,预防医学,藏医学,工商管理,市场营销,会计学,旅游管理,行政管理">
+                            汉语言文学,民族学,哲学,宗教学,经济学,国际经济与贸易,财政学,金融学,法学,社会学,政治学与行政学,教育学,体育教育,民... 共开设 54 个（类）专业
+                        </div>
+                        <a href="http://www.muc.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.scu.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/175/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.scu.edu.cn/" target="_blank" class="name-title">四川大学</a>
+                            <p class="name-desc">成都,综合,985,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="国际经济与贸易,财政学,国民经济管理,金融学,经济学,金融工程,法学,汉语言文学,中国语言文学,编辑出版学,对外汉语,新闻学,广告学,广播电视新闻学,汉语言,戏剧影视文学,英语,日语,俄语,法语,美术学,绘画,动画,表演,艺术设计学,舞蹈学,广播电视编导,音乐学,数学与应用数学,信息与计算科学,数学基础,统计学,应用物理学,微电子学,核工程与核技术,核物理,物理学,化学,应用化学,生物学 ,生命科学与技术 ,生物技术,生态学,生物科学,电子信息工程,光信息科学与技术 ,电子科学与技术,电子信息科学与技术,信息安全,电子信息科学,光信息科学与技术,计算机科学与技术,网络工程,软件工程,金属材料工程,无机非金属材料工程,材料物理,材料化学,生物医学工程,高分子材料加工工程,高分子材料与工程,测控技术与仪器,工业设计,机械设计制造及其自动化,材料成型及控制工程,电气工程及其自动化,通信工程,自动化,医学信息工程,电气信息,建筑学,城市规划,景观建筑设计 ,土木工程,给水排水工程,工程力学,环境科学,环境工程,水利水电工程,水文与水资源工程,热能与动力工程,农业水利工程,化学工程与工艺,生物工程,制药工程,过程装备与控制工程,安全工程,冶金工程,服装设计与工程专业 ,纺织工程,食品科学与工程,轻化工程,轻工生物技术 ,临床医学,医学技术 ,医学检验,护理学,康复治疗学,口腔医学,预防医学,工商管理,公共事业管理,卫生检验,药学,档案学,哲学,行政管理,信息管理与信息系统,劳动与社会保障,土地资源管理,信息资源管理,市场营销,会计学,管理科学,工程管理,人力资源管理,财务管理,工业工程,电子商务,历史学,考古学,博物馆学,旅游管理,法医学,材料科学与工程">
+                            汉语言文学,国际经济与贸易,财政学,国民经济管理,金融学,经济学,金融工程,法学,中国语言文学,编辑出版学,对外汉语,新闻... 共开设 125 个（类）专业
+                        </div>
+                        <a href="http://www.scu.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+                <ul class="listUl">
+                    <li>
+                        <a href="http://www.swufe.edu.cn/" target="_blank" class="left-logo"><img src="http://upload.zheyibu.com/upload/school/176/badge/thumbnail_200X200.jpg" style="width:100px;height:100px;"></a>
+                        <div class="mid-name">
+                            <a href="http://www.swufe.edu.cn/" target="_blank" class="name-title">西南财经大学</a>
+                            <p class="name-desc">成都,财经,211,普通一本</p>
+                        </div>
+                        <div class="mid-desc" title="金融学,金融工程,劳动与社会保障,保险学,新闻学,汉语言文学,经济学,数学与应用数学,金融数学,工商管理,市场营销,旅游管理,物流管理,会计学,财务管理,审计学,经济统计学,统计学,管理科学 ,计算机科学与技术,信息管理与信息系统,电子商务,法学,商务英语,英语,国际经济与贸易,国际商务,行政管理,人力资源管理">
+                            汉语言文学,金融学,金融工程,劳动与社会保障,保险学,新闻学,经济学,数学与应用数学,金融数学,工商管理,市场营销,旅游管... 共开设 29 个（类）专业
+                        </div>
+                        <a href="http://www.swufe.edu.cn/" target="_blank" class="right-btn">访问官网</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 查询结果详情列表 end -->
+            <!-- 页码 start -->
+            <div id="pageNumber">
+                <a class="pageList current">1</a>
+                <a href="http://enterprise.zheyibu.com/School/Index?majorCode=050101&amp;page=2" class="pageList">2</a>
+                <a href="http://enterprise.zheyibu.com/School/Index?majorCode=050101&amp;page=3" class="pageList">3</a>
+                <a href="http://enterprise.zheyibu.com/School/Index?majorCode=050101&amp;page=4" class="pageList">4</a>
+                <a href="http://enterprise.zheyibu.com/School/Index?majorCode=050101&amp;page=5" class="pageList">5</a>
+                <a class="pageOmit">...</a>
+                <a href="http://enterprise.zheyibu.com/School/Index?majorCode=050101&amp;page=50" class="pageList">50</a>
+                <a href="http://enterprise.zheyibu.com/School/Index?majorCode=050101&amp;page=2" class="nextPage"></a>
+            </div>
+            <!-- 页码 end -->
+        </div>
+    </div>
+</div>
+<script src="/content/static/enterprise/js/lib/homepage_search.js"></script>
+<script src="/content/static/enterprise/js/lib/majorPicker.js"></script>
+<script>
+    $(function() {
+        //首页查询三组件高校级别||所在地区||专业类别
+        $(document).on('click', '.level', function() {
+            $(this).schoolLevel({
+                inputHidden: 'input[name="schoolLevel"]'
+            });
+        }).on('click', '.area', function() {
+            $(this).schoolArea({
+                inputHidden: 'input[name="schoolArea"]'
+            });
+        }).on('click', '.divide', function() {
+            $(this).majorPicker({
+                inputHidden: 'input[name="majorClass"]'
+            });
+        });
+
+        $('.btn-search').on('click', function() {
+            searchSchoolInfo();
+        });
+    })
+
+    function searchSchoolInfo() {
+        var majorCode, schoolLevels, schoolAreas;
+        majorCode = $('input[name = "majorClass"]').val();
+        schoolLevels = $('input[name = "schoolLevel"]').val();
+        schoolAreas = $('input[name = "schoolArea"]').val();
+
+        if (majorCode == "" && ((schoolLevels != "" && schoolLevels != "0") || (schoolAreas != "" && schoolAreas != "0"))) {
+            alert("请选择专业");
+            return;
+        }
+
+        if (majorCode == "" && (schoolLevels == "" || schoolLevels == "0") && (schoolAreas == "" || schoolAreas == "0")) {
+            window.location.href = '/School/Index';
+        } else if ((schoolLevels == "" || schoolLevels == "0") && (schoolAreas == "" || schoolAreas == "0")) {
+            window.location.href = '/School/Index?majorCode=' + majorCode;
+        } else if (schoolLevels == "" || schoolLevels == "0") {
+            window.location.href = '/School/Index?majorCode=' + majorCode + '&' + 'schoolAreas=' + schoolAreas;
+        } else if (schoolAreas == "" || schoolAreas == "0") {
+            window.location.href = '/School/Index?majorCode=' + majorCode + '&' + 'schoolLevels=' + schoolLevels;
+        } else {
+            window.location.href = '/School/Index?majorCode=' + majorCode + '&' + 'schoolLevels=' + schoolLevels + '&' + 'schoolAreas=' + schoolAreas;
+        }
+    }
+</script>
+

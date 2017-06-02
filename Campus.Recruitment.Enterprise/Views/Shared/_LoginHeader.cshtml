@@ -1,0 +1,45 @@
+﻿@using Campus.Recruitment.Enterprise.Models;
+@using Campus.Recruitment.Enterprise.Helper;
+<div class="etp-header">
+    <div class="fixed-header">
+        <div class="etp-header-wrap">
+            <div class="logo-wrap">
+                <a class="logo" href="/"></a>
+            </div>
+            <ul class="nav-bar">
+                <li class="current"><a href="/">首页</a></li>
+                <li><a href="/position/search">职位管理</a></li>
+                <li><a href="/resume/search">简历管理</a></li>
+                <li><a href="/seminar/search">宣讲会</a></li>
+
+            </ul>
+            <div class="top-user-info">
+                <div class="home-box msg-tips">
+                    <a title="新起点首页" href="@AppSetting.Student_Url" class="icon-home">进入学生版</a>
+                </div>
+             
+                <div class="setting-box msg-tips">
+                    <span class="user-name">@SessionHelper.Instance().GetSessionValue("EnterpriseName")</span>
+                    <ul class="msg-ul">
+                        <li><a href="/account/setting" class="icon-editcorpinfo">账号设置</a></li>
+                        <li><a href="/account/password" class="icon-resetpwd">登录密码修改</a></li>
+                        <li><a href="/account/sign-out" class="icon-exitsys bordernone">安全退出</a></li>
+                    </ul>
+                </div>
+                <div class="etp-logo msg-tips">
+                    @{ 
+                        string icon = string.IsNullOrWhiteSpace(SessionHelper.Instance().GetSessionValue("LogoIcon")) 
+                            ? "/content/static/images/avatar/etp.jpg" 
+                            : $"/content/upload/e/{SessionHelper.Instance().GetSessionValue("EnterpriseId")}/{SessionHelper.Instance().GetSessionValue("LogoIcon")}";
+                    }
+                    <img src="@icon">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .ui-layer-header {
+        background-color: rgb(133, 176, 220);
+    }
+</style>

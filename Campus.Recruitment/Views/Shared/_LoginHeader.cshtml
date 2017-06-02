@@ -1,0 +1,73 @@
+﻿@using Campus.Recruitment.Models
+@using Campus.Recruitment.Helper
+<!-- Header start -->
+<div id="homepage-header">
+    <div class="user-back">
+        <div class="user-info" data-applycount="0" data-pushcount="718" data-hrinvitecount="0" data-followcount="0" data-unreadqacount="0" data-unreadhrmessagecount="0">
+            <div class="warning-msg">新起点提醒：提高警惕，识破虚假招聘、避免上当受骗！<span id="warning-detail">查看</span></div>
+            <div class="info resume">
+                <span><a href="/resume/@SessionHelper.Instance().GetSessionValue("UserId")">在线简历</a></span>
+
+            </div>
+            <div class="info apply">
+                <span class="notification">我的求职</span>
+                <ul class="apply-detail">
+                    <li>
+                        <a href="/position/apply">申请的职位</a>
+                        <i></i>
+                    </li>
+                    <li>
+                        <a href="/position/recommend">推荐的职位</a>
+                        <i></i>
+                    </li>
+                    <li>
+                        <a href="/position/hr-invintes">HR邀请</a>
+                        <i></i>
+                    </li>
+                    <li>
+                        <a href="/position/collection-post">收藏的职位</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-loginInfo">
+                @{
+                    string head_icon = SessionHelper.Instance().GetSessionValue("HeadIcon");
+                    string user_id = SessionHelper.Instance().GetSessionValue("UserId");
+                    var imgIcon = string.IsNullOrWhiteSpace(head_icon)
+                     ? "/content/static/images/avatar/avatar-s-1.jpg"
+                     : $"{AppSetting.Rss_Image + head_icon}";
+                 }
+                <img src="@imgIcon" alt="photo">
+                <p>@SessionHelper.Instance().GetSessionValue("RealName")</p>
+                <i></i>
+                <ul class="info-detail">
+                    <li>
+                        <a href="/account/setting">账号设置</a>
+                    </li>
+                    <li>
+                        <a href="/account/password">密码修改</a>
+                    </li>
+                    <li>
+                        <a href="/account/sign-out">退出登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <a class="header-icon" href="/">
+            <i></i>
+            <span>应届生招聘</span>
+        </a>
+        <div class="header-list cf">
+            <a href="/" class="list-item">首页</a>
+            <a href="/job/full-time" class="list-item">找全职</a>
+            <a href="/job/practice" class="list-item">找实习</a>
+            <a href="/seminar/search" class="list-item">宣讲会</a>
+
+            <a href="/raiders/search" class="list-item">求职攻略</a>
+            @*<a href="/play/index" class="list-item">职业锚</a>*@
+        </div>
+    </div>
+</div>
+<!-- Header end -->

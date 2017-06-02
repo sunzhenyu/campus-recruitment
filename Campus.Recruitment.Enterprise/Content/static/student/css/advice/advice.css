@@ -1,0 +1,450 @@
+﻿/*homepage body*/
+#homepage-container{
+    background-color:#f5f5f5;
+}
+#homepage-container .homepage-container{
+    width:1000px;
+    margin:0 auto;
+    padding-top:20px;
+}
+/*搜索列表页*/
+.homepage-container .search-result{
+    font-size:0;
+}
+.homepage-container .search-result .advice-left{
+    display:inline-block;
+    vertical-align:top;
+    width:712px;
+}
+.search-result .advice-left .left-top{
+    background-color:#fff;
+}
+.search-result .advice-left .left-header{
+    overflow:hidden;
+    padding:20px 20px 0;
+}
+.search-result .advice-left .left-header p{
+    float:left;
+    width:86px;
+    line-height:28px;
+    border:1px solid #ddd;
+    color:#999;
+    text-align:center;
+    cursor:pointer;
+}
+.search-result .advice-left .left-header p:hover{
+    color:#f0564e;
+}
+.search-result .advice-left .left-header p:nth-child(2){
+    margin-left:-1px;
+}
+.search-result .advice-left .left-header p.current{
+    background:#f5f5f5;
+    color:#f0564e;
+}
+.search-result .advice-left .left-advice{
+    clear:both;
+    background:#fff;
+    padding:0 20px;
+}
+.search-result .advice-left .left-advice .list-title{
+    border:none;
+    font-size:14px;
+    padding:20px 0 10px 0;
+}
+.advice-left .left-advice .list-title .light{
+    color:#f0564e;
+}
+.advice-left .left-advice .list-title a{
+    float:right;
+    text-decoration:none;
+}
+.advice-left .left-advice .list-title a:hover{
+    color:#7cbf59;
+}
+.search-result .advice-left .left-advice li{
+    padding-top:30px;
+    font-size:0;
+    padding-bottom:42px;
+    border-top:1px solid #eee;
+}
+.search-result .advice-left .left-advice img{
+    width:196px;
+    height:110px;
+    max-height:100%;
+    max-width:100%;
+    vertical-align:middle;
+}
+.search-result .advice-left .left-advice .advice-detail{
+    display:inline-block;
+    width:460px;
+    vertical-align:top;
+    padding-left:16px;
+    font-size:0;
+    color:#999;
+}
+.advice-left .left-advice .advice-detail .advice-paragraph{
+    margin:18px 0;
+    font-size:14px;
+}
+.left-advice .advice-detail .advice-stamp{
+    display:inline-block;
+    padding:0 6px;
+    margin-right:10px;
+    vertical-align:top;
+    line-height:1.5;
+    background:#f3f7f0;
+    color:#7cbf59;
+    font-size:14px;
+    text-align:center;
+    cursor:pointer;
+    text-decoration:none;
+}
+.left-advice .advice-detail .advice-stamp:hover{
+    background:#edf4e9;
+}
+.advice-left .left-advice .advice-detail .advice-name{
+    line-height:16px;
+    font-size:16px;
+    color:#333;
+    text-decoration:none;
+}
+.advice-left .left-advice .advice-detail .advice-name:hover{
+    color:#7cbf59;
+}
+.advice-left .left-advice .advice-detail .advice-date{
+    float:right;
+    font-size:14px;
+}
+/*页码样式*/
+.search-result .page-footer{
+    text-align:center;
+    font-size:0;
+    margin:20px;
+}
+.search-result .page-footer li{
+    display:inline-block;
+    vertical-align:top;
+    margin:0 5px;
+}
+.search-result .page-footer a{
+    display:inline-block;
+    width:28px;
+    line-height:28px;
+    height:28px;
+    text-align:center;
+    vertical-align:middle;
+    text-decoration:none;
+    border:1px solid #ddd;
+    font-size:14px;
+    background:#fff;
+    color:#666;
+}
+.search-result .page-footer .omitPage{
+    font-size:14px;
+}
+.search-result .page-footer .current a{
+    background:#7cbf59;
+    color:#fff;
+}
+.page-footer .pre-page a{
+    background:url(../../images/icon/search-icon.png) -34px -251px no-repeat;
+}
+.page-footer .pre-page a:hover{
+    background:url(../../images/icon/search-icon.png) -34px -289px no-repeat;
+    background-color:#7cbf59;
+}
+.page-footer .next-page a{
+    background:url(../../images/icon/search-icon.png) -67px -251px no-repeat;
+}
+.page-footer .next-page a:hover{
+    background:url(../../images/icon/search-icon.png) -67px -289px no-repeat;
+    background-color:#7cbf59;
+}
+.search-result .left-top .no-result{
+    margin:10px 20px;
+    border-top:1px solid #f5f5f5;
+    height:448px;
+}
+.search-result .left-top .no-result .bg{
+    float:left;
+    margin:66px 0 0 192px;
+    width:132px;
+    height:132px;
+    background:url(../../images/icon/search-icon.png) 26px -312px no-repeat;
+}
+.search-result .left-top .no-result p{
+    display:inline-block;
+    color:#666;
+    width:226px;
+    line-height:1.5;
+}
+.search-result .left-top .no-result .sorry{
+    margin-top:100px;
+    font-size:24px;
+}
+/*右侧栏目*/
+.homepage-container .search-result .advice-right{
+    display:inline-block;
+    vertical-align:top;
+    width:274px;
+    margin-left:14px;
+}
+.advice-right .article-right,
+.advice-right .hotlink-right,
+.advice-right .book-right{
+    background-color:#fff;
+    padding:10px 20px 5px;
+    color:#666;
+    margin-bottom:15px;
+}
+.advice-right .article-right .article-header{
+    line-height:2.5;
+    font-size:14px;
+    color:#333;
+}
+.advice-right .article-right .article-header a{
+    float:right;
+    color:#999;
+    text-decoration:none;
+}
+.advice-right .article-right .article-header a:hover{
+    color:#7cbf59;
+}
+.advice-right .article-right  ul{
+    padding:10px 0;
+}
+.advice-right .article-right li{
+    display:inline-block;
+    width:100%;
+    line-height:2;
+    font-size:14px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.advice-right .article-right li a{
+    text-decoration:none;
+    color:#666;
+}
+.advice-right .article-right li a:hover{
+    text-decoration:underline;
+    color:#7cbf59;
+}
+/*右侧搜索*/
+.article-right .article-header  form{
+    margin:10px 0;
+}
+.article-right .article-header .search-article{
+    float:left;
+    width:186px;
+    margin-right:-3px;
+    line-height:28px;
+    height: 28px;
+    text-indent:20px;
+    outline:none;
+    border:1px solid #ddd;
+}
+.article-right .article-header .search-article:focus{
+    border-color: #7cbf59;
+}
+.article-right .article-header .article-btn{
+    float:left;
+    width:50px;
+    height:30px;
+    margin-right:-20px;
+    outline:none;
+    background:url(../../images/icon/advice-icon.png) 18px 7px no-repeat;
+    background-color:#7cbf59;
+}
+.article-right .hot-article{
+    padding-top:20px;
+    clear:both;
+    font-size:0;
+}
+.article-right .hot-article i{
+    display:inline-block;
+    width:20px;
+    height:30px;
+    margin-right:6px;
+    vertical-align:top;
+    background:url(../../images/icon/advice-icon.png) 0 -30px no-repeat;
+}
+.article-right .hot-article .hot-title{
+    display:inline-block;
+    vertical-align:-20px;
+    font-size:14px;
+}
+.article-right .hot-article .hot_1,
+.article-right .hot-article .hot_2,
+.article-right .hot-article .hot_3,
+.article-right .hot-article .hot_4,
+.article-right .hot-article .hot_5,
+.article-right .hot-article .hot_common{
+    float:left;
+    width:14px;
+    height:14px;
+    margin-top:7px;
+    border-radius:50%;
+    margin-right:10px;
+    background:#999;
+    color:#fff;
+    font-style:normal;
+    font-size:12px;
+    line-height:14px;
+    text-align:center;
+}
+.article-right .hot-article .hot_1{
+    background:#f60;
+}
+.article-right .hot-article .hot_2{
+    background:#ff7519;
+}
+.article-right .hot-article .hot_3{
+    background:#ff8533;
+}
+.article-right .hot-article .hot_4{
+    background:#ff944c;
+}
+.article-right .hot-article .hot_5{
+    background:#ffa366;
+}
+.advice-right .hotlink-right i,
+.advice-right .book-right i{
+    display:inline-block;
+    vertical-align:top;
+    width:22px;
+    height:30px;
+    margin-right:6px;
+    background:url(../../images/icon/advice-icon.png) 2px -68px no-repeat;
+}
+.advice-right .book-right i{
+    background:url(../../images/icon/advice-icon.png) 2px -107px no-repeat;
+}
+.advice-right .hotlink-right p,
+.advice-right .book-right p{
+    display:inline-block;
+    width:200px;
+    font-size:14px;
+    line-height:2.5;
+    vertical-align:middle;
+    color:#333;
+}
+.advice-right .hotlink-right .current{
+    color:#7cbf59;
+}
+.advice-right .hotlink-right a{
+    display:inline-block;
+    text-decoration:none;
+    color:#666;
+    line-height:2;
+    margin-right: 10px;
+    font-size:14px;
+}
+.advice-right .hotlink-right a:hover{
+    color:#7cbf59;
+}
+/*每日一书*/
+.book-review{
+    height:260px;
+    width:100%;
+    font-size:0;
+}
+.book-review .icon-pre,
+.book-review .icon-next{
+    display:inline-block;
+    height:60px;
+    width:20px;
+    vertical-align:138px;
+    background:url(../../images/icon/advice-icon.png) 0 -192px no-repeat;
+    cursor:pointer;
+}
+.book-review .icon-pre:hover{
+    background:url(../../images/icon/advice-icon.png) 0 -138px no-repeat;
+}
+.book-review .icon-next{
+    background:url(../../images/icon/advice-icon.png) 0 -296px no-repeat;
+}
+.book-review .icon-next:hover{
+    background:url(../../images/icon/advice-icon.png) 0 -243px no-repeat;
+}
+.book-review .mid-desc{
+    position:relative;
+    display:inline-block;
+    width:194px;
+    height:262px;
+    overflow:hidden;
+}
+.book-review .book-img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:400px;
+}
+.book-review .book-img .book-show{
+    cursor:pointer;
+    opacity:1;
+    transition:all 1s ease;
+    -webkit-transition:all 1s ease;
+    -moz-transition:all 1s ease;
+}
+.book-review .book-img li{
+    position:relative;
+    display:inline-block;
+    width:194px;
+    height:246px;
+    text-align:center;
+    cursor:pointer;
+}
+.book-review .book-img img{
+    margin: 20px 0 10px;
+    width:104px;
+    height:146px;
+    max-height:100%;
+    max-width:100%;
+}
+.book-review .book-img p{
+    line-height:1.5;
+    color:#999;
+    font-size: 14px;
+    height: 22px;
+}
+.book-review .book-img .book-title{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    color:#333;
+    height: 28px;
+    line-height:2;
+}
+.book-review .book-img .book-mask{
+    display: inline-block;
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:246px;
+    width: 100%;
+    text-decoration:none;
+    opacity:0;
+    filter: alpha(opacity = 0);
+    transition:all 1s ease;
+    -webkit-transition:all 1s ease;
+    -moz-transition:all 1s ease;
+}
+.book-review .book-img .book-mask p{
+    width:160px;
+    margin: 0 auto;
+}
+.book-review .book-img .book-mask .book-add{
+    text-align:justify;
+    font-size:12px;
+    color:#666;
+}
+.book-review .book-img li:hover .book-show{
+    opacity:0;
+    filter: alpha(opacity = 0);
+}
+.book-review .book-img li:hover .book-mask{
+    opacity:1;
+    filter: alpha(opacity = 100);
+}

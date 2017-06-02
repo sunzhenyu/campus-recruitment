@@ -1,0 +1,90 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerItSkill
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-it" method="post">
+            <input data-val="true" data-val-number="字段 Id 必须是一个数字。" data-val-required="Id 字段是必需的。" id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="it" />
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label for="SkillNameTxt"><em>*</em>IT技能</label>
+                    <div class="fieldgroup">
+                        <input class="resume-text locaicon" id="SkillNameTxt" maxlength="100" name="SkillNameTxt" type="text" value="@Model.Skill_name_txt" />
+                        <input id="SkillName" name="SkillName" value="@Model.Skill_name" type="hidden">
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="SkillLevel"><em>*</em>掌握程度</label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="SkillLevel" name="SkillLevel" value="@Model.Skill_level"><option value="">请选择</option><option value="1">精通</option><option value="2">熟练</option><option value="3">良好</option><option value="4">一般</option></select>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+
+            </ul>
+            <p class="actions">
+                <input type="submit" id="submit-it" itemtype="it" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="it" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 简历模块的js
+    seajs.use(['topucdialog', 'validator', 'selectui', '$', 'layerpick'], function (TopucDialog, Validator, selectui, $, LayerPick) {
+
+        TopucDialog($);
+        $(function () {
+
+            $('#form-it').find('[data-widget="select"]').selectui();        //新版
+
+            $('#SkillNameTxt').click(function () {
+                Pick.skillPick({
+                    trigger: $(this),
+                    hidden: $(this).next()
+                });
+            })
+
+            window.itValidator = validator = new Validator({
+                element: '#form-it',
+                failSilently: true,
+                triggerType: false
+            });
+
+            Validator.addRule('checkRepetitionIT', function (options, commit) {
+                var element = options.element;
+                var val = $(element).val();
+                var valid = true;
+                var message = '';
+                $('.skillId').each(function (index, value) {
+                    if (val == $(value).val()) {
+                        valid = false;
+                        message = '该IT技能已被选择';
+                        return false;
+                    }
+                })
+                commit(valid, message);
+            })
+
+            validator.addItem({
+                element: '#SkillName',
+                required: true,
+                rule: 'checkRepetitionIT',
+                errormessageRequired: '请选择IT技能'
+            })
+            .addItem({
+                element: '#SkillLevel',
+                required: true,
+                errormessageRequired: '请选择掌握程度'
+            });
+            //.addItem({
+            //    element: '#skillTime',
+            //    required: true,
+            //    rule: 'number'
+            //});
+
+        });//end ready
+
+    });//end seajs.use
+</script>

@@ -1,0 +1,234 @@
+﻿@using Campus.Recruitment.Models
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerAll
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "简历预览";
+}
+
+<link href="@AppSetting.Rss_Image/content/static//student/css/usercenter/index.css" rel="stylesheet" type="text/css">
+
+<div class="page-container bg-resume">
+    <div class="page-content">
+        <div class="down-button">
+            <a href="javascript:;">下载简历</a>
+        </div>
+        <div class="user-resume">
+            <div class="page-side"></div>
+            <div class="user-info pRel">
+                @{
+                    var imgIcon = string.IsNullOrWhiteSpace(Model.customerBase.Head_icon)
+                        ? "/content/static/images/avatar/avatar-s-1.jpg?t=208"
+                        : $"/content/Upload/s/{Model.customerBase.Customer_id}/{Model.customerBase.Head_icon}";
+                }
+                <img src="@imgIcon">
+                <p>@Model.customerBase.Real_name</p>
+                <div>
+                    @{
+                        var birthday = Model.customerBase.Birthday <= DateTime.MinValue ? "" : Model.customerBase.Birthday.ToString("yyyy-MM");
+                        var current_location = Model.customerBase.Current_name ?? "";
+                        var family_location = Model.customerBase.Family_name ?? "";
+                        var high_school_location = Model.customerBase.High_school_name ?? "";
+                        var policital_status = Model.customerBase.Policital_status ?? "";
+                        var height = Model.customerBase.Height == 0 ? "" : Model.customerBase.Height + "cm";
+                        var sex = Model.customerBase.Sex == 1 ? "男" : "女";
+                    }
+                    <label>性别：<span>@sex</span></label>
+                    <label>出生日期：<span>@birthday</span></label>
+                    <label>现居住地：<span>@current_location</span></label>
+                    <label>户口地：<span>@family_location</span></label>
+                    <label>生源地：<span>@high_school_location</span></label>
+                    <label>政治面貌：<span>@policital_status</span></label>
+                    <label class="email"><span>@Model.customerBase.Email</span></label>
+                    <label class="mobile"><span>@Model.customerBase.Mobile</span></label>
+                </div>
+            </div>
+            <ul class="items">
+                <li>
+                    <h3>职业理想</h3>
+                    @*<p>工作类型：<span>全职</span></p>*@
+                    <p>工作地点：<span>@Model.customerBase.Intentional_city_name</span></p>
+                </li>
+                @if (Model.customerEducationList != null && Model.customerEducationList.Count() > 0)
+                {
+                    <li>
+                        <h3>教育经历</h3>
+                        @foreach (var item in Model.customerEducationList)
+                        {
+                            <div class="clearfix">
+                                <div class="c999">
+                                    (@item.Start_edu.ToString("yyyy.MM") -@item.End_edu.ToString("yyyy.MM")）
+                                </div>
+                                <div class="fl">
+                                    <span class="fl mr">@item.School_name</span>
+                                    <span class="fl">@item.Major</span>
+                                    <span class="fl mr">(@item.Degree)</span>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+                @if (Model.customerIntramuralJobList != null && Model.customerIntramuralJobList.Count() > 0)
+                {
+                    <li>
+                        <h3>校内职务</h3>
+                        @foreach (var item in Model.customerIntramuralJobList)
+                        {
+                            <div class="clearfix">
+                                <div class="c999">（@item.Start_campus.ToString("yyyy.MM")-@item.End_campus.ToString("yyyy.MM")）</div>
+                                <div class="fl">
+                                    <span class="fl mr">@item.School_name</span>
+                                    <span class="fl">@item.Position_name</span>
+                                    <span class="db clearfix" style="color: #999;">@item.Position_desc</span>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+
+
+                @if (Model.customerIntramuralRewardList != null && Model.customerIntramuralRewardList.Count() > 0)
+                {
+                    <li>
+                        <h3>校内奖励</h3>
+                        @foreach (var item in Model.customerIntramuralRewardList)
+                        {
+                            <div class="clearfix">
+                                <div class="c999">（@item.Start_reward.ToString("yyyy.MM")）</div>
+                                <div class="fl">
+                                    <span class="fl mr">@item.Scholarship_name</span>
+                                    <span class="fl">@item.Reward_school_ext</span>
+                                    <p class="clearfix">@item.Scholarship_desc</p>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+
+
+                @if (Model.customerExperienceList != null && Model.customerExperienceList.Count() > 0)
+                {
+                    <li>
+                        <h3>工作经历</h3>
+                        @foreach (var item in Model.customerExperienceList)
+                        {
+                            <div class="clearfix">
+                                <div class="c999">
+                                    （@item.Start_intership.ToString("yyyy.MM") -@item.End_intership.ToString("yyyy.MM")）
+                                </div>
+                                <div class="fl">
+                                    <p class="c43b41b">@item.Units_position<span class="mr">(@item.Units)</span><span>@item.Units_dept</span></p>
+                                    <p>@item.Units_work_desc</p>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+
+                @if (Model.customerProjectList != null && Model.customerProjectList.Count() > 0)
+                {
+                    <li>
+                        <h3>项目经历</h3>
+                        @foreach (var item in Model.customerProjectList)
+                        {
+                            <div class="clearfix">
+                                <div class="c999">
+                                    （@item.Start_project.ToString("yyyy.MM") - @item.End_project.ToString("yyyy.MM")）
+                                </div>
+                                <div class="fl">
+                                    <span class="fl mr">@item.Project_name</span>
+                                    <span class="fl">@item.Project_job_name</span>
+                                    <p class="clearfix">@item.Project_job_desc</p>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+
+                @if (Model.customerLanguageList != null && Model.customerLanguageList.Count() > 0)
+                {
+                    <li>
+                        <h3>语言能力</h3>
+                        @foreach (var item in Model.customerLanguageList)
+                        {
+                            <div class="clearfix">
+                                <div class="fl c999">@item.Name</div>
+                                <div class="fl">
+                                    <p>
+                                        听说：<span>@item.Hear</span>
+                                        <label>读写：<span>@item.Read_write</span></label>
+                                        <label>等级考试：<span>@item.Certifications</span></label>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+
+
+                @if (Model.customerItSkillList != null && Model.customerItSkillList.Count() > 0)
+                {
+                    <li>
+                        <h3>IT技能</h3>
+                        @foreach (var item in Model.customerItSkillList)
+                        {
+                            <div class="clearfix">
+                                <div class="fl c999">@item.Skill_name_txt</div>
+                                <div class="fl">
+                                    <p>
+                                        掌握程度：<span>@item.Skill_level</span>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+
+                @if (Model.customerCertificateList != null && Model.customerCertificateList.Count() > 0)
+                {
+                    <li>
+                        <h3>获得证书</h3>
+                        @foreach (var item in Model.customerCertificateList)
+                        {
+                            <div class="clearfix">
+                                <div class="fl c999">@item.Start_certificate.ToString("yyyy.MM")</div>
+                                <div class="fl">
+                                    <span>@item.Certificate_name</span>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                }
+                @if (!string.IsNullOrWhiteSpace(Model.customerBase.Specialty_desc))
+                {
+
+                    <li>
+                        <h3>个人特长</h3>
+                        <p><span>@Model.customerBase.Specialty_desc</span></p>
+                    </li>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model.customerBase.Eval_desc))
+                {
+
+                    <li>
+                        <h3>自我评价</h3>
+                        <p><span>@Model.customerBase.Eval_desc</span></p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.top-resume label').on('click', function () {
+            $(this).addClass('cur').siblings().removeClass('cur');
+        });
+
+        $('.upload-img label').on('click', function () {
+            $('.cover-layer').addClass('dN');
+            $('.upload-img').addClass('dN');
+        });
+    });
+</script>

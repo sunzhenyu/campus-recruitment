@@ -1,0 +1,353 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
+
+<div class="form-holder">
+    <form action="/resume/submitrecord/" method="post" id="form-base">
+        <input data-val="true"  id="Id" name="Id" type="hidden" value="@Model.Id" />
+        <input id="itemType" name="itemType" type="hidden" value="base" />
+        <div class="resume-form">
+            <ul class="resume-ul">
+                <li class="text">
+                    <label for="name">
+                        <em>*</em>真实姓名
+                    </label>
+                    <div class="stu-name ui-form-item">
+                        <div class="fieldgroup">
+                            <input class="resume-text" value="@Model.Real_name" id="name" readonly >
+                            <span class="ui-form-explain"></span>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="text ui-form-item">
+                    <label for="male">
+                        <em>*</em>性别
+                    </label>
+                    <div class="stu-sex ui-form-item">
+                        <div class="fieldgroup-sex">
+                            <span for="male" class="checkbox-holder">
+                                <input checked="checked" id="male" name="sex" style="display:none;" type="radio" value="1" /><i class="radioui radioui-checked" style="margin: 0 5px 0 0;"></i>男
+                            </span>
+                            <span for="female" class="checkbox-holder">
+                                <input id="female" name="sex" style="display:none;" type="radio" value="0" /><i class="radioui " style="margin: 0 5px 0 0;"></i>女
+                            </span>
+                        </div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="clearfix"></li>
+                <li class="text ui-form-item">
+                    <label for="sex">
+                        <em>*</em>出生日期
+                    </label>
+                    <div class="fieldgroup">
+                        @{ 
+                            var birthday_show = Model.Birthday > DateTime.MinValue ? Model.Birthday.ToString("yyyy.MM") : "";
+                            var birthday = Model.Birthday > DateTime.MinValue ? Model.Birthday.ToString("yyyy/MM/dd") : "";
+                        }
+                        <div class="ui-date-wrap"><input class="ui-input-date resume-text" id="birthday" readonly="" type="text" value="@birthday_show"></input><input name="Birthday" type="hidden" value="@birthday"></input></div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="current">
+                        <em>*</em>现居住地
+                    </label>
+                    <div class="fieldgroup">
+                        <input type="text" placeholder="请选择" class="resume-text locaicon" value="@Model.Current_name" id="current" name="CurrentName"
+                               readonly="readonly">
+                        <input data-val="true"  id="CurrentLocation" name="CurrentLocation" type="hidden" value="@Model.Current_location" />
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="family">
+                        <em>*</em>户口地
+                    </label>
+                    <div class="fieldgroup">
+                        <input type="text" placeholder="请选择" class="resume-text locaicon" value="@Model.Family_name" id="family" name="familyName" readonly="readonly">
+                        <input data-val="true"  id="FamilyLocation" name="FamilyLocation" type="hidden" value="@Model.Family_location" />
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="HighSchoolLocation">
+                        <em>*</em>生源地
+                    </label>
+                    <div class="fieldgroup">
+                        <input type="text" placeholder="请选择" class="resume-text locaicon" id="HighSchoolLocation" name="HighSchoolName" value="@Model.High_school_name" readonly="readonly">
+                        <input name="HighSchoolLocation" value="@Model.High_school_location" type="hidden">
+                        <span style="color:#999;">&nbsp;&nbsp;高中毕业所在城市</span>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="email">
+                        <em>*</em>邮箱地址
+                    </label>
+                    <div class="fieldgroup">
+                        <input type="text" value="@Model.Email" name="email" maxlength="30" id="email" class="resume-text" data-widget-cid="widget-8">
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+
+                <li class="text ui-form-item">
+                    <label>
+                        <em>*</em>政治面貌
+                    </label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="policital" name="PolicitalStatus" value="@Model.Policital_status"><option value="">请选择</option><option value="1">中共党员（含预备党员）</option><option selected="selected" value="2">团员</option><option value="3">民主党派</option><option value="4">群众</option></select>
+                    </div>
+                    <span class="ui-form-explain"></span>
+                </li>
+                <li class="text ui-form-item">
+                    <label>
+                        身高(CM)
+                    </label>
+                    <div class="fieldgroup">
+                        <input type="text" name="Height" value="@Model.Height" maxlength="3" id="height" class="resume-text" data-widget-cid="widget-9" data-explain="">
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+            </ul>
+            <p class="actions">
+                <input type="submit" id="submit-base" itemtype="base" class="J_Submit button-save hover-tran" value="保 存">
+                <a href="javascript:;" itemtype="base" class="J_Cancel">取消</a>
+            </p>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    if ('@Model.Sex' == '1' || '@Model.Sex' == 1) {
+        $("[name=sex]").eq(0).attr("checked", "checked");
+    } else {
+        $("[name=sex]").eq(1).attr("checked", "checked");
+    }
+
+    seajs.use(['jqueryform', 'topucdialog', 'validator', '$', 'selectui', 'zyb/datePicker/DatePicker', 'layerpick'], function (JqueryForm, TopucDialog, Validator, $, selectui, DatePicker, LayerPick) {
+        TopucDialog($);
+        JqueryForm($);
+        $(function () {
+            $(".fieldgroup-sex").on('click', 'span', function () {
+                $(".radioui").removeClass("radioui-checked");
+                $(".radioui").prev().removeAttr("checked");
+                $(this).children("i").toggleClass("radioui-checked");
+                $(this).children(":radio").attr("checked", "checked");
+            });
+
+            $('#form-base').find('[data-widget="select"]').selectui();        //新版
+
+            $('#current').click(function () {
+                Pick.cityPick({
+                    trigger: $(this),
+                    hidden: $(this).next(),
+                    title:'选择现居住地'
+                });
+            })
+
+            $("#family").click(function () {
+                Pick.cityPick({
+                    trigger: $(this),
+                    hidden: $(this).next(),
+                    title: '选择现户口所在地'
+                });
+            })
+
+            $("#HighSchoolLocation").click(function () {
+                Pick.cityPick({
+                    trigger: $(this),
+                    hidden: $(this).next(),
+                    title: '选择生源地所在地'
+                });
+            })
+            window.baseValidator = validator = new Validator({
+                element: '#form-base',
+                failSilently: true,
+                triggerType: false
+            });
+
+            Validator.addRule('checkCnName', function (options, commit) {
+                var element = options.element;
+                var val = $(element).val();
+                var message = '请输入姓名';
+                var valid = true;
+                var regex = /^[\u4E00-\u9FA5\uF900-\uFA2D]*$/;
+                if (val.length == 0){
+                    valid = false;
+                    message = "请输入姓名";
+                }
+                else if (!regex.test(val)) {
+                    valid = false;
+                    message = "请填写真实姓名，2-5个汉字";
+                }
+                else if (val.length < 2 || val.length > 5){
+                    valid = false;
+                    message = "请填写真实姓名，2-5个汉字";
+                }
+                commit(valid, message);
+            });
+
+            Validator.addRule('checkEmail', function (options, commit) {
+                var element = options.element;
+                var val = $(element).val();
+                var valid = true;
+                var message = '';
+                var regex = /^[a-zA-Z0-9._-]+[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+$/; @*/^[a-zA-Z0-9._-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+$/;*@
+                //if(!regex.test(val)){
+                //    valid = false;
+                //    message = '请输入正确邮箱格式';
+                //}
+                commit(valid,message);
+            })
+            Validator.addRule('checkBirth', function (options, commit) {
+                var element = options.element;
+                var val = $(element).val();
+                var valid = true;
+                var message = '';
+                if (val == '' && isNaN(val)) {
+                    valid = false;
+                    message = '请输入出生日期';
+                }
+                commit(valid, message);
+            })
+            Validator.addRule('checkHeight', function (options, commit) {
+                var element = options.element;
+                var val = $(element).val();
+                var valid = true;
+                var message = '';
+                if (val != '' && isNaN(val) || parseInt(val) < 50 || parseInt(val) > 250) {
+                    valid = false;
+                    message = '请输入合理的身高(50-250)';
+                }
+                commit(valid, message);
+            })
+            Validator.addRule('remote', function (options, commit) {
+                //var element = options.element,
+                //    item = Validator.query('form').getItem(element);
+
+                //item.addClass('ui-form-item-loading');
+
+                $.ajax({
+                    url: '/account/CheckMobileInExisted?mobile=' + $("#mobile").val() + '&userId=' + 136526,
+                    type:"POST",
+                    success: function (r) {
+                        if (r == "true") {
+                            commit(false, "该手机号码已存在，请重新填写");
+                        } else {
+                            commit(true, "");
+                        }
+                    }
+                });
+            });
+            validator.addItem({
+                element: '[name=Birthday]',
+                required: true,
+                rule: 'checkBirth',
+                display: '出生日期'
+            })
+            validator.addItem({
+                element: '#name',
+                required: true,
+                rule: 'checkCnName'
+            })
+            .addItem({
+                element: '[name=sex]',
+                required: true,
+                errormessageRequired: '请选择性别'
+            })
+            .addItem({
+                element: '#policital',
+                required: true,
+                errormessageRequired: '请选择政治面貌'
+            })
+            .addItem({
+                element: '#bornYear',
+                required: true,
+                display: '年份'
+            })
+            .addItem({
+                element: '#bornMon',
+                required: true,
+                display: '月份',
+                showMessage: function (message, element) {
+                    // 结束日期出错后会调用这个函数。如果前面的开始日期没有出错的时候才显示自己的出错消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(message);
+                        this.getItem(element).addClass(this.get('itemErrorClass'));
+                    }
+                },
+                hideMessage: function (message, element) {
+                    // 结束日期校验通过后会调用这个函数。如果前面的开始日期没有出错的时候才清空消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(element.attr('data-explain') || ' ');
+                        this.getItem(element).removeClass(this.get('itemErrorClass'));
+                    }
+                }
+            })
+            .addItem({
+                element: '#bornDay',
+                required: true,
+                display: '日期',
+                showMessage: function (message, element) {
+                    // 结束日期出错后会调用这个函数。如果前面的开始日期没有出错的时候才显示自己的出错消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(message);
+                        this.getItem(element).addClass(this.get('itemErrorClass'));
+                    }
+                },
+                hideMessage: function (message, element) {
+                    // 结束日期校验通过后会调用这个函数。如果前面的开始日期没有出错的时候才清空消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(element.attr('data-explain') || ' ');
+                        this.getItem(element).removeClass(this.get('itemErrorClass'));
+                    }
+                }
+            })
+            .addItem({
+                element: '#current',
+                required: true
+            })
+            .addItem({
+                element: '#family',
+                required: true
+            })
+            .addItem({
+                element: '#HighSchoolLocation',
+                required: true
+            })
+            .addItem({
+                element: '#email',
+                required: true,
+                rule: 'checkEmail'
+            })
+            .addItem({
+                element: '#mobile',
+                required: true,
+                rule: 'mobile remote'
+            })
+            .addItem({
+                element: '#height',
+                rule:'checkHeight'
+            });
+        });
+        (function () {
+
+            var nowYear = new Date().getFullYear();
+
+            $("#birthday").datePick({
+                hiddenField: '[name=Birthday]',
+                startYear: nowYear - 35,
+                defaultYear: nowYear - 21,
+                format: 'yyyy.mm.dd'
+            });
+
+        })();
+
+    });
+</script>
+
+
+

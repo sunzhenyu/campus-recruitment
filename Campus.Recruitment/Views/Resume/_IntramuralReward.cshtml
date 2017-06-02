@@ -1,0 +1,32 @@
+﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@model List<CustomerIntramuralReward>
+
+<div id="info-scholarship" class="info-holder" style="display: block;">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="info-item">
+                <div class="info-col">
+                    <div class="date">@item.Start_reward.ToString("yyyy.MM")</div>
+                    <div class="meta">
+                        <span>@item.Scholarship_name</span>
+                        <span>@item.Reward_school_ext</span>
+                    </div>
+                    <div class="action-col" style="display: none;">
+                        <a title="编辑" href="javascript:;" rel="edit" itemid="@item.Id" itemtype="scholarship" class="edit-btn J_ActionBtn"></a>
+                        <a title="删除" href="javascript:;" rel="delete" itemid="@item.Id" itemtype="scholarship" class="del-btn J_ActionBtn"></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="desc">@item.Scholarship_desc</div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="no-data-prompt">
+            填写校内奖励
+        </div>
+    }
+</div>

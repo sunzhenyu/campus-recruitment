@@ -1,0 +1,143 @@
+﻿.publish-wrap-hd{overflow:hidden}
+.publish-wrap-bd{border:1px solid #E5E5E5}
+.publish-section{padding:10px 0 10px 0}
+.publish-section-hd h3{margin:0 0 15px;overflow:hidden}
+.section-name{float:left;width:140px;text-align:right;color:#ccc;font-size:16px}
+.section-tips{display:block;margin-left:170px;color:#999}
+.publish-section-bd{margin:5px 0 0 150px}
+.internship-salary-block{padding:5px 10px 15px;background-color:#d9edf7;float:left;width:350px}
+.internship-salary-block .top-row .ui-check-label{margin-right:15px}
+.internship-salary-block .bottom-row{margin:5px 20px 0 0;display:inline-block}
+.publish-section .pub-tags{letter-spacing:0;padding:10px 40px 0 0}
+.pub-tags span{display:inline-block;border:1px solid #e3e3e3;background-color:#FFF;color:#333;height:32px;line-height:32px;white-space:nowrap;text-align:center;padding:0 20px;margin:0 10px 10px 0;cursor:pointer;background-image:url(img/icon/corp-tags-ico.png);background-repeat:no-repeat;background-position:right 12px}
+.pub-tags span:hover{border:1px solid #390}
+.pub-tags span.active{background-position:right -50px}
+.pub-tags span.hide{display:none}
+.pub-tags .show-more{line-height:24px;vertical-align:middle}
+.push-set-top{background-color:#5E76A5;padding:25px 40px;margin:-30px -29px 40px}
+.push-set-top h2{font-size:30px;margin:25px 0 10px;color:#fff}
+.push-set-top .desc{color:#fff;font-size:18px;margin:0 0 15px}
+.sch-cond{background-color:#F0F0F0;padding:30px 30px 65px;margin:-40px -29px 30px;position:relative}
+.sch-cond-val{font-weight:700;font-size:16px;line-height:34px}
+.sch-cond .ui-form-item{padding-left:80px}
+.ui-form-item .select .u-icon-position{left:330px;top:18px}
+.sch-cond .ui-form-button{padding-left:80px;margin-top:15px}
+.sch-cond .ui-label{width:70px;margin-left:-80px}
+.edit-sch-cond{text-decoration:underline;color:#2466B2;position:absolute;right:45px;top:34px;z-index:9}
+.sch-sel-top{margin:0 0 10px;font-weight:700;font-size:14px}
+.sch-sel-top .hl{font-weight:400}
+.sch-sel-list{border:1px solid #F0F0F0;padding:20px;background-color:#FFF;margin:10px 0 20px}
+.sch-sel-list-wrap{overflow:hidden}
+.sch-sel-list-wrap span{border:1px solid #E3E3E3;height:30px;line-height:30px;padding:0 32px 0 10px;margin:0 20px 10px 0;font-size:14px;background-color:#F7F7F7;float:left;position:relative}
+.sch-sel-list-wrap span a{width:22px;height:22px;text-align:center;line-height:22px;color:#FFF;font-weight:700;font-family:verdana;background-color:#8CE37D;margin:0 2px 0 10px;position:absolute;right:0;top:4px}
+.sch-sel-list-wrap span a:hover{text-decoration:none}
+.corp-tbl-sch .hover td{font-weight:700}
+.sch-sel-actions{padding:30px 0 0;margin-top:15px;border-top:1px solid #e3e3e3;text-align:center}
+.tbl-sch-body{max-height:409px;overflow-y:auto}
+.tbl-sch-body .tbl-sch,.tbl-sch-head .tbl-sch{width:auto;background-color:#FFF}
+.sch-sel-nodata{font-size:16px;color:#999;font-weight:700;margin-left:252px;padding:80px 0}
+.col-lvl{text-align:center}
+.col-city{text-align:center}
+.publish-section-hd{border-bottom:1px solid #E3E3E3;margin:0 0 20px 180px;width:635px}
+.publish-section-hd .section-name{color:#666;font-weight:700;display:block;width:auto}
+.section-tips-box{background-color:#F1F6FB;height:156px;color:#A46C3B;position:relative}
+.section-tips-box-wrap{overflow:hidden;display:inline-block;margin:30px 0 0 220px}
+.section-tips-box img{float:left;margin:10px 30px 0 0}
+.section-tips-box h3{display:inline}
+.section-tips-box ul{margin:5px 0 0 0}
+.section-tips-box ul li{font-size:14px;line-height:26px;list-style:inside}
+.close-tips-btn{position:absolute;top:6px;right:10px;display:block;width:28px;height:28px;background:url(img/icon/tips-box-close.png) no-repeat;cursor:pointer}
+.close-tips-btn:hover{background:url(img/icon/tips-box-close-hover.png) no-repeat}
+.ui-form-item-error .ui-text,.ui-form-item-error input[type=text],.ui-form-item-error select,.ui-form-item-error textarea{border-color:#fc5f29}
+.ui-form-item .ui-form-explain{display:inline}
+.ui-form-item-error .ui-form-explain{color:#fc5f27;padding:0 0 1px 25px;background:url(img/icon/post-error-ioc.png) 0 4px no-repeat;vertical-align:baseline;margin:2px 0 0;position:absolute;left:500px;top:8px;display:block}
+.form-item-degree{z-index:2}
+.form-item-internship{z-index:2}
+.form-item-weekday{z-index:1}
+.form-item-workNature{margin-bottom:8px}
+.form-item-workNature .ui-check-label{line-height:42px}
+.ui-form-item-error .select .select-result{border-color:#fc5f29}
+.ui-form-item .select{float:none;width:355px}
+.ui-form-item .select .select-result{width:318px;}
+.ui-form-item .select .select-result.fire{background:url(img/icon/fire-job.png) 100px 9px no-repeat;}
+.ui-form-item .select before,.ui-form-item .select:before{top:18px;right:16px;z-index:4}
+.ui-form-item .select after,.ui-form-item .select:after{top:19px;right:16px;z-index:4}
+.ui-form-item .select ul{width:352px;top:40px}
+.push-desired{line-height:34px;font-size:12px;font-family:"宋体"}
+.push-desired em{color:#f90}
+.ui-form-item .ui-check-label{vertical-align:middle;font-size:14px}
+.ui-form-item .ui-check-label input{vertical-align:-3px;margin-right:5px;width:16px;height:16px;word-spacing:0;letter-spacing:0;cursor:pointer}
+.ui-form-item .forward{padding-top:5px}
+.ui-form-item .forward .ui-check-label{line-height:34px;font-size:14px}
+.ui-form-item .receiving{line-height:34px;font-size:14px}
+.ui-form-item .receiving input,.ui-form-item .receiving label{vertical-align:middle}
+.assignschool .assign-tips{margin-bottom:10px;margin-top:5px}
+#PostSchool{width:474px;max-height:100px;overflow:auto;border-top:1px solid #E3E3E3;border-bottom:1px solid #E3E3E3}
+#PostSchool .items{padding:2px 8px 5px 8px;border:1px solid #E3E3E3;border-top:0 none;border-bottom:0 none;overflow:auto;min-height:25px}
+#PostSchool .items span{vertical-align:middle;display:inline-block;margin:5px 8px 2px 0;white-space:nowrap;padding:3px 32px 3px 10px;position:relative;text-overflow:ellipsis;font-size:12px;color:#3a87ad;background-color:#d9edf7;border:1px solid #BCDEF1;cursor:pointer}
+#PostSchool .items span a{position:absolute;right:4px;top:3px;width:18px;height:18px;background:url(img/icon/sel-school-del.png) no-repeat;overflow:hidden}
+.ui-form-button .zyb-btn{font-size:14px;margin:0 10px 0 0}
+#FloatingLayer{width:665px;height:241px;border:1px solid #E5E5E5;font-size:12px;color:#666;margin-top:8px}
+.FloatingLayerHead{padding:5px 0 5px 20px;border-bottom:1px solid #E5E5E5}
+.FloatingLayerHead .ui-btn-primary{float:right;margin:2px 45px 0 0;width:65px;height:24px;line-height:24px;font-size:12px}
+.FloatingLayerHead .select{float:left;width:120px}
+.FloatingLayerHead .select before,.FloatingLayerHead .select:before{top:10px;right:10px}
+.FloatingLayerHead .select after,.FloatingLayerHead .select:after{top:11px;right:10px}
+.FloatingLayerHead .select .select-result{width:83px;padding-top:3px;padding-bottom:3px;border-radius:0;font-size:12px}
+.FloatingLayerHead .select ul{top:24px;width:118px}
+.FloatingLayerHead .select ul li{font-size:12px;line-height:22px}
+.itemContentWrap{height:170px;overflow:auto}
+.itemContent{margin:0 0 12px 20px}
+.itemContent .item{width:200px;float:left;height:20px;cursor:pointer;margin:12px 5px 0 0}
+.itemContent .item label{display:inline-block;vertical-align:middle}
+.itemContent .item input{font-family:Lucida Grande,Lucida Sans,Arial,sans-serif;width:16px;height:16px;vertical-align:-4px;margin-right:2px}
+.FloatingLayerFoot{padding:8px 0 8px 20px;background:#f2f2f2}
+.FloatingLayerFoot p .checkAll{width:16px;height:16px;vertical-align:-4px;margin-right:5px}
+.channel-bd-wrap-hd{padding-top:20px}
+.main-box{border:1px solid #cbc9c9;height:auto;padding:40px 0;text-align:center;margin-bottom:45px}
+.main-box h2{margin:20px 0 0;color:#00B72D;font-size:24px;background:url(img/icon/duihao.png) no-repeat 390px 4px}
+.main-box .btnrow{margin-top:30px}
+.main-box .btnrow .ui-btn{font-size:18px;background-color:#338BE3;margin-left:100px}
+.main-box .btnrow .ui-btn:hover{background-color:#68A9EA}
+.main-box .btnrow .ui-btn:hover{text-decoration:none;color:#fff;background-color:#68A9EA}
+.main-box .back-link{height:44px;line-height:44px;color:#338BE3;font-size:16px;display:inline-block;margin-left:30px}
+.main-box .back-link:hover{text-decoration:none}
+.invite-position-box{background-color:#EBF2FA;padding:30px 40px 50px;font-size:16px}
+.invite-position-box .invite-text{line-height:30px}
+.invite-position-list{margin-top:24px;width:100%}
+.invite-position-list tr{border:1px solid #E5E5E5;background-color:#fff;margin-bottom:10px}
+.invite-position-list tbody td{padding:15px 0}
+.invite-position-list .tr-blank{height:10px}
+.invite-position-list tr:hover{border-color:#93C3F3;background:#fff;margin-top:-1px;margin-bottom:-1px}
+.invite-position-list td{height:60px}
+.invite-position-list .blank{width:30px}
+.invite-position-list .invite-btn a{display:inline-block;width:70px;line-height:2;margin-top:6px;border:1px solid #338be3;border-radius:3px;padding:0 5px;color:#fff;text-align:center;background-color:#338be3}
+.u-user-salary{height:40px;text-align:left;font-size:14px;font-family:"microsoft yahei",sans-serif;overflow:hidden}
+.invite-position-list .invite-btn a[action-type=improper]{color:#666;background-color:#ebf2fa;border-color:#e1ebf7}
+.high-btn .hightlight-icon{background:url(img/icon/highlight-icon.png) 0 2px no-repeat}
+.invite-position-list .invite-btn a:hover{text-decoration:none}
+.invite-position-list img{width:60px;height:60px}
+.invite-position-list tbody .invite-btn{text-align:right;padding-right:30px}
+.invite-position-list .invite-btn .invite-sended{background-color:#CCC;display:inline-block;text-align:center;font-size:12px;color:#fff;width:84px;height:24px;line-height:24px}
+.invite-personal-info img{float:left}
+.personal-info{margin-left:72px;font-size:12px}
+.personal-info p{line-height:22px}
+.personal-info .personal-study{font-size:14px}
+.invite-personal-info .fon12{font-size:12px}
+.invite-personal-info .invite-personal-name{font-size:16px;color:#4566A3;padding-right:10px}
+.invite-personal-info em{width:10px;display:inline-block;text-align:center;font-style:italic}
+.see-more-box a{height:60px;background-color:#5B96D0;text-align:center;font:16px/60px "宋体";margin-top:20px;display:block;color:#fff;font-weight:700}
+.see-more-box a:hover{background-color:#BDD5EC}
+.ui-dialog{border:1px solid #BDBDBD;outline:0}
+.ui-dialog-close{cursor:pointer;display:block;position:absolute;right:16px;top:12px;text-decoration:none;z-index:10;width:25px;height:25px;background:url(img/icon/corp-icons.png) 0 -4px no-repeat}
+.ui-dialog-close:hover{background-color:#95b5d9}
+.ui-dialog-content{background-color:#fff}
+.ui-form-item .unit{display:inline-block;margin-left:8px;font-size:14px}
+#prevBtn{background:#85B0DC}
+#prevBtn:hover{background:#339DF8}
+.ui-form-button{position:relative;left:280px;margin-bottom:30px}
+.ui-form-button .ui-btn{margin-right:20px}
+.ui-form-button .ui-check-label{font-size:14px}
+.ui-form-button .ui-check-label input{width:16px;height:16px;vertical-align:middle}
+.m-notice{position:relative;top:7px;height:30px;font-size:14px;color:#338BE3;z-index:2;float:right}
+.m-notice span{float:right;width:120px;line-height:30px;cursor:pointer;outline:0;padding-left:26px;background:url(../corp/img/icon/corp-warning-icon.png) 0 6px no-repeat;font-size:16px}

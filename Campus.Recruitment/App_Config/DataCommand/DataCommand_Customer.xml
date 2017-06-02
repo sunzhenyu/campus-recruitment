@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataCommands>
+  <DataCommand Name="Account.RegisterTwoUpdate" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer`
+          SET
+          `real_name` = @real_name,
+          `sex` = @sex,
+          `university` =@university,
+          `education` = @education,
+          `major` = @major,
+          `attend_begin_date` = @attend_begin_date,
+          `attend_end_date` = @attend_end_date,
+          `intentional_city` = @intentional_city,
+          `email` = @email,
+          `state` = 1,
+          `update_id` = @update_id,
+          `update_at` = now()
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@real_name" DbType="AnsiString"/>
+      <Param Name="@sex" DbType="Int32"/>
+      <Param Name="@university" DbType="AnsiString"/>
+      <Param Name="@education" DbType="AnsiString"/>
+      <Param Name="@major" DbType="AnsiString"/>
+      <Param Name="@attend_begin_date" DbType="DateTime"/>
+      <Param Name="@attend_end_date" DbType="DateTime"/>
+      <Param Name="@intentional_city" DbType="AnsiString"/>
+      <Param Name="@email" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  
+  <DataCommand Name="Account.ChangePassword" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer`
+          SET
+          `password` = @password,
+          `password_salt` = @password_salt,
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@password" DbType="AnsiString"/>
+      <Param Name="@password_salt" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+
+  <DataCommand Name="Customer.UpdateAvator" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer`
+          SET
+          `head_icon` = @head_icon
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@head_icon" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Customer.UpdateWorkState" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer`
+          SET
+          `is_work` = @is_work
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@is_work" DbType="Int32"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Customer.UpdateCustomerAndBase" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer`
+          SET `email` = @email WHERE `id` = @customer_id;
+          
+          update `campus_recruitment`.`customer_base`
+          set birthday = @birthday,current_location=@current_location,current_name = @current_name,
+            family_location=@family_location,family_name=@family_name,high_school_location=@high_school_location,
+            high_school_name=@high_school_name,policital_status=@policital_status,height=@height,
+            update_id=@update_id,update_at=now()
+           where id=@id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@email" DbType="AnsiString"/>
+      <Param Name="@customer_id" DbType="AnsiString"/>
+      <Param Name="@birthday" DbType="DateTime"/>
+      <Param Name="@current_location" DbType="AnsiString"/>
+      <Param Name="@current_name" DbType="AnsiString"/>
+      <Param Name="@family_location" DbType="AnsiString"/>
+      <Param Name="@family_name" DbType="AnsiString"/>
+      <Param Name="@high_school_location" DbType="AnsiString"/>
+      <Param Name="@high_school_name" DbType="AnsiString"/>
+      <Param Name="@policital_status" DbType="AnsiString"/>
+      <Param Name="@height" DbType="Int32"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Customer.UpdateCustomerEducation" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_education`
+          SET
+          `school_name` = @school_name,
+          `degree` = @degree,
+          `major` = @major,
+          `start_edu` = @start_edu,
+          `end_edu` = @end_edu,
+          `class_rank` = @class_rank,
+          `is_entrance_examination` = @is_entrance_examination,
+          `update_id` = @update_id,
+          `update_at` = now()
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@school_name" DbType="AnsiString"/>
+      <Param Name="@degree" DbType="AnsiString"/>
+      <Param Name="@major" DbType="AnsiString"/>
+      <Param Name="@start_edu" DbType="DateTime"/>
+      <Param Name="@end_edu" DbType="DateTime"/>
+      <Param Name="@class_rank" DbType="AnsiString"/>
+      <Param Name="@is_entrance_examination" DbType="Int32"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.UpdateCustomerExperience" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_experience`
+          SET
+          `units` = @units,
+          `units_dept` = @units_dept,
+          `units_position` = @units_position,
+          `start_intership` = @start_intership,
+          `end_intership` = @end_intership,
+          `units_work_desc` = @units_work_desc,
+          `update_id` = @update_id,
+          `update_at` = now()
+          WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@units" DbType="AnsiString"/>
+      <Param Name="@units_dept" DbType="AnsiString"/>
+      <Param Name="@units_position" DbType="AnsiString"/>
+      <Param Name="@start_intership" DbType="DateTime"/>
+      <Param Name="@end_intership" DbType="DateTime"/>
+      <Param Name="@units_work_desc" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.UpdateCustomerIntramuralJob" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_intramural_job`
+          SET
+          `position_name` = @position_name,
+          `school_name` = @school_name,
+          `start_campus` = @start_campus,
+          `end_campus` = @end_campus,
+          `position_desc` = @position_desc,
+          `update_id` = @update_id,
+          `update_at` = now()
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@position_name" DbType="AnsiString"/>
+      <Param Name="@school_name" DbType="AnsiString"/>
+      <Param Name="@start_campus" DbType="DateTime"/>
+      <Param Name="@end_campus" DbType="DateTime"/>
+      <Param Name="@position_desc" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.UpdateCustomerIntramuralReward" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_intramural_reward`
+          SET
+          `scholarship_name` = @scholarship_name,
+          `reward_school_ext` = @reward_school_ext,
+          `start_reward` = @start_reward,
+          `scholarship_desc` = @scholarship_desc,
+          `update_id` = @update_id,
+          `update_at` = now()
+          WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@scholarship_name" DbType="AnsiString"/>
+      <Param Name="@reward_school_ext" DbType="AnsiString"/>
+      <Param Name="@start_reward" DbType="DateTime"/>
+      <Param Name="@scholarship_desc" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.UpdateCustomerItSkill" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`customer_it_skill`
+        SET
+        `skill_name_txt` = @skill_name_txt,
+        `skill_level` = @skill_level,
+        `update_id` = @update_id,
+        `update_at` = now()
+        WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@skill_name_txt" DbType="AnsiString"/>
+      <Param Name="@skill_level" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.UpdateCustomerLanguage" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_language`
+            SET
+            `name` = @name,
+            `hear` = @hear,
+            `read_write` = @read_write,
+            `grades` = @grades,
+            `certifications` = @certifications,
+            `update_id` = @update_id,
+            `update_at` = now()
+            WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@name" DbType="AnsiString"/>
+      <Param Name="@hear" DbType="AnsiString"/>
+      <Param Name="@read_write" DbType="AnsiString"/>
+      <Param Name="@grades" DbType="AnsiString"/>
+      <Param Name="@certifications" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.UpdateCustomerProject" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_project`
+            SET
+            `project_name` = @project_name,
+            `project_job_name` = @project_job_name,
+            `start_project` = @start_project,
+            `end_project` = @end_project,
+            `project_job_desc` = @project_job_desc,
+            `update_id` = @update_id,
+            `update_at` = now()
+            WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@project_name" DbType="AnsiString"/>
+      <Param Name="@project_job_name" DbType="AnsiString"/>
+      <Param Name="@start_project" DbType="DateTime"/>
+      <Param Name="@end_project" DbType="DateTime"/>
+      <Param Name="@project_job_desc" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Customer.UpdateCustomerCertificate" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_certificate`
+          SET
+          `certificate_parent_name` = @certificate_parent_name,
+          `certificate_name` = @certificate_name,
+          `start_certificate` = @start_certificate,
+          `update_id` = @update_id,
+          `update_at` = now()
+          WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@certificate_parent_name" DbType="AnsiString"/>
+      <Param Name="@certificate_name" DbType="AnsiString"/>
+      <Param Name="@start_certificate" DbType="DateTime"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Customer.UpdateCustomerSpecialty" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_base`
+          SET
+          `specialty_desc` = @specialty_desc
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@specialty_desc" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Customer.UpdateCustomerEval" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_base`
+          SET
+          `eval_desc` = @eval_desc
+          WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@eval_desc" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+
+
+  <DataCommand Name="Customer.DeleteCustomerEducation" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_education`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerExperience" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_experience`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerIntramuralJob" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_intramural_job`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerIntramuralReward" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_intramural_reward`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerItSkill" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`customer_it_skill`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerLanguage" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+          UPDATE `campus_recruitment`.`customer_language`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerProject" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_project`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>       
+  </DataCommand>
+  <DataCommand Name="Customer.DeleteCustomerCertificate" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+         UPDATE `campus_recruitment`.`customer_certificate`
+          SET
+          `state` = 0
+          WHERE `id` = @id;
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+</DataCommands>

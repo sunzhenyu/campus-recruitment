@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8923E3D7-E1CB-4695-A242-EA4E331BCF0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Campus.Recruitment.BLL</RootNamespace>
+    <AssemblyName>Campus.Recruitment.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomerBLL.cs" />
+    <Compile Include="EnterprisesBLL.cs" />
+    <Compile Include="FeedbackBLL.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="PositionApplyBLL.cs" />
+    <Compile Include="PositionBLL.cs" />
+    <Compile Include="PositionCollectBLL.cs" />
+    <Compile Include="PositionFireBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Campus.Recruitment.DAL\Campus.Recruitment.DAL.csproj">
+      <Project>{0ecc0892-d492-4430-b9dd-c2240aa46ee8}</Project>
+      <Name>Campus.Recruitment.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Campus.Recruitment.Entities\Campus.Recruitment.Entities.csproj">
+      <Project>{33a44fee-6627-4f0d-8035-50dd938ac654}</Project>
+      <Name>Campus.Recruitment.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Campus.Recruitment.IBLL\Campus.Recruitment.IBLL.csproj">
+      <Project>{194153af-6913-4640-8f02-f27ed9822657}</Project>
+      <Name>Campus.Recruitment.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Campus.Recruitment.IDAL\Campus.Recruitment.IDAL.csproj">
+      <Project>{1c99bb3d-7b45-4934-a288-1a560dd78d7f}</Project>
+      <Name>Campus.Recruitment.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Campus.Recruitment.Utility\Campus.Recruitment.Utility.csproj">
+      <Project>{25b81350-cb71-4930-b2ab-5b6b6ef2d0ac}</Project>
+      <Name>Campus.Recruitment.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

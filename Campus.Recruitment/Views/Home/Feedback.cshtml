@@ -1,0 +1,168 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "意见反馈";
+}
+
+@*<link href="/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css" />*@
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/global.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/global.css" />
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css" />
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/coding.js"></script>
+<style>
+    .feedback-wrap {
+        position: relative;
+        margin: 110px auto 160px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        width: 660px;
+        height: 446px;
+    }
+
+    .feekback-img {
+        position: relative;
+        display: block;
+        top: -60px;
+        width: 122px;
+        height: 122px;
+        margin: 0 auto;
+    }
+
+    .feedback-title {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-top: -46px;
+        line-height: 2;
+    }
+
+    .feed-list {
+        height: 70px;
+    }
+
+        .feed-list label {
+            display: inline-block;
+            width: 152px;
+            text-align: right;
+            vertical-align: top;
+            line-height: 40px;
+        }
+
+        .feed-list input,
+        #Content {
+            display: inline-block;
+            width: 402px;
+            height: 40px;
+            border: 1px solid #eee;
+            margin-left: 10px;
+            padding-left: 16px;
+        }
+
+            .feed-list input:focus {
+                border-color: #7cbf59;
+            }
+
+        .feed-list.feedcontent {
+            height: 194px;
+        }
+
+    #Content {
+        height: 134px;
+        line-height: 1;
+        padding: 16px 10px;
+        width: 398px;
+    }
+
+        #Content:focus {
+            outline: none;
+            border-color: #7cbf59;
+        }
+
+    .feed-list span {
+        vertical-align: sub;
+        padding: 0 6px;
+        color: #ff806f;
+    }
+
+    input[type="submit"] {
+        float: left;
+        width: 124px;
+        line-height: 40px;
+        height: 40px;
+        background-color: #7cbf59;
+        color: #fff;
+        font-size: 18px;
+        margin-left: 162px;
+    }
+
+    #Content-error {
+        margin-left: 162px;
+        color: #f90;
+        line-height: 1;
+        text-align: left;
+    }
+
+    #Email-error {
+        margin-left: 162px;
+        color: #f90;
+        line-height: 2;
+        text-align: left;
+    }
+    
+    .wrapper-1000 {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+</style>
+<div class="feedback-wrap">
+    <div class="feedback-box">
+        <img class="feekback-img" src="/content/static/student/images/icon/feedback.png">
+        <form action="/feedback/create" method="post" id="feedback">
+            <input type="hidden" name="URL" value="file:///D:/Recruitment website/Campus Recruitment/职业锚.html" />
+            <p class="feedback-title">意见反馈</p>
+            <div class="feed-list">
+                <label for="Email">联系邮箱：</label>
+                <input type="text" name="Email" id="Email" />
+            </div>
+            <div class="feed-list feedcontent">
+                <label for="Content"><span>*</span>问题描述：</label>
+                <textarea id="Content" name="Content" placeholder="在这里告诉我们你遇到的问题、意见和建议、各种吐槽吧~（500字以内）"></textarea>
+            </div>
+            <input type="submit" value="提交" />
+        </form>
+    </div>
+</div>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.validate.min.js"></script>
+<script>
+    @*$.validator.addMethod("emailRule", function(value, element) {
+        return this.optional(element) || /[\.\w-]+@([\w-]+\.)+([a-zA-Z]{2,4}|[0-9]{1,3})$/.test(value);
+    });*@
+    $("#feedback").validate({
+        rules: {
+            Email: {
+                emailRule: true
+            },
+            Content: {
+                required: true,
+                maxlength: 500
+            }
+        },
+        messages: {
+            Email: {
+                emailRule: "邮箱格式不正确"
+            },
+            Content: {
+                required: "问题描述不能为空",
+                maxlength: "问题描述不能超过500字"
+            }
+        },
+        submitHandler: function (form) {
+            $(form).submit();
+        }
+    });
+</script>

@@ -1,0 +1,222 @@
+﻿@using Campus.Recruitment.Models
+@using Campus.Recruitment.Entities.Entity;
+@using Campus.Recruitment.Helper;
+@model PageList<List<SearchPosition>>
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "找实习";
+}
+
+<link href="@AppSetting.Rss_Image/Content/static/student/css/searchJob/searchJob.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/student/css/searchJob/industry.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/student/css/searchJob/uiSelect.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/student/css/searchJob/fulltime.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/student/city-picker.css" rel="stylesheet" />
+
+
+<div id="homepage-container">
+    <div class="homepage-container">
+        <!-- 搜索栏 start -->
+        <div id="homepage-search">
+            <div class="search-job">
+                <span id="search-job">实习</span>
+                @*<i></i>
+                    <input type="hidden" name="J_Type" id="J_Type" value="2" />*@
+            </div>
+            <div class="search-location">
+                <input id="cityName" class="cityName" value='' readonly placeholder="全国" />
+                <input type="hidden" id="hCity" name="city" value="0" />
+            </div>
+            <div class="s-key">
+                <input type="text" id="keys" placeholder="请输入职位或公司关键词" />
+                <div class="s-btn s-btn-practice">
+                    <i></i>
+                    <span style="font-weight:800">找工作</span>
+                </div>
+                <div class="hot-link clearfix dN">
+                    <div class="mb5">热搜职位:</div>
+                    <a href="javascript:;">管培生</a>
+                    <a href="javascript:;">会计</a>
+                    <a href="javascript:;">财务</a>
+                    <a href="javascript:;">金融</a>
+                    <a href="javascript:;">Java</a>
+                    <a href="javascript:;">测试</a>
+                    <a href="javascript:;">产品经理</a>
+                    <a href="javascript:;">运营</a>
+                    <a href="javascript:;">销售</a>
+                    <a href="javascript:;">编辑</a>
+                    <a href="javascript:;">人力资源</a>
+                    <a href="javascript:;">行政</a>
+                </div>
+            </div>
+            @*<ul class="s-job dN">
+                    <li data-id="1">全职</li>
+                    <li data-id="2">实习</li>
+                </ul>*@
+        </div>
+        <!-- 搜索栏 end -->
+        <!-- 功能栏 start -->
+        <div class="search-layout">
+            <div class="clearfix search-content">
+                <input type="hidden" name="func" value="0" />
+                <input type="hidden" name="Occupation" value="0" />
+                <input type="hidden" name="degree" value="0" />
+                <input type="hidden" name="salary" value="0" />
+                <div class="selectlist selectO">
+                    <div class="input-select" data-select="select" id="func" style="width:300px;">职能</div><i></i>
+                </div>
+                <div class="selectlist selectC">
+                    <div class="input-select" data-select="selectN" id="Occupation" style="width:300px;">行业</div><i></i>
+                </div>
+                <div class="selectlist">
+                    <div class="input-select" data-widget="ui-selectD" id="degree">
+                        <select>
+                            <option value="">不限</option>
+                            <option value="1">大专</option>
+                            <option value="2">本科</option>
+                            <option value="3">硕士</option>
+                            <option value="4">博士</option>
+                        </select>
+                    </div><i></i>
+                </div>
+                <div class="selectlist">
+                    <div class="input-select" data-widget="ui-selectS" id="salary">
+                        <select>
+                            <option value="">不限</option>
+                            <option value="1">面议</option>
+                            <option value="2">2000以下</option>
+                            <option value="3">2000及以上</option>
+                            <option value="4">3000及以上</option>
+                            <option value="5">5000及以上</option>
+                            <option value="6">8000及以上</option>
+                            <option value="7">10000及以上</option>
+                        </select>
+                    </div><i></i>
+                </div>
+            </div>
+        </div>
+        <!-- 功能栏 end -->
+        <!-- 主内容区 start -->
+        <div class="search-result">
+            <div class="result-left">
+                <div class="left-top">
+                    <!-- 搜索有结果 start -->
+                    <ul class="left-result">
+                        @foreach (var item in Model.Data)
+                        {
+                            <li>
+                                <div class="result-content">
+                                    @{
+                                        string icon = string.IsNullOrWhiteSpace(item.Logo_icon)
+                                            ? $"{AppSetting.Rss_Image}/content/static/images/avatar/etp.jpg"
+                                            : $"{AppSetting.Rss_Image + item.Logo_icon}";
+                                    }
+                                    <img src="@icon" />
+                                    <div class="job-detail">
+                                        <div class="xq-divide">
+                                            <a class="job-name" href="/job//@item.Id" target="_blank">
+                                                @item.Name
+                                            </a>
+                                        </div>
+                                        <a href="javascript:;" target="_blank" class="com-name">@item.Enterprise_name</a>
+                                        <a href="javascript:;" target="_blank" class="com-name"></a>
+                                        @*<i title="新起点认证企业"></i>*@
+                                        <span class="white-space">@item.City_names</span><span>@item.Update_at</span>
+                                    </div>
+                                    <div class="result-salary">@item.Salary</div>
+                                    <a class="heiwid" href="/job/@item.Id" target="_blank"></a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
+            </div>
+            <div class="result-right">
+                <a class="photo-right1" href="http://www.zheyibu.com/xuanjianghui/" target="_blank">
+                    <label>宣讲会<span>（1828）</span></label>
+                </a>
+                <div class="week-hot-position">
+                    <div class="article-header">
+                        <span>每周热推职位</span>
+                    </div>
+                    <ul id="hotJobs">
+                        @foreach (var item in Model.Data)
+                        {
+                            string icon = string.IsNullOrWhiteSpace(item.Logo_icon)
+                                ? $"{AppSetting.Rss_Image}/content/static/images/avatar/etp.jpg"
+                                : $"{AppSetting.Rss_Image + item.Logo_icon}";
+
+                            <li>
+                                <a href="/job/@item.Id" class="logo-link" target="_blank">
+                                    <img src="@icon" width="54" height="54">
+                                </a>
+                                <div class="job-list">
+                                    <a href="/job/@item.Id" class="job-name" target="_blank">@item.Name</a>
+                                    <a href="javascript:;" class="comany-name" target="_blank">@item.Enterprise_name</a>
+                                    <p class="salary">
+                                        @item.Salary
+                                    </p>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="article-right">
+                    <div class="article-header">
+                        <span>求职攻略</span>
+                        <a href="/article/" target="_blank">更多></a>
+                    </div>
+                    <ul id="article"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- 主内容区 end -->
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".header-list .list-item").removeClass("current");
+
+        $(".header-list .list-item").eq(2).addClass("current");
+        //$.ajax({
+        //    type: 'get',
+        //    url: '/push/hotarticle/',
+        //    dataType: 'html',
+        //    success: function (response) {
+        //        $('#article').html(response);
+        //    }
+        //});
+
+        //$.ajax({
+        //    type: 'get',
+        //    url: '/push/weeklyhotpositions?cityIds=' + 0 + '&positionType=' + 2,
+        //    dataType: 'html',
+        //    success: function (response) {
+        //        $('#hotJobs').html(response);
+        //    }
+        //});
+
+        $('.left-result').on('click', '.city-list-item span', function () {
+            if ($(this).hasClass('active')) {
+                $(this).text('收起城市列表').removeClass('active');
+                $(this).parent().next('.citylist-details').animate({
+                    height: 22
+                }, 300);
+            } else {
+                $(this).text('展开城市列表').addClass('active');
+                $(this).parent().next('.citylist-details').animate({
+                    height: 0
+                }, 300);
+            }
+        })
+    });
+</script>
+
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/student/city-picker.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/func.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/industry.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/searchJob.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/uiSelect.js"></script>

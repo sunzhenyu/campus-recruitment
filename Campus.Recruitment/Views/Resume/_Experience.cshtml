@@ -1,0 +1,32 @@
+﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@model List<CustomerExperience>
+
+<div id="info-experience" class="info-holder" style="display: block;">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="info-item">
+                <div class="info-col">
+                    <div class="date">@item.Start_intership.ToString("yyyy.MM") - @item.End_intership.ToString("yyyy.MM")</div>
+                    <div class="meta">
+                        <span>@item.Units_dept</span>
+                        <span>@item.Units_position (@item.Units)</span>
+                    </div>
+                    <div class="action-col" style="display: none;">
+                        <a title="编辑" href="javascript:;" rel="edit" itemid="@item.Id" itemtype="experience" class="edit-btn J_ActionBtn"></a>
+                        <a title="删除" href="javascript:;" rel="delete" itemid="@item.Id" itemtype="experience" class="del-btn J_ActionBtn"></a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="desc">@item.Units_work_desc</div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="no-data-prompt">
+            填写实习/工作经历
+        </div>
+    }
+</div>

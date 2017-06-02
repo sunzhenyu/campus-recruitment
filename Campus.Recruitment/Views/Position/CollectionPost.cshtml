@@ -1,0 +1,162 @@
+﻿@using Campus.Recruitment.Models
+@using Campus.Recruitment.Entities.Entity;
+@using Campus.Recruitment.Helper.Back;
+@model PageList<List<SearchPosition>>
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "收藏的职位";
+}
+
+
+@*<link href="/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<link href="/content/static/student/css/landpage/userCenter.css" rel="stylesheet">*@
+
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/global.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/global.css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/coding.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/student/css/landpage/userCenter.css" rel="stylesheet">
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            calendar: 'arale/calendar/1.0.0/calendar',
+            validator: 'arale/validator/0.9.7/validator',
+            jqueryform: 'jquery/form/3.49.0/form'
+        }
+    });
+</script>
+<div class="content">
+    <div class="content-in">
+        <!--左侧功能栏开始-->
+        <div class="user-left">
+            <div class="resume-all" style="margin-top:0px;">
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的简历
+                    </li>
+                    <li class="resume-module-item ">
+                        <a href="/resume/0">在线简历</a>
+                    </li>
+                </ul>
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的求职
+                    </li>
+                    <li class="resume-module-item   apply">
+                        <a href="/position/apply">申请的职位</a>
+                        <i class="num"></i>
+                    </li>
+                    @*<li class="resume-module-item  push">
+                        <a href="/position/recommend">推荐的职位</a>
+                        <i class="num"></i>
+                    </li>*@
+                    <li class="resume-module-item  hrinvite">
+                        <a href="/position/hr-invintes">HR邀请</a>
+                        <i class="num"></i>
+                    </li>
+                    <li class="resume-module-item active">
+                        <a href="/position/collection-post">收藏的职位</a>
+                        <i class="num"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            $(function() {
+                var a = $("#homepage-header .user-info").attr("data-applycount"),
+                    f = $("#homepage-header .user-info").attr("data-pushcount"),
+                    d = $("#homepage-header .user-info").attr("data-hrinvitecount"),
+                    b = $("#homepage-header .user-info").attr("data-followcount"),
+                    c = $("#homepage-header .user-info").attr("data-unreadqacount"),
+                    e = $("#homepage-header .user-info").attr("data-unreadhrmessagecount");
+                if (a != 0) {
+                    $(".apply").find(".num").text(a);
+                    $(".applyReply").text(a)
+                } else {
+                    $(".applyReply").text(a)
+                }
+                if (f != 0) {
+                    $(".push").find(".num").text(f);
+                    $(".pushPos").text(f)
+                } else {
+                    $(".pushPos").text(f)
+                }
+                if (d != 0) {
+                    $(".hrinvite").find(".num").text(d);
+                    $(".hrInvite").text(d)
+                } else {
+                    $(".hrInvite").text(d)
+                }
+                if (b != 0) {
+                    $(".follow").find(".num").text(b);
+                    $(".comFollow").text(b)
+                } else {
+                    $(".comFollow").text(b)
+                }
+                if (c != 0) {
+                    $(".unreadqa").find(".num").text(c)
+                }
+                if (e != 0) {
+                    $(".unreadhrmsg").find(".num").text(e)
+                }
+            });
+        </script>
+        <!--左侧功能栏结束-->
+        <div class="right-favorites">
+            <div class="right-title" style="border-left:0px;">
+                <em>我的收藏</em>
+            </div>
+            @if (Model.Data != null && Model.Data.Count > 0)
+            {
+                <ul class="company-list">
+                    @foreach (var item in Model.Data)
+                    {
+                        <li class="itemclass1" >
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <a href="javascript:void(0)" target="_blank">
+                                        <img src="@AppSetting.Rss_Image/@item.Logo_icon" width="58" height="58">
+                                    </a>
+                                </div>
+                                <div class="company-job" style="margin-top:30px;">
+                                    <p class="job-name"><a class="b-link position-link" href="/job/@item.Id" target="_blank" title="@item.Name">@item.Name</a><span></span></p>
+                                    <p class="company-name"><a href="javascript:void(0)" target="_blank">@item.Enterprise_name</a></p>
+                                </div>
+                                <div class="company-fav show-info">
+                                    <p class="job-info">
+                                        <em>@item.Update_at</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+                @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
+            }
+            else
+            {
+                <div id="divList">
+                    <div class="nodata">
+                        <p class="nodata-img"><img src="@AppSetting.Rss_Image/content/static/images/avatar/fav-book.png"></p>
+                        <p class="font-one">你还未收藏任何职位哦</p>
+                        <p class="font-two">看到中意但还不确定是否投递的职位就先把它收藏起来吧</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<script src="@AppSetting.Rss_Image/content/static/js/jquery/mvc/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/zyb/navigation.js" type="text/javascript"></script>
+

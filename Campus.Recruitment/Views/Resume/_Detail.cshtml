@@ -1,0 +1,41 @@
+﻿@using Campus.Recruitment.Models
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
+@{ 
+    Layout = null;
+}
+<div id="info-base" class="info-holder" style="display: block;">
+    <div class="avatar" id="uploadAvatar">
+        @{ 
+            var imgIcon = string.IsNullOrWhiteSpace(Model.Head_icon)
+                ? $"{AppSetting.Rss_Image}/content/static/images/avatar/avatar-s-1.jpg" 
+                : $"{AppSetting.Rss_Image}{Model.Head_icon}";
+            }
+        <img alt="编辑头像" src="@imgIcon">
+        <div class="edit-avatar">
+            <p>上传头像</p>
+        </div>
+    </div>
+    <div class="base-info-col">
+        <h3>@Model.Real_name</h3>
+        <ul>
+            @{ 
+                var birthday = Model.Birthday <= DateTime.MinValue ? "未填写" : Model.Birthday.ToString("yyyy.MM");
+                var current_location = Model.Current_name ?? "未填写";
+                var family_location = Model.Family_name ?? "未填写";
+                var high_school_location = Model.High_school_name ?? "未填写";
+                var policital_status = Model.Policital_status ?? "未填写";
+                var height = Model.Height == 0 ? "未填写" : Model.Height + "cm";
+             }
+            <li><span>生日：</span>@birthday</li>
+            <li><span>现居住地：</span>@current_location</li>
+            <li><span>户口地：</span>@family_location</li>
+            <li><span>生源地：</span>@high_school_location</li>
+            <li>
+                <span>邮箱：</span>
+                <label class="email">@Model.Email</label>
+            </li>
+            <li><span>政治面貌：</span>@policital_status</li>
+            <li><span>身高：</span>@height</li>
+        </ul>
+    </div>
+</div>

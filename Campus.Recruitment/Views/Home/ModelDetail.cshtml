@@ -1,0 +1,910 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "模块名称详情";
+}
+
+
+<link href="@AppSetting.Rss_Image\Content\static/student/css/searchJob/jobDetails.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image\Content\static/lib/css/student/login-layer.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image\Content\static/lib/css/student/login-layer.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image\Content\static/lib/css/base/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image\Content\static/lib/css/base/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+
+<div id="jobDetails-container">
+    <div class="jobDetails-container">
+        <div class="details-left">
+            <div class="job-intro">
+                <p>
+                    <a href="http://function.zheyibu.com/zhineng/353289/" target="_blank">法语专业实习生</a>
+                    <span>2017-04-30 更新</span>
+                </p>
+            </div>
+            <div class="details-intro">
+                <p class="intro-divide">
+                    <span>实习</span>
+                    <span>武汉</span>
+                    <span>
+                        <em>1000-2000元/月</em>
+                    </span>
+                    <span>招聘2人</span>
+                </p>
+                <div class="intro-demond">
+                    <p class="demond-title">职位要求：</p>
+                    <p class="demond-list">学历要求： 本科、硕士、博士</p>
+                    <p class="demond-list">专业要求： 法语</p>
+                </div>
+            </div>
+            <div class="job-wechat">
+                <div id="qrcode"></div>
+                <p>分享职位</p>
+            </div>
+            <div class="intro-position">
+                <p class="demond-title">职位描述：</p>
+                <p>
+                    法语专业实习生（人事岗）
+                    <br />主要职责：
+                    <br />1、负责为外籍人员办理签证及入、离职事宜；
+                    <br />3、公司员工入职、转正、离职等工作的综合管理；
+                    <br />4、员工社保、公积金、保险等的管理；
+                    <br />4、员工考勤，休假记录管理，制作考勤报告；
+                    <br />5、建立和维护人事档案、员工花名册，及时更新员工的个人信息和资料；
+                    <br />6、配合其他部门有关工作；
+                    <br />法语专业实习生（招聘岗）
+                    <br /> 2.负责整理更新人才库，登记候选人信息；
+                    <br />3.协助办理员工合同签订及入离职手续；
+                    <br /> 3.协助招聘主管工作，分析招聘数据，处理招聘周报，月报等；
+                    <br /> 4.负责人才资源的扩展,保证稳定的候选人储备供给；
+                    <br /> 法语专业实习生（行政岗）
+                    <br />2.负责采购管理，包括收集采购需求，比对库存，提交采购申请，完成采购及报销。
+                    <br />3.负责根据需求起草并翻译相关通知及发文，跟进通知执行情况。
+                    <br />4.负责行政出纳工作，完成公司每月对账、报销工作（票务、快递、物业水电、办公用品等），与供应商建立良好的外部沟通渠道。
+                    <br />5.办公环境管理：对办公环境进行5S管理。
+                    <br />任职要求：
+                    <br />1. 本科及以上学历，大三，大四或者在读研究生优先；
+                    <br />2. 要求法语熟练,英语通过六级或者专四者优先，拥有HR实习经历者优先；
+                    <br />3. 形象气质佳，性格开朗，热爱挑战，独立工作能力强，有良好的团队协作能力；
+                    <br />4. 每周保证至少3天工作时间，可连续实习3个月以上。
+                </p>
+            </div>
+            <div class="intro-apply">
+                <div class="collect">
+                    <span class="apply-job active">立即申请</span>
+                    <span class="collect-job collect">收藏</span>
+                    <span class="collect-success"></span>
+                    <span class="fire-job active">举报该职位！</span>
+                </div>
+            </div>
+            <div class="job-more">
+                <div class="job-similar ">
+                    <p class="similar-title">类似职位：<a href="/sou/0-20-0-0-0-0-0-3-0-0-2014001">更多>></a></p>
+                    <ul>
+                        <li>
+                            <img src="\Content\static\student/images/article/jsj.png" alt="武汉中地数码科技有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/5852835.html?f=js" class="job-name">综合管理实习生</a>
+                                <a href="http://company.zheyibu.com/71412" target="_blank" class="comany-name">武汉中地数码科技有限公司</a>
+                                <a href="http://company.zheyibu.com/71412" class="comany-name"></a>
+                                <p class="salary">
+                                    面议
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/jsj.png" alt="武汉中地数码科技有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/2316909.html?f=js" class="job-name">HR实习生</a>
+                                <a href="http://company.zheyibu.com/71412" target="_blank" class="comany-name">武汉中地数码科技有限公司</a>
+                                <a href="http://company.zheyibu.com/71412" class="comany-name"></a>
+                                <p class="salary">
+                                    面议
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="优信拍（北京）信息科技有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7225249.html?f=js" class="job-name">人力资源实习生-武汉-04723</a>
+                                <a class="comany-name">优信拍（北京）信息科技有限公司</a>
+                                <a href="http://company.zheyibu.com/148407" class="comany-name"></a>
+                                <p class="salary">
+                                    2001-4000/月
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="优信拍（北京）信息科技有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7182831.html?f=js" class="job-name">人力资源实习生-武汉-05369</a>
+                                <a class="comany-name">优信拍（北京）信息科技有限公司</a>
+                                <a href="http://company.zheyibu.com/148407" class="comany-name"></a>
+                                <p class="salary">
+                                    2001-4000/月
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="康明斯(中国)投资有限公司/Cummins (China) Investment Co., Ltd.">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7102952.html?f=js" class="job-name">人力资源实习生</a>
+                                <a class="comany-name">康明斯(中国)投资有限公司/Cummins (China) Investment Co., Ltd.</a>
+                                <a href="http://company.zheyibu.com/582838" class="comany-name"></a>
+                                <p class="salary">
+                                    面议
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/jsj.png" alt="湖北省电力勘测设计院">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7426544.html?f=js" class="job-name">人力资源实习生</a>
+                                <a class="comany-name">湖北省电力勘测设计院</a>
+                                <a href="http://company.zheyibu.com/984925" class="comany-name"></a>
+                                <p class="salary">
+                                    1000-2000/月
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="job-similar ">
+                    <p class="similar-title">该公司其他职位：<a href="http://company.zheyibu.com/73381/jobs-1.html#anchor">更多>></a></p>
+                    <ul>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7396774.html?f=jcop" class="job-name">商务实习生</a>
+                                <a class="comany-name">赛科工业科技开发（武汉）有限公司</a>
+                                <a href="http://company.zheyibu.com/73381" class="comany-name"></a>
+                                <p class="salary">
+                                    1000-2000/月
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7336166.html?f=jcop" class="job-name">人事行政实习生</a>
+                                <a class="comany-name">赛科工业科技开发（武汉）有限公司</a>
+                                <a href="http://company.zheyibu.com/73381" class="comany-name"></a>
+                                <p class="salary">
+                                    1500-1999/月
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/7083685.html?f=jcop" class="job-name">法语专业实习生</a>
+                                <a class="comany-name">赛科工业科技开发（武汉）有限公司</a>
+                                <a href="http://company.zheyibu.com/73381" class="comany-name"></a>
+                                <p class="salary">
+                                    1000-2000/月
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/6334885.html?f=jcop" class="job-name">焊装工程师</a>
+                                <a class="comany-name">赛科工业科技开发（武汉）有限公司</a>
+                                <a href="http://company.zheyibu.com/73381" class="comany-name"></a>
+                                <p class="salary">
+                                    面议
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/6334790.html?f=jcop" class="job-name">焊装工程师</a>
+                                <a class="comany-name">赛科工业科技开发（武汉）有限公司</a>
+                                <a href="http://company.zheyibu.com/73381" class="comany-name"></a>
+                                <p class="salary">
+                                    面议
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司">
+                            <div class="job-list">
+                                <a href="http://www.zheyibu.com/job/6278701.html?f=jcop" class="job-name">cfd工程师</a>
+                                <a class="comany-name">赛科工业科技开发（武汉）有限公司</a>
+                                <a href="http://company.zheyibu.com/73381" class="comany-name"></a>
+                                <p class="salary">
+                                    面议
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="details-right">
+            <div class="rg-company">
+                <div class="rg-comany-logo">
+                    <img src="\Content\static\student/images/article/my.png" alt="赛科工业科技开发（武汉）有限公司招聘法语专业实习生">
+                    <a class="company-link">赛科工业科技开发（武汉）有限公司</a>
+                    <a class="company-link" target="_blank" href="http://company.zheyibu.com/73381"></a>
+                    <div class="follow-success"></div>
+                </div>
+                <div class="rg-company-intro">
+                    <p>
+                        <label>行业：</label><span>汽车及零配件</span>
+                    </p>
+                    <p>
+                        <label>规模：</label><span>150-500人</span>
+                    </p>
+                    <p>
+                        <label>官网：</label><a href="http://www.segula.cn" class="website" target="_blank" rel="external nofollow">www.segula.cn</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="related-footer">
+    <div class="footer">
+        <div class="footer-nav">
+            <p class="nav active">相关职位</p>
+            <p class="nav">热门职位</p>
+            <p class="nav">城市职位</p>
+        </div>
+        <div class="more-link">
+            <div class="nav-container0">
+                <a class="list" href="http://function.zheyibu.com/zhineng/353289/" target="_blank">法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/326315/" target="_blank">法律专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/351492/" target="_blank">法学专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/343079/" target="_blank">法语实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/351856/" target="_blank">日语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/352801/" target="_blank">实习生－英语专业</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/339047/" target="_blank">英语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/358046/" target="_blank">德语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/361698/" target="_blank">实习生（英语专业）</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/341743/" target="_blank">法语翻译实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/344413/" target="_blank">法务专员实习生</a>
+            </div>
+            <div class="nav-container1">
+                <a class="list" href="http://function.zheyibu.com/zhineng/323946/" target="_blank">保姆护理</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/328681/" target="_blank">固废处理师</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/211356/" target="_blank">市政工程师</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/276234/" target="_blank">医药招标</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/326002/" target="_blank">地质选矿</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/160984/" target="_blank">卖场管理</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/330805/" target="_blank">兼职教师</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/82203/" target="_blank">副总编辑</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/251619/" target="_blank">铣床工</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/239058/" target="_blank">网络管理员</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/269898/" target="_blank">样衣工</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/308088/" target="_blank">置业顾问</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/235601/" target="_blank">外汇经纪人</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/66655/" target="_blank">动画设计</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/183674/" target="_blank">器械研发</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/123734/" target="_blank">集装箱业务</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/326785/" target="_blank">仿真开发</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/231331/" target="_blank">投资服务</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/149177/" target="_blank">客户服务</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/333675/" target="_blank">人力专员</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/151301/" target="_blank">空调工程</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/191166/" target="_blank">融资助理</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/209453/" target="_blank">市场经理</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/23429/" target="_blank">保健医生</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/250304/" target="_blank">物业租赁</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/335698/" target="_blank">商家运营</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/337388/" target="_blank">文科教师</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/93427/" target="_blank">公关主管</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/8421/" target="_blank">IT主管</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/46778/" target="_blank">创意总监</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/46726/" target="_blank">创意师</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/293103/" target="_blank">员工关系</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/183669/" target="_blank">器械销售</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/246819/" target="_blank">无线通信</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/205732/" target="_blank">施工队长</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/133741/" target="_blank">健身教练</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/270598/" target="_blank">药品研发</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/323945/" target="_blank">白盒测试</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/333552/" target="_blank">汽车总装师</a>
+                <a class="list" href="http://function.zheyibu.com/zhineng/318277/" target="_blank">咨询主管</a>
+            </div>
+            <div class="nav-container2">
+                <a class="list" href="http://function.zheyibu.com/beijing/zhineng/353289/" target="_blank">北京法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/shanghai/zhineng/353289/" target="_blank">上海法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/guangzhou/zhineng/353289/" target="_blank">广州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/shenzhen/zhineng/353289/" target="_blank">深圳法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/tianjin/zhineng/353289/" target="_blank">天津法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/nanjing/zhineng/353289/" target="_blank">南京法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/wuhan/zhineng/353289/" target="_blank">武汉法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/shenyang/zhineng/353289/" target="_blank">沈阳法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/xian/zhineng/353289/" target="_blank">西安法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/chengdu/zhineng/353289/" target="_blank">成都法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/chongqing/zhineng/353289/" target="_blank">重庆法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/hangzhou/zhineng/353289/" target="_blank">杭州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/qingdao/zhineng/353289/" target="_blank">青岛法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/dalian/zhineng/353289/" target="_blank">大连法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/ningbo/zhineng/353289/" target="_blank">宁波法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/jinan/zhineng/353289/" target="_blank">济南法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/haerbin/zhineng/353289/" target="_blank">哈尔滨法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/changchun/zhineng/353289/" target="_blank">长春法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/xiamen/zhineng/353289/" target="_blank">厦门法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/zhengzhou/zhineng/353289/" target="_blank">郑州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/changsha/zhineng/353289/" target="_blank">长沙法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/fuzhou/zhineng/353289/" target="_blank">福州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/wulumuqi/zhineng/353289/" target="_blank">乌鲁木齐法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/kunming/zhineng/353289/" target="_blank">昆明法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/lanzhou/zhineng/353289/" target="_blank">兰州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/suzhou/zhineng/353289/" target="_blank">苏州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/wuxi/zhineng/353289/" target="_blank">无锡法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/nanchang/zhineng/353289/" target="_blank">南昌法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/guiyang/zhineng/353289/" target="_blank">贵阳法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/nanning/zhineng/353289/" target="_blank">南宁法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/hefei/zhineng/353289/" target="_blank">合肥法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/taiyuan/zhineng/353289/" target="_blank">太原法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/shijiazhuang/zhineng/353289/" target="_blank">石家庄法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/huhehaote/zhineng/353289/" target="_blank">呼和浩特法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/foshan/zhineng/353289/" target="_blank">佛山法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/dongwan/zhineng/353289/" target="_blank">东莞法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/tangshan/zhineng/353289/" target="_blank">唐山法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/yantai/zhineng/353289/" target="_blank">烟台法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/quanzhou/zhineng/353289/" target="_blank">泉州法语专业实习生</a>
+                <a class="list" href="http://function.zheyibu.com/baotou/zhineng/353289/" target="_blank">包头法语专业实习生</a>
+            </div>
+        </div>
+        <p class="more"><span>更多</span></p>
+    </div>
+</div>
+
+
+<script src="@AppSetting.Rss_Image\Content\static/lib/js/base/jquery-ui.min.js"></script>
+<script src="@AppSetting.Rss_Image\Content\static/lib/js/base/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="@AppSetting.Rss_Image\Content\static/lib/js/base/jquery.mousewheel.min.js"></script>
+<script src="@AppSetting.Rss_Image\Content\static/lib/js/base/coding.js"></script>
+<script src="@AppSetting.Rss_Image\Content\static/lib/js/student/login-layer.js"></script>
+<script src="@AppSetting.Rss_Image\Content\static/lib/js/base/jquery.qrcode.min.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=tF1AwVI6rcIGkuts9qsMpAnefCDswGIC" type="text/javascript"></script>
+
+<script>
+    var weiboLoginRediretUri = 'http%3a%2f%2fwww.zheyibu.com%2fhome%2fStuThirdLogin%2f%3freturnUrl%3dhttp%3a%2f%2fwww.zheyibu.com%2fjob%2f6823688.html',
+        qqLoginRediretUri = 'http%3a%2f%2fwww.zheyibu.com%2fhome%2fStuThirdLogin%2f%3freturnUrl%3dhttp%3a%2f%2fwww.zheyibu.com%2fjob%2f6823688.html',
+        wechatLoginRediretUri = 'http%3a%2f%2fwww.zheyibu.com%2fhome%2fWeChatLogin%2f%3freturnUrl%3dhttp%3a%2f%2fwww.zheyibu.com%2fjob%2f6823688.html',
+        clientH = $(window).height(),
+        scrollTop = $(window).scrollTop(),
+        elementTop = $('.intro-apply').offset().top,
+        EtpId = '73381',
+        PositionId = '6823688';
+    $(function() {
+        // 职位二维码
+        try {
+            jQuery('#qrcode').qrcode({
+                render: "canvas",
+                width: 112,
+                height: 112,
+                text: 'http://m.zheyibu.com/Html/Jobs/SearchJobs.html?positionId=6823688&amp;adid='
+            });
+        } catch (e) {
+            jQuery('#qrcode').qrcode({
+                render: "table",
+                width: 112,
+                height: 112,
+                text: 'http://m.zheyibu.com/Html/Jobs/SearchJobs.html?positionId=6823688&amp;adid='
+            });
+        }
+        if (elementTop + 111 > clientH + scrollTop) {
+            $('.intro-apply').css({
+                position: 'fixed',
+                bottom: 0,
+                'box-shadow': '0 -1px 3px #ddd',
+                background: 'url(/content/static/student/images/icon/job-details-dot.png) repeat'
+            });
+        } else {
+            $('.intro-apply').removeAttr('style');
+        }
+        //初始化相关职位是否有更多
+        if ($('.nav-container0').height() < 44) {
+            $('.more').hide();
+        }
+        $(window).scroll(function() {
+            scrollTop = $(window).scrollTop();
+            if (elementTop + 111 > clientH + scrollTop) {
+                $('.intro-apply').css({
+                    position: 'fixed',
+                    bottom: 0,
+                    'box-shadow': '0 -1px 3px #ddd',
+                    background: 'url(static/student/images/icon/job-details-dot.png) repeat'
+                });
+            } else {
+                $('.intro-apply').removeAttr('style');
+            }
+        });
+        $('#jobDetails-container').on('click', '.job-similar img', function() {
+                $(this).siblings('.job-list').children('.comany-name')[0].click();
+            })
+            .on('click', '.apply-job.active', function() {
+                var _this = $(this);
+                if (document.referrer != location.href) {
+                    window.localStorage["job_refrrer_" + PositionId] = document.referrer;
+                }
+                if (getCookie("Login") && getCookie("Login").split(",")[3] == "Student") {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Job/CheckWillApplyPos',
+                        beforeSend: function() {
+                            _this.removeClass('active');
+                        },
+                        data: {
+                            posId: PositionId
+                        },
+                        success: function(r) {
+                            //if (r.code === 2) {
+                            //    var inTemplate = '<div class="complete">\
+                            //                        <p class="com">你在' + r.datediff + '已经申请过该职位</p>\
+                            //                        <a href="" class="com">查看我的职位申请记录>></a>\
+                            //                        <a href="javascript:;" class="know">知道了~</a>\
+                            //                      </div>';
+                            //    _this.layerAlertMask({
+                            //        width: 524,
+                            //        height: 276,
+                            //        setContent: inTemplate
+                            //    });
+                            //} else
+                            if (r.code == 3) {
+                                var unTemplate = '<div class="unComplete">\
+                                                    <p class="unCom">您的简历完成度为：<em>' + r.profileCompleteness + '%</em>，不能申请该职位！</p>\
+                                                    <p class="unCom">简历完整度达到' + r.baseCompleteness + '%，可申请全职职位。</p>\
+                                                    <a href="/resume?posid=' + PositionId + '" class="goComplete">完善简历</a>\
+                                                  </div>';
+                                _this.layerAlertMask({
+                                    title: '',
+                                    width: 524,
+                                    height: 276,
+                                    setContent: unTemplate
+                                });
+                                _this.addClass('active');
+                            } else if (r.code == 0) {
+                                var beforeTemplate = function() {
+                                    return '<div class="beforeSend">\
+                                                        <div class="before-title">\
+                                                            <p class="before-intro">尊敬的HR，您好！</p>\
+                                                            <p class="after-intro">' + posType(r.posType, r.eduInfo) + '</p>\
+                                                        </div>\
+                                                        <div class="addition">\
+                                                            <p class="addtion-resume active">在线简历</p>\
+                                                            <p class="addition-list">完善度' + r.profileCompleteness + '%。完整度越高，成功率越高！<a href="/resume?posid=' + PositionId + '">立即完善简历</a></p>\
+                                                            <p class="addtion-video ' + isVideo(r.hadVideoResume) + '">视频简历</p>\
+                                                            <p class="addition-list">' + isShowVideo(r.hadVideoResume) + '</p>\
+                                                        </div>\
+                                                        <p class="tip-note">' + r.filterOutReasons + '</p>\
+                                                        <a href="javascript:;" class="send active">投递简历</a>\
+                                                        <p class="addtion-resume dynamic active">同时关注该公司，实时掌握公司动态</p>\
+                                                        <input type="hidden" name="posId" value="' + PositionId + '">\
+                                                        <input type="hidden" name="isWithVideoResume" value="false">\
+                                                        <input type="hidden" name="isFollow" value="true">\
+                                                      </div>';
+                                }
+
+                                function isVideo(has) {
+                                    return has == true ? 'active' : '';
+                                }
+
+                                function isShowVideo(has) {
+                                    var isExist = has;
+                                    if (isExist == false) {
+                                        return '尚未上传视频简历。<a href="/resume/videoresume/">上传视频简历</a>';
+                                    } else {
+                                        return '视频简历';
+                                    }
+                                }
+
+                                function posType(postype, edu) {
+                                    return postype == '全职' ? '我是一名即将毕业于<em>' + edu.SchoolName + '</em>的学生，所学专业<em>' + edu.Major + '</em>。在即将进入社会之际，我怀着一颗真诚的心与对事业的渴求，真诚的向您推荐自己。' : '我是一名即将毕业于<em>' + edu.SchoolName + '</em>的学生，所学专业<em>' + edu.Major + '</em>。我对贵行业有着浓厚兴趣，并且希望可以在贵公司进行专业实习，在此真诚的向您推荐自己。';
+                                }
+                                _this.layerAlertMask({
+                                    title: '',
+                                    width: 524,
+                                    height: 'auto',
+                                    setContent: beforeTemplate
+                                });
+                                $('.addtion-video.active').click(function() {
+                                    if ($(this).hasClass('active')) {
+                                        $(this).removeClass('active');
+                                        $('input[name="isWithVideoResume"]').val('false');
+                                    } else {
+                                        $(this).addClass('active');
+                                        $('input[name="isWithVideoResume"]').val('true');
+                                    }
+                                })
+                                $('.addtion-resume.dynamic').click(function() {
+                                        if ($(this).hasClass('active')) {
+                                            $(this).removeClass('active');
+                                            $('input[name="isFollow"]').val('false');
+                                        } else {
+                                            $(this).addClass('active');
+                                            $('input[name="isFollow"]').val('true');
+                                        }
+                                    })
+                                    //投递简历
+                                $('.send.active').click(function() {
+                                    var _this = $(this);
+                                    var referrer = window.localStorage["job_refrrer_" + PositionId];
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '/Job/DoApply' + location.search,
+                                        beforeSend: function() {
+                                            _this.removeClass('active');
+                                        },
+                                        data: {
+                                            referrer: referrer,
+                                            isWithVideoResume: $('input[name="isWithVideoResume"]').val(),
+                                            isFollow: $('input[name="isFollow"]').val(),
+                                            posId: $('input[name="posId"]').val()
+                                        },
+                                        success: function(r) {
+                                            delete window.localStorage["job_refrrer_" + PositionId];
+                                            if (r.code == 0) {
+                                                $('#layer-alert-content i').trigger('click');
+                                                location.href = r.redirecturl
+
+                                            }
+                                        }
+                                    })
+                                })
+                                _this.addClass('active');
+                            } else {
+                                console.log(r);
+                            }
+                        }
+                    });
+                    //知道了~
+                    $('.know').click(function() {
+                        $('#layer-alert-content').find('i').trigger('click');
+                    });
+                } else {
+                    $(this).loginLayer({
+                        reUrl: {
+                            PositionId: PositionId,
+                            EtpId: EtpId,
+                            operationName: 'apply',
+                            weiboLoginRediretUri: weiboLoginRediretUri,
+                            qqLoginRediretUri: qqLoginRediretUri,
+                            wechatLoginRediretUri: wechatLoginRediretUri
+                        },
+                        onLayerMask: function() {
+                            var operationName = 'apply',
+                                url = location.href;
+                            if (url.indexOf('?') !== -1) {
+                                location.href = location.href.split('?')[0] + '?operationName=apply';
+                            } else {
+                                location.href = location.href + '?operationName=apply';
+                            }
+                        }
+                    });
+                }
+            })
+            .on('click', '.pay-attention.follow', function() {
+                var _this = $(this);
+                if (getCookie("Login") && getCookie("Login").split(",")[3] == "Student") {
+                    $('.follow-success').show();
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Company/Follow/',
+                        data: {
+                            id: EtpId
+                        }
+                    });
+                    setTimeout(function() {
+                        _this.next('.follow-success').animate({
+                            'opacity': 0,
+                            'bottom': '54px'
+                        }, 500, function() {
+                            $('.follow-success').hide();
+                            _this.removeClass('follow').addClass('active');
+                            _this.find('span').text('已关注');
+                        })
+                    }, 100);
+                } else {
+                    _this.loginLayer({
+                        reUrl: {
+                            PositionId: PositionId,
+                            EtpId: EtpId,
+                            operationName: 'follow',
+                            weiboLoginRediretUri: weiboLoginRediretUri,
+                            qqLoginRediretUri: qqLoginRediretUri,
+                            wechatLoginRediretUri: wechatLoginRediretUri
+                        },
+                        onLayerMask: function() {
+                            var operationName = 'follow',
+                                url = location.href;
+                            if (url.indexOf('?') !== -1) {
+                                location.href = location.href.split('?')[0] + '?operationName=follow';
+                            } else {
+                                location.href = location.href + '?operationName=follow';
+                            }
+                        }
+                    });
+                }
+            })
+            .on('click', '.collect-job.collect', function() {
+                var _this = $(this);
+                if (getCookie("Login") && getCookie("Login").split(",")[3] == "Student") {
+                    $('.collect-success').show();
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Job/Collect/',
+                        data: {
+                            id: PositionId
+                        }
+                    });
+                    setTimeout(function() {
+                        _this.next('.collect-success').animate({
+                            'opacity': 0,
+                            'bottom': '64px'
+                        }, 500, function() {
+                            $('.collect-success').hide();
+                            _this.removeClass('collect').addClass('active');
+                            _this.text('已收藏');
+                        })
+                    }, 100);
+                } else {
+                    _this.loginLayer({
+                        reUrl: {
+                            PositionId: PositionId,
+                            EtpId: EtpId,
+                            operationName: 'collect',
+                            weiboLoginRediretUri: weiboLoginRediretUri,
+                            qqLoginRediretUri: qqLoginRediretUri,
+                            wechatLoginRediretUri: wechatLoginRediretUri
+                        },
+                        onLayerMask: function() {
+                            var operationName = 'collect',
+                                url = location.href;
+                            if (url.indexOf('?') !== -1) {
+                                location.href = location.href.split('?')[0] + '?operationName=collect';
+                            } else {
+                                location.href = location.href + '?operationName=collect';
+                            }
+                        }
+                    });
+                }
+            })
+            .on('click', '.fire-job.active', function() {
+                var _this = $(this);
+
+                function loadReason(arr) {
+                    var temp = '';
+                    $.each(arr, function(i, v) {
+                        if (i == 0) {
+                            temp += '<li class="active" data-id="' + v.Value + '">' + v.Text + '</li>'
+                        } else {
+                            temp += '<li data-id="' + v.Value + '">' + v.Text + '</li>'
+                        }
+                    });
+                    return temp;
+                }
+                if (getCookie("Login") && getCookie("Login").split(",")[3] == "Student") {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Job/CheckWillReportPos',
+                        beforeSend: function() {
+                            _this.removeClass('active');
+                        },
+                        data: {
+                            posId: PositionId
+                        },
+                        success: function(r) {
+                            _this.addClass('active');
+                            if (r.code == 0) {
+                                var template = function() {
+                                    return '<div class="report-position">\
+                                    <p><em>*</em>该职位存在什么问题</p>\
+                                    <ul>' + loadReason(r.positionReportReasonType) +
+                                        '</ul>\
+                                    <textarea class="report-cause" placeholder="举报描述..."></textarea>\
+                                    <div class="btn-sub">\
+                                        <span class="report-sub">确定</span>\
+                                        <span class="report-clear">取消</span>\
+                                    </div>\
+                                </div>'
+                                };
+                                $(this).layerAlertMask({
+                                    title: '举报职位',
+                                    closeIcon: true,
+                                    setContent: template,
+                                    width: '660',
+                                    height: '486',
+                                });
+                                $('.layer-alert-container').on('click', '.report-sub', function() {
+                                        //提交
+                                        var reasonType = $('.report-position').find('.active').attr('data-id'),
+                                            id = PositionId,
+                                            remark = $('.report-cause').val();
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '/Job/DoReport',
+                                            data: {
+                                                reasonType: reasonType,
+                                                id: id,
+                                                remark: remark
+                                            },
+                                            success: function(r) {
+                                                $('#layer-alert-content').find('i').trigger('click');
+                                                location.href = location.href;
+                                            }
+                                        });
+                                    })
+                                    .on('click', '.report-clear', function() {
+                                        $('#layer-alert-content').find('i').trigger('click');
+                                    })
+                                    .on('click', '.report-position li', function() {
+                                        if (!$(this).hasClass('active')) {
+                                            $(this).siblings().removeClass('active');
+                                            $(this).addClass('active');
+                                        }
+                                    });
+
+                            }
+                        }
+                    })
+                } else {
+                    _this.loginLayer({
+                        reUrl: {
+                            PositionId: PositionId,
+                            EtpId: EtpId,
+                            operationName: 'report',
+                            weiboLoginRediretUri: weiboLoginRediretUri,
+                            qqLoginRediretUri: qqLoginRediretUri,
+                            wechatLoginRediretUri: wechatLoginRediretUri
+                        },
+                        onLayerMask: function() {
+                            location.href = location.href;
+                        }
+                    });
+                }
+            })
+            //查看完成地图
+            .on('click', '.read-map', function() {
+                var mapTemplate = '<div class="map-container">\
+                                        <p class="map-title">地址：</p>\
+                                        <div id="mapDetails"></div>\
+                                        <div class="map-rg">\
+                                            <div class="rg-bus">\
+                                                <p>附近公交站</p>\
+                                                <ul id="map-bus"></ul>\
+                                            </div>\
+                                            <div class="rg-subway">\
+                                                <p>附近地铁站</p>\
+                                                <ul id="map-subway"></ul>\
+                                            </div>\
+                                        </div>\
+                                    </div>';
+                $(this).layerAlertMask({
+                    title: '公司地址及交通信息',
+                    closeIcon: true,
+                    setContent: mapTemplate,
+                    width: '800',
+                    height: '504',
+                });
+                var map = new BMap.Map("mapDetails");
+                var top_left_control = new BMap.ScaleControl({
+                    anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                }); // 左上角，添加比例尺
+                var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
+                var point = new BMap.Point(116.331398, 39.897445);
+                map.enableScrollWheelZoom(true);
+                map.addControl(top_left_control);
+                map.addControl(top_left_navigation);
+                // 创建地址解析器实例
+                var myGeo = new BMap.Geocoder();
+                // 将地址解析结果显示在地图上,并调整地图视野
+                myGeo.getPoint('', function(point) {
+                    if (point) {
+                        var marker = new BMap.Marker(point); // 创建标注
+                        map.addOverlay(marker);
+                        map.centerAndZoom(point, 16);
+                        var opts = {
+                            width: 200, // 信息窗口宽度
+                            height: 70, // 信息窗口高度
+                            title: "赛科工业科技开发（武汉）有限公司", // 信息窗口标题
+                            enableMessage: false //设置允许信息窗发送短息
+                        };
+                        var infoWindow = new BMap.InfoWindow("地址：", opts); // 创建信息窗口对象
+                        map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        marker.addEventListener("click", function() {
+                            map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        });
+                        var localF = new BMap.LocalSearch(map, {
+                            renderOptions: {
+                                map: map,
+                                panel: 'map-bus',
+                                selectFirstResult: false,
+                                autoViewport: false
+                            },
+                            pageCapacity: 50,
+                            onResultsHtmlSet: function(element) {
+                                $('#map-bus').mCustomScrollbar({
+                                    theme: 'minimal-dark'
+                                });
+                                $('.mCSB_container').find('div:first-child').css('border', 'none');
+                            }
+                        });
+                        localF.searchNearby('公交站', point, 500);
+                        var localS = new BMap.LocalSearch(map, {
+                            renderOptions: {
+                                map: map,
+                                panel: 'map-subway',
+                                selectFirstResult: false,
+                                autoViewport: false
+                            },
+                            pageCapacity: 50,
+                            onResultsHtmlSet: function() {
+                                $('#map-subway').mCustomScrollbar({
+                                    theme: 'minimal-dark'
+                                });
+                                $('.mCSB_container').find('div:first-child').css('border', 'none');
+                            }
+                        });
+                        localS.searchNearby('地铁站', point, 1000);
+                    } else {
+                        alert("您选择地址没有解析到结果!");
+                    }
+                }, '');
+            });
+        $('.related-footer').on('click', '.more span', function() {
+                var index = $('.footer-nav .active').index(),
+                    containerH = $('.nav-container' + index).height();
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $('.more-link').animate({
+                        'height': 42
+                    }, 300);
+                } else {
+                    $(this).addClass('active');
+                    $('.more-link').animate({
+                        'height': containerH
+                    }, 300);
+                }
+            })
+            .on('click', '.nav', function() {
+                var index = $(this).index();
+                if ($('.nav-container' + index).height() > 44) {
+                    $('.more-link').css({
+                        'height': 42
+                    });
+                    $('.more').find('span').removeClass('active').end().show();
+                } else {
+                    $('.more-link').css({
+                        'height': 42
+                    });
+                    $('.more').hide();
+                }
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.nav-container' + index).siblings().hide();
+                $('.nav-container' + index).show();
+            });
+        //登录信息
+        function getCookie(name) {
+            var strCookie = document.cookie;
+            var arrCookie = strCookie.split("; ");
+            for (var i = 0; i < arrCookie.length; i++) {
+                var arr = arrCookie[i].split("=");
+                if (arr[0] == name) {
+                    if (name == "Login") //登录信息单独加密
+                    {
+                        var loginInfo = utf8to16(base64decode(decodeURIComponent(arr[1])));
+                        return loginInfo;
+                    }
+                    return arr[1];
+                }
+            }
+            return "";
+        }
+        if (getCookie("Login") && getCookie("Login").split(",")[3] === "Student") {
+            var operationName = '';
+            if (operationName === 'apply') {
+                $('.apply-job.active').click();
+            } else if (operationName === 'follow') {
+                $('.pay-attention.follow').click();
+            } else if (operationName === 'collect') {
+                $('.collect-job.collect').click();
+            }
+        }
+    });
+</script>

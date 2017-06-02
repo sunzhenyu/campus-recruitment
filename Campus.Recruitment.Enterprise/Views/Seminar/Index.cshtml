@@ -1,0 +1,118 @@
+﻿@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "宣讲会";
+}
+
+<link rel="stylesheet" href="/content/static/zheyibu/static/css/dialog.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/showBox.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/dialog.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-v2.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-manage.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/global-corp.css">
+<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/init.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            validator: 'arale/validator/0.9.7/validator'
+        }
+    });
+</script>
+<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+
+<div class="container">
+    <div id="new-position-content">
+        <input name="__RequestVerificationToken" type="hidden" value="V-JhgCzWu77kjS0eASW2tgUkQrWDPl4jTpZNcZbk-LMzI9z0MiThX49GDYTeEAoel7AR0UEzHQ7oMqHg5z6BP0jhMkppjNb75R1js2vfs-81">
+        <div class="tab-panels">
+            <div class="sub-nav" style="border:none">
+                <a href="/xjh/createoredit" class="add-job">新建宣讲会</a>
+            </div>
+        </div>
+        <div class="wrapper-1000">
+            <div class="channel-bd">
+                <div id="J_PosMnger" class="channel-bd-wrap" style="min-height: 600px;">
+                    <table class="corp-tbl-1">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="40%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <thead>
+                            <tr class="tr-title">
+                                <th class="position">举办时间</th>
+                                <th class="resume">举办地点</th>
+                                <th class="resume">状态</th>
+                                <th class="resume">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="J_PosTbody">
+                            <tr data-rid="423268">
+                                <td>
+                                    2022-07-12 ( 星期二 )
+                                    <br><span>13:00-14:00</span>
+                                </td>
+                                <td style="text-align: center">
+                                    江汉大学
+                                    <br><span>J04 </span>
+                                </td>
+                                <td style="text-align: center">
+                                    <span style="color:black">发布中</span>
+                                    <br>
+                                </td>
+                                <td class="action" style="text-align: center">
+                                    <a href="http://www.zheyibu.com/xuanjianghui/423268.html" class="solo-action s-solo-action" target="_blank">预览</a>
+                                    <a href="/xjh/createoredit/423268" class="solo-action s-solo-action edit">编辑</a>
+                                    <a href="javascript:;" class="solo-action s-solo-action delete">删除</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="page-row tbl-page-row">
+                        <div class="page-bottom-r">
+                            <span class="page-cur">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/content/static/js/corp/showBox.js"></script>
+<script type="text/javascript">
+    $(".etp-header .nav-bar li").removeClass("current");
+    $(".etp-header .nav-bar li").eq(3).addClass("current");
+
+    $(".delete").click(function(e) {
+        var cfm = '<h2>确定删除该宣讲会吗？</h2>';
+        var url = 'application/markpush';
+        var rowid = $(this).parent().parent().attr("data-rid");
+        var data = {};
+        data.SeminarId = rowid;
+        data._Status = 0;
+        data.__RequestVerificationToken = $('input[name=__RequestVerificationToken]').val();
+        Showbo.Msg.confirm(cfm, function(btn) {
+            if (btn === 'yes') {
+                $.ajax({
+                    data: data,
+                    type: 'POST',
+                    url: '/XJH/DeleteXJH?type=delete',
+                    success: function(data) {
+                        if (data.code === 1) {
+                            window.location.reload();
+                        }
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+
+    })
+</script>

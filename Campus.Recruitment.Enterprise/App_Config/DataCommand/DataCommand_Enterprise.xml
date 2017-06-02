@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataCommands>
+  <DataCommand Name="Enterprise.RegisterTwoUpdate" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`enterprise`
+      SET
+      `name` = @name,
+      address = @address,
+      icon_logo = @icon_logo,
+      `show_industry` = @show_industry,
+      `scale` = @scale,
+      `mode` = @mode,
+      `show_city` = @show_city,
+      `city` = @city,
+      `web_site` = @web_site,
+      `contact_man` = @contact_man,
+      `contact_area_code` = @contact_area_code,
+      `contact_telephone` = @contact_telephone,
+      `contact_ext` = @contact_ext,
+      `contact_mobile` = @contact_mobile,
+      `state` = 1,
+      `update_id` = @update_id,
+      `update_at` = now()
+      WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@name" DbType="AnsiString"/>
+      <Param Name="@address" DbType="AnsiString"/>
+      <Param Name="@icon_logo" DbType="AnsiString"/>
+      <Param Name="@show_industry" DbType="AnsiString"/>
+      <Param Name="@scale" DbType="Int32"/>
+      <Param Name="@mode" DbType="Int32"/>
+      <Param Name="@show_city" DbType="AnsiString"/>
+      <Param Name="@city" DbType="AnsiString"/>
+      <Param Name="@web_site" DbType="AnsiString"/>
+      <Param Name="@contact_man" DbType="AnsiString"/>
+      <Param Name="@contact_area_code" DbType="AnsiString"/>
+      <Param Name="@contact_telephone" DbType="AnsiString"/>
+      <Param Name="@contact_ext" DbType="AnsiString"/>
+      <Param Name="@contact_mobile" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Enterprise.ChangePassword" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`enterprise`
+      SET
+      `password` = @password,
+      `password_salt` = @password_salt
+      WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@password" DbType="AnsiString"/>
+      <Param Name="@password_salt" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Enterprise.AccountSetting" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`enterprise`
+      SET
+      `email` = @email,
+      `contact_man` = @contact_man,
+      `contact_area_code` = @contact_area_code,
+      `contact_telephone` = @contact_telephone,
+      `contact_ext` = @contact_ext,
+      `contact_mobile` = @contact_mobile,
+      `state` = 1,
+      `update_id` = @update_id,
+      `update_at` = now()
+      WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@email" DbType="AnsiString"/>
+      <Param Name="@contact_man" DbType="AnsiString"/>
+      <Param Name="@contact_area_code" DbType="AnsiString"/>
+      <Param Name="@contact_telephone" DbType="AnsiString"/>
+      <Param Name="@contact_ext" DbType="AnsiString"/>
+      <Param Name="@contact_mobile" DbType="AnsiString"/>
+      <Param Name="@update_id" DbType="AnsiString"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+</DataCommands>

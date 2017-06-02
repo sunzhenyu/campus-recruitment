@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CE63308-A68C-4DEB-8548-31F097DE6B7B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Campus.Recruitment.Rss</RootNamespace>
+    <AssemblyName>Campus.Recruitment.Rss</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\admin\Scripts\Ueditor\net\upload\2015-12-14\1f55a4f7-39fd-4731-8a68-99cf8bf2c9ca.jpg" />
+    <Content Include="content\admin\Scripts\Ueditor\net\upload\2015-12-14\81f48d39-7bd1-44f7-8852-cf2ea9e77772.jpg" />
+    <Content Include="content\admin\Scripts\Ueditor\net\upload\2015-12-14\bf7c06be-bdab-41f8-bbb2-529cafe9b7e3.jpg" />
+    <Content Include="content\admin\Scripts\Ueditor\net\upload\2015-12-14\d6b30507-0f10-4176-afd2-4a4bc028f90c.jpg" />
+    <Content Include="content\admin\Scripts\Ueditor\net\upload\2017-05-05\17f2d9d2-b134-442f-9a64-cc0ac16667d0.png" />
+    <Content Include="content\static\css\base\base.css" />
+    <Content Include="content\static\css\corp\accont.css" />
+    <Content Include="content\static\css\corp\dialog.css" />
+    <Content Include="content\static\css\corp\etp-gb.css" />
+    <Content Include="content\static\css\corp\global-corp.css" />
+    <Content Include="content\static\css\corp\global-v3.css" />
+    <Content Include="content\static\css\corp\img\bg\loading.gif" />
+    <Content Include="content\static\css\corp\img\etp\zheyibu-etp.png" />
+    <Content Include="content\static\css\corp\img\etp\zheyibu-etp1.png" />
+    <Content Include="content\static\css\corp\img\icon\arr-d.png" />
+    <Content Include="content\static\css\corp\img\icon\corp-icons.png" />
+    <Content Include="content\static\css\corp\img\icon\corp-tags-ico.png" />
+    <Content Include="content\static\css\corp\img\icon\corp-warning-icon.png" />
+    <Content Include="content\static\css\corp\img\icon\duihao.png" />
+    <Content Include="content\static\css\corp\img\icon\fire-job.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-collect-l.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-collect-s.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-dialog-close.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-L-R.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-legend.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-list-select.png" />
+    <Content Include="content\static\css\corp\img\icon\icon-resume-operates.png" />
+    <Content Include="content\static\css\corp\img\icon\icon.png" />
+    <Content Include="content\static\css\corp\img\icon\iocn-legend-hover-1.png" />
+    <Content Include="content\static\css\corp\img\icon\jianli-search.png" />
+    <Content Include="content\static\css\corp\img\icon\master_icon.png" />
+    <Content Include="content\static\css\corp\img\icon\post-error-ioc.png" />
+    <Content Include="content\static\css\corp\img\icon\star.png" />
+    <Content Include="content\static\css\corp\img\icon\tips-box-close-hover.png" />
+    <Content Include="content\static\css\corp\img\icon\tips-box-close.png" />
+    <Content Include="content\static\css\corp\img\icon\tips-ioc.png" />
+    <Content Include="content\static\css\corp\position-manage.css" />
+    <Content Include="content\static\css\corp\position-v2.css" />
+    <Content Include="content\static\css\corp\profile.css" />
+    <Content Include="content\static\css\corp\register.css" />
+    <Content Include="content\static\css\corp\resume-manage.css" />
+    <Content Include="content\static\css\corp\resumeViewer.css" />
+    <Content Include="content\static\css\corp\showBox.css" />
+    <Content Include="content\static\css\html\demo\quickmark\jquery.qrcode.min.js" />
+    <Content Include="content\static\css\jq\jcrop\Jcrop.gif" />
+    <Content Include="content\static\css\jq\jcrop\jquery.Jcrop.min.css" />
+    <Content Include="content\static\css\zyb\img\bg\micro-video-resume.jpg" />
+    <Content Include="content\static\css\zyb\img\bg\myobj-zylx.png" />
+    <Content Include="content\static\css\zyb\img\bg\photo.png" />
+    <Content Include="content\static\css\zyb\img\bg\portrait-bg.png" />
+    <Content Include="content\static\css\zyb\img\btn\resume-file-btn-bg.png" />
+    <Content Include="content\static\css\zyb\img\icon\checkui.png" />
+    <Content Include="content\static\css\zyb\img\icon\dialog-close.png" />
+    <Content Include="content\static\css\zyb\img\icon\icon-nav-end.png" />
+    <Content Include="content\static\css\zyb\img\icon\icon-nav-start.png" />
+    <Content Include="content\static\css\zyb\img\icon\icon-player-btn.png" />
+    <Content Include="content\static\css\zyb\img\icon\loading.gif" />
+    <Content Include="content\static\css\zyb\img\icon\m-close.jpg" />
+    <Content Include="content\static\css\zyb\img\icon\nav-li-point.png" />
+    <Content Include="content\static\css\zyb\img\icon\nav-li-right.png" />
+    <Content Include="content\static\css\zyb\img\icon\new-resume-iocs.png" />
+    <Content Include="content\static\css\zyb\img\icon\popipt.png" />
+    <Content Include="content\static\css\zyb\img\icon\resume-video.png" />
+    <Content Include="content\static\css\zyb\img\icon\student-pic.png" />
+    <Content Include="content\static\css\zyb\img\icon\tips-box-close.png" />
+    <Content Include="content\static\css\zyb\img\icon\warning-icon.png" />
+    <Content Include="content\static\css\zyb\img\icon\wechat-notice.jpg" />
+    <Content Include="content\static\css\zyb\img\icon\wechat-notice2.jpg" />
+    <Content Include="content\static\css\zyb\resumeform\zyb-resume-form.css" />
+    <Content Include="content\static\css\zyb\zyb-apply-finished.css" />
+    <Content Include="content\static\css\zyb\zyb-new20150121.css" />
+    <Content Include="content\static\css\zyb\zyb-rec-job.css" />
+    <Content Include="content\static\css\zyb\zyb-resume-new.css" />
+    <Content Include="content\static\css\zyb\zyb-user.css" />
+    <Content Include="content\static\enterprise\css\activity\activity.css" />
+    <Content Include="content\static\enterprise\css\homepage\enter.css" />
+    <Content Include="content\static\enterprise\css\homepage\index.css" />
+    <Content Include="content\static\enterprise\css\lib\homepage_search.css" />
+    <Content Include="content\static\enterprise\css\lib\majorPicker.css" />
+    <Content Include="content\static\enterprise\css\resume\resumeDetails.css" />
+    <Content Include="content\static\enterprise\css\search\searchpage.css" />
+    <Content Include="content\static\enterprise\debug\css\account.css" />
+    <Content Include="content\static\enterprise\debug\css\base-info.css" />
+    <Content Include="content\static\enterprise\debug\css\corphome.css" />
+    <Content Include="content\static\enterprise\debug\css\dialog.css" />
+    <Content Include="content\static\enterprise\debug\css\form.css" />
+    <Content Include="content\static\enterprise\debug\css\style.css" />
+    <Content Include="content\static\enterprise\debug\img\ad_ctr.png" />
+    <Content Include="content\static\enterprise\debug\img\corp-dem.png" />
+    <Content Include="content\static\enterprise\debug\js\slider.js" />
+    <Content Include="content\static\enterprise\debug\js\topu.dialog.js" />
+    <Content Include="content\static\enterprise\images\background\part1-bg1.jpg" />
+    <Content Include="content\static\enterprise\images\background\part1-bg2.jpg" />
+    <Content Include="content\static\enterprise\images\background\part1-bg3.jpg" />
+    <Content Include="content\static\enterprise\images\background\part1-bg4.jpg" />
+    <Content Include="content\static\enterprise\images\background\part1-bg5.jpg" />
+    <Content Include="content\static\enterprise\images\icon\home-logo-light.jpg" />
+    <Content Include="content\static\enterprise\images\icon\home-search-icon.png" />
+    <Content Include="content\static\enterprise\images\icon\homepage-icon.png" />
+    <Content Include="content\static\enterprise\images\icon\homepage-icon1.png" />
+    <Content Include="content\static\enterprise\images\icon\keep-icon.png" />
+    <Content Include="content\static\enterprise\images\icon\zheyibu-etp.png" />
+    <Content Include="content\static\enterprise\images\icon\zheyibu-etp1.png" />
+    <Content Include="content\static\enterprise\js\lib\cycleBanner.js" />
+    <Content Include="content\static\enterprise\js\lib\homepage_search.js" />
+    <Content Include="content\static\enterprise\js\lib\majorPicker.js" />
+    <Content Include="content\static\enterprise\lib\components\form\form.js" />
+    <Content Include="content\static\enterprise\lib\components\form\uploader\webuploader.js" />
+    <Content Include="content\static\enterprise\static\img\account\fpwd-title-bg.png" />
+    <Content Include="content\static\enterprise\static\img\account\icon-success.png" />
+    <Content Include="content\static\enterprise\static\img\profile\auth.png" />
+    <Content Include="content\static\enterprise\static\img\register\reg-title-bg.png" />
+    <Content Include="content\static\html\demo\quickmark\jquery.qrcode.min.js" />
+    <Content Include="content\static\images\avatar\avatar-s-1.jpg" />
+    <Content Include="content\static\images\avatar\avatar-s-2.jpg" />
+    <Content Include="content\static\images\avatar\college-b.jpg" />
+    <Content Include="content\static\images\avatar\etp.jpg" />
+    <Content Include="content\static\images\avatar\fav-book.png" />
+    <Content Include="content\static\images\avatar\hr-invite.png" />
+    <Content Include="content\static\images\avatar\QR-code1.png" />
+    <Content Include="content\static\images\avatar\QR-code2.png" />
+    <Content Include="content\static\images\avatar\select-job.png" />
+    <Content Include="content\static\images\corp\nav-num-bg.png" />
+    <Content Include="content\static\images\VideoResume\conney-1.jpg" />
+    <Content Include="content\static\images\VideoResume\jay-1.jpg" />
+    <Content Include="content\static\images\VideoResume\tod-1.jpg" />
+    <Content Include="content\static\images\VideoResume\vupload_c2.gif" />
+    <Content Include="content\static\images\xyt\qi_bg2.jpg" />
+    <Content Include="content\static\js\corp\additional-methods.js" />
+    <Content Include="content\static\js\corp\corp-data.js" />
+    <Content Include="content\static\js\corp\dialog.js" />
+    <Content Include="content\static\js\corp\formui.js" />
+    <Content Include="content\static\js\corp\init.js" />
+    <Content Include="content\static\js\corp\jquery.from.3.49.0.js" />
+    <Content Include="content\static\js\corp\jquery.nicescroll.min.js" />
+    <Content Include="content\static\js\corp\pageCode.js" />
+    <Content Include="content\static\js\corp\position-manage.js" />
+    <Content Include="content\static\js\corp\publisher.js" />
+    <Content Include="content\static\js\corp\register.js" />
+    <Content Include="content\static\js\corp\resume-manage.js" />
+    <Content Include="content\static\js\corp\resumeViewer.js" />
+    <Content Include="content\static\js\corp\showBox.js" />
+    <Content Include="content\static\js\jquery\jquery\jquery-1.7.2.min.js" />
+    <Content Include="content\static\js\jquery\mvc\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="content\static\js\jquery\plugin\Pikaday\pikaday.css" />
+    <Content Include="content\static\js\jquery\plugin\Pikaday\pikaday.js" />
+    <Content Include="content\static\js\sea-modules\arale\base\1.1.1\base.js" />
+    <Content Include="content\static\js\sea-modules\arale\class\1.1.0\class.js" />
+    <Content Include="content\static\js\sea-modules\arale\dialog\1.2.3\dialog.js" />
+    <Content Include="content\static\js\sea-modules\arale\dialog\1.3.0\confirmbox.js" />
+    <Content Include="content\static\js\sea-modules\arale\dialog\1.3.0\dialog.js" />
+    <Content Include="content\static\js\sea-modules\arale\dialog\dialog.js" />
+    <Content Include="content\static\js\sea-modules\arale\events\1.1.0\events.js" />
+    <Content Include="content\static\js\sea-modules\arale\iframe-shim\1.0.2\iframe-shim.js" />
+    <Content Include="content\static\js\sea-modules\arale\overlay\1.1.3\mask.js" />
+    <Content Include="content\static\js\sea-modules\arale\overlay\1.1.3\overlay.js" />
+    <Content Include="content\static\js\sea-modules\arale\overlay\1.1.4\mask.js" />
+    <Content Include="content\static\js\sea-modules\arale\overlay\1.1.4\overlay.js" />
+    <Content Include="content\static\js\sea-modules\arale\position\1.0.1\position.js" />
+    <Content Include="content\static\js\sea-modules\arale\templatable\0.9.1\templatable.js" />
+    <Content Include="content\static\js\sea-modules\arale\templatable\0.9.2\templatable.js" />
+    <Content Include="content\static\js\sea-modules\arale\validator\0.9.7\validator.js" />
+    <Content Include="content\static\js\sea-modules\arale\widget\1.1.1\widget.js" />
+    <Content Include="content\static\js\sea-modules\corp\confirm\1.0.0\confirm.js" />
+    <Content Include="content\static\js\sea-modules\corp\dialog\dialog.js" />
+    <Content Include="content\static\js\sea-modules\corp\formUI\1.0.0\formui.js" />
+    <Content Include="content\static\js\sea-modules\corp\resumes\1.0.0\resumes.js" />
+    <Content Include="content\static\js\sea-modules\corp\schoolLayer\1.0.0\schoolfilterdata.js" />
+    <Content Include="content\static\js\sea-modules\corp\schoolLayer\1.0.1\schoollayer.js" />
+    <Content Include="content\static\js\sea-modules\gallery\handlebars\1.0.2\handlebars.js" />
+    <Content Include="content\static\js\sea-modules\gallery\handlebars\1.0.2\runtime.js" />
+    <Content Include="content\static\js\sea-modules\jquery\autocomplete\1.1.0\autocomplete.css" />
+    <Content Include="content\static\js\sea-modules\jquery\autocomplete\1.1.0\autocomplete.js" />
+    <Content Include="content\static\js\sea-modules\jquery\autocomplete\1.11.4\autoComplete.js" />
+    <Content Include="content\static\js\sea-modules\jquery\autocomplete\1.11.4\jquery-ui.css" />
+    <Content Include="content\static\js\sea-modules\jquery\form\3.49.0\form.js" />
+    <Content Include="content\static\js\sea-modules\jquery\jquery\1.7.2\jquery.js" />
+    <Content Include="content\static\js\sea-modules\jquery\lightbox\lightbox.js" />
+    <Content Include="content\static\js\sea-modules\jquery\lightbox\themes\default\images\jquery-lightbox-theme.png" />
+    <Content Include="content\static\js\sea-modules\jquery\lightbox\themes\default\images\loading.gif" />
+    <Content Include="content\static\js\sea-modules\jquery\lightbox\themes\default\jquery.lightbox.css" />
+    <Content Include="content\static\js\sea-modules\jquery\placeholder\1.0.0\placeholder.js" />
+    <Content Include="content\static\js\sea-modules\jquery\scity\1.0.0\scity.js" />
+    <Content Include="content\static\js\sea-modules\jquery\slimscroll\jquery.slimscroll.js" />
+    <Content Include="content\static\js\sea-modules\module\checkbox-ui\checkui.js" />
+    <Content Include="content\static\js\sea-modules\module\jqueryui\1.10.4\jqueryui.js" />
+    <Content Include="content\static\js\sea-modules\module\layer\1.0.3\dialog-data.js" />
+    <Content Include="content\static\js\sea-modules\module\layer\1.0.3\layer.js" />
+    <Content Include="content\static\js\sea-modules\module\layer\1.0.4\layer.js" />
+    <Content Include="content\static\js\sea-modules\module\layer\plugin\pick\1.0.3\layer-pick-com.js" />
+    <Content Include="content\static\js\sea-modules\module\layer\plugin\pick\1.0.3\layer-pick.js" />
+    <Content Include="content\static\js\sea-modules\module\schoolLayer\1.0.0\schoolfilterdata.js" />
+    <Content Include="content\static\js\sea-modules\module\selectui\selectui.js" />
+    <Content Include="content\static\js\sea-modules\module\topucdialog\1.1.5\topucdialog.css" />
+    <Content Include="content\static\js\sea-modules\module\topucdialog\1.1.5\topucdialog.js" />
+    <Content Include="content\static\js\sea-modules\module\topucdialog\1.1.5\topucdialogdata.js" />
+    <Content Include="content\static\js\sea-modules\seajs\seajs-style\1.0.2\seajs-style.js" />
+    <Content Include="content\static\js\sea-modules\seajs\seajs\2.1.1\sea.js" />
+    <Content Include="content\static\js\sea-modules\validate\jquery.validate.min.js" />
+    <Content Include="content\static\js\sea-modules\zyb\datePicker\DatePicker.js" />
+    <Content Include="content\static\js\sea-modules\zyb\datePicker\datePicker.new.js" />
+    <Content Include="content\static\js\sea-modules\zyb\popup\1.0.0\topu.dialog.js" />
+    <Content Include="content\static\js\sea-modules\zyb\prompt\1.0.0\prompt.js" />
+    <Content Include="content\static\js\sea-modules\zyb\resume\1.0.3\resume.js" />
+    <Content Include="content\static\js\webuploader\webuploader.css" />
+    <Content Include="content\static\js\webuploader\webuploader.min.js" />
+    <Content Include="content\static\js\zyb\job-details-update.js" />
+    <Content Include="content\static\js\zyb\navigation.js" />
+    <Content Include="content\static\lib\css\base\datepicker.css" />
+    <Content Include="content\static\lib\css\base\jquery-ui.min.css" />
+    <Content Include="content\static\lib\css\base\jquery.mCustomScrollbar.min.css" />
+    <Content Include="content\static\lib\css\base\loading.css" />
+    <Content Include="content\static\lib\css\normalize.css" />
+    <Content Include="content\static\lib\css\student\city-picker.css" />
+    <Content Include="content\static\lib\css\student\cityinit.css" />
+    <Content Include="content\static\lib\css\student\datePicker.css" />
+    <Content Include="content\static\lib\css\student\header-footer.css" />
+    <Content Include="content\static\lib\css\student\layerAlertMask.css" />
+    <Content Include="content\static\lib\css\student\login-layer.css" />
+    <Content Include="content\static\lib\img\loading.gif" />
+    <Content Include="content\static\lib\js\base\coding.js" />
+    <Content Include="content\static\lib\js\base\datepicker.js" />
+    <Content Include="content\static\lib\js\base\global.js" />
+    <Content Include="content\static\lib\js\base\jquery-1.11.3.min.js" />
+    <Content Include="content\static\lib\js\base\jquery-ui.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.autocomplete.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.bxslider.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.lazyload.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.mousewheel.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.qrcode.min.js" />
+    <Content Include="content\static\lib\js\base\jquery.validate.min.js" />
+    <Content Include="content\static\lib\js\base\loading.js" />
+    <Content Include="content\static\lib\js\base\transit.min.js" />
+    <Content Include="content\static\lib\js\base\uaredirect.min.js" />
+    <Content Include="content\static\lib\js\enterprise\js\jquery.slimscroll.min.js" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\calendar.js" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\skin\default\img.gif" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="content\static\lib\js\enterprise\js\My97DatePicker\WdatePicker.js" />
+    <Content Include="content\static\lib\js\student\city-picker.js" />
+    <Content Include="content\static\lib\js\student\cityinit.js" />
+    <Content Include="content\static\lib\js\student\datePicker.js" />
+    <Content Include="content\static\lib\js\student\downslide.js" />
+    <Content Include="content\static\lib\js\student\layerAlertMask.js" />
+    <Content Include="content\static\lib\js\student\login-layer.js" />
+    <Content Include="content\static\lib\js\student\shortcutMenu.js" />
+    <Content Include="content\static\student\css\about\index.css" />
+    <Content Include="content\static\student\css\advice\advice.css" />
+    <Content Include="content\static\student\css\advice\adviceDetails.css" />
+    <Content Include="content\static\student\css\company\hr.css" />
+    <Content Include="content\static\student\css\company\position.css" />
+    <Content Include="content\static\student\css\company\s-fb.css" />
+    <Content Include="content\static\student\css\index\homepage.css" />
+    <Content Include="content\static\student\css\landpage\userCenter.css" />
+    <Content Include="content\static\student\css\login\login.css" />
+    <Content Include="content\static\student\css\login\register.css" />
+    <Content Include="content\static\student\css\login\registerStep.css" />
+    <Content Include="content\static\student\css\profession\profession.css" />
+    <Content Include="content\static\student\css\searchJob\fulltime.css" />
+    <Content Include="content\static\student\css\searchJob\industry.css" />
+    <Content Include="content\static\student\css\searchJob\jobDetails.css" />
+    <Content Include="content\static\student\css\searchJob\searchJob.css" />
+    <Content Include="content\static\student\css\searchJob\uiSelect.css" />
+    <Content Include="content\static\student\css\usercenter\index.css" />
+    <Content Include="content\static\student\css\xuanjianghui\details.css" />
+    <Content Include="content\static\student\css\xuanjianghui\index.css" />
+    <Content Include="content\static\student\css\zhiyemao\index.css" />
+    <Content Include="content\static\student\images\article\fdc.png" />
+    <Content Include="content\static\student\images\article\homepage-default-logo.png" />
+    <Content Include="content\static\student\images\article\jsj.png" />
+    <Content Include="content\static\student\images\article\jy.png" />
+    <Content Include="content\static\student\images\article\kjjr.png" />
+    <Content Include="content\static\student\images\article\my.png" />
+    <Content Include="content\static\student\images\background\anchor_bg.png" />
+    <Content Include="content\static\student\images\background\B-1.jpg" />
+    <Content Include="content\static\student\images\background\B-2.jpg" />
+    <Content Include="content\static\student\images\background\B-3.jpg" />
+    <Content Include="content\static\student\images\background\B-4.jpg" />
+    <Content Include="content\static\student\images\background\contact.png" />
+    <Content Include="content\static\student\images\background\footer-banner.jpg" />
+    <Content Include="content\static\student\images\background\footer-rg-banner.png" />
+    <Content Include="content\static\student\images\background\homepage-banner-footer.jpg" />
+    <Content Include="content\static\student\images\background\left-footer-reg.jpg" />
+    <Content Include="content\static\student\images\background\lg-reg-bg.jpg" />
+    <Content Include="content\static\student\images\background\pageside.png" />
+    <Content Include="content\static\student\images\background\profession-banner.jpg" />
+    <Content Include="content\static\student\images\background\profession-footer-login.jpg" />
+    <Content Include="content\static\student\images\background\reg-banner.png" />
+    <Content Include="content\static\student\images\background\zheyibu-map.png" />
+    <Content Include="content\static\student\images\icon\404.png" />
+    <Content Include="content\static\student\images\icon\about-logo.png" />
+    <Content Include="content\static\student\images\icon\about-logo11.png" />
+    <Content Include="content\static\student\images\icon\advice-icon.png" />
+    <Content Include="content\static\student\images\icon\anchor-option-list.png" />
+    <Content Include="content\static\student\images\icon\collect-follow.png" />
+    <Content Include="content\static\student\images\icon\company-bg-icon.png" />
+    <Content Include="content\static\student\images\icon\email-mobile-icon.png" />
+    <Content Include="content\static\student\images\icon\feedback.png" />
+    <Content Include="content\static\student\images\icon\feedsuccess.png" />
+    <Content Include="content\static\student\images\icon\go-top.png" />
+    <Content Include="content\static\student\images\icon\homepage-icon-header.png" />
+    <Content Include="content\static\student\images\icon\homepage_icon.png" />
+    <Content Include="content\static\student\images\icon\homepage_icon1.png" />
+    <Content Include="content\static\student\images\icon\homepage_icon2.png" />
+    <Content Include="content\static\student\images\icon\hr-answer-reply.png" />
+    <Content Include="content\static\student\images\icon\icon-x.png" />
+    <Content Include="content\static\student\images\icon\item-icons.png" />
+    <Content Include="content\static\student\images\icon\job-details-dot.png" />
+    <Content Include="content\static\student\images\icon\job-details-icon.png" />
+    <Content Include="content\static\student\images\icon\job_wechat.png" />
+    <Content Include="content\static\student\images\icon\keys-success-tips.png" />
+    <Content Include="content\static\student\images\icon\layer-login-dialog.png" />
+    <Content Include="content\static\student\images\icon\layer-top-X.png" />
+    <Content Include="content\static\student\images\icon\life-pre-next.png" />
+    <Content Include="content\static\student\images\icon\line-icon.png" />
+    <Content Include="content\static\student\images\icon\login-register.png" />
+    <Content Include="content\static\student\images\icon\mobile-logo.png" />
+    <Content Include="content\static\student\images\icon\overlay_dot.png" />
+    <Content Include="content\static\student\images\icon\profession-dot-bg.png" />
+    <Content Include="content\static\student\images\icon\profession-icon.png" />
+    <Content Include="content\static\student\images\icon\qq-logo.png" />
+    <Content Include="content\static\student\images\icon\search-icon.png" />
+    <Content Include="content\static\student\images\icon\share.png" />
+    <Content Include="content\static\student\images\icon\userCenter.png" />
+    <Content Include="content\static\student\images\icon\webchat-logo.png" />
+    <Content Include="content\static\student\images\icon\xiaobu.png" />
+    <Content Include="content\static\student\images\icon\xinlang-logo.png" />
+    <Content Include="content\static\student\images\icon\xjh-bg-icon.png" />
+    <Content Include="content\static\student\images\icon\xjh-detail-title.png" />
+    <Content Include="content\static\student\images\icon\xjh-icon-logo.png" />
+    <Content Include="content\static\student\images\icon\xjh-search.png" />
+    <Content Include="content\static\student\images\icon\zheyibu-logo.png" />
+    <Content Include="content\static\student\js\company\company.js" />
+    <Content Include="content\static\student\js\homepage\homepage.js" />
+    <Content Include="content\static\student\js\searchJob\func.js" />
+    <Content Include="content\static\student\js\searchJob\industry.js" />
+    <Content Include="content\static\student\js\searchJob\searchJob.js" />
+    <Content Include="content\static\student\js\searchJob\uiSelect.js" />
+    <Content Include="content\static\zheyibu\components\baidu\baiducc.js" />
+    <Content Include="content\static\zheyibu\components\baidu\baiduee.js" />
+    <Content Include="content\static\zheyibu\components\cuplayer\images\swfobject.js" />
+    <Content Include="content\static\zheyibu\components\google\gtm.js" />
+    <Content Include="content\static\zheyibu\components\jQuery\jquery.min.js" />
+    <Content Include="content\static\zheyibu\components\jQuery\jquery.signalR-2.0.0.min.js" />
+    <Content Include="content\static\zheyibu\components\layer\layer-pick.js" />
+    <Content Include="content\static\zheyibu\components\layer\layer.js" />
+    <Content Include="content\static\zheyibu\components\mCustomScrollbar\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="content\static\zheyibu\components\mCustomScrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="content\static\zheyibu\components\selectui\selectui.js" />
+    <Content Include="content\static\zheyibu\components\validate\jquery.validate.min.js" />
+    <Content Include="content\static\zheyibu\static\css\blue-skin.css" />
+    <Content Include="content\static\zheyibu\static\css\common.css" />
+    <Content Include="content\static\zheyibu\static\css\DatePicker.new.css" />
+    <Content Include="content\static\zheyibu\static\css\dialog.css" />
+    <Content Include="content\static\zheyibu\static\css\global.css" />
+    <Content Include="content\static\zheyibu\static\css\layer.css" />
+    <Content Include="content\static\zheyibu\static\css\layer2.css" />
+    <Content Include="content\static\zheyibu\static\css\pop.css" />
+    <Content Include="content\static\zheyibu\static\css\selectui.css" />
+    <Content Include="content\static\zheyibu\static\img\icon\a-ok.png" />
+    <Content Include="content\static\zheyibu\static\img\icon\apply-success-zhiye.png" />
+    <Content Include="content\static\zheyibu\static\img\icon\fire-job.png" />
+    <Content Include="content\static\zheyibu\static\img\icon\icon-dialog-close.png" />
+    <Content Include="content\static\zheyibu\static\img\icon\icon-fromui-checkbox.png" />
+    <Content Include="content\static\zheyibu\static\js\coding.js" />
+    <Content Include="content\static\zheyibu\static\js\global.js" />
+    <Content Include="content\static\zheyibu\static\js\jquery.slimscroll.js" />
+    <Content Include="content\Upload\article\5655\thumb.jpg" />
+    <Content Include="content\Upload\article\5661\thumb.jpg" />
+    <Content Include="content\Upload\article\5662\thumb.jpg" />
+    <Content Include="content\Upload\article\5663\thumb.jpg" />
+    <Content Include="content\Upload\article\5664\thumb.jpg" />
+    <Content Include="content\Upload\article\5670\thumb.jpg" />
+    <Content Include="content\Upload\article\5671\thumb.jpg" />
+    <Content Include="content\Upload\article\5679\thumb.jpg" />
+    <Content Include="content\Upload\article\5680\thumb.jpg" />
+    <Content Include="content\Upload\article\5684\thumb.jpg" />
+    <Content Include="content\Upload\article\5685\thumb.jpg" />
+    <Content Include="content\Upload\article\5688\thumb.jpg" />
+    <Content Include="content\Upload\article\5689\thumb.jpg" />
+    <Content Include="content\Upload\article\5690\thumb.jpg" />
+    <Content Include="content\Upload\article\5693\thumb.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635791497111385395.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635791497252626012.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635890657327212542.png" />
+    <Content Include="content\Upload\CompanyRecommend\635890706390437638.png" />
+    <Content Include="content\Upload\CompanyRecommend\635932275724731850.png" />
+    <Content Include="content\Upload\CompanyRecommend\635956489343017840.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635963342326777086.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635963422771306584.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635963432195858357.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\635981491425593777.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636032263565023050.png" />
+    <Content Include="content\Upload\CompanyRecommend\636045489195559924.png" />
+    <Content Include="content\Upload\CompanyRecommend\636166121057963734.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636178552977810974.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636196690316138776.png" />
+    <Content Include="content\Upload\CompanyRecommend\636203567278210037.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636245914269671000.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636245915947453947.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636282883219275576.jpg" />
+    <Content Include="content\Upload\CompanyRecommend\636282884989722685.jpg" />
+    <Content Include="content\Upload\e\1070019\50x50.jpg" />
+    <Content Include="content\Upload\e\1087508\80x80.jpg" />
+    <Content Include="content\Upload\e\1258742\50x50.jpg" />
+    <Content Include="content\Upload\e\1266355\50x50.jpg" />
+    <Content Include="content\Upload\e\1269807\150x150.jpg" />
+    <Content Include="content\Upload\e\1301356\80x80.jpg" />
+    <Content Include="content\Upload\e\1320523\50x50.jpg" />
+    <Content Include="content\Upload\e\1330442\50x50.jpg" />
+    <Content Include="content\Upload\e\1330990\50x50.jpg" />
+    <Content Include="content\Upload\e\1330990\80x80.jpg" />
+    <Content Include="content\Upload\e\1341631\80x80.jpg" />
+    <Content Include="content\Upload\e\1343953\thumbnail.jpg" />
+    <Content Include="content\Upload\e\1358366\80x80.jpg" />
+    <Content Include="content\Upload\e\1361280\80x80.jpg" />
+    <Content Include="content\Upload\e\1362717\50x50.jpg" />
+    <Content Include="content\Upload\e\1362717\80x80.jpg" />
+    <Content Include="content\Upload\e\1364366\50x50.jpg" />
+    <Content Include="content\Upload\e\1389006\80x80.jpg" />
+    <Content Include="content\Upload\e\1398773\50x50.jpg" />
+    <Content Include="content\Upload\e\1398773\80x80.jpg" />
+    <Content Include="content\Upload\e\219096\80x80.jpg" />
+    <Content Include="content\Upload\e\222295\50x50.jpg" />
+    <Content Include="content\Upload\e\259278\50x50.jpg" />
+    <Content Include="content\Upload\e\355470\50x50.jpg" />
+    <Content Include="content\Upload\e\359515\50x50.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172345_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172424_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172657_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172721_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172755_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172903_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172917_740x483.JPG" />
+    <Content Include="content\Upload\e\359515\photo\20140929172932_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172944_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929172959_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929173109_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929173141_740x483.JPG" />
+    <Content Include="content\Upload\e\359515\photo\20140929174405_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174427_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174450_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174459_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174510_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174613_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174705_740x483.JPG" />
+    <Content Include="content\Upload\e\359515\photo\20140929174842_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929174908_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929175031_740x483.JPG" />
+    <Content Include="content\Upload\e\359515\photo\20140929183224_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140929183408_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140930092858_740x483.JPG" />
+    <Content Include="content\Upload\e\359515\photo\20140930093115_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140930093131_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20140930093137_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20141018094349_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20141018094357_740x483.jpg" />
+    <Content Include="content\Upload\e\359515\photo\20141018094412_740x483.JPG" />
+    <Content Include="content\Upload\e\359515\photo\20141018094439_740x483.jpg" />
+    <Content Include="content\Upload\e\626604\80x80.jpg" />
+    <Content Include="content\Upload\e\677779\150x150.jpg" />
+    <Content Include="content\Upload\e\786871\50x50.jpg" />
+    <Content Include="content\Upload\e\866255\50x50.jpg" />
+    <Content Include="content\Upload\e\878190\50x50.jpg" />
+    <Content Include="content\Upload\e\883095\150x150.jpg" />
+    <Content Include="content\Upload\e\886374\50x50.jpg" />
+    <Content Include="content\Upload\e\889561\150x150.jpg" />
+    <Content Include="content\Upload\e\889727\150x150.jpg" />
+    <Content Include="content\Upload\e\893089\150x150.jpg" />
+    <Content Include="content\Upload\e\902806\150x150.jpg" />
+    <Content Include="content\Upload\e\904974\80x80.jpg" />
+    <Content Include="content\Upload\e\925079\150x150.jpg" />
+    <Content Include="content\Upload\e\9f577d0c-177d-4ca5-b5a7-36af5855a60c\f736ac72-e5e8-46cc-98fc-a53f060b8d3f.jpg" />
+    <Content Include="content\Upload\e\c3b7dc78-d8cd-409f-8018-5c2b0fd05861\8c3f18a0-5d3d-4b37-9cc1-9cd19c0b223d.jpg" />
+    <Content Include="content\Upload\e\fc704c4b-ec46-4de6-a341-3577430373b0\79a03a9d-3154-456a-bb07-b1e494ac7542.png" />
+    <Content Include="content\Upload\s\101185\150x150.jpg" />
+    <Content Include="content\Upload\s\102280\150x150.jpg" />
+    <Content Include="content\Upload\s\128592\150x150.jpg" />
+    <Content Include="content\Upload\s\136526\lifephoto\2017050917183182313731_108xauto.jpg" />
+    <Content Include="content\Upload\s\136526\lifephoto\2017050917183182313731_150xauto.jpg" />
+    <Content Include="content\Upload\s\136526\lifephoto\2017050917183182313731_740xauto.jpg" />
+    <Content Include="content\Upload\s\136526\lifephoto\2017050917184019861641_108xauto.jpg" />
+    <Content Include="content\Upload\s\136526\lifephoto\2017050917184019861641_150xauto.jpg" />
+    <Content Include="content\Upload\s\136526\lifephoto\2017050917184019861641_740xauto.jpg" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\0a9f2e99-d097-44ec-9705-2481c9a93235.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\0c565de8-5455-4e44-8877-70da2139177e.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\164deaba-2af6-42b9-81bd-f4f3cd67164e.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\19e9e5ef-fa9b-4676-967c-adb3d03ddb0a.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\1ba9661b-e434-481c-bcc0-e140788f38c0.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\213d43c0-bdf5-4aff-aeb8-fecc8de15fe8.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\24046d74-65bb-48cc-9fb8-7d8c1bdd0523.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\24860cf4-7534-43b5-bd7b-30768a39b30a.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\24f76388-2a2a-4364-8d96-bca9b7ebe6f8.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\26275cad-1743-412e-a06d-187c0f0168f1.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\29a6d602-ea61-447a-bf1a-49480903f404.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\2eb28855-6a4b-41dc-bfa0-1e7a23ba7043.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\320c1754-8970-4304-b35c-0ef2916d1324.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\3572d4d7-b1c8-441c-b0f8-502f7c1e188c.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\3ca7bed1-5c84-4c81-b953-e55e5080fb4d.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\48084604-721e-43c3-925c-b0e49b69115b.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\4accd570-82fa-4881-8845-f0b4ad98d799.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\5a48b515-3eba-4a66-ab85-421f93caba87.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\5a6f740e-6a36-4aa4-b6cc-af69630f9d62.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\5e5682fe-7687-430b-aa6a-65366c10c426.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\65727d66-148f-4969-93e6-0cb46a51ef73.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\6711d120-66ce-4892-893c-60e7d6169b2e.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\70e30cef-849f-4f1e-aeda-6d9da273c129.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\71b013b9-84f3-49af-9c68-d04ff2a94f0e.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\74273696-4bdf-4174-909f-b57094ffe843.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\7863227d-8250-47f5-8b01-47436896eec1.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\80ba4769-81ab-4675-a091-0fa9dea16700.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\8c4aedd5-81bc-43fb-ad52-83726ea67ba1.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\9896d369-eb40-4dda-92eb-0021258f4715.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\9b31dfe8-eb63-4ec9-9ac0-2983a3c4cc7e.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\9ccec73f-8154-476e-8daf-f17c3a3da546.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\a2e2a015-7352-4714-8a55-4988415a146b.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\a9b11228-1302-4640-b0f6-e6142b278bd8.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\af5a113f-19e6-47ab-9c22-0627f73cd688.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\ba1be9f5-4a14-4da0-8183-bcbb6294931b.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\bddbee89-c844-4cd2-8939-fb857c2ab65a.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\be3a5448-a1bc-419d-9ece-d2d4a6eed4b4.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\bffe099e-ec71-4785-b36a-51022082e1a2.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\c6d9b30f-4f91-43d2-b2b8-217f2f2ec231.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\c99f869d-a875-4621-ab00-7d2b122484dd.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\cd19d665-83e9-452e-82c8-b8fd14a947ce.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\cf0bbe97-2f51-4d81-82b0-7f0683a0e76d.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\f01be96e-ffba-4df9-a5a0-4ade196d1db6.png" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\f7d63613-6a04-4ddd-a52f-f71fb7786bb0.png" />
+    <Content Include="packages.config" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\181af1f1-db4e-4e0a-aa99-22ba37e6b496" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\38eaf2de-8dca-416d-9e97-f9137351fc15" />
+    <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\ace0c6e8-cc2c-416c-b21b-86874cda5bce" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>17244</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17244/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,711 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "首页";
+}
+<link href="@AppSetting.Rss_Image/content/static/student/css/index/homepage.css?u=803b3116-a845-4a89-b542-dabcc0d49d82" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/lib/css/student/city-picker.css?u=10808311-6fac-4f46-be17-94f6fad3d7a1" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/lib/css/student/layerAlertMask.css?u=10808311-6fac-4f46-be17-94f6fad3d7a1" rel="stylesheet">
+<div class="homepage-nav">
+    <div class="search-banner">
+
+        <!-- Banner start -->
+        <div class="aft">
+            <ul id="slide">
+                <li style="position: absolute; display: list-item;"><a href="#" class="part1bg part1-bg0"></a></li>
+                <li style="position: absolute; display: none;"><a href="#" class="part1bg part1-bg1"></a></li>
+                <li style="position: absolute; display: none;"><a class="part1bg part1-bg2" href="http://enterprise.zheyibu.com/"></a></li>
+                <li style="position: absolute; display: none;"><a href="http://www.zheyibu.com/zhuanti/topuc" class="part1bg part1-bg3"></a></li>
+            </ul>
+            <div class="dot"><p><b class="cur"></b><b class=""></b><b class=""></b><b class=""></b></p></div>
+        </div>
+        <!-- Banner end -->
+        <!-- 搜索栏 start -->
+        <div id="homepage-search">
+            <div class="search-job">
+                <span id="search-job">全职</span>
+                <i></i>
+                <input type="hidden" name="J_Type" id="J_Type" value="1">
+            </div>
+
+            <div class="search-location">
+                <input id="cityName" class="cityName" value="" readonly="" placeholder="全国">
+                <input type="hidden" id="hCity" name="city" value="0">
+            </div>
+            <div class="s-key">
+                <input type="text" id="keys" placeholder="请输入职位或公司关键词">
+                <div class="s-btn">
+                    <i></i>
+                    <span style="font-weight:800">找工作</span>
+                </div>
+                <div class="hot-link clearfix dN">
+                    <div class="mb5">热搜职位:</div>
+                    <a href="javascript:;">管培生</a>
+                    <a href="javascript:;">会计</a>
+                    <a href="javascript:;">财务</a>
+                    <a href="javascript:;">金融</a>
+                    <a href="javascript:;">Java</a>
+                    <a href="javascript:;">测试</a>
+                    <a href="javascript:;">产品经理</a>
+                    <a href="javascript:;">运营</a>
+                    <a href="javascript:;">销售</a>
+                    <a href="javascript:;">编辑</a>
+                    <a href="javascript:;">人力资源</a>
+                    <a href="javascript:;">行政</a>
+
+                </div>
+            </div>
+            <ul class="s-job dN">
+                <li data-id="1">全职</li>
+                <li data-id="2">实习</li>
+            </ul>
+        </div>
+        <!-- 搜索栏 end -->
+    </div>
+</div>
+<div class="homepage-pro">
+    <div class="pro-container">
+        <!--按专业找职位 start -->
+        <div class="homepage-part1">
+            <div class="part1-container" style="height: 374px;">
+                <p class="part-header-item cf"><label data-items="item1">工学<span>/Engineering</span></label></p>
+                <ul class="specialty1 s-list">
+                    <li><a href="model/0" target="_blank" class="highlight">机械设计制造及其自动化</a></li>
+                    <li><a href="model/0" target="_blank">材料成型及控制工程</a></li>
+                    <li><a href="model/0" target="_blank">机械电子工程</a></li>
+                    <li><a href="model/0" target="_blank">工业设计</a></li>
+                    <li><a href="model/0" target="_blank">过程装备与控制工程</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">车辆工程</a></li>
+                    <li><a href="model/0" target="_blank">测控技术与仪器</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">材料科学与工程</a></li>
+                    <li><a href="model/0" target="_blank">高分子材料与工程</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">电气工程及其自动化</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">电子信息工程</a></li>
+                    <li><a href="model/0" target="_blank">电子科学与技术</a></li>
+                    <li><a href="model/0" target="_blank">通信工程</a></li>
+                    <li><a href="model/0" target="_blank">电子信息科学与技术</a></li>
+                    <li><a href="model/0" target="_blank">自动化</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">计算机科学与技术</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">软件工程</a></li>
+                    <li><a href="model/0" target="_blank">网络工程</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">土木工程</a></li>
+                    <li><a href="model/0" target="_blank">测绘工程</a></li>
+                    <li><a href="model/0" target="_blank">化学工程与工艺</a></li>
+                    <li><a href="model/0" target="_blank">制药工程</a></li>
+                    <li><a href="model/0" target="_blank">服装设计与工程</a></li>
+                    <li><a href="model/0" target="_blank">环境工程</a></li>
+                    <li><a href="model/0" target="_blank">环境科学</a></li>
+                    <li><a href="model/0" target="_blank">食品科学与工程</a></li>
+                    <li><a href="model/0" target="_blank">建筑学</a></li>
+                    <li><a href="model/0" target="_blank">城乡规划</a></li>
+                    <li><a href="model/0" target="_blank">安全工程</a></li>
+                    <li><a href="model/0" target="_blank">生物工程</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item2">文学<span>/Literature</span></label></p>
+                <ul class="specialty2 s-list">
+                    <li><a href="model/0" target="_blank" class="highlight">汉语言文学</a></li>
+                    <li><a href="model/0" target="_blank">汉语言</a></li>
+                    <li><a href="model/0" target="_blank">汉语国际教育</a></li>
+                    <li><a href="model/0" target="_blank">应用语言学</a></li>
+                    <li><a href="model/0" target="_blank" class="highlight">英语</a></li>
+                    <li><a href="model/0" target="_blank">俄语</a></li>
+                    <li><a href="model/0" target="_blank">德语</a></li>
+                    <li><a href="model/0" target="_blank">法语</a></li>
+                    <li><a href="model/0" target="_blank">西班牙语</a></li>
+                    <li><a href="model/0" target="_blank">阿拉伯语</a></li>
+                    <li><a href="model/0" target="_blank">日语</a></li>
+                    <li><a href="model/0" target="_blank">朝鲜语</a></li>
+                    <li><a href="model/0" target="_blank">泰语</a></li>
+                    <li><a href="model/0" target="_blank">越南语</a></li>
+                    <li><a href="model/0" target="_blank">葡萄牙语</a></li>
+                    <li><a href="model/0" target="_blank">意大利语</a></li>
+                    <li><a href="model/0" target="_blank">翻译</a></li>
+                    <li><a href="model/0" target="_blank">商务英语</a></li>
+                    <li><a href="model/0" target="_blank">新闻学</a></li>
+                    <li><a href="model/0" target="_blank">广告学</a></li>
+                    <li><a href="model/0" target="_blank">传播学</a></li>
+                    <li><a href="model/0" target="_blank">编辑出版学</a></li>
+                    <li><a href="model/0" target="_blank">数字出版</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item3">历史学<span>/History</span></label></p>
+                <ul class="specialty3 s-list">
+                    <li><a href="model/0" target="_blank">历史学</a></li>
+                    <li><a href="model/0" target="_blank">世界史</a></li>
+                    <li><a href="model/0" target="_blank">考古学</a></li>
+                    <li><a href="model/0" target="_blank">文物与博物馆学</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item4">理学<span>/Science</span></label></p>
+                <ul class="specialty4 s-list">
+                    <li><a href="model/0" target="_blank">数学与应用数学</a></li>
+                    <li><a href="model/0" target="_blank">信息与计算科学</a></li>
+                    <li><a href="model/0" target="_blank">物理学</a></li>
+                    <li><a href="model/0" target="_blank">应用物理学</a></li>
+                    <li><a href="model/0" target="_blank">核物理</a></li>
+                    <li><a href="model/0" target="_blank">声学</a></li>
+                    <li><a href="model/0" target="_blank">化学</a></li>
+                    <li><a href="model/0" target="_blank">应用化学</a></li>
+                    <li><a href="model/0" target="_blank">地理科学</a></li>
+                    <li><a href="model/0" target="_blank">大气科学</a></li>
+                    <li><a href="model/0" target="_blank">海洋科学</a></li>
+                    <li><a href="model/0" target="_blank">地质学</a></li>
+                    <li><a href="model/0" target="_blank">地球化学</a></li>
+                    <li><a href="model/0" target="_blank">生物科学</a></li>
+                    <li><a href="model/0" target="_blank">生物技术</a></li>
+                    <li><a href="model/0" target="_blank">生物信息学</a></li>
+                    <li><a href="model/0" target="_blank">生态学</a></li>
+                    <li><a href="model/0" target="_blank">心理学</a></li>
+                    <li><a href="model/0" target="_blank">应用心理学</a></li>
+                    <li><a href="model/0" target="_blank">统计学</a></li>
+                    <li><a href="model/0" target="_blank">应用统计学</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item5">医学<span>/Medical Science</span></label></p>
+                <ul class="specialty5 s-list">
+                    <li><a href="model/0" target="_blank">基础医学</a></li>
+                    <li><a href="model/0" target="_blank">临床医学</a></li>
+                    <li><a href="model/0" target="_blank">麻醉学</a></li>
+                    <li><a href="model/0" target="_blank">医学影像学</a></li>
+                    <li><a href="model/0" target="_blank">口腔医学</a></li>
+                    <li><a href="model/0" target="_blank">预防医学</a></li>
+                    <li><a href="model/0" target="_blank">卫生监督</a></li>
+                    <li><a href="model/0" target="_blank">中医学</a></li>
+                    <li><a href="model/0" target="_blank">针灸推拿学</a></li>
+                    <li><a href="model/0" target="_blank">中西医临床医学</a></li>
+                    <li><a href="model/0" target="_blank">药学</a></li>
+                    <li><a href="model/0" target="_blank">药物制剂</a></li>
+                    <li><a href="model/0" target="_blank">临床药学</a></li>
+                    <li><a href="model/0" target="_blank">药物分析</a></li>
+                    <li><a href="model/0" target="_blank">药物化学</a></li>
+                    <li><a href="model/0" target="_blank">法医学</a></li>
+                    <li><a href="model/0" target="_blank">医学检验技术</a></li>
+                    <li><a href="model/0" target="_blank">康复治疗学</a></li>
+                    <li><a href="model/0" target="_blank">护理学</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item6">农学<span>/Agronomy</span></label></p>
+                <ul class="specialty6 s-list">
+                    <li><a href="model/0" target="_blank">农学</a></li>
+                    <li><a href="model/0" target="_blank">园艺</a></li>
+                    <li><a href="model/0" target="_blank">植物保护</a></li>
+                    <li><a href="model/0" target="_blank">茶学</a></li>
+                    <li><a href="model/0" target="_blank">应用生物科学</a></li>
+                    <li><a href="model/0" target="_blank">农业资源与环境</a></li>
+                    <li><a href="model/0" target="_blank">动物科学</a></li>
+                    <li><a href="model/0" target="_blank">动物医学</a></li>
+                    <li><a href="model/0" target="_blank">林学</a></li>
+                    <li><a href="model/0" target="_blank">园林</a></li>
+                    <li><a href="model/0" target="_blank">森林保护</a></li>
+                    <li><a href="model/0" target="_blank">水产养殖学</a></li>
+                    <li><a href="model/0" target="_blank">草业科学</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item7">教育学<span>/Education</span></label></p>
+                <ul class="specialty7 s-list">
+                    <li><a href="model/0" target="_blank">教育学</a></li>
+                    <li><a href="model/0" target="_blank">科学教育</a></li>
+                    <li><a href="model/0" target="_blank">教育技术学</a></li>
+                    <li><a href="model/0" target="_blank">艺术教育</a></li>
+                    <li><a href="model/0" target="_blank">学前教育</a></li>
+                    <li><a href="model/0" target="_blank">小学教育</a></li>
+                    <li><a href="model/0" target="_blank">特殊教育</a></li>
+                    <li><a href="model/0" target="_blank">体育教育</a></li>
+                    <li><a href="model/0" target="_blank">运动训练</a></li>
+                    <li><a href="model/0" target="_blank">运动人体科学</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item8">艺术学<span>/Art</span></label></p>
+                <ul class="specialty8 s-list">
+                    <li><a href="model/0" target="_blank">音乐表演</a></li>
+                    <li><a href="model/0" target="_blank">音乐学</a></li>
+                    <li><a href="model/0" target="_blank">舞蹈表演</a></li>
+                    <li><a href="model/0" target="_blank">舞蹈学</a></li>
+                    <li><a href="model/0" target="_blank">表演</a></li>
+                    <li><a href="/mp/0-0-0-0-guangbodianshibiandao/" target="_blank">广播电视编导</a></li>
+                    <li><a href="/mp/0-0-0-0-boyinyuzhuchiyishu/" target="_blank">播音与主持艺术</a></li>
+                    <li><a href="/mp/0-0-0-0-donghua/" target="_blank">动画</a></li>
+                    <li><a href="/mp/0-0-0-0-meishuxue/" target="_blank">美术学</a></li>
+                    <li><a href="/mp/0-0-0-0-huihua/" target="_blank">绘画</a></li>
+                    <li><a href="/mp/0-0-0-0-diaosu/" target="_blank">雕塑</a></li>
+                    <li><a href="/mp/0-0-0-0-sheying/" target="_blank">摄影</a></li>
+                    <li><a href="/mp/0-0-0-0-shijuechuandasheji/" target="_blank">视觉传达设计</a></li>
+                    <li><a href="/mp/0-0-0-0-huanjingsheji/" target="_blank">环境设计</a></li>
+                    <li><a href="/mp/0-0-0-0-fuzhuangyufushisheji/" target="_blank">服装与服饰设计</a></li>
+                    <li><a href="/mp/0-0-0-0-gongyimeishu/" target="_blank">工艺美术</a></li>
+                    <li><a href="/mp/0-0-0-0-shuzimeitiyishu/" target="_blank">数字媒体艺术</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item9">法学<span>/Law</span></label></p>
+                <ul class="specialty9 s-list">
+                    <li><a href="/mp/0-0-0-0-faxue/" target="_blank" class="highlight">法学</a></li>
+                    <li><a href="/mp/0-0-0-0-zhishichanquan/" target="_blank">知识产权</a></li>
+                    <li><a href="/mp/0-0-0-0-zhengzhixueyuxingzhengxue/" target="_blank">政治学与行政学</a></li>
+                    <li><a href="/mp/0-0-0-0-guojizhengzhi/" target="_blank">国际政治</a></li>
+                    <li><a href="/mp/0-0-0-0-shehuixue/" target="_blank">社会学</a></li>
+                    <li><a href="/mp/0-0-0-0-shehuigongzuo/" target="_blank">社会工作</a></li>
+                    <li><a href="/mp/0-0-0-0-minzuxue/" target="_blank">民族学</a></li>
+                    <li><a href="/mp/0-0-0-0-kexueshehuizhuyi/" target="_blank">科学社会主义</a></li>
+                    <li><a href="/mp/0-0-0-0-sixiangzhengzhijiaoyu/" target="_blank">思想政治教育</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item10">哲学<span>/Philosophy</span></label></p>
+                <ul class="specialty10 s-list">
+                    <li><a href="/mp/0-0-0-0-zhexue/" target="_blank">哲学</a></li>
+                    <li><a href="/mp/0-0-0-0-luojixue/" target="_blank">逻辑学</a></li>
+                    <li><a href="/mp/0-0-0-0-zongjiaoxue/" target="_blank">宗教学</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item11">管理学<span>/Management</span></label></p>
+                <ul class="specialty11 s-list">
+                    <li><a href="/mp/0-0-0-0-xinxiguanliyuxinxixitong/" target="_blank" class="highlight">信息管理与信息系统</a></li>
+                    <li><a href="/mp/0-0-0-0-gongchengguanli/" target="_blank">工程管理</a></li>
+                    <li><a href="/mp/0-0-0-0-gongchengzaojia/" target="_blank">工程造价</a></li>
+                    <li><a href="/mp/0-0-0-0-gongshangguanli/" target="_blank" class="highlight">工商管理</a></li>
+                    <li><a href="/mp/0-0-0-0-shichangyingxiao/" target="_blank" class="highlight">市场营销</a></li>
+                    <li><a href="/mp/0-0-0-0-huijixue/" target="_blank" class="highlight">会计学</a></li>
+                    <li><a href="/mp/0-0-0-0-caiwuguanli/" target="_blank" class="highlight">财务管理</a></li>
+                    <li><a href="/mp/0-0-0-0-guojishangwu/" target="_blank">国际商务</a></li>
+                    <li><a href="/mp/0-0-0-0-renliziyuanguanli/" target="_blank" class="highlight">人力资源管理</a></li>
+                    <li><a href="/mp/0-0-0-0-shenjixue/" target="_blank">审计学</a></li>
+                    <li><a href="/mp/0-0-0-0-zichanpinggu/" target="_blank">资产评估</a></li>
+                    <li><a href="/mp/0-0-0-0-wuyeguanli/" target="_blank">物业管理</a></li>
+                    <li><a href="/mp/0-0-0-0-wenhuachanyeguanli/" target="_blank">文化产业管理</a></li>
+                    <li><a href="/mp/0-0-0-0-laodongguanxi/" target="_blank">劳动关系</a></li>
+                    <li><a href="/mp/0-0-0-0-gonggongshiyeguanli/" target="_blank">公共事业管理</a></li>
+                    <li><a href="/mp/0-0-0-0-xingzhengguanli/" target="_blank">行政管理</a></li>
+                    <li><a href="/mp/0-0-0-0-laodongyushehuibaozhang/" target="_blank">劳动与社会保障</a></li>
+                    <li><a href="/mp/0-0-0-0-tudiziyuanguanli/" target="_blank">土地资源管理</a></li>
+                    <li><a href="/mp/0-0-0-0-chengshiguanli/" target="_blank">城市管理</a></li>
+                    <li><a href="/mp/0-0-0-0-jiaotongguanli/" target="_blank">交通管理</a></li>
+                    <li><a href="/mp/0-0-0-0-tushuguanxue/" target="_blank">图书馆学</a></li>
+                    <li><a href="/mp/0-0-0-0-danganxue/" target="_blank">档案学</a></li>
+                    <li><a href="/mp/0-0-0-0-xinxiziyuanguanli/" target="_blank">信息资源管理</a></li>
+                    <li><a href="/mp/0-0-0-0-wuliuguanli/" target="_blank">物流管理</a></li>
+                    <li><a href="/mp/0-0-0-0-wuliugongcheng/" target="_blank">物流工程</a></li>
+                    <li><a href="/mp/0-0-0-0-gongyegongcheng/" target="_blank">工业工程</a></li>
+                    <li><a href="/mp/0-0-0-0-dianzishangwu/" target="_blank">电子商务</a></li>
+                    <li><a href="/mp/0-0-0-0-lvyouguanli/" target="_blank">旅游管理</a></li>
+                    <li><a href="/mp/0-0-0-0-jiudianguanli/" target="_blank">酒店管理</a></li>
+                </ul>
+                <p class="part-header-item cf"><label data-items="item4">经济学<span>/Economics</span></label></p>
+                <ul class="specialty12 s-list">
+                    <li><a href="/mp/0-0-0-0-jingjixue/" target="_blank" class="highlight">经济学</a></li>
+                    <li><a href="/mp/0-0-0-0-jingjitongjixue/" target="_blank">经济统计学</a></li>
+                    <li><a href="/mp/0-0-0-0-caizhengxue/" target="_blank">财政学</a></li>
+                    <li><a href="/mp/0-0-0-0-shuishouxue/" target="_blank">税收学</a></li>
+                    <li><a href="/mp/0-0-0-0-jinrongxue/" target="_blank" class="highlight">金融学</a></li>
+                    <li><a href="/mp/0-0-0-0-jinronggongcheng/" target="_blank">金融工程</a></li>
+                    <li><a href="/mp/0-0-0-0-baoxianxue/" target="_blank">保险学</a></li>
+                    <li><a href="/mp/0-0-0-0-touzixue/" target="_blank">投资学</a></li>
+                    <li><a href="/mp/0-0-0-0-jinrongshuxue/" target="_blank">金融数学</a></li>
+                    <li><a href="/mp/0-0-0-0-xinyongguanli/" target="_blank">信用管理</a></li>
+                    <li><a href="/mp/0-0-0-0-guojijingjiyumaoyi/" target="_blank" class="highlight">国际经济与贸易</a></li>
+                    <li><a href="/mp/0-0-0-0-maoyijingji/" target="_blank">贸易经济</a></li>
+                </ul>
+            </div>
+            <div class="read-more"><span>查看全部专业</span><i></i></div>
+        </div>
+        <!--按专业找职位 end -->
+    </div>
+</div>
+<div class="company-list">
+    <div class="homepage-container">
+        <!-- 校园招聘推荐企业 start -->
+        <div class="homepage-part2">
+            <p class="part-header">2017校园招聘推荐企业@*<a href="/" target="_blank"><span class="part2-more">查看更多&gt;&gt;</span></a>*@</p>
+            <ul class="part2-list">
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636282884989722685.jpg" class="lazy" alt="海南生态软件园" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636282884989722685.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>海南生态软件园</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">央企旗下一家专业科技园区开发管理公司</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[海口] 产业研究</p></a>
+                        <a href="/job/0" target="_blank"><p>[海口] 人力资源助理</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636282883219275576.jpg" class="lazy" alt="北洋集团" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636282883219275576.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>北洋集团</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">集科研、生产、销售、投资于一体的综合性国有控股集团</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[威海] 项目、资质申报专员</p></a>
+                        <a href="/job/0" target="_blank"><p>[威海] 党建、纪检专员</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636245915947453947.jpg" class="lazy" alt="海信家电" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636245915947453947.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>海信家电</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">隶属于海信集团，以海信厨卫产品为主的生产、销售、研发一体的企业</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[顺德] 出口产品研发工程师</p></a>
+                        <a href="/job/0" target="_blank"><p>[青岛] 厨电产品研发工程师（流体、风噪）</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635963422771306584.jpg" class="lazy" alt="北京康美特" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635963422771306584.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>北京康美特</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">专注于新材料领域的国家级高新技术企业</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] 有机硅研发</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] 研发工程师助理（应届实习生）</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636045489195559924.png" class="lazy" alt="深圳思凯微" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636045489195559924.png" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>深圳思凯微</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">专业的数字电视广播芯片和卫星导航芯片研发的高新技术企业</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[深圳] 卫星导航算法工程师</p></a>
+                        <a href="/job/0" target="_blank"><p>[深圳] 硬件工程师</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635956489343017840.jpg" class="lazy" alt="优克锡企业管理" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635956489343017840.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>优克锡企业管理</span>
+                        </div>
+                    </a>
+                    <p class="com-summary">优生活 优工作——遇见优克锡,遇见最优的自己</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[广州] 招聘专员</p></a>
+                        <a href="/job/0" target="_blank"><p>[广州] 管理培训生</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636032263565023050.png" class="lazy" alt="人民网" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636032263565023050.png" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>人民网</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">人民日报社控股的上市公司，国际互联网上最大的综合性网络媒体之一</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] 实习UI设计师</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] 英文实习编辑</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636245914269671000.jpg" class="lazy" alt="碧桂园物业" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636245914269671000.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>碧桂园物业</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">国家一级资质，碧桂园集团旗下的四大业务板块之一</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[佛山] 市场投拓专员/助理</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635932275724731850.png" class="lazy" alt="ezbuy" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635932275724731850.png" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>ezbuy</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">来自新加坡，最大的东南亚跨境电商平台</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[上海] 物流专员</p></a>
+                        <a href="/job/0" target="_blank"><p>[东莞] 采购验货专员</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636178552977810974.jpg" class="lazy" alt="都赛" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636178552977810974.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>都赛</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">全球性的商业社群平台和信息提供商</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[上海] 项目开发助理</p></a>
+                        <a href="/job/0" target="_blank"><p>[上海] 海外销售代表</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635963432195858357.jpg" class="lazy" alt="微店" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635963432195858357.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>微店</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">致力于移动互联网购物领域的全球领先电商平台</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] Android开发工程师</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] Java开发工程师</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636196690316138776.png" class="lazy" alt="帆软软件" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636196690316138776.png" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>帆软软件</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">国内商业智能软件领导厂商</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[无锡] 产品运营</p></a>
+                        <a href="/job/0" target="_blank"><p>[南京] 交互设计师</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635981491425593777.jpg" class="lazy" alt="微宏动力系统" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635981491425593777.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>微宏动力系统</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">全球电池系统研发、设计及生产的领导者</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[上海] 技术支持工程师</p></a>
+                        <a href="/job/0" target="_blank"><p>[湖州] 售后维护技术员</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636203567278210037.jpg" class="lazy" alt="培高连锁" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636203567278210037.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>培高连锁</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">供应链整合+移动支付+现代物流+电子商务+媒体传播</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] 人事专员/人事助理（包食宿）</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] 包装设计（包食宿）</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635963342326777086.jpg" class="lazy" alt="涂鸦移动" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635963342326777086.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>涂鸦移动</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">专注Android平台的世界级移动互联网游戏公司</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] 3D游戏美术设计师</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] 人力资源实习生</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635890706390437638.png" class="lazy" alt="韩都衣舍" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635890706390437638.png" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>韩都衣舍</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">中国最大的互联网时尚品牌运营集团</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[济南] 服装设计</p></a>
+                        <a href="/job/0" target="_blank"><p>[济南] 文案策划</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635890657327212542.png" class="lazy" alt="途高科技" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635890657327212542.png" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>途高科技</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">全国领先家居领域电子商务平台</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[杭州] 管理培训生</p></a>
+                        <a href="/job/0" target="_blank"><p>[杭州] Android开发工程师</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635791497252626012.jpg" class="lazy" alt="新起点校园招聘网" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635791497252626012.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>新起点校园招聘网</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">专注于大学生求职的校园招聘网站</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[济南] 管理培训生</p></a>
+                        <a href="/job/0" target="_blank"><p>[济南] 校园发展专员（网站运营）</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635791497111385395.jpg" class="lazy" alt="拓优顾问" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/635791497111385395.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>拓优顾问</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">拓优就是猎头，国内最早成立的猎头公司之一</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] 校园推广大使/校园发展专员</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] BD Specialist /大客户销售</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+                <li class="appear">
+                    <a href="enterprise/0" target="_blank">
+                        <img src="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636166121057963734.jpg" class="lazy" alt="品驰" data-original="@AppSetting.Rss_Image/content/Upload/CompanyRecommend/636166121057963734.jpg" width="140" height="68" style="display: inline;">
+                        <div class="part2-listHeader">
+                            <span>品驰</span>
+                            <i title="新起点认证企业"></i>
+                        </div>
+                    </a>
+                    <p class="com-summary">启博美好生活</p>
+                    <div class="delay-list">
+                        <a href="/job/0" target="_blank"><p>[北京] 嵌入软件研发工程师</p></a>
+                        <a href="/job/0" target="_blank"><p>[北京] ios开发工程师</p></a>
+                    </div>
+                    <a class="position-more" href="/enterprise/0/job" target="_blank">查看全部职位</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 校园招聘推荐企业 end -->
+    </div>
+</div>
+<!-- Footer Banner start -->
+<!--登录前-->
+<div class="homepage-part3 homepage-part-scroll">
+    <a href="/account/register/"></a>
+</div>
+
+<!-- Footer Banner end -->
+@*<div class="link-friend">
+    <div class="homepage-part4">
+        <p>常用链接</p>
+        <ul class="link-part1">
+            <li><a href="http://job.zheyibu.com/" target="_blank">职位排行榜</a></li>
+            <li><a href="/quanzhi/" target="_blank">找工作</a></li>
+            <li><a href="http://function.zheyibu.com/" target="_blank">职能职位</a></li>
+            <li><a href="/xuanjianghui/" target="_blank">宣讲会</a></li>
+
+            <li><a href="/shixi/" target="_blank">找实习</a></li>
+            <li><a href="/article/" target="_blank">求职指导</a></li>
+            <li><a href="/beijing/" target="_blank">北京校园招聘</a></li>
+            <li><a href="/shanghai/" target="_blank">上海校园招聘</a></li>
+            <li class="iClick"></li>
+        </ul>
+        <ul class="link-part2">
+            <li><a href="/guangzhou/" target="_blank">广州校园招聘</a></li>
+            <li><a href="/shenzhen/" target="_blank">深圳校园招聘</a></li>
+            <li><a href="/xian/" target="_blank">西安校园招聘</a></li>
+            <li><a href="/qiye/a/" target="_blank">企业</a></li>
+            <li><a href="http://enterprise.zheyibu.com/hrshare" target="_blank">校园招聘攻略</a></li>
+            <li><a href="http://www.zheyibu.com/zhuanye/" target="_blank">专业解析</a></li>
+            <li><a href="http://www.zheyibu.com/gsid278350/" target="_blank">公司问答</a></li>
+        </ul>
+        <p>合作伙伴</p>
+        <ul class="link-part3">
+            <li><a href="http://www.topuc.com/" target="_blank">Top猎头公司</a></li>
+            <li><a href="http://cs.1010jz.com " target="_blank">长沙兼职网</a></li>
+            <li><a href="http://hengyang.offcn.com/ " target="_blank">衡阳公务员考试网</a></li>
+            <li><a href="http://www.51msf.com/" target="_blank">码上返</a></li>
+            <li><a href="http://www.loyaltynt.com/" target="_blank">上海仁新网络</a></li>
+            <li><a href="http://www.liaoshenrc.com/" target="_blank">辽宁人才网</a></li>
+            <li><a href="http://www.huaxirc.com/" target="_blank">四川招聘网</a></li>
+            <li><a href="http://www.yixue99.com/ " target="_blank">医疗卫生人才网</a></li>
+            <li><a href="http://www.guangdongrc.com" target="_blank">广东人才网</a></li>
+            <li class="iClick"></li>
+        </ul>
+        <ul class="link-part4">
+            <li><a href="http://www.yundianrc.com" target="_blank">云南人才网</a></li>
+            <li><a href="http://zz.xiaoxiangrc.com/" target="_blank">株洲招聘网</a></li>
+            <li><a href="http://www.doorhr.com/" target="_blank">门业人才网</a></li>
+            <li><a href="http://www.xszrcw.com" target="_blank">苏州人才网</a></li>
+            <li><a href="http://www.zqrsrc.com" target="_blank">章丘招聘</a></li>
+            <li><a href="http://www.pigerencai.com" target="_blank">皮革人才网</a></li>
+            <li><a href="http://www.mcmqyc.com" target="_blank">幕墙招聘网</a></li>
+            <li><a href="http://news.cfw.cn" target="_blank">服装新闻网</a></li>
+            <li><a href="http://shanghai.138job.com/" target="_blank">上海美容人才网</a></li>
+            <li><a href="http://www.huapinwang.com" target="_blank">合肥人才网</a></li>
+            <li><a href="http://www.lprcw.com/" target="_blank">梁平人才网</a></li>
+            <li><a href="http://www.jiudianzhaopin.com/ " target="_blank">中国酒店招聘网</a></li>
+            <li><a href="http://xuancheng.offcn.com/" target="_blank">宣城人事考试</a></li>
+            <li><a href="http://career-english.yjbys.com" target="_blank">职场英语</a></li>
+            <li><a href="http://www.0598rc.com" target="_blank">三明人才网</a></li>
+            <li><a href="http://www.pzsns.com" target="_blank">邳州招聘网</a></li>
+            <li><a href="http://www.nnjob.com" target="_blank">南宁人才网</a></li>
+            <li><a href="http://www.chinahr.com/wuxi/" target="_blank">无锡招聘</a></li>
+            <li><a href="http://www.hr0766.com" target="_blank">云浮招聘网</a></li>
+            <li><a href="http://www.0902rc.com" target="_blank">哈密英才网</a></li>
+            <li><a href="http://www.36zm.com/" target="_blank">中国照明人才网</a></li>
+            <li><a href="http://www.114hr.net" target="_blank">河南人才网</a></li>
+            <li><a href="http://www.jilinzhaopin.com" target="_blank">中易招聘网</a></li>
+            <li><a href="http://www.medrc.net/" target="_blank">医疗人才网</a></li>
+            <li><a href="http://www.011job.com/" target="_blank">阜阳人事人才网</a></li>
+            <li><a href="http://www.qyjob.com.cn " target="_blank">沁阳招聘</a></li>
+            <li><a href="http://www.mqzgz.cn" target="_blank">民权招聘</a></li>
+            <li><a href="http://www.job768.com/" target="_blank">辉煌招聘</a></li>
+            <li><a href="http://hbjob.bjx.com.cn/" target="_blank">环保招聘</a></li>
+            <li><a href="http://www.job5156.com/hengyang/" target="_blank">衡阳招聘网</a></li>
+            <li><a href="http://www.best73.com" target="_blank">优质企商网</a></li>
+            <li><a href="http://www.job2299.com" target="_blank">监理人才网</a></li>
+            <li><a href="http://www.hrrcw.com" target="_blank">怀柔人才网</a></li>
+            <li><a href="http://www.51zhucai.com" target="_blank">筑才人才网</a></li>
+            <li><a href="http://www.geren-jianli.org" target="_blank">简历模板</a></li>
+            <li><a href="http://www.yzzp.com" target="_blank">邯郸人才网</a></li>
+            <li><a href="http://www.job02.cn" target="_blank">临安人才网</a></li>
+            <li><a href="http://www.hr0759.com/ " target="_blank">湛江招聘网</a></li>
+            <li><a href="http://www.zhangshushi.com" target="_blank">樟树人才网</a></li>
+            <li><a href="http://www.133jz.com" target="_blank">兼职网</a></li>
+            <li><a href="http://www.ssjzw.com" target="_blank">兼职网</a></li>
+            <li><a href="http://www.nnzp.com/" target="_blank">南宁招聘网</a></li>
+        </ul>
+    </div>
+</div>*@
+
+
+<script>
+    $(".header-list .list-item").removeClass("current");
+    $(".header-list .list-item").eq(0).addClass("current");
+</script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/student/city-picker.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/uaredirect.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.lazyload.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/student/js/homepage/homepage.js"></script>

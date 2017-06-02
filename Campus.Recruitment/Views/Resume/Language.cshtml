@@ -1,0 +1,272 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerLanguage
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-language" method="post">
+            <input data-val="true"  id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="language" />
+
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label for="languageName"><em>*</em>语言</label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="languageName" name="Name" value="@Model.Name" ><option value="">请选择</option><option value="1">英语</option><option value="2">日语</option><option value="3">俄语</option><option value="4">法语</option><option value="5">德语</option><option value="6">西班牙语</option><option value="7">葡萄牙语</option><option value="8">意大利语</option><option value="9">韩语/朝鲜语</option><option value="10">阿拉伯语</option><option value="11">粤语</option><option value="12">沪语</option><option value="13">闽南语</option></select>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="hear"><em>*</em>听说</label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="hear" name="Hear" value="@Model.Hear"><option value="">请选择</option><option value="1">精通</option><option value="2">熟练</option><option value="3">良好</option><option value="4">一般</option></select>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="readWrite"><em>*</em>读写</label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="readWrite" name="ReadWrite" value="@Model.Read_write"><option value="">请选择</option><option value="1">精通</option><option value="2">熟练</option><option value="3">良好</option><option value="4">一般</option></select>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item J_li">
+                    <label>等级考试</label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" name="Grades" id="Grades" value="@Model.Grades">
+                            <option value="">请选择</option>
+                        </select>
+
+
+                    </div>
+                    <input id="Certifications" name="Certifications" type="hidden" value="@Model.Certifications">
+                    <span class="ui-form-explain"></span>
+                </li>
+            </ul>
+
+            <p class="actions">
+                <input type="submit" id="submit-language" itemtype="language" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="language" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 简历模块的js
+    seajs.use(['validator', 'selectui', '$'], function (Validator, selectui, $) {
+
+        //copy from: topuc.Data.DropDown.js  jquery.examselect.js
+        var topucDataLanguage =
+                [
+                    {
+                        "id": 1, "items": [
+                          { "id": 1001, "items": [], "name": "大学英语四级", "pid": 1 },
+                          { "id": 1002, "items": [], "name": "大学英语六级", "pid": 1 },
+                          { "id": 1003, "items": [], "name": "专业英语四级", "pid": 1 },
+                          { "id": 1004, "items": [], "name": "专业英语八级", "pid": 1 },
+                          { "id": 1005, "items": [], "name": "中级口译", "pid": 1 },
+                          { "id": 1006, "items": [], "name": "高级口译", "pid": 1 },
+                          { "id": 1007, "items": [], "name": "剑桥商务英语中级", "pid": 1 },
+                          { "id": 1008, "items": [], "name": "剑桥商务英语高级", "pid": 1 },
+                          { "id": 1009, "items": [], "name": "全国公共英语三级", "pid": 1 },
+                          { "id": 1010, "items": [], "name": "全国公共英语四级", "pid": 1 },
+                          { "id": 1011, "items": [], "name": "全国公共英语五级", "pid": 1 },
+                          { "id": 1012, "items": [], "name": "托业", "pid": 1 },
+                          { "id": 1013, "items": [], "name": "托福", "pid": 1 },
+                          { "id": 1014, "items": [], "name": "雅思", "pid": 1 },
+                          { "id": 1015, "items": [], "name": "GRE", "pid": 1 },
+                          { "id": 1016, "items": [], "name": "GMAT", "pid": 1 }
+                        ], "name": "英语", "pid": 0
+                    },
+                    {
+                        "id": 2, "items": [
+                            { "id": 2001, "items": [], "name": "日语能力考试一级", "pid": 2 },
+                            { "id": 2002, "items": [], "name": "日语能力考试二级", "pid": 2 },
+                            { "id": 2003, "items": [], "name": "日语能力考试三级", "pid": 2 },
+                            { "id": 2004, "items": [], "name": "日语能力考试四级", "pid": 2 }], "name": "日语", "pid": 0
+                    },
+                    {
+                        "id": 3, "items": [
+                            { "id": 3001, "items": [], "name": "大学俄语四级", "pid": 3 },
+                            { "id": 3002, "items": [], "name": "大学俄语六级", "pid": 3 }
+                        ], "name": "俄语", "pid": 0
+                    },
+                    {
+                        "id": 4, "items": [
+                            { "id": 4001, "items": [], "name": "大学法语四级", "pid": 4 },
+                            { "id": 4002, "items": [], "name": "大学法语六级", "pid": 4 },
+                            { "id": 4003, "items": [], "name": "法语TEF ", "pid": 4 }
+                        ], "name": "法语", "pid": 0
+                    },
+                    {
+                        "id": 5, "items": [
+                            { "id": 5001, "items": [], "name": "大学德语四级", "pid": 5 },
+                            { "id": 5002, "items": [], "name": "大学德语六级", "pid": 5 },
+                            { "id": 5003, "items": [], "name": "专业德语四级", "pid": 5 },
+                            { "id": 5004, "items": [], "name": "德语WSK", "pid": 5 }
+                        ], "name": "德语", "pid": 0
+                    },
+                    {
+                        "id": 6, "items": [
+                            { "id": 6001, "items": [], "name": "专业西班牙语四级", "pid": 6 },
+                            { "id": 6002, "items": [], "name": "专业西班牙语八级", "pid": 6 },
+                            { "id": 6003, "items": [], "name": "DELE", "pid": 6 }
+                        ], "name": "西班牙语", "pid": 0
+                    },
+                    { "id": 7, "items": [], "name": "葡萄牙语", "pid": 0 },
+                    { "id": 8, "items": [], "name": "意大利语", "pid": 0 },
+                    {
+                        "id": 9, "items": [
+                          { "id": 9001, "items": [], "name": "韩语一级", "pid": 9 },
+                          { "id": 9002, "items": [], "name": "韩语二级", "pid": 9 },
+                          { "id": 9003, "items": [], "name": "韩语三级", "pid": 9 },
+                          { "id": 9004, "items": [], "name": "韩语四级", "pid": 9 },
+                          { "id": 9005, "items": [], "name": "韩语五级", "pid": 9 },
+                          { "id": 9006, "items": [], "name": "韩语六级", "pid": 9 }
+                        ], "name": "韩语\/朝鲜语", "pid": 0
+                    },
+                    { "id": 10, "items": [], "name": "阿拉伯语", "pid": 0 },
+                    { "id": 11, "items": [], "name": "粤语", "pid": 0 },
+                    { "id": 12, "items": [], "name": "上海话", "pid": 0 },
+                    { "id": 13, "items": [], "name": "闽南语", "pid": 0 }
+                ]
+
+
+        var getExamData = function () {
+            //var examData = '';
+            //$('select[name=Grades]').each(function () {
+            //    var $this = $(this);
+            //    if (!$this.closest('li').is(':hidden')) {
+            //        var examName = $this.val();
+            //        var examScore = $.trim($this.siblings('input.score-text').val());
+            //        examScore = examScore ? examScore : "0";
+            //        if (examName != 0 && examScore != '') {
+            //            examData += ',' + examName + ':' + examScore;
+            //        }
+            //    }
+            //});
+            //examData = examData.substring(1);
+
+            //$('#Certifications').val(examData);
+
+            $('#Certifications').val($("#Grades option[value=" + $("#Grades").val() + "]").text());
+
+        };
+
+        var _setOptions = function (LNameID) {
+            var exams = null;
+            $.each(topucDataLanguage, function (i, v) {
+                if (v.id == LNameID) {
+                    exams = v.items;
+                }
+            });
+            $("select[name=Grades]").each(function () {
+                var $this = $(this);
+                var $Score = $this.siblings(".score-text");
+                $this.val("");
+                $Score.val("");
+                $this.empty();
+                $this.append("<option value=''>请选择</option>");
+                if (exams != null) {
+                    for (var i = 0; i < exams.length; i++) {
+                        $this.append("<option value='" + exams[i].id + "'>" + exams[i].name + "</option>");
+                    }
+                }
+                $this.next().remove();
+                $this.selectui();
+            });
+        };
+
+        var _initExamSelect = function () {
+            var examData = $('#Certifications').val();
+            var LNameID = $('#languageName').val();
+            if (LNameID) {
+                _setOptions(LNameID);
+            }
+            var examArr = examData.split(',');
+            var $originalLi = $('.J_li:hidden');
+            $.each(examArr, function (i, v) {
+                var examVal = v.split(':')[0];
+                var examScore = v.split(':')[1];
+                if (examScore == 0) {
+                    examScore = '';
+                }
+                if (i == 0) {
+                    var examName = $('.J_li').not(':hidden').find("ul").find("[data-id=" + examVal + "]").text();
+                    $('.J_li').not(':hidden').find("[name=Grades]").val(examVal);
+                    $('.J_li').not(':hidden').find(".selectUi").next(".score-text").val(examScore);
+                } else {
+                    var $lastLi = $originalLi.clone().attr({ style: '' }).insertAfter('.J_li:last');
+                    var examName = $lastLi.find("ul").find("[data-id=" + examVal + "]").text();
+                    $lastLi.find("[name=Grades]").val(examVal);
+                    $lastLi.find(".selectUi").next(".score-text").val(examScore);
+                }
+                $('.J_li').not(':hidden').find("[name=Grades]").next().remove();
+                $('.J_li').not(':hidden').find("[name=Grades]").selectui();
+            });
+        }
+
+        $(function () {
+
+            //$('#form-language').find('[data-widget="select"]').selectui();          //新版
+
+            var languageName = $("#languageName").selectuiParam();
+            var hear = $("#hear").selectuiParam();
+            var readWrite = $("#readWrite").selectuiParam();
+            var Grades = $("#Grades").selectuiParam();
+            languageName._selected(@Model.Name);
+            hear._selected(@Model.Hear);
+            readWrite._selected(@Model.Read_write);
+
+            $('.J_Submit').click(function () {
+                //考试名称+分数 数据格式化
+                getExamData();
+            });
+
+            var examData = '';
+            $('#languageName').next().find("ul").on('click', 'li', function (e) {
+                var LNameID = $(this).attr('data-id');
+                _setOptions(LNameID);
+            });
+
+            $(document).off('click', '#addScore').on('click', '#addScore', function () {
+                var cloneLI = $(this).closest('li').siblings('li:hidden').clone(true);
+                cloneLI.removeAttr('style').insertBefore($(this).closest('li'));
+                //添加新的证书项，删除掉克隆元素的selectui，重新生成新的selectui
+                cloneLI.find('[data-widget="select"]').next().remove();
+                cloneLI.find('[data-widget="select"]').selectui();
+            });
+
+            $(document).off('click', '.deleteBtn').on('click', '.deleteBtn', function () {
+                $(this).closest('li').remove();
+            });
+
+            _initExamSelect();
+
+            window.languageValidator = validator = new Validator({
+                element: '#form-language',
+                failSilently: true,
+                triggerType: false
+            });
+
+            validator.addItem({
+                element: '#languageName',
+                required: true
+            })
+            .addItem({
+                element: '#hear',
+                required: true
+            })
+            .addItem({
+                element: '#readWrite',
+                required: true
+            })
+            .addItem({
+                element: '[name=Score]',
+                rule: 'number ',
+                errormessageRequired:'请输入正确的格式'
+            });
+
+        });//end ready
+
+    });//end seajs.use
+
+</script>

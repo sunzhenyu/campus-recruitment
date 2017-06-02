@@ -1,0 +1,160 @@
+﻿@using Campus.Recruitment.Models
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "职位申请成功";
+}
+
+
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/global.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/global.css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/coding.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-apply-finished.css" rel="stylesheet" type="text/css">
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            calendar: 'arale/calendar/1.0.0/calendar',
+            validator: 'arale/validator/0.9.7/validator',
+            jqueryform: 'jquery/form/3.49.0/form'
+        }
+    });
+</script>
+<style>
+    .wrapper-1000 {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+</style>
+
+<div class="wrapper-1000 apply-success">
+    <div class="a-box pRel">
+        <div class="a-line"></div>
+        <div class="a-qm">
+            <i class="t-l"></i><i class="b-l"></i><img src="https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQGY7zoAAAAAAAAAASxodHRwOi8vd2VpeGluLnFxLmNvbS9xLy1YVjZjQTNsRXZGcndGNlhuMWttAAIEbU9aVgMEAAAAAA==">
+            <p>随时接收面试通知</p>
+        </div>
+        <div class="a-word1 pRel">职位申请成功！<i class="a-ok"></i></div>
+        <div class="a-word2 pRel">扫描右侧二维码，关注“新起点”服务号，第一时间掌握求职进展。</div>
+        <div class="a-word2 pRel">你还可以在<a href="http://www.zheyibu.com/mystep/applylist/">申请的职位</a>中跟踪反馈。</div>
+        <div class="a-word2 mt10 pRel"><a href="http://company.zheyibu.com/1328592/jobs-1.html">查看该公司其他职位&gt;</a></div>
+        <div class="a-job-title">我猜， 你还对下面的职位感兴趣， 看一看吧</div>
+        <ul class="a-jobs">
+            <li data-url="http://www.zheyibu.com/job/7347239.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">武汉市勘察设计有限公司 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-12 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7339565.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">华中科技大学自动化学院一课题组 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-10 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7326301.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">北京市海淀区中关村软件园人才基地 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-05 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7304650.html?f=jas">
+                <div class="a-job-name">C#软件工程师</div>
+                <div class="a-job-info">武汉地大信息工程股份有限公司 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-03-24 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7304645.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">武汉地大信息工程股份有限公司 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-03-24 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7235224.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">武汉船舶研究设计院 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-03-12 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7234965.html?f=jas">
+                <div class="a-job-name">三维仿真软件工程师</div>
+                <div class="a-job-info">中核武汉核电运行技术股份有限公司 &emsp;&emsp; 武汉 &emsp;&emsp; 全职 &emsp;&emsp; 2017-03-12 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7332280.html?f=jas">
+                <div class="a-job-name">高级软件工程师</div>
+                <div class="a-job-info">西安阿尔泰电子科技发展有限公司 &emsp;&emsp; 西安 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-07 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7439856.html?f=jas">
+                <div class="a-job-name">CAM软件工程师</div>
+                <div class="a-job-info">西门子工业软件 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-05-05 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7435585.html?f=jas">
+                <div class="a-job-name">CAE软件工程师</div>
+                <div class="a-job-info">西门子工业软件 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-05-04 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7429951.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">Falcon Alpha (Shanghai) Ltd &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-05-03 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7418654.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">Autodesk欧特克 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-28 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7405379.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">神州数码信息系统有限公司 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-25 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7400743.html?f=jas">
+                <div class="a-job-name">软件工程师&nbsp;&nbsp;&nbsp;</div>
+                <div class="a-job-info">神州数码信息系统有限公司 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-25 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7394921.html?f=jas">
+                <div class="a-job-name">机器学习软件工程师</div>
+                <div class="a-job-info">Cadence &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-21 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7374820.html?f=jas">
+                <div class="a-job-name">CAD软件工程师</div>
+                <div class="a-job-info">西门子产品管理软件（上海）有限公司 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-18 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7366032.html?f=jas">
+                <div class="a-job-name">软件工程师</div>
+                <div class="a-job-info">上海迈迅威视觉技有限公司 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-17 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7365505.html?f=jas">
+                <div class="a-job-name">.net 软件工程师</div>
+                <div class="a-job-info">上海路辉智能系统有限公司 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-17 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7363907.html?f=jas">
+                <div class="a-job-name">Andriod软件工程师</div>
+                <div class="a-job-info">上海巨哥电子科技有限公司 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-17 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+            <li data-url="http://www.zheyibu.com/job/7353182.html?f=jas">
+                <div class="a-job-name">java软件工程师</div>
+                <div class="a-job-info">SMG技术运营中心 &emsp;&emsp; 上海 &emsp;&emsp; 全职 &emsp;&emsp; 2017-04-13 </div>
+                <div class="a-job-salary">面议</div>
+            </li>
+        </ul>
+        <a href="/resume/myobjective/" class="apply-success-zhiye"></a>
+    </div>
+</div>
+
+
+<script src="@AppSetting.Rss_Image/content/static/html/demo/quickmark/jquery.qrcode.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/zyb/navigation.js" type="text/javascript"></script>
+

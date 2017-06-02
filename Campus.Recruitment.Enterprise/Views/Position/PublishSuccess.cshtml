@@ -1,0 +1,247 @@
+﻿@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "职位管理-发布成功";
+}
+
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-v2.css">
+<link href="/content/static/css/corp/dialog.css" rel="stylesheet">
+<link href="/content/static/css/corp/showBox.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/global-v3.css">
+<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/init.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            validator: 'arale/validator/0.9.7/validator'
+        }
+    });
+</script>
+<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+
+<style>
+    .arale-dialog-1_3_0 .ui-dialog {
+        background-color: rgba(0, 0, 0, .2);
+        border: 0;
+        FILTER: progid: DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#55000000);
+        padding: 3px;
+        outline: 0;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-content {
+        background: #fff;
+    }
+
+    :root .arale-dialog-1_3_0 .ui-dialog {
+        FILTER: none;\9
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-close {
+        color: #999;
+        cursor: pointer;
+        display: block;
+        font-family: tahoma;
+        font-size: 24px;
+        font-weight: 700;
+        height: 18px;
+        line-height: 14px;
+        position: absolute;
+        right: 16px;
+        text-decoration: none;
+        top: 16px;
+        z-index: 10;
+    }
+
+        .arale-dialog-1_3_0 .ui-dialog-close:hover {
+            color: #666;
+            text-shadow: 0 0 2px #aaa;
+        }
+
+    .arale-dialog-1_3_0 .ui-dialog-title {
+        height: 45px;
+        font-size: 16px;
+        font-family: '微软雅黑', '黑体', Arial;
+        line-height: 46px;
+        border-bottom: 1px solid #E1E1E1;
+        color: #4d4d4d;
+        text-indent: 20px;
+        background-color: #f9f9f9;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));
+        background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
+        background: -o-linear-gradient(top, #fcfcfc, #f9f9f9);
+        background: -ms-linear-gradient(top, #fcfcfc, #f9f9f9);
+        background: linear-gradient(top, #fcfcfc, #f9f9f9);
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-container {
+        padding: 15px 20px 20px;
+        font-size: 12px;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-message {
+        margin-bottom: 15px;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-operation {
+        zoom: 1;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-confirm,
+    .arale-dialog-1_3_0 .ui-dialog-cancel {
+        display: inline;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-operation .ui-dialog-confirm {
+        margin-right: 4px;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-button-orange,
+    .arale-dialog-1_3_0 .ui-dialog-button-white {
+        display: inline-block;
+        *display: inline;
+        *zoom: 1;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 2px;
+        padding: 0 12px;
+        line-height: 23px;
+        height: 23px;
+        *overflow: visible;
+        background-image: none;
+    }
+
+    .arale-dialog-1_3_0 a.ui-dialog-button-orange:hover,
+    .arale-dialog-1_3_0 a.ui-dialog-button-white:hover {
+        text-decoration: none;
+    }
+
+    .arale-dialog-1_3_0 .ui-dialog-button-orange {
+        color: #fff;
+        border: 1px solid #d66500;
+        background-color: #f57403;
+    }
+
+        .arale-dialog-1_3_0 .ui-dialog-button-orange:hover {
+            background-color: #fb8318;
+        }
+
+    .arale-dialog-1_3_0 .ui-dialog-button-white {
+        border: 1px solid #afafaf;
+        background-color: #f3f3f3;
+        color: #777;
+    }
+
+        .arale-dialog-1_3_0 .ui-dialog-button-white:hover {
+            border: 1px solid #8e8e8e;
+            background-color: #fcfbfb;
+            color: #676d70;
+        }
+
+    .confirm-done {
+        color: #2466b2;
+    }
+</style>
+<script src="/content/static/lib/js/base/jquery-1.11.3.min.js"></script>
+<script src="/content/static/js/corp/showBox.js"></script>
+<script src="/content/static/js/corp/dialog.js"></script>
+<script type="text/javascript">
+    $(function() {
+        //邀请投递
+        $(document).on('click', '[action-type="invite"]', function() {
+            var url = $(this).attr('data-url'),
+                etpmark = $(this).attr('data-etpmark'),
+                pushidstr = $(this).attr('data-pushidstr'),
+                $this = $(this);
+            inviteDialog = new Dialog();
+            inviteDialog.init({
+                width: 518,
+                target: '<div class="legend-info">' + checkbox($this) +
+                    '<p class="invite-push" style="margin:10px auto 0;width:110px;background:#338BE3;color:#fff;text-align:center;font-size:16px;height:36px;line-height:36px;border-radius:3px;cursor:pointer;">确定</p>' +
+                    '<div class="hfilter m-minHeight">' + //m-minHeight
+                    '</div>' +
+                    '</div>',
+                trigger: $(this),
+                mask: true,
+                title: '请选择邀请投递的职位',
+                animate: true
+            });
+            inviteDialog.show();
+            $('.invite-push').click(function() {
+                if ($('input.invite-push-input:checked').length) {
+                    var inputVal = [];
+                    $('input.invite-push-input:checked').each(function() {
+                        inputVal.push($(this).val());
+                    });
+                    var pushIdStr = inputVal.join(',');
+                    $.ajax({
+                        type: 'post',
+                        url: url,
+                        data: {
+                            pushIdStr: pushIdStr,
+                            etpmark: etpmark,
+                            __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+                        },
+                        success: function(r) {
+                            if (r.code == 0) {
+                                $this.parent().html('<div class="invite-sended">已发送邀请</div>');
+                            } else {
+                                console.log('邀请失败！');
+                            }
+                        }
+                    });
+                    $('.js-dialog-close').trigger('click');
+                } else {
+                    alert("请选择邀请职位");
+                }
+            });
+            $('.ui-dialog-title').css('width', '488px');
+            $('.legend-info').find('a').css({
+                'max-width': '406px'
+            });
+
+            function checkbox($this) {
+                var temp = '',
+                    ele = $this.closest('tr').children('.high-btn').find('.toggle');
+                $.each(ele, function(i, v) {
+                    temp += '<p style="line-height:1.5;font-size:16px;color:#4566a3;"><input class="invite-push-input" style="margin-right:3px;" type="checkbox" id="push' + i + '" value="' + $(v).attr('data-pushId') + '" /><label for="push' + i + '">' + $(v).html() + '</label></p>';
+                });
+                return temp;
+            }
+        });
+        $('.toggle-p').click(function() {
+            var hgt = $(this).parent().height();
+            $(this).parents('.u-user-salary').animate({
+                'height': hgt
+            }, 300).end().remove();
+        });
+    });
+    seajs.use(['corp/resumes/1.0.0/resumes', 'corp/formUI/1.0.0/formui', '$'], function(Resumes, formUi, $) {
+        $(function() {
+            var oWidget = new Resumes();
+        });
+    });
+</script>
+<input name="__RequestVerificationToken" type="hidden" value="slSd60xnivYb8I4gu4oWbYhJgsLy85BgSO8FFpiljdWSG48V_h4DJb7QZ_Z8q5T1K2wIUZkJiE4NZ2aXCpv51shqVjQfhGwGmbrwpSBdih41">
+<div class="channel-wrap channel-wrap-job" id="J_RsmMnger" data-widget-cid="widget-1">
+    <div class="wrapper">
+        <div class="channel-bd-wrap-hd clearfix">
+            <div class="main-box clearfix">
+                <h2>&nbsp;&nbsp;&nbsp;&nbsp;职位发布成功！</h2>
+                <div class="btnrow">
+                    <a class="ui-btn ui-btn-primary" href="/position/publish">继续发布职位</a>
+                    <a class="back-link" href="/position/search">返回职位管理</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

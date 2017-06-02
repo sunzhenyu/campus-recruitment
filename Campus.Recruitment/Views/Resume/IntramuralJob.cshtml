@@ -1,0 +1,185 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerIntramuralJob
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-position" method="post">
+            <input data-val="true"  id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="position" />
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label for="positionName">
+                        <em>*</em>职务
+                    </label>
+                    <div class="fieldgroup">
+                        <input class="resume-text" id="positionName" maxlength="30" name="JobName" type="text" value="@Model.Position_name">
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="schoolName">
+                        <em>*</em>所在学校
+                    </label>
+                    <div class="fieldgroup">
+
+                        <input type="text" name="SchoolName" value="@Model.School_name" class="resume-text m-school1" id="m1-keys" />
+                        <span class="ui-form-explain"></span>
+                        <div class="m-school-list1">
+                            <ul>
+                                <li>@Model.School_name</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label>
+                        <em>*</em>在职时间
+                    </label>
+                    <div class="fieldgroup">
+                        @{
+                            var start_campus_show = Model.Start_campus > DateTime.MinValue ? Model.Start_campus.ToString("yyyy.MM") : "";
+                            var start_campus = Model.Start_campus > DateTime.MinValue ? Model.Start_campus.ToString("yyyy/MM/dd") : "";
+
+                            var end_campus_show = Model.End_campus > DateTime.MinValue ? Model.End_campus.ToString("yyyy.MM") : "";
+                            var end_campus = Model.End_campus > DateTime.MinValue ? Model.End_campus.ToString("yyyy/MM/dd") : "";
+                        }
+                        <div class="ui-date-wrap ui-date-exp"><input class="resume-text ui-input-date" id="start-campus" value="@start_campus_show" readonly="" type="text"></input><input id="start-campus-id" name="StartDate" type="hidden" value="@start_campus"></input></div>
+                        <em class="select-to">至</em>
+                        <div class="ui-date-wrap ui-date-exp"><input class="resume-text ui-input-date" id="end-campus" value="@end_campus" readonly="" type="text"></input><input id="end-campus-id" name="EndDate" type="hidden" value="@end_campus"></input></div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label>
+                        描述
+                    </label>
+                    <div class="fieldgroup">
+                        <textarea class="resume-area" cols="50" id="positionDesc" placeholder="描述职务的具体工作以及获得的成就等（限400字）" name="JobDesc" rows="8">@Model.Position_desc</textarea>
+                    </div>
+                </li>
+            </ul>
+            <p class="actions">
+                <input type="submit" id="submit-position" itemtype="position" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="position" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 简历模块的js
+    seajs.use(['validator', '$', 'selectui', 'zyb/datePicker/DatePicker'], function (Validator, $, selectui, DatePicker) {
+
+        $(function () {
+
+            $('#form-position').find('[data-widget="select"]').selectui();    //新版
+
+            //declare in resume.js
+            //$('.study-date').find("ul").on('click', 'li', function (e) {
+            //    setCaseTimeV2();
+            //});
+
+            window.positionValidator = validator = new Validator({
+                element: '#form-position',
+                failSilently: true,
+                triggerType: false
+            });
+
+            //check 结束日期 是否 大于 开始日期
+            Validator.addRule('checkEndDateResonable', function (options, commit) {
+                var element = options.element;
+                var numStart = parseInt($.trim($("#start-campus").val()).split('.').join(''));
+                var numEnd = parseInt($.trim($("#end-campus").val()).split('.').join(''));
+                var message = '';
+                var valid = true;
+                //日期比较
+                if (numStart > numEnd) {
+                    valid = false;
+                    message = "结束日期应大于开始日期";
+                }
+                commit(valid, message);
+            });
+
+            Validator.addRule('wordLimit', function (options, commit) {
+                var element = options.element;
+                var val = element.val();
+                var message = '';
+                var valid = true;
+                console.log(val.length > 400);
+                if (val != '' && val.length > 400) {
+                    valid = false;
+                    message = "描述内容限400字";
+                }
+                commit(valid, message);
+            });
+
+            validator
+            .addItem({
+                element: '[name=StartDate]',
+                required: true,
+                errormessageRequired: '请选择在职时间',
+                rule: 'checkEndDateResonable'
+            })
+            .addItem({
+                element: '[name=EndDate]',
+                required: true,
+                errormessageRequired: '请选择离职时间',
+                showMessage: function (message, element) {
+                    // 结束日期出错后会调用这个函数。如果前面的开始日期没有出错的时候才显示自己的出错消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(message);
+                        this.getItem(element).addClass(this.get('itemErrorClass'));
+                    }
+                },
+                hideMessage: function (message, element) {
+                    // 结束日期校验通过后会调用这个函数。如果前面的开始日期没有出错的时候才清空消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(element.attr('data-explain') || ' ');
+                        this.getItem(element).removeClass(this.get('itemErrorClass'));
+                    }
+                }
+            })
+            .addItem({
+                element: '#positionName',
+                required: true
+            })
+            .addItem({
+                element: '#m1-keys',
+                required: true,
+                errormessageRequired: '请选择所在学校'
+            })
+            .addItem({
+                element: '#positionDesc',
+                rule: 'wordLimit'
+            });
+
+            (function () {
+                var nowYear = new Date().getFullYear();
+
+                $("#start-campus").datePick({
+                    hiddenField: '#start-campus-id',
+                    startYear: nowYear - 10,
+                    format: 'yyyy.mm.dd',
+                    defaultYear: nowYear,
+                    disableDate: 1,
+                    //referDate: function () {
+                    //    return $('#end-campus').val();
+                    //}
+                });
+                $("#end-campus").datePick({
+                    hiddenField: '#end-campus-id',
+                    startYear: nowYear - 10,
+                    defaultYear: nowYear,
+                    format: 'yyyy.mm.dd',
+                    disableDate: -1,
+                    //referDate: function () {
+                    //    return $('#start-campus').val();
+                    //},
+                    endYearText: '至今'
+                });
+            })();
+
+        });//end ready
+
+    });//end seajs.use
+</script>

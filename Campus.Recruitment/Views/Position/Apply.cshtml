@@ -1,0 +1,332 @@
+﻿@using Campus.Recruitment.Models
+@using Campus.Recruitment.Entities.Entity;
+@using Campus.Recruitment.Helper.Back;
+@model PageList<List<SearchPosition>>
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "申请的职位";
+}
+
+@*<link href="/content/static//css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+    <link href="/content/static//css/zyb/zyb-user.css" rel="stylesheet" type="text/css">
+    <link href="/content/static//css/corp/dialog.css" rel="stylesheet" type="text/css">
+    <link href="/content/static//student/css/landpage/userCenter.css" rel="stylesheet">
+    <script src="/content/static//js/corp/dialog.js" type="text/javascript"></script>
+    <script src="/Content/static/js/sea-modules/jquery/scity/1.0.0/scity.js"></script>*@
+
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/global.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/global.css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/coding.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/student/shortcutMenu.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-user.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/student/css/landpage/userCenter.css" rel="stylesheet">
+<script type="text/javascript" src="@AppSetting.Rss_Image/content/static/js/corp/dialog.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            calendar: 'arale/calendar/1.0.0/calendar',
+            validator: 'arale/validator/0.9.7/validator',
+            jqueryform: 'jquery/form/3.49.0/form'
+        }
+    });
+</script>
+<div class="content">
+    <div class="content-in">
+        <!--左侧功能栏开始-->
+        <div class="user-left">
+            <div class="resume-all" style="margin-top:0px;">
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的简历
+                    </li>
+                    <li class="resume-module-item ">
+                        <a href="/resume/0">在线简历</a>
+                    </li>
+                </ul>
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的求职
+                    </li>
+                    <li class="resume-module-item active apply">
+                        <a href="/position/apply">申请的职位</a>
+                        <i class="guide"></i>
+                    </li>
+                    @*<li class="resume-module-item  push">
+                            <a href="/position/recommend">推荐的职位</a>
+                            <i class="num"></i>
+                        </li>*@
+                    <li class="resume-module-item  hrinvite">
+                        <a href="/position/hr-invintes">HR邀请</a>
+                        <i class="num"></i>
+                    </li>
+                    <li class="resume-module-item">
+                        <a href="/position/collection-post">收藏的职位</a>
+                        <i class="num"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--左侧功能栏结束-->
+        <!--右侧我的申请开始(有收藏数据时显示,样式hide-info用于隐藏该内容)-->
+        <div class="right-favorites">
+            <div class="right-title" style="border-left:0;">
+                <em>我申请的职位</em>
+                <p class="select-job"><a class="hover-tran" href="#" id="J_ApplyFilterTrigger">全部<img src="@AppSetting.Rss_Image/content/static//images/avatar/select-job.png"></a></p>
+                <ul class="select-list" id="J_ApplyFilterUl">
+                    <li class="current">
+                        <a href="/position/apply">
+                            <p class="hover-tran">全部</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/position/apply">
+                            <p class="hover-tran">简历被查看</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/position/apply">
+                            <p class="hover-tran">通过筛选</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/position/apply">
+                            <p class="hover-tran">通知面试</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/position/apply">
+                            <p class="hover-tran">不合适</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            @if (Model.Data != null && Model.Data.Count > 0)
+            {
+
+                <ul class="company-list">
+
+                    @foreach (var item in Model.Data)
+                    {
+                        <li class="itemclass1">
+                            <div class="company-info">
+                                <div class="company-logo">
+                                    <a href="javascript:void(0)" target="_blank">
+                                        <img src="@AppSetting.Rss_Image/@item.Logo_icon" width="58" height="58">
+                                    </a>
+                                </div>
+                                <div class="company-job">
+                                    <p class="job-name"><a class="b-link position-link" href="/job/@item.Id" target="_blank" title="@item.Name">@item.Name</a><span></span></p>
+                                    <p class="company-name"><a href="javascript:void(0)" target="_blank">@item.Enterprise_name</a></p>
+                                    <p class="job-info">
+                                        <em>@item.Update_at 申请</em>
+                                    </p>
+                                </div>
+                                <div class="company-fav show-info">
+                                    <!--通知面试状态添加样式show-info-->
+                                    <p class="job-status">等待查阅</p>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            <!--分页栏-->
+
+                @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
+            }
+            else
+            {
+                <div id="divList">
+                    <div class="nodata">
+                        <p class="nodata-img"><img src="@AppSetting.Rss_Image/content/static/images/avatar/fav-book.png"></p>
+                        <p class="font-one">你还未申请任何职位哦</p>
+                        <p class="font-two">看到中意的赶紧投递简历吧</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <!--右侧我的申请结束(有申请数据)-->
+    </div>
+</div>
+<script src="@AppSetting.Rss_Image/content/static//js/zyb/navigation.js" type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.use(['$'], function($) {
+        $(function() {
+            $('#J_ApplyFilterTrigger').click(function() {
+                $('#J_ApplyFilterUl').toggle();
+            });
+        });
+        var temp = '<div id="firei_submit">\
+                        <div class="fire_i">\
+                            <div style="padding:30px 0 20px 20px;font-size:16px;color:#666;"><i style="color:#f00;">*</i>该职位存在什么问题</div>\
+                            <ul>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="1">虚假职位</label></li>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="2">传销</label></li>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="3">假冒公司</label></li>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="4">招聘中收取钱财</label></li>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="5">职位要求工作经验</label></li>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="6">职位已停止招聘</label></li>\
+                                    <li style="float:left;width:128px;margin-left:20px;font-size:14px;line-height:2;"><label><input type="radio" name="reasonType" value="7">其他</label></li>\
+                            </ul>\
+                            <textarea name="remark" style="margin:10px 20px;float:left;width:444px;height:110px;padding:20px;" placeholder="举报描述..."></textarea>\
+                            <div class="fire_error" style="color:#f00;font-size:14px;clear:both;margin-left:20px;margin-bottom:10px;display:none;">举报职位存在问题不能为空！</div>\
+                            <div style="clear:both;margin-left:20px;">\
+                                <input class="fire_submit" type="submit" value="确定" style="float:left;width:126px;line-height:48px;height:48px;text-align:center;color:#fff;background:#7cbf59;font-size:18px;margin-bottom:20px;">\
+                                <span data-role="close" style="float:left;color:#7cbf59;font-size:18px;padding:12px 30px;cursor:pointer">取消</span>\
+                            </div>\
+                        </div>\
+                    </div>';
+        $('.apply-fire-btn.active').click(function() {
+            var _th = $(this);
+            $.ajax({
+                type: 'get',
+                beforeSend: function() {
+                    _th.removeClass('active');
+                },
+                url: '/job/CheckWillReportPos',
+                data: {
+                    posId: $(this).parents('li').attr('data-posId')
+                },
+                success: function(r) {
+                    _th.addClass('active');
+                    if (r.code == 0) {
+                        var legendDialog = new Dialog(),
+                            positionId = _th.parents('li').attr('data-posId');
+                        legendDialog.init({
+                            width: 580,
+                            target: temp,
+                            trigger: $(this),
+                            mask: true,
+                            title: '举报该职位',
+                            animate: true
+                        });
+                        legendDialog.show();
+                        $('.ui-dialog-title').css({
+                            'width': '550px',
+                            'background-color': '#7cbf59'
+                        });
+
+                        $('[data-role="close"]').click(function() {
+                            $('.js-dialog-close').trigger('click');
+                        })
+                        $('.fire_submit').click(function() {
+                            if ($('input[name="reasonType"]:checked').length) {
+                                var _this = $(this);
+                                $.ajax({
+                                    type: "POST",
+                                    url: '/job/DoReport',
+                                    data: {
+                                        id: positionId,
+                                        reasonType: $('input[name="reasonType"]:checked').val(),
+                                        remark: $('textarea[name="remark"]').val()
+                                    },
+                                    success: function(r) {
+                                        if (r.code == 0) {
+                                            $('.js-dialog-close').trigger('click');
+                                            location.href = location.href;
+                                        } else {
+                                            $('.js-dialog-close').trigger('click');
+                                            console.log(r.msg);
+                                        }
+                                    }
+                                });
+                            } else {
+                                alert('请填写举报原因');
+                            }
+                        })
+                    } else {
+                        alert(r.msg);
+                    }
+                }
+            })
+        });
+        var accept = $('<div class="accept-dialog">\
+                                <p class="accept">确定接受本次面试邀请吗？</p>\
+                                <p class="ac-re-btn"><span class="ac-btn">接受</span><span class="re-btn">取消</span></p>\
+                            </div>');
+        var noAccept = $('<div class="accept-dialog">\
+                                <p class="accept">确定拒绝本次面试邀请吗？</p>\
+                                <p class="ac-re-btn"><span class="ac-btn">残忍拒绝</span><span class="re-btn">取消</span></p>\
+                            </div>');
+        $('.btn-top').click(function() {
+            var applyid = $(this).parents('li').attr('data-applyid');
+            var accDialog = new Dialog();
+            var _this = $(this);
+            accDialog.init({
+                width: 400,
+                target: accept,
+                trigger: $(this),
+                mask: true,
+                title: '面试邀请',
+                animate: true
+            });
+            accDialog.show();
+            $('.ui-dialog-title').css({
+                'width': '370px',
+                'background-color': '#7cbf59'
+            });
+            $('.re-btn').click(function() {
+                $('.js-dialog-close').trigger('click');
+            });
+            $('.ac-btn').click(function() {
+                $.ajax({
+                    url: '/mystep/feedbackInterview?isReject=false&applyId=' + applyid,
+                    type: 'POST',
+                    success: function(r) {
+                        if (r.code == 0) {
+                            $('.js-dialog-close').trigger('click');
+                        } else {
+                            console.log(r.msg);
+                        }
+                    }
+                });
+                _this.parent().empty().append('<p>已接受面试</p>');
+            });
+        });
+        $('.btn-bottom').click(function() {
+            var _this = $(this);
+            var applyid = $(this).parents('li').attr('data-applyid');
+            var accDialog = new Dialog();
+            accDialog.init({
+                width: 400,
+                target: noAccept,
+                trigger: $(this),
+                mask: true,
+                title: '面试邀请',
+                animate: true
+            });
+            accDialog.show();
+            $('.ui-dialog-title').css({
+                'width': '370px',
+                'background-color': '#7cbf59'
+            });
+            $('.re-btn').click(function() {
+                $('.js-dialog-close').trigger('click');
+            });
+            $('.ac-btn').click(function() {
+                $.ajax({
+                    url: '/mystep/feedbackInterview?isReject=true&applyId=' + applyid,
+                    type: 'POST',
+                    success: function(r) {
+                        if (r.code == 0) {
+                            $('.js-dialog-close').trigger('click');
+                        } else {
+                            console.log(r.msg);
+                        }
+                    }
+                });
+                _this.parent().empty().append('<p class="re-re">已拒绝面试</p>');
+            })
+        });
+    });
+</script>
+

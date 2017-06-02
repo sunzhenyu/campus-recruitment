@@ -1,0 +1,45 @@
+﻿@using Campus.Recruitment.Enterprise.Models;
+@using Campus.Recruitment.Enterprise.Helper;
+<!DOCTYPE html>
+<head>
+    <title>企业中心-新起点校园招聘</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" />
+    <meta name="description" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="/content/static/Images/favicon.ico"> -->
+    <link href="/content/static/css/base/base.css" rel="stylesheet" type="text/css" />
+    <link href="/content/static/css/corp/global-corp.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    @*//判断是否登录*@
+    @if (SessionHelper.Instance().GetSessionValue("EnterpriseId").Length > 0)
+    {
+        @Html.Partial("_LoginHeader");
+    }
+    else
+    {
+        @Html.Partial("_Header");
+    }
+
+
+    @RenderBody()
+
+    <div class="footer">
+        <div class="foot-wrap">
+            <div class="hot-line">服务热线：021-84222716 </div>
+            <div class="foot-wrap-main">
+                <div class="foot-links">
+                    <a href="@AppSetting.Student_Url/site/about">关于我们</a> &nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/news">新闻报道</a> &nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/employee-life">员工生活</a> &nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/contact">联系我们</a>&nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/user-protocol">用户协议</a>&nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url">求职者入口</a>
+                </div>
+                <div class="copyright">Copyright © 2016-2018 luckyyou.cn All Rights Reserved 沪ICP备16040702号-1</div>
+            </div>
+        </div>
+    </div>
+</body>
+

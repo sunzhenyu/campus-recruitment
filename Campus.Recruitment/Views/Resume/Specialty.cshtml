@@ -1,0 +1,56 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-speciality" method="post">
+            <input data-val="true"  id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="speciality" />
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label for="specialityDesc"><em>*</em>描述</label>
+                    <div class="fieldgroup">
+                        <textarea class="resume-area speciality-area" cols="50" id="specialityDesc" name="Speciality" placeholder="请填写你的个人特长，多个特长之间用逗号分隔。如演讲，唱歌，书法，篮球等（限5-400字）" rows="8">@Model.Specialty_desc</textarea>
+                    </div>
+                </li>
+            </ul>
+            <p class="actions">
+                <input type="submit" id="submit-speciality" itemtype="speciality" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="speciality" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 简历模块的js
+    seajs.use(['validator', '$'], function (Validator, $) {
+
+        $(function () {
+
+            window.specialityValidator = validator = new Validator({
+                element: '#form-speciality',
+                failSilently: true,
+                triggerType: false,
+                autoSubmit: false
+            });
+
+            Validator.addRule('wordLimit', function (options, commit) {
+                var element = options.element;
+                var val = element.val();
+                var message = '';
+                var valid = true;
+                if ((val != '' && val.length > 400) || (val != '' && val.length < 5)) {
+                    valid = false;
+                    message = "描述内容限5-400字";
+                }
+                commit(valid, message);
+            });
+
+            validator.addItem({
+                element: '#specialityDesc',
+                required: true,
+                rule: 'wordLimit'
+            });
+        });//end ready
+
+    });//end seajs.use
+</script>

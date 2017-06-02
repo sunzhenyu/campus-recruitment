@@ -1,0 +1,149 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerCertificate
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-cert" method="post">
+            <input data-val="true"  data-val-required="Id 字段是必需的。" id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="cert" />
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label>
+                        <em>*</em>证书名称
+                    </label>
+                    <div class="fieldgroup">
+                        @*<select data-widget="select" id="certType" name="CertificateParentName" value="@Model.Certificate_parent_name"><option value="">请选择</option><option value="6">计算机证书</option><option value="7">会计证书</option><option value="8">其它证书</option><option value="9">自定义证书</option></select>
+                        <select data-widget="select" id="certSelet" name="CertificateName" value="@Model.Certificate_name"><option value="">请选择</option></select>*@
+                        <input type="text" name="CertificateName"  id="certText" class="resume-text-s" >
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="certYear">
+                        <em>*</em>获得时间
+                    </label>
+                    <div class="fieldgroup">
+                        @{ 
+                            var start_time_show = Model.Start_certificate > DateTime.MinValue ? Model.Start_certificate.ToString("yyyy.MM") : "";
+                            var start_time = Model.Start_certificate > DateTime.MinValue ? Model.Start_certificate.ToString("yyyy/MM/dd") : "";
+                         }
+                        <div class="ui-date-wrap"><input class="ui-input-date resume-text" id="start-certificate" readonly="" type="text" value="@start_time_show"></input><input id="start-certificate-id" name="CertificateDate" type="hidden" value="@start_time"></input></div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+            </ul>
+            <p class="actions">
+                <input type="submit" id="submit-cert" itemtype="cert" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="cert" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 简历模块的js
+    seajs.use(['validator', '$', 'selectui', 'zyb/datePicker/DatePicker'], function (Validator, $, selectui, DatePicker) {
+
+        $(function () {
+
+            $('#form-cert').find('[data-widget="select"]').selectui();    //新版
+            //declare in resume.js
+            $('.birth-date,.birth-date-year').find("ul").on('click', 'li', function (e) {
+                dateFormat = $('#startYear').val() + '-' + $('#startMon').val() + "-1";
+                $('#StartDate').val(dateFormat)
+            });
+
+            window.certValidator = validator = new Validator({
+                element: '#form-cert',
+                failSilently: true,
+                triggerType: false
+            });
+
+            //if ('0' != 9) {
+            //    validator
+            //    .removeItem('#certSelet')
+            //    .addItem({
+            //        element: '#certText',
+            //        required: true,
+            //        display: '证书',
+            //    });
+            //    $('#certSelet').parents(".selectui").show();
+            //    $('#certText').hide();
+            //} else
+            //{
+            //    validator
+            //        .removeItem('#certText')
+            //        .addItem({
+            //            element: '#certSelet',
+            //            required: true,
+            //            display: '证书',
+            //        });
+            //    $('#certSelet').next(".selectUi").remove();
+            //    $('#certText').show();
+            //}
+
+            function getcertificationlist(pid) {
+                var $certSelet = $("#certSelet");
+                if (pid == 9) {
+                    validator
+                     .removeItem('#certSelet')
+                    .addItem({
+                        element: '#certText',
+                        required: true,
+                        display: '证书',
+                    });
+                    $certSelet.next().hide();
+                    $('#certText').show();
+                }
+                else {
+                    validator
+                     .removeItem('#certText')
+                    .addItem({
+                        element: '#certSelet',
+                        required: true,
+                        display: '证书',
+                    });
+                    $('#certText').val("").hide();
+                    var options = {};
+                    var data = {};
+                    data.parentid = pid;
+                    var url = 'http://www.zheyibu.com/resume/GetCertification';
+                    $certSelet.empty();
+                    $.get(url, data, function (response) {
+                        $.each(response, function (i, v) {
+                            $certSelet.append("<option value='" + v.ItemName + "'>" + v.ItemName + "</option>");
+                        });
+                        $certSelet.next().remove();
+                        $certSelet.selectui();
+                    }, 'json'
+                    );
+                }
+            }
+
+            //$('#certType').next().find("ul").on('click', 'li', function (e) {
+            //    getcertificationlist($(this).attr("data-id"));
+            //});
+            //$('#certSelet').next('div[data-widget="selectUi"]').on('click','li',function () {
+            //    $('#certText').val($(this).attr('data-id'));
+            //})
+            validator
+            .addItem({
+                element: '[name=CertificateDate]',
+                required: true,
+                errormessageRequired: '请选择获得时间',
+            });
+
+            (function () {
+                var nowYear = new Date().getFullYear();
+
+                $("#start-certificate").datePick({
+                    hiddenField: '#start-certificate-id',
+                    startYear: nowYear - 10,
+                    defaultYear: nowYear,
+                    format: 'yyyy.mm.dd'
+                });
+            })();
+
+
+        });//end ready
+
+    });//end seajs.use
+</script>

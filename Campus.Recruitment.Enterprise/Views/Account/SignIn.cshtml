@@ -1,0 +1,99 @@
+﻿@using Campus.Recruitment.Enterprise.Models;
+
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>企业用户登录-新起点校园招聘</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/content/static/Images/favicon.ico">
+    <link href="/content/static/css/base/base.css" rel="stylesheet" type="text/css" />
+    <link href="/content/static/css/corp/global-corp.css" rel="stylesheet" type="text/css" />
+    <link href="/content/static/lib/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="/content/static/enterprise/css/homepage/enter.css" rel="stylesheet" type="text/css">
+    <script src="/content/static/lib/js/base/jquery-1.11.3.min.js"></script>
+    <!-- Header start -->
+</head>
+
+<body>
+    <div id="com-header" class="cf">
+        <div class="hdLeft">
+            <div class="lfLogo">
+                <div class="lgLeft">
+                    <a href="/"></a>
+                </div>
+                <div class="lgRight">企业版</div>
+            </div>
+            <div class="lfPhone">
+                <div class="phLeft"></div>
+                <div class="phRight">
+                    <p>企业服务热线</p>
+                    <p>021-84222716</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header end -->
+    <!-- 用户登录内容 start -->
+    <div id="login-content">
+        <div class="login-content">
+            <p>用户登录</p>
+            <div class="login-table">
+                <form id="login-info" method="post" action="/account/sign-in-check">
+                    <input type="text" name="AccountName" placeholder="用户名" required=""><i class="user-name"></i>
+                    <input type="password" name="Password" placeholder="密码" required=""><i class="user-psd"></i>
+                    <span class="login-auto active">自动登录</span>
+                    <a href="/account/forgetpwd" class="lost-password">忘记密码</a>
+                    <button type="submit" id="loginSub">登录</button>
+                    <p></p>
+                    <input type="hidden" name="RememberMe" value="true">
+                </form>
+                <div class="login-register">
+                    <p>互联网校招新思维！</p>
+                    <p> 让企业招聘更简单、更高效！</p>
+                    <p class="reg-info">还没有企业账号？</p>
+                    <a href="/account/register-one" class="register">立即免费注册</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 用户登录内容 end -->
+    <div class="footer">
+        <div class="foot-wrap">
+            <div class="hot-line">服务热线：021-84222716 </div>
+            <div class="foot-wrap-main">
+                <div class="foot-links">
+                    <a href="@AppSetting.Student_Url/site/about">关于我们</a> &nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/news">新闻报道</a> &nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/employee-life">员工生活</a> &nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/contact">联系我们</a>&nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url/site/user-protocol">用户协议</a>&nbsp;|&nbsp;
+                    <a href="@AppSetting.Student_Url">求职者入口</a>
+                </div>
+                <div class="copyright">Copyright © 2016-2018 luckyyou.cn All Rights Reserved 沪ICP备16040702号-1</div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        //验证登录信息
+        var $login = $('#login-content');
+        $login.on('click', '.login-auto', function() {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('input[name="RememberMe"]').val(false);
+            } else {
+                $(this).addClass('active');
+                $('input[name="RememberMe"]').val(true);
+            }
+        })
+    })
+    </script>
+</body>
+<div></div>
+
+</html>

@@ -1,0 +1,29 @@
+﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@model List<CustomerCertificate>
+
+<div id="info-cert" class="info-holder">
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="info-item">
+                <div class="info-col">
+                    <div class="date">@item.Start_certificate.ToString("yyyy.MM")</div>
+                    <div class="meta">
+                        <span>@item.Certificate_name</span>
+                    </div>
+                    <div class="action-col">
+                        <a title="编辑" href="javascript:;" rel="edit" itemid="@item.Id" itemtype="cert" class="edit-btn J_ActionBtn"></a>
+                        <a title="删除" href="javascript:;" rel="delete" itemid="@item.Id" itemtype="cert" class="del-btn J_ActionBtn"></a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="no-data-prompt">
+            填写获得证书
+        </div>
+    }
+</div>

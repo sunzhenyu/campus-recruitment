@@ -1,0 +1,568 @@
+﻿@using Campus.Recruitment.Models
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "宣讲会";
+}
+@*<link href="/Content/static/student/css/xuanjianghui/index.css" rel="stylesheet" />
+<link href="/Content/static/lib/css/student/cityinit.css" rel="stylesheet" />
+<link href="/Content/static/lib/css/base/datepicker.css" rel="stylesheet" />*@
+<link href="@AppSetting.Rss_Image/Content/static/student/css/xuanjianghui/index.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/student/cityinit.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/base/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/base/jquery-ui.min.css" rel="stylesheet" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/base/datepicker.css" rel="stylesheet" />
+<div id="xjh-container">
+    <div class="xjh-container">
+        <!-- 主内容区 start -->
+        <div class="search-result">
+            <div class="result-left">
+                <div class="left-top">
+                    <form id="xjh-search" name="xjh_search" action="/seminar/search" method="get">
+                        <input type="text" name="keyword" id="keyword" placeholder="请输入学校名称、地点或公司名称进行查询" />
+                        <input type="submit" value="搜索" />
+                    </form>
+                    <!-- 搜索有结果 start -->
+                    <div class="free-mark-xjh">
+                        <div class="filter-search-bg">
+                            <div class="free-remark-filter">
+                                <div class="selectlist xjh-city">
+                                    <span id="cityName" class="cityName">全国</span>
+                                    <input type="hidden" id="hCity" name="city" />
+                                </div>
+                                <div class="selectlist">
+                                    <div class="input-select" data-widget="ui-selectS" id="filter-school">
+                                        <select>
+                                            <option value="" selected="selected">全部学校</option>
+                                        </select>
+                                        <input type="hidden" name="school" />
+                                    </div>
+                                </div>
+                                <div class="selectlist selectlist-view">
+                                    <div class="input-select-view">
+                                        <input type="text" id="startDate" name="startDate" value="" readonly placeholder="今天" />
+                                        <i class="startX"></i>
+                                        <span>-</span>
+                                        <input type="text" id="endDate" name="endDate" value="" readonly placeholder="结束时间" />
+                                        <i class="startY"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="left-result">
+                            <li class="index">
+                                <div class=xjh-index-logo>
+                                    <div class="logo-time">2017</div>
+                                    <div class="logo-time">04.25</div>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="神州数码宣讲会">神州数码宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>哈尔滨</span><span class="white-space">黑龙江大学</span><span>黑大汇文楼</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="宁波银行苏州分行宣讲会">宁波银行苏州分行宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>长沙</span><span class="white-space">中南大学</span><span>校本部科教南楼507</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="西安艮泰信息技术宣讲会">西安艮泰信息技术宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>西安</span><span class="white-space">陕西师范大学</span><span>新勇中心（东）201</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="泰康人寿保险四川分宣讲会">泰康人寿保险四川分宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>成都</span><span class="white-space">成都理工大学</span><span>芙蓉餐厅二楼就业指导中心1号厅</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="临邑博文学校宣讲会">临邑博文学校宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>济南</span><span class="white-space">山东师范大学</span><span>长清湖校区宣讲室（大学生活动中心一层西厅（115室）无</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:30</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="长江航运科学研究所宣讲会">长江航运科学研究所宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>杭州</span><span class="white-space">中国计量学院</span><span>环宇楼c204教室</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:30</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="中时讯通信建设宣讲会">中时讯通信建设宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>长沙</span><span class="white-space">长沙理工大学</span><span>大学生创新创业园一楼报告厅</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:30</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="广元市利州区人力资源和社会保障局宣讲会">广元市利州区人力资源和社会保障局宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>重庆</span><span class="white-space">重庆大学</span><span>b区二综801室</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:30</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="上海仙晟君生物科技宣讲会">上海仙晟君生物科技宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>郑州</span><span class="white-space">郑州轻工业学院</span><span>科学校区二教楼614室</span>
+                                        </p>
+                                        <span class="xjh-mark-time">08:30</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="牧原宣讲会">牧原宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>太原</span><span class="white-space">中北大学</span><span>主楼七层西侧大厅</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="江西航空宣讲会">江西航空宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>重庆</span><span class="white-space">重庆邮电大学</span><span>2215教室</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="北京精华培训学校宣讲会">北京精华培训学校宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>哈尔滨</span><span class="white-space">东北农业大学</span><span>主楼410</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="东莞市蓝绿红教育投资宣讲会">东莞市蓝绿红教育投资宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>南昌</span><span class="white-space">江西师范大学</span><span>大学生活动中心一楼招聘大厅</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="海南链家旅居产业科技服务宣讲会">海南链家旅居产业科技服务宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>昆明</span><span class="white-space">昆明理工大学</span><span>呈贡校区西北区教学楼b栋102</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="海南省琼海市嘉积中学海桂学校宣讲会">海南省琼海市嘉积中学海桂学校宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>成都</span><span class="white-space">四川师范大学</span><span>狮子山校区第三办公区201教室</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="四川省第二场硕士、博士研究生人才洽谈宣讲会">四川省第二场硕士、博士研究生人才洽谈宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>成都</span><span class="white-space">四川大学</span><span>西区学生活动中心三楼大厅</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="大连山海宣讲会">大连山海宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>大连</span><span class="white-space">大连大学</span><span>招生就业指导处312</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="厦门航空宣讲会">厦门航空宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>长沙</span><span class="white-space">湖南商学院</span><span>实验楼一楼</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="中信建投证券佛山顺德大良证券营业部宣讲会">中信建投证券佛山顺德大良证券营业部宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>广州</span><span class="white-space">广东财经大学</span><span>实验楼209</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class=xjh-index-logo>
+                                </div>
+                                <div class="result-content">
+                                    <div class="job-detail">
+                                        <p class="job-name"><a href="/seminar/0" target="_blank" title="株洲万达国际电影城宣讲会">株洲万达国际电影城宣讲会</a></p>
+                                        <p class="group-detail">
+                                            <i></i><span>株洲</span><span class="white-space">湖南工业大学</span><span>公共教学楼127</span>
+                                        </p>
+                                        <span class="xjh-mark-time">09:00</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- 搜索没结果 start -->
+                        <!--<div class="xjh-no-result">
+                            <div class="xjh-noResult-logo"></div>
+                            <p>该地区近期暂无招聘会信息，请保持关注！</p>
+                        </div>-->
+                        <!-- 搜索没结果 end -->
+                    </div>
+                    <!-- 搜索有结果 end -->
+                </div>
+                <ul class="page-footer">
+                    <li class="current">
+                        <a href="">1</a>
+                    </li>
+                    <li>
+                        <a href="/xuanjianghui?page=2">2</a>
+                    </li>
+                    <li>
+                        <a href="/xuanjianghui?page=3">3</a>
+                    </li>
+                    <li>
+                        <a href="/xuanjianghui?page=4">4</a>
+                    </li>
+                    <li>
+                        <a href="/xuanjianghui?page=5">5</a>
+                    </li>
+                    <li class="omitPage">...</li>
+                    <li><a href="/xuanjianghui?page=87">87</a></li>
+                    <li class="next-page">
+                        <a class="page-next" href="/xuanjianghui?page=2"> </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="result-right">
+                <div class="week-hot-position">
+                    <div class="article-header">
+                        <span>每周热推职位</span>
+                    </div>
+                    <ul id="hotJobs"></ul>
+                </div>
+                <div class="article-right">
+                    <div class="article-header">
+                        <span>求职攻略</span>
+                        <a href="/article/">更多></a>
+                    </div>
+                    <ul id="article"></ul>
+                </div>
+            </div>
+        </div>
+        <!-- 主内容区 end -->
+        <!-- 底部说明区 start -->
+        <div class="footer-notice-line">
+            <p class="notice-title">友情提醒：</p>
+            <p>实际情况中，少数宣讲会场次可能临时改变时间、地点、甚至取消。因此提醒大家，宣讲会开始前，可与相关企业和承办学校联系确认后再前往，以免造成不必要的时间浪费。</p>
+        </div>
+        <!-- 底部说明区 end -->
+    </div>
+</div>
+
+@*<script src="/Content/static/lib/js/student/cityinit.js"></script>
+<script src="/Content/static/student/js/searchJob/uiSelect.js"></script>
+<script src="/Content/static/lib/js/base/datepicker.js"></script>*@
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/student/cityinit.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/uiSelect.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/jquery.mousewheel.min.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/jquery-ui.min.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/lib/js/base/datepicker.js"></script>
+<script>
+    $(".header-list .list-item").removeClass("current");
+    $(".header-list .list-item").eq(3).addClass("current");
+    //标记城市选择器是否触发
+    var flag = true;
+    var $cityName = '';
+    var $schoolName = '',
+        QUERY_URL = "/seminar/search?keyword=" + '' + "&cityName=" + $cityName + "&schoolName=" + $schoolName,
+        date = new Date(),
+        now = new Date(date.getFullYear(), date.getMonth(), date.getDay());
+    $('[data-widget="ui-selectS"]')
+        .selectui({
+            showText: '全部学校',
+            inputHidden: 'input[name="school"]',
+            callback: function() {
+                var school = $('input[name="school"]').val();
+                var href;
+                if (school == '') {
+                    href = '/seminar/search';
+                }
+                if ($cityName) {
+                    href = "/xjh//" + school;
+                } else {
+                    href = '/seminar/search';
+                }
+
+                if ($('#startDate').val() || $('#endDate').val()) {
+                    href += '?startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+                }
+
+                if ($('#keyword').val() && href.split('?').length < 2) {
+                    href += '?keyword=' + $('#keyword').val();
+                } else if ($('#keyword').val() && href.split('?').length >= 2) {
+                    href += '&keyword=' + $('#keyword').val();
+                }
+
+                window.location.href = href;
+            },
+            scroll: {
+                'isScroll': true,
+                'height': 170
+            }
+        });
+    $.fn.datepicker.dates['zh-CN'] = {
+        days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+        daysShort: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+        daysMin: ["日", "一", "二", "三", "四", "五", "六"],
+        months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+        monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+        today: "今日",
+        clear: "清除",
+        format: "yyyy年mm月dd日",
+        titleFormat: "yyyy年mm月",
+        weekStart: 1
+    };
+    $('#startDate').datepicker({
+        format: 'yyyy/mm/dd',
+        autoclose: true,
+        language: 'zh-CN',
+        container: '.selectlist-view'
+    }).on('changeDate', function(date) {
+        $('#endDate').datepicker('setStartDate', date.date);
+        window.location.href = QUERY_URL + '&startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+    });
+    $('#startDate').datepicker('setEndDate', $('#endDate').val());
+    $('#endDate').datepicker({
+        format: 'yyyy/mm/dd',
+        autoclose: true,
+        language: 'zh-CN',
+        container: '.selectlist-view'
+    }).on('changeDate', function(date) {
+        $('#startDate').datepicker('setEndDate', date.date);
+        window.location.href = QUERY_URL + '&startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+    });
+    $('#endDate').datepicker('setStartDate', $('#startDate').val());
+    $('.startX').click(function() {
+        $('#startDate').val() === '' ? '' : (function() {
+            $('#startDate').val('');
+            window.location.href = QUERY_URL + '&startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+        }())
+    });
+    $('.startY').click(function() {
+        $('#endDate').val() === '' ? '' : (function() {
+            $('#endDate').val('');
+            window.location.href = QUERY_URL + '&startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+        }())
+    });
+    $('.free-remark-filter')
+        .on('mouseenter',
+            '.xjh-city',
+            function() {
+                var options = {
+                    trigger: '.free-remark-filter',
+                    positionElement: '.xjh-city',
+                    inputVal: '.cityName',
+                    hinput: '#hCity',
+                    callback: function() {
+                        var cityName = $('#cityName').text();
+                        $('#cityName').css('border', 'none');
+                        $('.xjh-city').css('border', '1px solid #ddd');
+                        $.ajax({
+                            url: '/campustalk/GetCityPinyinById?cityName=' + encodeURI(cityName),
+                            success: function(r) {
+                                var href;
+                                if (!!r) {
+                                    href = '/xjh/' + r.cityPy;
+                                } else {
+                                    href = location.href;
+                                }
+                                if (r.cityPy == "quanguo") {
+                                    href = '/xuanjianghui';
+                                    href += '?startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+                                } else if ($('#startDate').val() || $('#endDate').val()) {
+                                    href += '?startDate=' + $('#startDate').val() + '&endDate=' + $('#endDate').val();
+                                }
+                                if ($('#keyword').val() && href.split('?').length < 2) {
+                                    href += '?keyword=' + $('#keyword').val();
+                                } else if ($('#keyword').val() && href.split('?').length >= 2) {
+                                    href += '&keyword=' + $('#keyword').val();
+                                }
+
+                                window.location.href = href;
+                            }
+                        }); //提交刷新页面
+                    }
+                };
+                $('.xjh-city').css({
+                    'border': '1px solid #7cbf59',
+                    'border-bottom': '1px solid transparent'
+                });
+                $(this).cityPicker(options);
+            })
+        .on('mouseenter',
+            '#citySelect',
+            function() {
+                flag = false;
+                $('.xjh-city').css({
+                    'border': '1px solid #7cbf59',
+                    'border-bottom': '1px solid transparent'
+                });
+            })
+        .on('mouseleave',
+            '#citySelect',
+            function() {
+                flag = true;
+                $('.xjh-city').css('border', '1px solid #ddd');
+                $(this).remove();
+            })
+        .on('mouseleave',
+            '#cityName',
+            function() {
+                setTimeout(function() {
+                        if (flag) {
+                            $('.xjh-city').css('border', '1px solid #ddd');
+                            $('#citySelect').remove();
+                        } else {
+                            return false;
+                        }
+                    },
+                    10)
+            })
+
+    function freshPage() {
+        //location.href = location.href;
+    }
+    ////这个是老板页面异步加载热门文章的请求
+    //$(function () {
+    //    $.ajax({
+    //        type: 'get',
+    //        url: '/push/hotarticle?type=campusTalk',
+    //        dataType: 'html',
+    //        success: function (response) {
+    //            $('#article').html(response);
+    //        }
+    //    });
+    //});
+    //$.ajax({
+    //    type: 'get',
+    //    url: '/push/weeklyhotpositions/',
+    //    dataType: 'html',
+    //    success: function (response) {
+    //        $('#hotJobs').html(response);
+    //    }
+    //});
+</script>

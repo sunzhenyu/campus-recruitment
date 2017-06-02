@@ -1,0 +1,432 @@
+﻿@using Campus.Recruitment.Models;
+@using Campus.Recruitment.Helper;
+
+@model Campus.Recruitment.Entities.Entity.JobDetailInfo
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "找全职详情";
+}
+
+<link href="@AppSetting.Rss_Image/Content/static/student/css/searchJob/jobDetails.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/student/login-layer.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/student/login-layer.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/base/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="@AppSetting.Rss_Image/Content/static/lib/css/base/jquery.mCustomScrollbar.min.css" rel="stylesheet" type="text/css" />
+
+<div id="jobDetails-container">
+    <div class="jobDetails-container">
+        <div class="details-left">
+            <div class="job-intro">
+                <p>
+                    <a href="#" target="_blank">@Model.PositionInfo.Name</a>
+                    <span>@Model.PositionInfo.Update_at.ToString("yyyy-MM-dd") 更新</span>
+                </p>
+            </div>
+            <div class="details-intro">
+                <p class="intro-divide">
+                    @{ 
+                        string positionType = Model.PositionInfo.Position_type == 1 ? "全职" : "实习";
+                        string recruitCount = Model.PositionInfo.Recruit_count > 0 ? $"招聘{Model.PositionInfo.Recruit_count}人" : "招聘若干";
+                        string salary = "";
+                        if (Model.PositionInfo.Position_type == 1)
+                        {
+                            salary = Model.PositionInfo.Salary_min > 0 ? $"{Model.PositionInfo.Salary_min}-{Model.PositionInfo.Salary_max}元/月" : "面议";
+                        }
+                        else
+                        {
+                            if (Model.PositionInfo.Intern_salary_type == 1)
+                            {
+                                salary = Model.PositionInfo.Intern_salary_min > 0 ? $"{Model.PositionInfo.Intern_salary_min}-{Model.PositionInfo.Intern_salary_max}元/月" : "面议";
+                            }
+                            else if (Model.PositionInfo.Intern_salary_type == 2)
+                            {
+                                salary = Model.PositionInfo.Daily_salary > 0 ? $"{Model.PositionInfo.Daily_salary}/天" : "面议";
+                            }
+                            else
+                            {
+                                salary = Model.PositionInfo.Hour_salary > 0 ? $"{Model.PositionInfo.Hour_salary}/时" : "面议";
+                            }
+                        }
+
+                    }
+                    <span>@positionType</span>
+                    <span>@Model.PositionInfo.City_names</span>
+                    <span>
+                        <em>@salary</em>
+                    </span>
+                    <span>@recruitCount</span>
+                </p>
+                <div class="intro-demond">
+                    <p class="demond-title">职位要求：</p>
+                    <p class="demond-list">学历要求： @Model.PositionInfo.Degree_names</p>
+                    <p class="demond-list">专业要求： @Model.PositionInfo.Major_name</p>
+                    <p class="demond-list">学校级别： @Model.PositionInfo.School_level_name</p>
+                    <p class="demond-list">学校城市： @Model.PositionInfo.School_city_names</p>
+                </div>
+            </div>
+            <div class="job-wechat">
+                <div id="qrcode"><img id="imgValidateCode" src="/job/qrcode?id=@Model.PositionInfo.Id" alt="分享职位"></div>
+                <p>分享职位</p>
+            </div>
+            <div class="intro-position"> 
+                <p class="demond-title">职位描述：</p>
+                <p>
+                    @Html.CreateHtmlForTextAreaText(Model.PositionInfo.Pos_description)
+                </p>
+            </div>
+            <div class="intro-apply">
+                <div class="collect"> 
+                    @if (ViewBag.ApplyState == "1")
+                    {
+                        <span class="apply-job">已申请</span>
+                    }
+                    else
+                    {
+                        <span class="apply-job active">立即申请</span>
+                    }
+
+                    @if (ViewBag.CollectState != "1")
+                    {
+                        <span class="collect-job collect">收藏</span>
+                        <span class="collect-success"></span>
+                    }
+
+                    @if (ViewBag.ApplyState != "1")
+                    {
+                        if (ViewBag.FireState == "1")
+                        {
+                            <span class="fire-job">已举报该职位！</span>
+                        }
+                        else
+                        {
+                            <span class="fire-job active">举报该职位！</span>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="details-right">
+            <div class="rg-company">
+                <div class="rg-comany-logo">
+                    @{ 
+                        string icon = string.IsNullOrWhiteSpace(Model.EnterprisesInfo.Icon_logo)
+                                ? "/content/static/images/avatar/etp.jpg"
+                                : $"{AppSetting.Rss_Image + Model.EnterprisesInfo.Icon_logo}";
+
+                    }
+                    <img src="@icon" alt="">
+                    <a class="company-link" target="_blank" href="javascript:;">@Model.EnterprisesInfo.Name</a>
+                    <a class="company-link" target="_blank" href="javascript:;"></a>
+                  @*  <a href="javascript:;" class="pay-attention follow"><span>关注</span></a>*@
+                    <div class="follow-success"></div>
+                </div>
+                <div class="rg-company-intro">
+                    <p>
+                        <label>行业：</label><span>@Model.EnterprisesInfo.Show_industry</span>
+                    </p>
+                    <p>
+                        <label>性质：</label><span>@Model.EnterprisesInfo.Mode</span>
+                    </p>
+                    <p>
+                        <label>规模：</label><span>@Model.EnterprisesInfo.Scale</span>
+                    </p>
+                    <p>
+                        <label>官网：</label><a href="@Model.EnterprisesInfo.Web_site" class="website" target="_blank" rel="external nofollow">@Model.EnterprisesInfo.Web_site</a>
+                    </p>
+                    <p class="address">地址：<span>@Model.EnterprisesInfo.Address</span></p>
+                </div>
+                <div id="rg-company-map"></div>
+                <p class="read-map" data-adr="@Model.EnterprisesInfo.Address" data-city="武汉">查看完整地图>></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="login-layer-mask" style="display:none;">
+    <div id="login-layer-content" style="height:355px">
+        <div class="login-layer-header">学生用户登录<i></i></div>
+        <div class="login-layer-container">
+            <form action='/account/sign-in-check' id="register-form" method="post">
+                <input type="text" name="Mobile" placeholder="手机号">
+                <div class="login-alert-warning email-warning"><i></i><span></span></div>
+                <input type="password" name="Password" placeholder="密码">
+                <div class="login-alert-warning passwd-warning"><i></i><span></span></div>
+                <div class="auto-login active">
+                    <i></i>
+                    <span>自动登录</span>
+                    <input type="hidden" name="RememberMe" value="true">
+                </div>
+                <a href="/account/mobileforgetpwd" class="forget-passwd-link">忘记密码</a>
+                <p class="login-submit">立即登录</p>
+            </form>
+            <div class="fake-reg-btn">
+                <p>还没有新起点帐号？<a href="/account/sign-in" class="fake-reg-link">立即注册<i></i></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery-ui.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.mousewheel.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/coding.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/student/login-layer.js"></script>
+@*<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.qrcode.min.js">*@
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tF1AwVI6rcIGkuts9qsMpAnefCDswGIC"></script>
+<script>
+    var clientH = $(window).height(),
+        scrollTop = $(window).scrollTop(),
+        elementTop = $('.intro-apply').offset().top;
+    var PositionId = "@Model.PositionInfo.Id";
+    $(function() {
+        if (elementTop + 111 > clientH + scrollTop) {
+            $('.intro-apply').css({
+                position: 'fixed',
+                bottom: 0,
+                'box-shadow': '0 -1px 3px #ddd',
+                background: 'url(@AppSetting.Rss_Image/content/static/student/images/icon/job-details-dot.png) repeat'
+            });
+        } else {
+            $('.intro-apply').removeAttr('style');
+        }
+        //初始化相关职位是否有更多
+        if ($('.nav-container0').height() < 44) {
+            $('.more').hide();
+        }
+        $(window).scroll(function() {
+            scrollTop = $(window).scrollTop();
+            if (elementTop + 111 > clientH + scrollTop) {
+                $('.intro-apply').css({
+                    position: 'fixed',
+                    bottom: 0,
+                    'box-shadow': '0 -1px 3px #ddd',
+                    background: 'url(static/student/images/icon/job-details-dot.png) repeat'
+                });
+            } else {
+                $('.intro-apply').removeAttr('style');
+            }
+        });
+        $('#jobDetails-container')
+            .on('click', '.job-similar img', function() {
+                $(this).siblings('.job-list').children('.comany-name')[0].click();
+            })
+            .on('click', '.apply-job.active', function() {
+                var _this = $(this);
+                if ("@SessionHelper.Instance().GetSessionValue("UserId")" != "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/job/apply',
+                        beforeSend: function() {
+                            _this.removeClass('active');
+                        },
+                        data: {
+                            position_id: PositionId
+                        },
+                        success: function(r) {
+                            window.location.href = "/position/apply";
+                        }
+                    });
+                    //知道了~
+                    $('.know').click(function() {
+                        $('#layer-alert-content').find('i').trigger('click');
+                    });
+                } else {
+                    $("#login-layer-mask").css("display","block");
+                }
+            })
+            .on('click', '.collect-job.collect', function() {
+                var _this = $(this);
+                if ("@SessionHelper.Instance().GetSessionValue("UserId")" != "") {
+                    $('.collect-success').show();
+                    $.ajax({
+                        type: 'POST',
+                        url: '/job/collect/',
+                        data: {
+                            position_id: PositionId
+                        },
+                        success: function (r) {
+                            window.location.href = "/job/" + PositionId;
+                        }
+                    });
+                } else {
+                    $("#login-layer-mask").css("display", "block");
+                }
+            })
+            .on('click', '.fire-job.active', function() {
+                var _this = $(this);
+
+                function loadReason(arr) {
+                    var temp = '';
+                    $.each(arr, function(i, v) {
+                        if (i == 0) {
+                            temp += '<li class="active" data-id="' + v.Value + '">' + v.Text + '</li>'
+                        } else {
+                            temp += '<li data-id="' + v.Value + '">' + v.Text + '</li>'
+                        }
+                    });
+                    return temp;
+                }
+                if ("@SessionHelper.Instance().GetSessionValue("UserId")" != "") {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/job/fire',
+                        beforeSend: function() {
+                            _this.removeClass('active');
+                        },
+                        data: {
+                            position_id: PositionId
+                        },
+                        success: function(r) {
+                            window.location.href = "/job/"+PositionId;
+                        }
+                    })
+                } else {
+                    $("#login-layer-mask").css("display", "block");
+                }
+            })
+            //查看完成地图
+            .on('click', '.read-map', function() {
+                var mapTemplate = '<div class="map-container">\
+                                        <p class="map-title">地址：@Model.EnterprisesInfo.Address</p>\
+                                        <div id="mapDetails"></div>\
+                                        <div class="map-rg">\
+                                            <div class="rg-bus">\
+                                                <p>附近公交站</p>\
+                                                <ul id="map-bus"></ul>\
+                                            </div>\
+                                            <div class="rg-subway">\
+                                                <p>附近地铁站</p>\
+                                                <ul id="map-subway"></ul>\
+                                            </div>\
+                                        </div>\
+                                    </div>';
+                $(this).layerAlertMask({
+                    title: '公司地址及交通信息',
+                    closeIcon: true,
+                    setContent: mapTemplate,
+                    width: '800',
+                    height: '504',
+                });
+                var map = new BMap.Map("mapDetails");
+                var top_left_control = new BMap.ScaleControl({
+                    anchor: BMAP_ANCHOR_BOTTOM_LEFT
+                }); // 左上角，添加比例尺
+                var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
+                var point = new BMap.Point(116.331398, 39.897445);
+                map.enableScrollWheelZoom(true);
+                map.addControl(top_left_control);
+                map.addControl(top_left_navigation);
+                // 创建地址解析器实例
+                var myGeo = new BMap.Geocoder();
+                // 将地址解析结果显示在地图上,并调整地图视野
+                myGeo.getPoint('东湖高新区光谷科技港2栋A座907#', function(point) {
+                    if (point) {
+                        var marker = new BMap.Marker(point); // 创建标注
+                        map.addOverlay(marker);
+                        map.centerAndZoom(point, 16);
+                        var opts = {
+                            width: 200, // 信息窗口宽度
+                            height: 70, // 信息窗口高度
+                            title: "武汉华拓防腐安装工程有限公司", // 信息窗口标题
+                            enableMessage: false //设置允许信息窗发送短息
+                        };
+                        var infoWindow = new BMap.InfoWindow("地址：@Model.EnterprisesInfo.Address", opts); // 创建信息窗口对象
+                        map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        marker.addEventListener("click", function() {
+                            map.openInfoWindow(infoWindow, point); //开启信息窗口
+                        });
+                        var localF = new BMap.LocalSearch(map, {
+                            renderOptions: {
+                                map: map,
+                                panel: 'map-bus',
+                                selectFirstResult: false,
+                                autoViewport: false
+                            },
+                            pageCapacity: 50,
+                            onResultsHtmlSet: function(element) {
+                                $('#map-bus').mCustomScrollbar({
+                                    theme: 'minimal-dark'
+                                });
+                                $('.mCSB_container').find('div:first-child').css('border', 'none');
+                            }
+                        });
+                        localF.searchNearby('公交站', point, 500);
+                        var localS = new BMap.LocalSearch(map, {
+                            renderOptions: {
+                                map: map,
+                                panel: 'map-subway',
+                                selectFirstResult: false,
+                                autoViewport: false
+                            },
+                            pageCapacity: 50,
+                            onResultsHtmlSet: function() {
+                                $('#map-subway').mCustomScrollbar({
+                                    theme: 'minimal-dark'
+                                });
+                                $('.mCSB_container').find('div:first-child').css('border', 'none');
+                            }
+                        });
+                        localS.searchNearby('地铁站', point, 1000);
+                    } else {
+                        alert("您选择地址没有解析到结果!");
+                    }
+                }, '@Model.EnterprisesInfo.Show_city');
+            });
+
+    });
+
+    $(".login-submit").on("click", function () {
+        if ("" == $("input[name='UserName']").val()) {
+            $(".email-warning").children("span").text("账号不能为空");
+            $(".email-warning").css("visibility", "visible");
+            return;
+        }
+        if ("" == $("input[name='Password']").val()) {
+            $(".passwd-warning").children("span").text("密码不能为空");
+            $(".passwd-warning").css("visibility", "visible");
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "/account/ajax-sign-in",
+            data: {
+                Mobile: $('input[name="Mobile"]').val(),
+                Password: $('input[name="Password"]').val(),
+                RememberMe: $('input[name="RememberMe"]').val()
+            },
+            success: function (data) {
+                if (data) {
+                    //$("#login-layer-mask").css("display", "none");
+                    location.reload();
+                } else {
+                    $(".passwd-warning").children("span").text("账号或密码不正确");
+                    $(".passwd-warning").css("visibility", "visible");
+                }
+            }
+        });
+    });
+
+    $("#login-layer-content i").on("click", function () {
+        $("#login-layer-mask").hide();
+    });
+
+</script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("rg-company-map");
+    map.enableScrollWheelZoom(true);
+    var point = new BMap.Point(116.331398, 39.897445);
+    map.centerAndZoom(point, 12);
+    // 创建地址解析器实例
+    var myGeo = new BMap.Geocoder();
+    // 将地址解析结果显示在地图上,并调整地图视野
+    myGeo.getPoint("@Model.EnterprisesInfo.Address", function(point) {
+        if (point) {
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+        } else {
+            console.log('地图加载失败');
+        }
+    }, "@Model.EnterprisesInfo.Show_city");
+</script>

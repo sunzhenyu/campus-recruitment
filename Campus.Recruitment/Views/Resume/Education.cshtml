@@ -1,0 +1,327 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerEducation
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-education" method="post">
+            <input data-val="true"  id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="education" />
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label for="schoolName">
+                        <em>*</em>学校名称
+                    </label>
+                    <div class="fieldgroup">
+                        <input type="text" value="@Model.School_name" name="SchoolName" id="schoolName" class="resume-text ac_input" placeholder="请输入完整大学名" maxlength="30" autocomplete="off" @*data-url="/account/schoolautocomplete/"*@ />
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="Degree">
+                        <em>*</em>学历
+                    </label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="degree" name="degree">
+                        <option value="">请选择</option>
+                        <option value="1">大专</option>
+                        <option value="2">本科</option>
+                        <option value="3">硕士</option>
+                        <option value="4">博士</option></select>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="major">
+                        <em>*</em>专业
+                    </label>
+                    <div class="fieldgroup">
+                        <input id="major" name="Major" type="text" class="resume-text" value="@Model.Major"
+                               @*data-url="/account/majorautocomplete/"
+                               data-matchurl="/resume/getmajorcode/"*@>
+                        @*<span class="ui-form-explain"></span>
+                        <div class="ui-form-warning">提醒：教育部专业类目中未查询到“<span></span>”</div>
+                        <div class="ui-form-warning" style="margin-bottom: -10px;">专业是系统推荐职位的重要匹配维度，请确认是否填写正确</div>*@
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label>
+                        <em>*</em>学习时间
+                    </label>
+                    @{
+                        var start_edu_show = Model.Start_edu > DateTime.MinValue ? Model.Start_edu.ToString("yyyy.MM") : "";
+                        var start_edu = Model.Start_edu > DateTime.MinValue ? Model.Start_edu.ToString("yyyy/MM/dd") : "";
+
+                        var end_edu_show = Model.End_edu > DateTime.MinValue ? Model.End_edu.ToString("yyyy.MM") : "";
+                        var end_edu = Model.End_edu > DateTime.MinValue ? Model.End_edu.ToString("yyyy/MM/dd") : "";
+                    }
+                    <div class="fieldgroup">
+                        <div class="ui-date-wrap ui-date-exp"><input class="resume-text ui-input-date" id="start-edu" readonly="" type="text" value="@start_edu_show"></input><input id="start-edu-id" name="StartDate" type="hidden" value="@start_edu"></input></div>
+                        <em class="select-to">至</em>
+                        <div class="ui-date-wrap ui-date-exp"><input class="resume-text ui-input-date" id="end-edu" readonly="" type="text" value="@end_edu_show"></input><input id="end-edu-id" name="EndDate" type="hidden" value="@end_edu"></input></div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="classRank">
+                        班级排名
+                    </label>
+                    <div class="fieldgroup">
+                        <select data-widget="select" id="classRank" name="classRank" >
+                        <option value="">请选择</option>
+                        <option value="1">前10%</option>
+                        <option  value="2">前30%</option>
+                        <option value="3">前50%</option>
+                        <option value="4">其他</option></select>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+
+                <li class="text ui-form-item">
+                    <label>
+                        是否统招
+                    </label>
+                    <div class="fieldgroup">
+
+                        <select data-widget="select" id="IsEntranceExamination" name="IsEntranceExamination" ><option value="">请选择</option><option selected="selected" value="True">是</option><option value="False">否</option></select>
+                    </div>
+                </li>
+            </ul>
+            <p class="actions">
+                <input type="submit" id="submit-education" itemtype="education" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="education" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // 简历模块的js
+
+    seajs.use(['jqueryAutocomplete', 'validator', '$', 'selectui', 'zyb/datePicker/DatePicker'], function (jqueryAutocomplete, Validator, $, selectui, DatePicker) {
+        jqueryAutocomplete($);
+
+        var getSubMajors = function (subval) {
+            $majorl1 = $("#majorl1");
+            $majorL2 = $("#majorl2");
+            selectedValue = "-1";
+            var majorUrl = $('#majorUrl').val();
+            $.get(majorUrl, { pcode: $majorl1.val() }, function (data) {
+                $majorL2.val(selectedValue);
+                $majorL2.prev(".select-result").text("请选择");
+                $majorL2UL = $majorL2.next("ul");
+                $majorL2UL.empty();
+                $.each(data, function (i, v) {
+                    $majorL2UL.append("<li data-value='" + v.Code + "'><a href='javascript:;'>" + v.Major + "</a></li>");
+                });
+                if (subval != null) {
+                    SetValueToSelectUI($majorL2, subval);
+                }
+            }, 'json');
+        };
+
+        //给hidden赋值，并将text显示在span上
+        var SetValueToSelectUI = function ($hiddenOfSelectUI, val) {
+            $ulOfSelectUI = $hiddenOfSelectUI.parents(".selectui").find("ul");
+            $spanOfSelectUI = $hiddenOfSelectUI.prev(".select-result");
+            if ($ulOfSelectUI.length > 0 && $spanOfSelectUI.length > 0) {
+                //在ul的li中寻找text，赋给span
+                var $a = $("a", $("li[data-value='" + val + "']", $ulOfSelectUI));
+                if ($a.length > 0 && $.trim($a.html).length > 0) {
+                    $hiddenOfSelectUI.val(val);
+                    $spanOfSelectUI.val($a.html());
+                }
+            }
+        }
+
+        $(function () {
+
+            //var select = $('#form-education').find('[data-widget="select"]').selectui();     //新版
+
+            var degree = $("#degree").selectuiParam();
+            var classRank = $("#classRank").selectuiParam();
+            var IsEntranceExamination = $("#IsEntranceExamination").selectuiParam();
+            degree._selected(@Model.Degree);
+            classRank._selected(@Model.Class_rank);
+            if ("@Model.Is_entrance_examination" == "True" || "@Model.Is_entrance_examination" == "true") {              
+                IsEntranceExamination._selected(1);
+            } else {
+                
+                IsEntranceExamination._selected(2);
+            }
+
+            //Green------2014-7-14--“专业分类”
+            $('#majorl1').parents(".selectui").find("ul").on('click', 'li', function (e) {
+                getSubMajors();
+            });
+            $("input[name='Major']").focus(function () {
+                $('.ui-form-warning').hide();
+            });
+            $("input[name='Major']").blur(function () {
+                var $this = $(this),
+                    $majorL1 = $('#majorl1'),
+                    $majorL2 = $('#majorl2');
+                //增加专业验证是否是标准
+
+                if (!!$this.val()) {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://api.zheyibu.com/api/major/GetMajorisValidate',
+                        data: {majorName : $this.val()},
+                        success: function (r) {
+                            if (r == false) {
+                                $('.ui-form-warning span').text($this.val());
+                                $('.ui-form-warning').show();
+                            }
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+                    });
+
+                }
+                var majorMatchUrl = $('#major').attr('data-matchUrl');
+                $.get(majorMatchUrl, { major: $this.val() }, function (data) {
+                    if (data.code == 0) {
+                        SetValueToSelectUI($majorL1, data.L1);
+                        //getSubMajors();
+                        //SetValueToSelectUI($majorL2, data.L2);  //异步的，不能这样调用
+                        getSubMajors(data.L2); //参数subval
+                    }
+                });
+            });
+            //------------------------------
+
+            var schoolCompleteUrl = $('#schoolName').attr('data-url');
+            $("#schoolName").autocomplete(schoolCompleteUrl, {
+                dataType: 'json',
+                minChars: 1,
+                width: 218,
+                highlight: false,
+                formatItem: function (row, i, max) {
+                    return row[0];
+                },
+                formatResult: function (row) {
+                    return row[0];
+                }
+            });
+
+            var majorCompleteUrl = $('#major').attr('data-url');
+            $("#major").autocomplete(majorCompleteUrl, {
+                dataType: 'json',
+                minChars: 1,
+                width: 218,
+                highlight: false,
+                formatItem: function (row, i, max) {
+                    return row[0];
+                },
+                formatResult: function (row) {
+                    return row[0];
+                }
+            });
+
+            window.educationValidator = validator = new Validator({
+                element: '#form-education',
+                failSilently: true,
+                triggerType: false
+            });
+
+            //check 结束日期 是否 大于 开始日期
+            Validator.addRule('checkEndDateResonable', function (options, commit) {
+                var element = options.element;
+                var numStart = parseInt($.trim($("#start-edu").val()).split('.').join(''));
+                var numEnd = parseInt($.trim($("#end-edu").val()).split('.').join(''));
+                var message = '';
+                var valid = true;
+                //日期比较
+                if (numStart > numEnd) {
+                    valid = false;
+                    message = "结束日期应大于开始日期";
+                }
+                commit(valid, message);
+            });
+            //Validator.addRule('checkRemoteData', function (options) {
+            //    debugger
+            //    $.ajax({
+            //        url: '/account/CheckMajorisValidate',
+            //        type: 'GET',
+            //        data: {
+            //            majorName: $('#major').val()
+            //        },
+            //        success: function (r) {
+            //            debugger
+            //        }
+            //    });
+            //});
+            validator
+            .addItem({
+                element: '#schoolName',
+                required: true
+            })
+            .addItem({
+                element: '#degree',
+                required: true
+            })
+            .addItem({
+                element: '#major',
+                required: true
+            })
+            .addItem({
+                element: '[name=StartDate]',
+                required: true,
+                errormessageRequired: '请选择开始时间',
+                rule: 'checkEndDateResonable'
+            })
+            .addItem({
+                element: '[name=EndDate]',
+                required: true,
+                errormessageRequired: '请选择结束时间',
+                showMessage: function (message, element) {
+                    // 结束日期出错后会调用这个函数。如果前面的开始日期没有出错的时候才显示自己的出错消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(message);
+                        this.getItem(element).addClass(this.get('itemErrorClass'));
+                    }
+                },
+                hideMessage: function (message, element) {
+                    // 结束日期校验通过后会调用这个函数。如果前面的开始日期没有出错的时候才清空消息。
+                    var startErr = $.trim(this.getExplain(element).html());
+                    if (!startErr) {
+                        this.getExplain(element).html(element.attr('data-explain') || ' ');
+                        this.getItem(element).removeClass(this.get('itemErrorClass'));
+                    }
+                }
+            });
+        });//end ready
+
+        (function () {
+
+            var nowYear = new Date().getFullYear();
+
+            $("#start-edu").datePick({
+                hiddenField: '#start-edu-id',
+                startYear: nowYear - 10,
+                defaultYear: nowYear-3,
+                format: 'yyyy.mm.dd',
+                disableDate: 1,
+                defaultMon: 9,
+                //referDate: function () {
+                //    return $('#end-edu').val();
+                //}
+            });
+            $("#end-edu").datePick({
+                hiddenField: '#end-edu-id',
+                startYear: nowYear - 10,
+                defaultYear: nowYear+1,
+                endYear: nowYear + 5,
+                format: 'yyyy.mm.dd',
+                disableDate: -1,
+                defaultMon: 6,
+                //referDate: function () {
+                //    return $('#end-edu').val();
+                //},
+                endYearText: ''
+            });
+        })();
+
+    });//end seajs.use
+</script>

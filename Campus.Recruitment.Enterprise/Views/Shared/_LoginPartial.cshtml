@@ -1,0 +1,13 @@
+﻿<div id="login-banner">
+    <form action="/account/ajaxlogin" method="post">
+        <label>企业登录</label>
+        <input type="text" name="AccountName" placeholder="登录用户名" />
+        <input type="password" name="Password" placeholder="登录密码" />
+        <input type="hidden" name="RememberMe" value="true" />
+        <button type="button">登录</button>
+        <a href="/account/register">企业注册</a>
+        <span class="keep-login active">保持登录状态</span>
+        <a href="/account/forgetpwd" class="forget-psd">忘记密码</a>
+        <div class="pass-user">帐号或者密码错误</div>
+    </form>
+</div>

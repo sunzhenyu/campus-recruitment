@@ -1,0 +1,288 @@
+﻿@using Campus.Recruitment.Enterprise.Models;
+@using Campus.Recruitment.Enterprise.Helper;
+@using Campus.Recruitment.Entities.Entity;
+@model PageList<List<Position>>
+
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "职位管理";
+}
+<link rel="stylesheet" href="/content/static/zheyibu/static/css/dialog.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/showBox.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/dialog.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-v2.css">
+<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-manage.css">
+<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="/content/static/js/corp/init.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            validator: 'arale/validator/0.9.7/validator'
+        }
+    });
+</script>
+<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="/content/static/js/jquery/jquery/jquery-1.7.2.min.js"></script>
+<script src="/content/static/js/corp/formui.js"></script>
+<script src="/content/static/js/corp/showBox.js"></script>
+<script src="/content/static/js/corp/dialog.js"></script>
+<script src="/content/static/js/corp/position-manage.js"></script>
+<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<script src="/content/static/js/corp/init.js"></script>
+<script src="/content/static/zheyibu/components/layer/layer.js"></script>
+<script>
+    seajs.use(['$', 'arale/dialog/1.2.3/dialog'],
+        function ($, Dialog) {
+
+            $(function () {
+
+                //职位发布须知
+                template = '<div style="font-size:14px;color:#333;border-radius:3px;">' + '<div id="m-header" style="width:600px;line-height:44px;color:#fff;font-size:16px;background-color:#85b0dc;padding-left:20px;">职位发布须知</div>' + '<p style="margin:12px 22px;">在本站发布的招聘信息必须是大学应届生、在校生可以应聘的职位，严禁发布以下几类职位：</p>' + '<p style="color:#A46C3B;margin:10px 22px;">1. 公关、校园推广代理类、加盟类、论坛专职发帖类；</p>' + '<p style="color:#A46C3B;margin:10px 22px;">2. 无学历要求的低端类职位，如淘宝客服、工厂普工、传单派发、修理工、搬运工、杂工、保安、保洁工、仓管员等职位；</p>' + '<p style="color:#A46C3B;margin:10px 22px;">3. 只要求工作经验的职位（没有应届生/在校生需求）；</p>' + '<p style="color:#A46C3B;margin:10px 22px;">4. 招聘信息中包含不良信息的职位；</p>' + '<p style="color:#A46C3B;margin:10px 22px;">5. 第三方招聘发布的职位（如中介、劳务派遣）；</p>' + '<p style="color:#A46C3B;margin:10px 22px;">6. 培训机构招收学员进行有偿培训，再分配到合作的公司工作。</p>' + '<p style="margin:12px 0 24px 22px;">以上类别职位一经发现，本站将立即屏蔽或删除</p></div>';
+                window.noticeDialog = new Dialog({
+                    width: 620,
+                    closeTpl: ' ',
+                    trigger: $('.m-info'),
+                    content: template
+                });
+                $('.sub-nav').on('click', '.add-job', function (e) {
+                    $.ajax({
+                        type: 'get',
+                        async: false,
+                        url: '/Position/CheckIsPublishPositionOverLimit',
+                        success: function (data) {
+                            if (data.isOverLimit) {
+                                var cs = '<p>亲，你的帐号目前最多可发布职位数量为' + data.maxPosCount + '个，不可再发布职位了。</p>\
+                                <p>如果您需要发布更多的职位，请联系我们申请提升职位数量上限。</p>\
+                                <p>联系电话：021-58360268-572</p>';
+                                var layer = new Layer({
+                                    content: cs,
+                                    title: '提示'
+                                });
+                                layer.show();
+                                e.preventDefault();
+                                $(".ui-layer-header").css("background-color", "#3498db");
+                            }
+                        }
+                    });
+                })
+            });
+        })
+</script>
+
+<style>
+    .ui-dialog {
+        padding: 0;
+    }
+
+        .ui-dialog.animated {
+            padding: 20px;
+        }
+
+        .ui-dialog .ui-dialog-content {
+            padding: 0;
+        }
+</style>
+<div class="container">
+    <div id="new-position-content">
+        <div class="tab-panels">
+            <div class="sub-nav">
+                <a href="/position/publish" class="add-job">发布新职位</a>
+                <ul>
+                    <li class="posi-li">
+                        <div class="pos-item">
+                            <div class="pos">
+                                <a href="/position/search?state=1">发布中的职位</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="posi-li">
+                        <div class="pos-item">
+                            <div class="pos">
+                                <a href="/position/search?state=2">已暂停职位</a>
+                            </div>
+                        </div>
+                    </li>
+                    @*<li class="posi-li">
+                        <div class="pos-item">
+                            <div class="pos">
+                                <a href="/position/search?state=3">已过期职位</a>
+                            </div>
+                        </div>
+                    </li>*@
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper-1000">
+            <div class="channel-bd">
+                <div class="data-filter clearfix">
+                    <form action="/position" method="get" id="formFilter">
+                        <input id="state" name="state" type="hidden" value="@ViewBag.State">
+                        <div class="select category-select u-no-beaf">
+                            <i class="u-icon-position"></i>
+                            <input class="select-result" readonly="readonly" value="职位名称">
+                            <input id="posName" name="Name" type="hidden" value="@ViewBag.Name">
+                            <ul style="display: none;">
+                                <li class="u-li">
+                                    <div class="u-li-content">不限</div>
+                                </li>
+                                <li class="u-unit" data-id="运营">
+                                    <div class="u-li-content">运营</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="select category-select u-no-beaf">
+                            <i class="u-icon-position"></i>
+                            <input class="select-result" readonly="readonly" value="工作城市">
+                            <input id="city" name="cityId" type="hidden" value="@ViewBag.CityId">
+                            <ul style="display: none;">
+                                <li class="u-li">
+                                    <div class="u-li-content">不限</div>
+                                </li>
+                                <li class="u-unit" data-id="2014001">
+                                    <div class="u-li-content">武汉</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="select category-select u-no-beaf">
+                            <i class="u-icon-position"></i>
+                            <input class="select-result" readonly="readonly" value="工作性质">
+                            <input id="posType" name="PositionType" type="hidden" value="@ViewBag.PositionType">
+                            <ul style="display: none;">
+                                <li class="u-li">
+                                    <div class="u-li-content">不限</div>
+                                </li>
+                                <li class="u-unit" data-id="1">
+                                    <div class="u-li-content">全职</div>
+                                </li>
+                                <li class="u-unit" data-id="2">
+                                    <div class="u-li-content">实习</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="select category-select u-no-beaf">
+                            <i class="u-icon-position"></i>
+                            <input class="select-result" readonly="readonly" value="职位类别">
+                            <input id="func" name="FunctionId" type="hidden" value="@ViewBag.FunctionId">
+                            <ul style="display: none;">
+                                <li class="u-li">
+                                    <div class="u-li-content">不限</div>
+                                </li>
+                                <li class="u-unit" data-id="8">
+                                    <div class="u-li-content">运营</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div id="J_PosMnger" class="channel-bd-wrap">
+                    <table class="corp-tbl-1">
+                        <colgroup>
+                            <col width="10">  
+                            <col width="160"> 
+                            <col width="60">
+                            <col width="60">
+                            <col width="100">
+                            <col width="145">
+                            <col width="95">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr class="tr-title">
+                                <th class="check"></th>
+                                <th class="position">职位名称</th>
+                                <th class="resume">应聘简历</th>
+                                <th class="resume">招聘人数</th>
+                                <th class="resume">待遇</th>
+                                <th class="refresh">学历要求</th>
+                                <th class="deadline">最后刷新</th>
+                                <th class="actions">操作</th>
+                            </tr>
+
+                        </thead>
+                        <tbody id="J_PosTbody">
+                            @foreach (var item in Model.Data)
+                            {
+                                string positionType = item.Position_type == 1 ? "全职" : "实习";
+                                string recruitCount = item.Recruit_count > 0 ? $"{item.Recruit_count}人" : "若干";
+                                string salary = "";
+                                if (item.Position_type == 1)
+                                {
+                                    salary = item.Salary_min > 0 ? $"{item.Salary_min}-{item.Salary_max}" : "面议";
+                                }
+                                else
+                                {
+                                    if (item.Intern_salary_type == 1)
+                                    {
+                                        salary = item.Intern_salary_min > 0 ? $"{item.Intern_salary_min}-{item.Intern_salary_max}" : "面议";
+                                    }
+                                    else if (item.Intern_salary_type == 2)
+                                    {
+                                        salary = item.Daily_salary > 0 ? $"{item.Daily_salary}/天" : "面议";
+                                    }
+                                    else
+                                    {
+                                        salary = item.Hour_salary > 0 ? $"{item.Hour_salary}/时" : "面议";
+                                    }
+                                }
+
+
+                                <tr id="@item.Id" class="position-row ">
+                                    <td class="check">
+                                        @*<input type="checkbox" class="item-check" id="">*@
+                                    </td>
+                                    <td class="position">
+                                        <a href="@AppSetting.Student_Url/job/0" class="b-link position-name" target="_blank">@item.Name</a>
+                                        <span class="position-location"></span>
+                                        <span class="position-meta">
+                                            @item.City_names (@positionType)
+                                        </span>
+                                    </td>
+                                    <td class="resume">
+                                        <span>0</span>
+                                    </td>
+                                    <td class="refresh">
+                                        <span>@recruitCount</span>
+                                    </td>
+                                    <td class="refresh">
+                                        <span>@salary</span>
+                                    </td>
+                                    <td class="refresh">@item.Degree_names</td>
+                                    <td class="deadline">@item.Update_at.ToString("yyyy-MM-dd")</td>
+                                    <td class="actions">
+                                        @{ 
+                                            string isRefresh = item.Update_at > DateTime.Now.Date ? "" : "solo-action-disabled";
+                                        }
+                                        <a href="javascript:;" class="solo-action s-solo-action @isRefresh" action-type="refresh" active="0">刷新</a>
+                                        <a href="/position/publish?id=@item.Id" class="solo-action s-solo-action" action-type="edit" target="_blank">编辑</a>
+                                        <a href="javascript:;" class="solo-action s-solo-action" action-type="pause">暂停</a>
+                                        <a href="javascript:;" class="solo-action s-solo-action" action-type="delete" active="0">删除</a>
+                                        <a href="/resume/search?positionId=@item.Id" class="solo-action a-solo-action" target="_blank">查收简历</a>
+                                    </td>
+                                </tr>
+                            }
+                            <tr class="interval">
+                                <td colspan="1" class="noborder"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="page-row tbl-page-row">
+                        @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".etp-header .nav-bar li").removeClass("current");
+    $(".etp-header .nav-bar li").eq(1).addClass("current");
+
+    $(".sub-nav li").eq(parseInt(@ViewBag.State) - 1).addClass("current");
+</script>

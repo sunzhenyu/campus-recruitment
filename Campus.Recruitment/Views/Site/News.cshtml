@@ -1,0 +1,74 @@
+﻿@using Campus.Recruitment.Models
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    ViewBag.Title = "新闻报道";
+}
+
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/Content/static/student/css/about/index.css">
+
+
+<div class="container">
+    <div class="inn-container">
+        <div class="left-nav">
+            <ul>
+                <li class="nav-list-title" style="width:254px;height:50px;">新起点校园招聘网</li>
+                <li class="nav-list" style="width:254px;height:50px;"><a href="/site/about">关于新起点</a></li>
+                <li class="nav-list active" style="width:254px;height:50px;"><a href="/site/news">新闻报道</a></li>
+                <li class="nav-list" style="width:254px;height:50px;"><a href="/site/employee-life">员工生活</a></li>
+                <li class="nav-list" style="width:254px;height:50px;"><a target="_blank" href="http://company.zheyibu.com/359515/jobs-1.html">加入我们</a></li>
+                <li class="nav-list" style="width:254px;height:50px;"><a href="/site/contact">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="right-content-about">
+            <div class="about-info">
+                <div class="info">
+                    <p class="title">新闻报道</p>
+                    <ul class="news">
+                        <li class="news-list">
+                            <a href="http://news.163.com/15/0127/18/AH04EB6V00014AEE.html" class="list-title" target="_blank">新起点和企业HR第一次亲密接触</a>
+                            <p class="list-tips">2015-01-27 网易</p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://ist.nwu.edu.cn/xxxycms/release_html/news/421.html" class="list-title" target="_blank">信息学院第二届“身临职境”模拟招聘会</a>
+                            <p class="list-tips">2015-01-05 西北大学信息科学与技术学院</p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://xwzxe.sdjzu.edu.cn/html/yxjw/2014/12/30/df05d223-5ab9-49fc-85d4-f459b2647fc6.html" class="list-title" target="_blank">我校成功举办第六届简历大赛表彰大会暨“新起点”校园招聘就业指导讲座</a>
+                            <p class="list-tips">2014-12-30 山东建筑大学</p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://jsj.nwpu.edu.cn/info/1205/4327.htm" class="list-title" target="_blank">北京拓优顾问公司资深猎头顾问Kevin就业指导讲座</a>
+                            <p class="list-tips">2014-12-16 西北工业大学计算机学院</p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://mp.weixin.qq.com/s?__biz=MjM5MTYyOTM2MQ==&amp;mid=202019916&amp;idx=1&amp;sn=ce289b24f0b87565d88d2767006e6d62&amp;scene=4&amp;uin=Njc0MjM3MzYw&amp;key=8ea74966bf01cfb686f90c9a4b11a83dec583615385df9a80ce8c5889d6ffa1a94c5521712b4b5179241a2bb105c9310&amp;devicetype=android-17&amp;version=26010042&amp;lang=zh_CN&amp;pass_ticket=PlXgUQl7m7K%2FNYNjB8aZEET9ptkmhdMAxHZi9xLM2POTux2KaYzKmlGWuHsr95uq" class="list-title" target="_blank">新起点网复旦大学求职指导讲座成功举办</a>
+                            <p class="list-tips">2014-12-14 西安交通大学仲英书院</p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://www.view.sdu.edu.cn/new/2014/1209/68744.html" class="list-title" target="_blank">信息学院举办就业创业指导讲座</a>
+                            <p class="list-tips">2014-12-09 山东大学</p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://mp.weixin.qq.com/s?__biz=MjM5MTYyOTM2MQ==&amp;mid=201660871&amp;idx=1&amp;sn=72c2180d87d9b599a7498fa440ac030e&amp;scene=4&amp;uin=Njc0MjM3MzYw&amp;key=8ea74966bf01cfb657358048da83fa571849184e0610a024660045728a44018d86ba53c0e4a12b9352779af4044d25eb&amp;devicetype=android-17&amp;version=26010042&amp;lang=zh_CN&amp;pass_ticket=PlXgUQl7m7K%2FNYNjB8aZEET9ptkmhdMAxHZi9xLM2POTux2KaYzKmlGWuHsr95uq" class="list-title" target="_blank"> 【职场面对面】IT互联网行业分析及就业指导</a>
+                            <p class="list-tips">2014-12-02 西安交通大学 </p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://mp.weixin.qq.com/s?__biz=MjM5MTYyOTM2MQ==&amp;mid=201051216&amp;idx=1&amp;sn=5152b5d4d86b00afce6f6338532d8ddd&amp;scene=4&amp;uin=Njc0MjM3MzYw&amp;key=8ea74966bf01cfb6bbc67b97c0ac55d1b92caa6c319c05aab00bd3ee1e31be235281d776186b7166195c1fe044ef86f4&amp;devicetype=android-17&amp;version=26010042&amp;lang=zh_CN&amp;pass_ticket=PlXgUQl7m7K%2FNYNjB8aZEET9ptkmhdMAxHZi9xLM2POTux2KaYzKmlGWuHsr95uq" class="list-title" target="_blank"> 【仲英微职场】第一期网络笔记--面试技巧</a>
+                            <p class="list-tips">2014-11-02 西安交通大学仲英书院 </p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://tech.southcn.com/t/2014-06/26/content_102977905.htm" class="list-title" target="_blank">逆袭豪门瓜分校园 校园招聘的移动互联网时代到了 </a>
+                            <p class="list-tips">2014-06-26 南方网 </p>
+                        </li>
+                        <li class="news-list">
+                            <a href="http://finance.qq.com/a/20140519/018303.htm" class="list-title" target="_blank"> 资深猎头支招应届生</a>
+                            <p class="list-tips"> 2014-05-19 腾讯财经</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

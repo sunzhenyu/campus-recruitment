@@ -1,0 +1,173 @@
+﻿@using Campus.Recruitment.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "注册第一步";
+}
+
+<link href="@AppSetting.Rss_Image/content/static/student/css/login/register.css" rel="stylesheet" type="text/css" />
+
+<div id="homepage-container">
+    <div class="lg-reg-bg">
+        <p class="reg-title">大学生找工作，赢在新起点！</p>
+        <form action='/account/register-two' id="register-form" method="post">
+            <div class="reg-banner">
+                <p><span class="reg">立即注册</span><span class="basis">基本资料</span><span class="done">完成注册</span></p>
+            </div>
+            <p class="reg-name">学生用户注册</p>
+            <div class="reg-info">
+                <p>
+                    <label for="mobile">手机号：</label>
+                    <input id="mobile" type="text" name="mobile" placeholder="请输入常用手机号码" />
+                </p>
+                <p>
+                    <label for="code">验证码：</label>
+                    <input id="code" type="text" name="Code" /><img id="imgValidateCode" src="/account/check-code" alt="验证码"><a id="refresh" href="javascript:;">看不清？换一张</a>
+                </p>
+                @*<p>
+                        <label for="mobileValidateCode">短信验证码：</label>
+                        <input id="mobileValidateCode" type="text" name="mobileValidateCode" placeholder="请输入手机验证码" /><span class="sendCode inactive" id="sendCode">获取验证码</span>
+                    </p>*@
+                <p>
+                    <label for="password">密码：</label>
+                    <input id="password" type="password" name="Password" placeholder="6-16位字符（字母、数字、符号）" />
+                </p>
+            </div>
+            <p class="protocal active">我已阅读并同意<a href="http://www.zheyibu.com/userprotocal/" target="_blank">《新起点用户协议》</a></p>
+            <input type="submit" value="立即注册" id="register-btn">
+        </form>
+    </div>
+</div>
+
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.validate.min.js"></script>
+<script>
+    $(function () {
+        if ("@ViewBag.Error".length > 0) alert("验证码错误");
+        $.validator.addMethod("blank", function (value, element) {
+            return this.optional(element) || !/^\s+|\s+$/.test(value);
+        });
+        $.validator.addMethod("telphone", function (value, element) {
+            if (!/^0?(13|14|15|17|18)[0-9]{9}$/.test(value)) {
+                $('#sendCode').removeClass("active").addClass("inactive");
+            }
+            return this.optional(element) || /^0?(13|14|15|17|18)[0-9]{9}$/.test(value);
+        }, "请输入正确格式的手机号码");
+        var validator = $("#register-form").validate({
+            errorPlacement: function (error, element) { //错误提示在什么地方
+                if (element.attr('name') == 'Code') {
+                    $('#code-error').remove();
+                    error.insertAfter("#refresh");
+                } else if (element.attr('name') == 'mobileValidateCode') {
+                    error.insertAfter("#sendCode");
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            rules: {
+                mobile: {
+                    required: true,
+                    telphone: true,
+                    remote: {
+                        url: '/account/is-exist-mobile',
+                        type: 'post',
+                        data: {
+                            mobile: function () {
+                                return $("#mobile").val();
+                            }
+                        },
+                        complete: function (r) {
+                            if (r != "false") {
+                                $('#sendCode').addClass("active").removeClass("inactive");
+                            } else {
+                                $('#sendCode').removeClass("active").addClass("inactive");
+                            }
+                        }
+                    }
+                },
+                //mobileValidateCode: {
+                //    required: true,
+                //    remote: {
+                //        url: '/Account/CheckMobileValidateCodeIsRight',
+                //        type: 'post',
+                //        data: {
+                //            code: function() {
+                //                return $("#mobileValidateCode").val();
+                //            },
+                //            mobile: function() {
+                //                return $('#mobile').val();
+                //            }
+                //        }
+                //    }
+                //},
+                Password: {
+                    required: true,
+                    rangelength: [6, 16],
+                    blank: true
+                },
+                Code: {
+                    required: true,
+                    remote: {
+                        url: '/account/check-pic-code',
+                        type: 'get',
+                        data: {
+                            code: function () {
+                                return $("#code").val();
+                            }
+                        }
+                    }
+                },
+            },
+            messages: {
+                mobile: {
+                    required: "手机号不能为空",
+                    telphone: "手机号格式不正确",
+                    remote: "该手机号已存在"
+                },
+                Password: {
+                    required: "密码不能为空",
+                    rangelength: "密码必须为6-16位",
+                    blank: '密码前后不能包含空格'
+                },
+                Code: {
+                    required: "请输入图片验证码",
+                    remote: "图片验证码不正确",
+                },
+                mobileValidateCode: {
+                    required: "请输入验证码",
+                    remote: "验证码不正确",
+                }
+            },
+            submitHandler: function (form) {
+                //验证码验证
+                form.submit();
+            }
+        });
+        var originUrl = $('#imgValidateCode').attr('src');
+        $('#refresh').click(function () {
+            $('#imgValidateCode').attr('src', originUrl + '?' + new Date());
+        });
+        //$(document).on('click', '.sendCode.active', function() {
+        //    if (validator.element("#mobile")) {
+        //        $.ajax({
+        //            type: "POST",
+        //            url: '/Account/SendMobileNoVerificationCode',
+        //            data: {
+        //                mobile: $('#mobile').val()
+        //            }
+        //        });
+        //        var intNum = 60,
+        //            _this = $(this),
+        //            timeMaker = setInterval(function() {
+        //                if (intNum) {
+        //                    _this.text(intNum + 's后重试');
+        //                    _this.removeClass("active").addClass("inactive");
+        //                    intNum--;
+        //                } else {
+        //                    clearInterval(timeMaker);
+        //                    _this.text("获取验证码");
+        //                    _this.addClass("active").removeClass("inactive");
+        //                }
+        //            }, 1000);
+        //    }
+        //});
+    });
+</script>

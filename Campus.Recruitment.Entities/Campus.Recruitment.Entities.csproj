@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33A44FEE-6627-4F0D-8035-50DD938AC654}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Campus.Recruitment.Entities</RootNamespace>
+    <AssemblyName>Campus.Recruitment.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Condition\AccountSettingCondition.cs" />
+    <Compile Include="Condition\BasePageCondition.cs" />
+    <Compile Include="Condition\CustomerCondition.cs" />
+    <Compile Include="Condition\EnterpriseCondition.cs" />
+    <Compile Include="Condition\PositionCondition.cs" />
+    <Compile Include="Condition\PositionPageCondition.cs" />
+    <Compile Include="Condition\SearchPositionCondition.cs" />
+    <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\Customers\Customer.cs" />
+    <Compile Include="Entity\Customers\CustomerAll.cs" />
+    <Compile Include="Entity\Customers\CustomerAndBase.cs" />
+    <Compile Include="Entity\Customers\CustomerBase.cs" />
+    <Compile Include="Entity\Customers\CustomerCertificate.cs" />
+    <Compile Include="Entity\Customers\CustomerEducation.cs" />
+    <Compile Include="Entity\Customers\CustomerExperience.cs" />
+    <Compile Include="Entity\Customers\CustomerIntramuralJob.cs" />
+    <Compile Include="Entity\Customers\CustomerIntramuralReward.cs" />
+    <Compile Include="Entity\Customers\CustomerItSkill.cs" />
+    <Compile Include="Entity\Customers\CustomerLanguage.cs" />
+    <Compile Include="Entity\Customers\CustomerProject.cs" />
+    <Compile Include="Entity\Enterprises.cs" />
+    <Compile Include="Entity\Feedback.cs" />
+    <Compile Include="Entity\JobDetailInfo.cs" />
+    <Compile Include="Entity\PageList.cs" />
+    <Compile Include="Entity\Position.cs" />
+    <Compile Include="Entity\PositionApply.cs" />
+    <Compile Include="Entity\PositionCollect.cs" />
+    <Compile Include="Entity\SearchPosition.cs" />
+    <Compile Include="Entity\SysDictionary.cs" />
+    <Compile Include="PositionFire.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

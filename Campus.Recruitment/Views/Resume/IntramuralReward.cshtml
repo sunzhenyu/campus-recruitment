@@ -1,0 +1,142 @@
+﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerIntramuralReward
+
+<div class="form-holder">
+    <div class="resume-form">
+        <form action="/resume/submitrecord/" id="form-scholarship" method="post">
+            <input data-val="true"  id="Id" name="Id" type="hidden" value="@Model.Id" />
+            <input id="itemType" name="itemType" type="hidden" value="scholarship" />
+            <ul class="resume-ul">
+                <li class="text ui-form-item">
+                    <label for="scholarshipName">
+                        <em>*</em>获奖名称
+                    </label>
+                    <div class="fieldgroup">
+                        <input class="resume-text" id="scholarshipName" maxlength="30" name="RewardName" type="text" value="@Model.Scholarship_name">
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="scholarshipSchool">
+                        <em>*</em>所在学校
+                    </label>
+                    <div class="fieldgroup">
+
+                        <input type="text" name="RewardSchoolExt" class="resume-text m-school2" id="m2-keys" value="@Model.Reward_school_ext"/>
+                        <span class="ui-form-explain"></span>
+                        <div class="m-school-list2">
+                            <ul>
+                                <li>@Model.Reward_school_ext</li>
+                            </ul>
+                        </div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label>
+                        <em>*</em>获奖时间
+                    </label>
+                    <div class="fieldgroup">
+                        @{
+                            var reward_show = Model.Start_reward > DateTime.MinValue ? Model.Start_reward.ToString("yyyy.MM") : "";
+                            var reward = Model.Start_reward > DateTime.MinValue ? Model.Start_reward.ToString("yyyy/MM/dd") : "";
+                        }
+                        <div class="ui-date-wrap"><input class="ui-input-date resume-text" id="start-reward" value="@reward_show" readonly="" type="text"></input><input id="start-reward-id" name="RewardTime" type="hidden" value="@reward"></input></div>
+                        <span class="ui-form-explain"></span>
+                    </div>
+                </li>
+                <li class="text ui-form-item">
+                    <label for="scholarshipDesc">
+                        描述
+                    </label>
+                    <div class="fieldgroup">
+                        <textarea class="resume-area" cols="50" id="scholarshipDesc" placeholder="描述奖励的获得过程以及感想等（限400字）" name="RewardDesc" rows="8">@Model.Scholarship_desc</textarea>
+                    </div>
+                </li>
+            </ul>
+
+            <p class="actions">
+                <input type="submit" id="submit-scholarship" itemtype="scholarship" class="J_Submit button-save hover-tran" value="保 存">
+                <a itemtype="scholarship" class="J_Cancel" href="javascript:;">取消</a>
+            </p>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // 简历模块的js
+    seajs.use(['jqueryAutocomplete', 'validator', '$', 'selectui', 'zyb/datePicker/DatePicker'], function (Autocomplete, Validator, $, selectui, DatePicker) {
+        Autocomplete($);
+
+        $(function () {
+
+            $('#form-scholarship').find('[data-widget="select"]').selectui();     //新版
+
+            //$('.study-date').find("ul").on('click', 'li', function (e) {
+            //    setCaseTimeV2();
+            //});
+
+            $("#rewardSchool").autocomplete('/Education/AutoComolete', {
+                dataType: 'json',
+                minChars: 1,
+                width: 248,
+                highlight: false,
+                formatItem: function (row, i, max) {
+                    return row[0];
+                },
+                formatResult: function (row) {
+                    return row[0];
+                }
+            });
+
+            window.scholarshipValidator = validator = new Validator({
+                element: '#form-scholarship',
+                failSilently: true,
+                triggerType: false
+            });
+
+            Validator.addRule('wordLimit', function (options, commit) {
+                var element = options.element;
+                var val = element.val();
+                var message = '';
+                var valid = true;
+                console.log(val.length > 400);
+                if (val != '' && val.length > 400) {
+                    valid = false;
+                    message = "描述内容限400字";
+                }
+                commit(valid, message);
+            });
+
+            validator
+            .addItem({
+                element: '[name=RewardTime]',
+                required: true,
+                errormessageRequired: '请选择获奖时间',
+            })
+            .addItem({
+                element: '#scholarshipName',
+                required: true
+            })
+            .addItem({
+                element: '#m2-keys',
+                required: true,
+                errormessageRequired: '请选择所在学校',
+            })
+            .addItem({
+                element: '#scholarshipDesc',
+                rule: 'wordLimit'
+            });
+
+            (function () {
+                var nowYear = new Date().getFullYear();
+                $("#start-reward").datePick({
+                    hiddenField: '[name=RewardTime]',
+                    startYear: nowYear - 10,
+                    defaultYear: nowYear,
+                    format: 'yyyy.mm.dd'
+                });
+            })();
+
+        });//end ready
+
+    });//end seajs.use
+</script>

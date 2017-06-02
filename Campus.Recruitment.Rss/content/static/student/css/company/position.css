@@ -1,0 +1,75 @@
+﻿#company-container{background:#fff;color:#333;overflow:hidden;height:326px}
+#company-container .com-title-content{position:relative;z-index:1}
+#company-container .company-banner{position:relative;width:100%;height:326px;background-position:center 0;background-size:cover;overflow:hidden}
+@keyframes comScale{0%{-webkit-transform:scale(1.05);-moz-transform:scale(1.05);transform:scale(1.05)}
+100%{-webkit-transform:scale(1);-moz-transform:scale(1);transform:scale(1)}
+}
+.company-container{position:relative;min-height:384px;width:1000px;margin:0 auto}
+.company-container .kong{margin: 96px auto;width:302px;overflow:hidden}
+.company-container .kong .kong-img{float:left;width:80px;height:80px;background:url(../../images/icon/position-kong.png) no-repeat;margin-right:26px}
+.kong-tips{font-size:16px;color:#999;margin-top:16px;line-height:1.5}
+#company-container .com-banner-bg1{background-image:url(../../images/background/com-banner-bg1.jpg)}
+.company-banner .com-banner-logo{width:120px;height:120px;line-height:120px;margin:30px auto 10px;background-clip:content-box;background-color:#fff;border:5px solid rgba(255,255,255,.3);border-radius:50%;text-align:center;font-size:0}
+.company-banner .com-banner-logo img{border-radius:50%;vertical-align:middle}
+.company-banner .com-name{font-size:24px;color:#fff;text-align:center;line-height:1.5}
+.company-banner .com-name i{display:inline-block;width:22px;height:22px;vertical-align:-2px;background:url(../../images/icon/company-bg-icon.png) -30px -30px no-repeat}
+.company-banner .com-follow-on{width:82px;height:34px;margin:10px auto 0;line-height:34px;background:rgba(255,255,255,.3);border-radius:3px;text-align:center;font-size:0}
+.company-banner .com-follow-on p{display:inline-block;width:76px;height:28px;line-height:28px;vertical-align:middle;margin:0 auto;background:#7cbf59;font-size:14px;border-radius:3px;color:#fff;cursor:pointer}
+.company-banner .com-follow-on .active{background:#999}
+.company-banner .enterprise-bg{position:absolute;top:0;left:0;width:100%;height:326px;background:transparent;animation:comScale 3s ease;-webkit-animation:comScale 3s ease;-moz-animation:comScale 3s ease}
+.company-nav-outer{position:relative;height:58px;top:-58px}
+#company-container .company-nav{width:100%;height:58px;line-height:56px;background:hsla(0,0%,96%,.95);text-align:center;font-size:0}
+#company-container .company-nav .center-pos{width:1000px;margin:0 auto;text-align:left}
+#company-container .company-nav a{display:inline-block;margin-right:52px;vertical-align:middle;color:#333;font-size:18px;border-bottom:2px solid transparent;text-decoration:none}
+#company-container .company-nav a.last{margin-right:0}
+#company-container .company-nav a.cur{color:#7cbf59;border-bottom-color:#7cbf59}
+#company-container .company-nav .pos-apply-rg{display:none;float:right;vertical-align:middle;width:110px;line-height:36px;height:36px;color:#fff;text-align:center;background:#7cbf59;border:0;border-radius:3px;margin:10px 6px}
+.company-container .com-school-position{position:relative;float:left;width:704px;background-color:#fff;overflow:hidden;min-height:384px;padding-right:36px;padding-top:20px;min-height:700px}
+.company-container .com-school-position .school-pos-name{font-size:24px;line-height:2;border-bottom:1px solid #ddd}
+.com-school-position .school-pos-name span{float:right;margin:10px 0;font-size:14px;color:#999}
+.com-school-position .school-pos-name span em{color:#7cbf59;font-style:normal}
+.com-school-position .school-pos-container li{line-height:100px;font-size:0;cursor:pointer}
+.com-school-position .school-pos-container .pos-name:hover{color:#7cbf59;text-decoration:underline}
+.com-school-position .school-pos-container .pos-content{border-bottom:1px solid #f5f5f5}
+.school-pos-container .pos-content .pos-detail{display:inline-block;width:562px;vertical-align:middle;line-height:2;font-size:14px;color:#999}
+.pos-content .pos-detail .pos-name{display:inline-block;vertical-align:top;width:100%;font-size:18px;text-decoration:none;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pos-content .pos-detail em{font-style:normal;margin:0 16px}
+.school-pos-container .pos-content .pos-salary{float:right;width:140px;text-align:right;font-size:16px;line-height:3.5;color:#f60;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+.page-footer{text-align:center;font-size:0;padding:30px}
+.page-footer li{display:inline-block;vertical-align:top;margin:0 5px}
+.page-footer a{display:inline-block;width:28px;line-height:28px;height:28px;text-align:center;vertical-align:middle;text-decoration:none;border:1px solid #ddd;font-size:14px;background:#fff;color:#666}
+.page-footer .omitPage{font-size:14px}
+.page-footer .current a{background:#7cbf59;color:#fff}
+.page-footer .pre-page a{background:url(../../images/icon/search-icon.png) -34px -251px no-repeat}
+.page-footer .pre-page a:hover{background:url(../../images/icon/search-icon.png) -34px -289px no-repeat;background-color:#7cbf59}
+.page-footer .next-page a{background:url(../../images/icon/search-icon.png) -67px -251px no-repeat}
+.page-footer .next-page a:hover{background:url(../../images/icon/search-icon.png) -67px -289px no-repeat;background-color:#7cbf59}
+.container-divide{position:absolute;top:0;display:inline-block;vertical-align:top;width:12px;height:100%;background-color:#f5f5f5;background:-webkit-linear-gradient(90deg,#f5f5f5,#fff);background:-moz-linear-gradient(to right,#f5f5f5,#fff);background:linear-gradient(90deg,#f5f5f5,#fff)}
+.com-xiaobu-right{display:none;position:absolute;width:224px;padding:16px 6px;background-color:#fff;border:1px solid #ddd;z-index:2}
+.com-xiaobu-right .logo{margin:0 auto}
+.com-xiaobu-right .right-logo{float:left;width:58px;height:50px;margin-right:4px;margin-left:4px;background:url(../../images/icon/company-bg-icon.png) -16px -503px no-repeat}
+.com-xiaobu-right .right-logo-sub{line-height:1.5;color:#999}
+.com-xiaobu-right .right-bot{clear:both;padding:4px 6px;line-height:1.5;text-align:justify}
+.com-xiaobu-right:after,.com-xiaobu-right:before{position:absolute;content:'';top:24px;right:-20px;width:0;height:0;border:10px solid transparent;border-left-color:#ddd}
+.com-xiaobu-right:after{right:-19px;border-left-color:#fff}
+.com-title-name .slide-view{width:220px;margin:0 auto;overflow:hidden}
+.com-title-name .slide-view .staff-title{overflow:hidden;padding:10px 0;width:440px}
+.slide-view .staff-title li{float:left;width:220px;text-align:center}
+.slide-view .staff-title li img{border-radius:50%;margin-bottom:20px}
+.com-title-name .slide-view .staff-intro{font-size:18px;line-height:1.5;padding-bottom:20px}
+.staff-intro .position{font-size:16px;color:#999}
+.right-float .xiaobu-icon{position:absolute;width:30px;height:104px;line-height:30px;background-color:#7cbf59;color:#fff;right:-44px;top:52px;cursor:pointer;background:url(../../images/icon/xiaobu.png) no-repeat}
+.right-float{position:relative;display:inline-block;padding:42px 0;width:234px;margin-left:26px;vertical-align:top}
+.right-float .com-title-name{position:relative;line-height:1;overflow:hidden;margin-bottom:20px}
+.com-title-name .title{font-size:18px;float:left}
+.com-title-name .title-line{float:left;width:152px;margin-top:10px;margin-left:10px;border-top:1px solid #eee}
+.com-title-name .cf{margin-bottom:20px}
+.com-title-name .summary{font-size:14px;line-height:1.8}
+.com-title-name .summary .summary-list{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.com-title-name .summary a{color:#2a78cf}
+.com-title-name .label-title{font-size:0}
+.com-title-name .label-title .label-list{display:inline-block;vertical-align:top;line-height:24px;margin-right:10px;margin-bottom:10px;padding:0 10px;font-size:14px;border:1px solid #eee}
+.preEl{position:absolute;left:0;top:92px;width:16px;height:30px;background:url(../../images/icon/company-bg-icon.png) -34px -137px no-repeat;cursor:pointer;z-index:3}
+.preEl:hover{background:url(../../images/icon/company-bg-icon.png) 0 -100px no-repeat}
+.nextEl{position:absolute;right:0;top:92px;width:16px;height:30px;background:url(../../images/icon/company-bg-icon.png) -32px -100px no-repeat;cursor:pointer;z-index:3}
+.nextEl:hover{background:url(../../images/icon/company-bg-icon.png) 2px -137px no-repeat}

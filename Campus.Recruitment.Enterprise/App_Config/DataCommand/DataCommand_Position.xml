@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataCommands>
+
+  <DataCommand Name="Position.UpdateState" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`position`
+      SET
+       state = @state
+      WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@state" DbType="Int32"/>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+
+  <DataCommand Name="Position.Refresh" DatabaseName="Campus.Recruitment.DB" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+      UPDATE `campus_recruitment`.`position`
+      SET
+       update_at = now()
+      WHERE `id` = @id;
+
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@id" DbType="AnsiString"/>
+    </Parameters>
+  </DataCommand>
+</DataCommands>

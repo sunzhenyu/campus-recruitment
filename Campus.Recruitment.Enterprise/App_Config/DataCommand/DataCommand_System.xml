@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataCommands>
+  <DataCommand Name="System.User.PasswordCheck" DatabaseName="KeChong.DB.NBK" CommandType="Text" Timeout="500">
+    <CommandText>
+      <![CDATA[
+           select a.id,a.name,a.mobile,a.login_name,a.login_pwd_digest,a.login_pwd_salt 
+        from small_legs.sys_users as a where login_name=@login_name and status = 1 
+          and organ_code = '530000888888' 
+      ]]>
+    </CommandText>
+    <Parameters>
+      <Param Name="@login_name" DbType="AnsiString"/>
+      <!--<Param Name="@note" DbType="AnsiString"/>
+      <Param Name="@sentTimeStart" DbType="DateTime"/>
+      <Param Name="@sentTimeEnd" DbType="DateTime"/>
+      <Param Name="@status" DbType="Int32"/>
+      <Param Name="@pageIndex" DbType="Int32"/>
+      <Param Name="@pageSize" DbType="Int32"/>-->
+    </Parameters>
+  </DataCommand>
+</DataCommands>

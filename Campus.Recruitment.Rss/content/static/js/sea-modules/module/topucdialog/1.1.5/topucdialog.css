@@ -1,0 +1,90 @@
+﻿.normal-select-input{width:130px;height:15px;line-height:15px;padding:4px 25px 4px 3px;border:none;background-color:transparent;color:#333}
+.inputwidth179{border:none;color:#000;width:149px;height:25px;line-height:25px;padding:0 20px 0 10px;background-color:transparent;cursor:pointer;outline:0}
+.topucContainer{background:#FFF;font-family:Arial;font-size:14px;color:#747474;border:1px solid #989898;position:absolute;display:none}
+.topucDialogItemDiv{clear:both;display:inherit}
+.topucDialogItemTitle .topucDialogItemLi{color:#333;clear:both;font-weight:700}
+.topucDialogItemTitle .topucDialogItemLi,.ui-dialog .topucDialogRecentSelTitle{color:#333;font-weight:700;padding-top:4px}
+.ui-dialog .topucDialogRecentSelTitle{line-height:44px}
+.topucDialogItemTitle .topucDialogItemLi label{margin-top:-1px;cursor:default}
+.topucDialogItemUl{margin:0;padding:0;list-style:none;overflow:hidden}
+#topucDialogTopSelectedUl .topucDialogItemLi,.topucDialogRecentSelUl .topucDialogRecentSelLi{width:94px}
+.topucDialogRecentSelUl .topucDialogRecentSelLi label:hover{background-color:#3ab54b;color:#fff}
+.topucDialogRecentSelUl:after{content:"";display:block;clear:both}
+.topucDialogItemLi,.topucDialogRecentSelLi{white-space:nowrap;overflow:hidden;float:left;color:#666;line-height:24px}
+.topucDialogItemLi[Sel=Sel]{margin-right:30px}
+.topucDialogItemLi input{margin-right:5px}
+.topucContainer input,.topucDialogToolTip input{vertical-align:-2px}
+.topucContainer label,.topucDialogToolTip label{cursor:pointer;display:inline-block;font-size:14px;padding:4px 5px;font-family:"宋体"}
+.topucDialogTopSelectedTips{color:#999}
+.topucDialogTop{padding:25px 0 0 12px;background:#fafafa}
+#CitySingle .topucDialogTop{background:0 0}
+.topucDialogTop .topucDialogItemTitle{float:left;height:25px;vertical-align:middle;font-weight:700}
+.topucDialogBtnDiv{float:right;font-size:13px;float:right;margin:0;padding:0;border:0}
+.topucDialogBtn{display:inline-block;color:#999;margin-right:5px;border:none;height:22px;background-image:url(../img/sprite/action-btn.png);line-height:22px;width:47px;background-position:0 0}
+.topucDialogBtnDiv a{margin-left:7px}
+.topucDialogTopSelected{clear:both;padding:6px 0;width:100%}
+.topucDialogMid{width:100%;margin-top:18px;padding-left:12px}
+#IndustryMulti .topucDialogMid{padding:0}
+#ComputerSkillSingle table{border:1px solid #eaeaea;margin-top:-1px}
+#ComputerSkillSingle td{border:1px solid #eaeaea;width:420px}
+#ComputerSkillSingle .topucDialogItemDiv label:hover{background:#3ab54b;color:#fff}
+#ComputerSkillSingle .topucDialogItemDiv{padding:15px 0 12px 20px}
+#ComputerSkillSingle .topucDialogItemTitle{padding:15px 0 0 4px}
+.topucDialogMid td{vertical-align:top}
+.ui-dialog-message{padding-left:12px;margin-top:25px}
+.topucDialogBottom{width:100%}
+.topucDialogToolTip{background-color:#fff;border:1px solid #3ab54b;padding:5px}
+.topucDialogIndustry{border:1px solid #eaeaea;border-left:0;border-bottom:0;height:370px;overflow-y:scroll}
+.topucDialogIndustryItemTitle{padding:15px 0 12px 20px}
+.topucDialogIndustryItemTitle .topucDialogItemLi{color:#333}
+.topucDialogIndustryTD{border:1px solid #eaeaea;border-top:0;border-right:0}
+.topucDialogMid .itemContainer:nth-of-type(1) .topucDialogItemDiv .topucDialogItemLi label:hover{background-color:#3ab54b;color:#fff}
+.topucDialogToolTip .topucDialogItemDiv{color:#747474!important}
+.topucDialogToolTip .topucDialogItemTitle .topucDialogItemLi{color:#333}
+.topucDialogToolTip .topucDialogItemDiv .topucDialogItemLi label:hover{background-color:#3ab54b;color:#fff}
+.topucDialogTREven{background:#3ab54b}
+.topucDialogTRHover{background:#3ab54b!important;color:#fff}
+.ui-dialog .dialog-done,.ui-dialog .dialog-reset{display:inline-block;height:22px;line-height:22px;font-size:12px;min-width:32px;padding:0 6px;text-align:center}
+.ui-dialog .dialog-done{color:#fff;background:#7cbf59;-webkit-transition:all 218ms;-moz-transition:all 218ms;-ms-transition:all 218ms;-o-transition:all 218ms;border-radius:2px}
+.ui-dialog .dialog-done:hover{background:#6cc372;text-decoration:none}
+.ui-dialog .dialog-reset{color:#666;background-color:#eef6f8;cursor:pointer;border-radius:2px}
+.ui-dialog .dialog-reset:hover{text-decoration:none}
+.ui-dialog .ui-dialog-titlebar{background-color:#7cbf59;cursor:move;height:60px;padding-left:25px;font-size:18px;position:relative;border-radius:5px 5px 0 0}
+.ui-dialog .ui-dialog-title{float:left;font:18px/60px "微软雅黑";height:60px;background:0 0;text-indent:0;border-bottom:0 none;color:#fff}
+.topucDialogOverLays{width:100%;height:100%;position:fixed;top:0;left:0;background-color:rgba(0,0,0,.6);visibility:hidden;opacity:0;-webkit-transition:visibility 0s .3s,opacity .3s 0s;-moz-transition:opacity .3s 0s,visibility 0s .3s;transition:opacity .3s 0s,visibility 0s .3s;z-index:1002}
+.topucDialogOverLays.isVisible{opacity:1;visibility:visible;-webkit-transition:opacity .3s 0s,visibility 0s 0s;-moz-transition:opacity .3s 0s,visibility 0s 0s;transition:opacity .3s 0s,visibility 0s 0s}
+.topucDialogOverLays .ui-widget{-webkit-transform:translateY(-40px);-webkit-transition:-webkit-transform .3s;-moz-transform:translateY(-40px);-ms-transform:translateY(-40px);-o-transform:translateY(-40px);transform:translateY(-40px);-webkit-backface-visibility:hidden;-webkit-transition-property:-webkit-transform;-moz-transition-property:-moz-transform;transition-property:transform;-webkit-transition-duration:.3s;-moz-transition-duration:.3s;transition-duration:.3s}
+.topucDialogOverLays.isVisible .ui-widget{-webkit-transform:translateY(0);-moz-transform:translateY(0);-ms-transform:translateY(0);-o-transform:translateY(0);transform:translateY(0)}
+.ui-widget{font-family:Lucida Grande,Lucida Sans,Arial,sans-serif;font-size:1.1em;position:absolute;width:300px;overflow:hidden;filter:none;z-index:2001;padding:0}
+.ui-widget .ui-widget{font-size:1em}
+.ui-widget button,.ui-widget input,.ui-widget select,.ui-widget textarea{font-family:Lucida Grande,Lucida Sans,Arial,sans-serif;font-size:1em}
+.ui-widget-content{background:#fcfdfd;color:#222}
+.ui-widget-content a{color:#222}
+.ui-widget-header{background-color:#5cc2f2;color:#fff;font-weight:400}
+.ui-widget-header a{color:#fff}
+.ui-dialog{border-radius:5px 5px 0 0}
+.ui-dialog .ui-dialog-titlebar-close{width:19px;height:19px;position:absolute;right:20px;top:20px;background:0 0;border:none}
+.ui-dialog .ui-dialog-titlebar-close:hover{background:0 0}
+.ui-widget-header .ui-icon{width:19px;height:19px;-webkit-transition:.4s;-o-transition:.4s;-moz-transition:.4s;transition:.4s;background:url(images/close.png) 0 0 no-repeat}
+.ui-widget-header .ui-icon:hover{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);-moz-transform:rotate(180deg);transform:rotate(180deg)}
+.ui-dialog .ui-dialog-titlebar-close:hover .ui-icon{background-position:0 0}
+.ui-widget .ui-dialog-content{position:relative;border:0;padding:0 20px 20px 14px;overflow:auto;zoom:1}
+.ui-dialog .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}
+.ui-dialog .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}
+.ui-dialog .ui-resizable-se{width:14px;height:14px;right:3px;bottom:3px}
+.ui-widget-overlay{position:absolute;top:0;left:0;width:100%;height:100%}
+.ui-widget-overlay{opacity:.5;-moz-opacity:.5;filter:Alpha(Opacity=50);background:#000;z-index:2000}
+.ui-widget-shadow{margin:-8px 0 0 -8px;padding:8px;background:#aaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x;opacity:.3;filter:Alpha(Opacity=30);-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.ui-helper-hidden{display:none}
+.ui-helper-hidden-accessible{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}
+.ui-helper-reset{margin:0;padding:0;border:0;outline:0;line-height:1.3;text-decoration:none;font-size:100%;list-style:none}
+.ui-helper-clearfix:after,.ui-helper-clearfix:before{content:"";display:table}
+.ui-helper-clearfix:after{clear:both}
+.ui-helper-clearfix{zoom:1}
+.ui-helper-zfix{width:100%;height:100%;top:0;left:0;position:absolute;opacity:0;filter:Alpha(Opacity=0)}
+.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-focus,.ui-widget-header .ui-state-hover{background:#fff;font-weight:700;color:#1d5987}
+.ui-icon{width:16px;height:16px}
+.ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat}
+.ui-state-hover .ui-icon{background-position:4px 4px}
+.topucDialogBtnDiv .z-button-ma{color:#fff}

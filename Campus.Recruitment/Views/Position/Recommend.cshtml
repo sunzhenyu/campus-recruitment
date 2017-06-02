@@ -1,0 +1,573 @@
+﻿@using Campus.Recruitment.Models
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "推荐的职位";
+}
+
+@*<link href="/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<link href="/content/static/css/zyb/zyb-user.css" rel="stylesheet" type="text/css">
+<link href="/content/static/css/zyb/zyb-rec-job.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/dialog.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/pop.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/DatePicker.new.css" rel="stylesheet" type="text/css">
+<link href="/content/static/zheyibu/static/css/selectui.css" rel="stylesheet">
+<link href="/content/static/student/css/landpage/userCenter.css" rel="stylesheet">
+<link charset="utf-8" rel="stylesheet" href="/content/static/js/sea-modules/jquery/autocomplete/1.1.0/autocomplete.css">*@
+
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/global.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/global.css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/coding.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-user.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-rec-job.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/dialog.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/pop.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/DatePicker.new.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/selectui.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/student/css/landpage/userCenter.css" rel="stylesheet">
+
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            calendar: 'arale/calendar/1.0.0/calendar',
+            validator: 'arale/validator/0.9.7/validator',
+            jqueryform: 'jquery/form/3.49.0/form'
+        }
+    });
+</script>
+<link charset="utf-8" rel="stylesheet" href="@AppSetting.Rss_Image/content/static/js/sea-modules/jquery/autocomplete/1.1.0/autocomplete.css">
+
+<div class="content">
+    <div class="content-in">
+        <!--左侧功能栏开始-->
+        <div class="user-left">
+            <div class="resume-all" style="margin-top:0px;">
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的简历
+                    </li>
+                    <li class="resume-module-item ">
+                        <a href="/resume/0">在线简历</a>
+                    </li>
+                </ul>
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的求职
+                    </li>
+                    <li class="resume-module-item  apply">
+                        <a href="/position/apply">申请的职位</a>
+                        <i class="num"></i>
+                    </li>
+                    @*<li class="resume-module-item active push">
+                        <i class="guide"></i>
+                        <a href="/position/recommend">推荐的职位</a>
+                    </li>*@
+                    <li class="resume-module-item  hrinvite">
+                        <a href="/position/hr-invintes">HR邀请</a>
+                        <i class="num"></i>
+                    </li>
+                    <li class="resume-module-item ">
+                        <a href="/position/collection-post">收藏的职位</a>
+                        <i class="num"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--左侧功能栏结束-->
+        <!--右侧职位推荐开始(有职位推荐时显示,样式hide-info用于隐藏该内容)-->
+        <div class="right-favorites">
+            <div class="right-title" style="border-left:0;">
+                <em>职位推荐</em>
+            </div>
+            <input type="hidden" id="hfNeedShowEducationEdit" value="false">
+            <input type="hidden" id="hfNeedShowCeshiGuide" value="true">
+            <!--推荐列表-->
+            <div class="rec-job-check mt20 clearfix">
+                <span style="margin-left:25px;">排序：</span>
+                <input type="radio" class="radio11" id="radio11" name="sort" value="" checked=""><span class="radio11" for="radio11" style="cursor:pointer;">推荐度</span>
+                <input type="radio" class="radio22" id="radio22" name="sort" style="margin-left:8px;"><span class="radio22" for="radio22" style="cursor:pointer;">发布时间</span>
+                <input type="checkbox" id="ignoreCeshiUnMatch" style="display:none;">
+                <label style="float:right;margin-right:25px;" for="ignoreCeshiUnMatch" class="fl " title="">显示与职业锚相符</label>
+                <input type="checkbox" id="ignoreMajorUnMatch" style="display:none;">
+                <label style="float:right;" for="ignoreMajorUnMatch" class="fl ">隐藏专业不限</label>
+            </div>
+            <ul class="company-list">
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="http://company.zheyibu.com/1301356" target="_blank">
+                                <img src="Upload/e/1301356/80x80.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/6997947.html?f=pu" target="_blank" title="WEB前端开发">WEB前端开发</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="http://company.zheyibu.com/1301356/" target="_blank" title="西安宏树电子科技有限公司">西安宏树电子科技有限公司</a><i class="approve" title="认证企业"></i>
+                            </p>
+                            <p class="job-info">
+                                <em>西安</em><span>|</span>
+                                <em>2500-5000元/月</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title="计算机软件">计算机软件</em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>21小时前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7439856.html?f=pu" target="_blank" title="CAM软件工程师">CAM软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="西门子工业软件">西门子工业软件</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>2天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/student/images/article/jsj.png" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7421923.html?f=pu" target="_blank" title="Web前端开发工程师">Web前端开发工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="上海麦戈信息科技有限公司">上海麦戈信息科技有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title="计算机软件,计算机硬件,计算机服务（系统、数据、维修）">计算机软件,计算机硬...</em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>11天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/student/images/article/jsj.png" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7421922.html?f=pu" target="_blank" title="Android开发工程师">Android开发工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="上海麦戈信息科技有限公司">上海麦戈信息科技有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title="计算机软件,计算机硬件,计算机服务（系统、数据、维修）">计算机软件,计算机硬...</em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>11天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/student/images/article/jsj.png" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7416049.html?f=pu" target="_blank" title="单片机软件工程师">单片机软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="武汉市天禹绿能环保设备有限公司">武汉市天禹绿能环保设备有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>武汉</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title="环保">环保</em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>12天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/student/images/article/jsj.png" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7410820.html?f=pu" target="_blank" title="Java 软件开发">Java 软件开发</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="安徽创见软件有限公司">安徽创见软件有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title="计算机软件">计算机软件</em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>12天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7405379.html?f=pu" target="_blank" title="软件工程师">软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="神州数码信息系统有限公司">神州数码信息系统有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>13天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7400743.html?f=pu" target="_blank" title="软件工程师&nbsp;&nbsp;&nbsp;">软件工程师&nbsp;&nbsp;&nbsp;</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="神州数码信息系统有限公司">神州数码信息系统有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>13天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7371627.html?f=pu" target="_blank" title="设备维护工程师">设备维护工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="西安乾华信息科技有限公司">西安乾华信息科技有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>西安</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>21天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7371626.html?f=pu" target="_blank" title="移动通信工程师">移动通信工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="西安乾华信息科技有限公司">西安乾华信息科技有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>西安</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>21天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7368403.html?f=pu" target="_blank" title="C软件开发工程师">C软件开发工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="UEG医疗影像">UEG医疗影像</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>22天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7366533.html?f=pu" target="_blank" title="软件工程师">软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="(聚贤纳才同驭未来)同驭汽车科技">(聚贤纳才同驭未来)同驭汽车科技</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>22天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7366032.html?f=pu" target="_blank" title="软件工程师">软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="上海迈迅威视觉技有限公司">上海迈迅威视觉技有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>22天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/images/avatar/etp.jpg" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7365505.html?f=pu" target="_blank" title=".net 软件工程师">.net 软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="上海路辉智能系统有限公司">上海路辉智能系统有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title=""></em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>22天前</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="company-info">
+                        <div class="company-logo">
+                            <a href="javascript:void(0)" target="_blank">
+                                <img src="/content/static/student/images/article/jsj.png" width="58" height="58">
+                            </a>
+                        </div>
+                        <div class="company-job">
+                            <p class="job-name">
+                                <a href="http://www.zheyibu.com/job/7363907.html?f=pu" target="_blank" title="Andriod软件工程师">Andriod软件工程师</a><span></span>
+                            </p>
+                            <p class="company-name">
+                                <a class="a-link" href="javascript:void(0)" target="_blank" title="上海巨哥电子科技有限公司">上海巨哥电子科技有限公司</a>
+                            </p>
+                            <p class="job-info">
+                                <em>上海</em><span>|</span>
+                                <em>面议</em><span>|</span>
+                                <em>全职</em><span>|</span>
+                                <em title="电子技术/半导体/集成电路">电子技术/半导体/集成...</em>
+                            </p>
+                        </div>
+                        <div class="rec-time">
+                            <p>22天前</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--分页栏-->
+            <div class="foot-row">
+                <div class="page-bottom-r">
+                    <div class="page-bottom-r">
+                        <span class="page-cur">1</span>
+                        <a href="/mystep/?page=2">2</a>
+                        <a href="/mystep/?page=3">3</a>
+                        <a href="/mystep/?page=4">4</a>
+                        <a href="/mystep/?page=5">5</a>
+                        <span class="page-break">...</span>
+                        <a href="/mystep/?page=49">49</a>
+                        <a href="/mystep/?page=2" class="page-next">下一页</a>
+                        <input id="hdPageCount" name="hdPageCount" type="hidden" value="49">
+                    </div>
+                </div>
+            </div>
+            <a href="http://www.zheyibu.com/resume/myobjective/" class="myobj-zylx"></a>
+            <!-- 底部banner -->
+        </div>
+        <!--右侧职位推荐结束(有职位推荐)-->
+    </div>
+</div>
+
+
+<script type="text/javascript" src="@AppSetting.Rss_Image/content/static/zheyibu/components/selectui/selectui.js"></script>
+<script type="text/javascript" src="@AppSetting.Rss_Image/content/static/js/zyb/job-details-update.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/zyb/navigation.js" type="text/javascript"></script>
+<script>
+    seajs.use(['$', 'module/layer/1.0.3/layer'], function($, layer) {
+        //职位推荐功能优化
+        $('.rec-job-check label').on('click', function() {
+            if ($(this).attr('for') == 'ignoreCeshiUnMatch') {
+                if ($("#hfNeedShowCeshiGuide").val() == "true") {
+                    var showPop = new Layer();
+                    showPop.setContent(cont).show();
+                    return false;
+                }
+            }
+
+            var ignoreMajorUnMatch = $("#ignoreMajorUnMatch").is(":checked");
+            var ignoreCeshiUnMatch = $("#ignoreCeshiUnMatch").is(":checked");
+
+            if ($(this).attr('for') == 'ignoreMajorUnMatch') {
+                ignoreMajorUnMatch = !ignoreMajorUnMatch;
+            } else if ($(this).attr('for') == 'ignoreCeshiUnMatch') {
+                ignoreCeshiUnMatch = !ignoreCeshiUnMatch;
+            }
+
+            location.href = "/mystep?ignoreMajorUnMatch=" + ignoreMajorUnMatch + "&ignoreCeshiUnMatch=" + ignoreCeshiUnMatch;
+            return;
+        });
+
+        var cont = '<div class="ui-layer-header" data-role="header" move="ok" style="cursor: move;">' +
+            '<div class="ui-layer-title" data-role="title">' +
+            '<h3>你尚未进行职业锚测评</h3>' +
+            '<div class="advice">' +
+            '<p>职业锚测评可以帮助你在面临职业选择时，</br>做出与自己价值观，内心真实自我相匹配的职业决策。</p>' +
+            '</div>' +
+            '</div><button class="ui-layer-close" data-role="close">×</button>' +
+            '</div>' +
+            '<div class="pop">' +
+            '<div class="btn-submit clearfix">' +
+            '<a href="/ceshi/zhiyemao/" style="margin:0 141px;width:160px;">立即测试</a>' +
+            '<p style="font-size:14px;color:#666;margin-top:10px;">已有' + 1130897 + '人参加测试</p>' +
+            '</div>' +
+            '</div>';
+        $('.radio11').click(function() {
+            $('#radio11').attr('checked', 'checked');
+            location.search = '?rot=0';
+        });
+        $('.radio22').click(function() {
+            $('#radio22').attr('checked', 'checked');
+            location.search = '?rot=1';
+        });
+        $('.job-notice-banner').click(function() {
+            $('#radio22').attr('checked', 'checked');
+            location.search = '?rot=1';
+        });
+    });
+</script>
