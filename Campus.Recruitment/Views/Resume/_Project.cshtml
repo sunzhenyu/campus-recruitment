@@ -1,4 +1,5 @@
 ﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@using Campus.Recruitment.Helper
 @model List<CustomerProject>
 
 <div id="info-project" class="info-holder">
@@ -19,7 +20,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="desc">
-                        @item.Project_job_desc
+                    @Html.CreateHtmlForTextAreaText(item.Project_job_desc)
                     </div>
                 </div>
             </div>

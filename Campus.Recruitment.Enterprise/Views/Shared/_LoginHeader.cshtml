@@ -28,9 +28,9 @@
                 </div>
                 <div class="etp-logo msg-tips">
                     @{ 
-                        string icon = string.IsNullOrWhiteSpace(SessionHelper.Instance().GetSessionValue("LogoIcon")) 
-                            ? "/content/static/images/avatar/etp.jpg" 
-                            : $"/content/upload/e/{SessionHelper.Instance().GetSessionValue("EnterpriseId")}/{SessionHelper.Instance().GetSessionValue("LogoIcon")}";
+                        string icon = string.IsNullOrWhiteSpace(SessionHelper.Instance().GetSessionValue("LogoIcon"))
+                            ? $"{AppSetting.Rss_Image}/content/static/images/avatar/etp.jpg"
+                            : $"{AppSetting.Rss_Image}/{SessionHelper.Instance().GetSessionValue("LogoIcon")}";
                     }
                     <img src="@icon">
                 </div>

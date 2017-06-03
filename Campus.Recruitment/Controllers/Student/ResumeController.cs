@@ -401,6 +401,14 @@ namespace Campus.Recruitment.Controllers.Student
             var userId = SessionHelper.Instance().GetSessionValue("UserId");
             return PartialView("_Detail", _customerBll.GetCustomerAndBase(userId));
         }
-             
+
+        [Route("update-work-state")]
+        public ActionResult UpdateWorkState(string flag)
+        {
+            bool isWork = flag == "2" ? true : false;
+            string userId = SessionHelper.Instance().GetSessionValue("UserId");
+
+            return Json(_customerBll.UpdateWorkState(userId, isWork));
+        }
     }
 }

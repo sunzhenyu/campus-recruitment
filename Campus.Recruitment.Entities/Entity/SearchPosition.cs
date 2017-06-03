@@ -45,9 +45,35 @@ namespace Campus.Recruitment.Entities.Entity
         /// </summary>
         public string Logo_icon { get; set; }
 
+        public string Create_at { get; set; }
+
         /// <summary>
         /// 发布信息更新时间
         /// </summary>
         public string Update_at { get; set; }
+
+        public int State { get; set; }
+
+        public string State_name
+        {
+            get
+            {
+                switch (State)
+                {
+                    case 1:
+                        return "待处理";
+                    case 2:
+                        return "通知面试";
+                    case 3:
+                        return "不合适";
+                    case 4:
+                        return "已完成";
+                    default:
+                        return "异常状态";
+                }
+            }
+        }
+
+        public NotificationInterview NotificationInterviewEntity { get; set; } = new NotificationInterview();
     }
 }

@@ -178,6 +178,7 @@
         scrollTop = $(window).scrollTop(),
         elementTop = $('.intro-apply').offset().top;
     var PositionId = "@Model.PositionInfo.Id";
+    var EnterpriseId = "@Model.EnterprisesInfo.Id";
     $(function() {
         if (elementTop + 111 > clientH + scrollTop) {
             $('.intro-apply').css({
@@ -220,7 +221,8 @@
                             _this.removeClass('active');
                         },
                         data: {
-                            position_id: PositionId
+                            position_id: PositionId,
+                            enterprise_id: EnterpriseId
                         },
                         success: function(r) {
                             window.location.href = "/position/apply";
@@ -242,7 +244,8 @@
                         type: 'POST',
                         url: '/job/collect/',
                         data: {
-                            position_id: PositionId
+                            position_id: PositionId,
+                            enterprise_id: EnterpriseId
                         },
                         success: function (r) {
                             window.location.href = "/job/" + PositionId;
@@ -274,7 +277,8 @@
                             _this.removeClass('active');
                         },
                         data: {
-                            position_id: PositionId
+                            position_id: PositionId,
+                            enterprise_id: EnterpriseId
                         },
                         success: function(r) {
                             window.location.href = "/job/"+PositionId;

@@ -4,7 +4,7 @@
 @model PageList<List<SearchPosition>>
 @{
     //判断是否登录
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
     ViewBag.Title = "申请的职位";
 }
 
@@ -128,14 +128,30 @@
                                     <p class="job-name"><a class="b-link position-link" href="/job/@item.Id" target="_blank" title="@item.Name">@item.Name</a><span></span></p>
                                     <p class="company-name"><a href="javascript:void(0)" target="_blank">@item.Enterprise_name</a></p>
                                     <p class="job-info">
-                                        <em>@item.Update_at 申请</em>
+                                        <em>@item.Create_at 申请</em>
                                     </p>
                                 </div>
                                 <div class="company-fav show-info">
                                     <!--通知面试状态添加样式show-info-->
-                                    <p class="job-status">等待查阅</p>
+                                    <p class="job-status">@item.State_name</p>
+                                    <p class="job-time">@item.Update_at 受理</p>
                                 </div>
                             </div>
+                            
+                            @if (item.State == 2 || item.State == 4)
+                            {
+                                <div class="job-pass clearfix">
+                                    <em class="top-triangle1"></em>
+                                    <em class="top-triangle2"></em>
+                                    <div class="pass-left">
+                                        <p>面试时间：@item.NotificationInterviewEntity.Interview_date @item.NotificationInterviewEntity.Interview_hour:@item.NotificationInterviewEntity.Interview_minutes</p>
+                                        <p>联系人: @item.NotificationInterviewEntity.Contact_people (@item.NotificationInterviewEntity.Cantact_mobile)</p>
+                                    </div>
+                                    <div class="pass-right">
+                                        <p>面试地址：@item.NotificationInterviewEntity.Interview_address</p>
+                                    </div>
+                                </div>
+                            }
                         </li>
                     }
                 </ul>
@@ -329,4 +345,6 @@
         });
     });
 </script>
+
+
 

@@ -27,8 +27,20 @@ namespace Campus.Recruitment.BLL
             return entity.Id;
         }
 
-        public bool IsApplyByUser(string user_id) {
-            return _positionApplyRepository.Count(x => x.Customer_id == user_id && x.State == 1) > 0;
+        public bool IsApplyByUser(string user_id,string position_id) {
+            return _positionApplyRepository.Count(x => x.Customer_id == user_id && x.State > 0 && x.Position_id == position_id) > 0;
+        }
+
+        public bool UpdateState(string customer_id,string position_id, int state)
+        {
+            var entity = _positionApplyRepository.LoadEntities(x => x.Customer_id == customer_id && x.Position_id == position_id).FirstOrDefault() ?? new PositionApply();
+
+            entity.State = state;
+            entity.Update_at = DateTime.Now;
+
+            _positionApplyRepository.UpdateEntity(entity);
+
+            return true;
         }
     }
 }

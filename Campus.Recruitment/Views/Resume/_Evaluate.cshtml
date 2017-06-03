@@ -1,10 +1,11 @@
-﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
+﻿@using Campus.Recruitment.Helper
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
 
 <div id="info-eval" class="info-holder">
     <!--无数据end-->
     <div class="info-item">
         <div class="info-col">
-            <div class="self-description">@Model.Eval_desc</div>
+            <div class="self-description">@Html.CreateHtmlForTextAreaText(Model.Eval_desc)</div>
         </div>
     </div>
 </div>

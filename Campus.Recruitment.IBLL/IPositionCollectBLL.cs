@@ -11,6 +11,6 @@ namespace Campus.Recruitment.IBLL
     {
         string Create(PositionCollect entity);
 
-        bool IsCollectByUser(string user_id);
+        bool IsCollectByUser(string user_id,string position_id);
     }
 }

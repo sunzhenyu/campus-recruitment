@@ -48,6 +48,7 @@
     <Compile Include="Condition\EnterpriseCondition.cs" />
     <Compile Include="Condition\PositionCondition.cs" />
     <Compile Include="Condition\PositionPageCondition.cs" />
+    <Compile Include="Condition\ResumeManageCondition.cs" />
     <Compile Include="Condition\SearchPositionCondition.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\Customers\Customer.cs" />
@@ -65,14 +66,17 @@
     <Compile Include="Entity\Enterprises.cs" />
     <Compile Include="Entity\Feedback.cs" />
     <Compile Include="Entity\JobDetailInfo.cs" />
+    <Compile Include="Entity\NotificationInterview.cs" />
     <Compile Include="Entity\PageList.cs" />
     <Compile Include="Entity\Position.cs" />
     <Compile Include="Entity\PositionApply.cs" />
     <Compile Include="Entity\PositionCollect.cs" />
+    <Compile Include="Entity\PositionInvitation.cs" />
     <Compile Include="Entity\SearchPosition.cs" />
     <Compile Include="Entity\SysDictionary.cs" />
-    <Compile Include="PositionFire.cs" />
+    <Compile Include="Entity\PositionFire.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\ResumeManage.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -755,6 +755,8 @@
     <Content Include="Views\Resume\Invitation.cshtml" />
     <Content Include="Views\Home\Extension.cshtml" />
     <Content Include="Views\Home\CollegesInfo.cshtml" />
+    <Content Include="Views\Resume\NotificationInterview.cshtml" />
+    <Content Include="Views\Resume\InvitationSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

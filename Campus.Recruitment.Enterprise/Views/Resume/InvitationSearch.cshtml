@@ -1,0 +1,233 @@
+﻿@using Campus.Recruitment.Enterprise.Models;
+@using Campus.Recruitment.Enterprise.Helper;
+@using Campus.Recruitment.Entities.Entity;
+@model PageList<List<ResumeManage>>
+@{
+    //判断是否登录
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "简历管理";
+}
+
+<!-- css for resume -->
+<link href="@AppSetting.Rss_Image/content/static/css/corp/resume-manage.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/showBox.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/js/jquery/plugin/Pikaday/pikaday.css" rel="stylesheet">
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/init.js"></script>
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            $: 'jquery/jquery/1.7.2/jquery',
+            placeholder: 'jquery/placeholder/1.0.0/placeholder',
+            dialog: 'arale/dialog/1.2.3/dialog',
+            validator: 'arale/validator/0.9.7/validator'
+        }
+    });
+</script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/validate/jquery.validate.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/jquery.from.3.49.0.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/cuplayer/images/swfobject.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/formui.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/showBox.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/dialog.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/jquery/plugin/Pikaday/pikaday.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/resume-manage.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/jquery.nicescroll.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/pageCode.js"></script>
+<!-- js for resume -->
+<script type="text/javascript">
+    $(function () {
+        $('.u-back-icon').click(function () {
+            $(this).prev('.select-result').trigger('click');
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".u-all a").click(function () {
+            $(this).addClass("active");
+            $(this).parent().siblings().children().removeClass("active");
+        });
+        $(".u-undeal a").click(function () {
+            $(this).addClass("active");
+            $(this).parent().siblings().children().removeClass("active");
+        });
+        $(".u-interview a").click(function () {
+            $(this).addClass("active");
+            $(this).parent().siblings().children().removeClass("active");
+        });
+        $(".u-interest a").click(function () {
+            $(this).addClass("active");
+            $(this).parent().siblings().children().removeClass("active");
+        });
+        $('.toggle-p').click(function () {
+            var hgt = $(this).parent().height();
+            $(this).parents('.u-user-salary').animate({
+                'height': hgt
+            }, 300).end().remove();
+        });
+    });
+</script>
+<div class="container">
+    <div id="new-position-content">
+        <div class="tab-panels clearfix">
+            <div class="sub-nav">
+                <ul>
+                    <li class="posi-li ">
+                        <div class="pos-item">
+                            <div class="pos subitem">
+                                <a href="/resume/search">应聘简历<b class="count">@ViewBag.ResumeTotal</b></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="posi-li current">
+                        <div class="pos-item">
+                            <div class="pos">
+                                <a href="/resume/search-invitation">
+                                    邀请简历
+                                    <b class="count">@Model.Data</b>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                @*<a href="/application?IsRecycleBin=1" class="bins ">
+                        <div class="pos-item">
+                            <i></i>简历回收箱
+                        </div>
+                    </a>*@
+            </div>
+        </div>
+        <div class="wrapper-1000 clearfix">
+            <!-- 列表内容 -->
+            <table class="corp-tbl-1 corp-tbl-resume ">
+                <colgroup>
+                    <col width="45">
+                    <col width="505">
+                    <col width="220">
+                    <col width="160">
+                </colgroup>
+
+                @if (Model.Data != null && Model.Data.Count > 0)
+                {
+                    foreach (var item in Model.Data)
+                    {
+                        <tbody class="t-row ">
+                            <tr class="interval">
+                                @*<td colspan="4" class="noborder"></td>*@
+                            </tr>
+                            <tr class="row-hd" id="@item.Position_apply_id" data-ispush="0" data-index="1">
+                                <td class="first">
+                                    <!-- 处理过的简历 或者当前为回收箱 才提供批操作 -->
+                                    <input type="checkbox" class="item-check">
+                                </td>
+                                <!-- 应聘信息start -->
+                                <td colspan="2" class="column">
+                                    <div class="user-info-top">
+                                        <span>应聘：</span>
+                                        <span class="u-spanl">
+                                            <a href="@AppSetting.Student_Url/job/@item.Position_id" target="_blank">
+                                                @item.Position_Name
+                                            </a>
+                                        </span>
+                                        <span>
+                                            @item.Position_city_name
+                                        </span>
+                                    </div>
+                                    <div class="user-info-top-right">
+                                        <span>投递时间：</span>
+                                        <span>@item.Position_apply_date</span>
+                                    </div>
+                                </td>
+                                <!-- 应聘信息end -->
+                                <td colspan="2" class="last"></td>
+                            </tr>
+                            <tr class="tbl-row">
+                                <td class="check"></td>
+                                <!-- 学生信息start -->
+                                <td class="user">
+                                    <a target="_blank" href="/resume/@item.Position_apply_id" class="user-avatar userUrl">
+                                        @{
+                                            var imgIcon = string.IsNullOrWhiteSpace(item.Customer_head_logo)
+                                                ? $"{AppSetting.Rss_Image}/content/static/images/avatar/avatar-s-1.jpg"
+                                                : $"{AppSetting.Rss_Image}{item.Customer_head_logo}";
+                                        }
+                                        <img src="@imgIcon" alt="" title="">
+                                    </a>
+                                    <div class="user-info">
+                                        <div class="user-info-row">
+                                            <p class="u-user-name">
+                                                <a target="_blank" href="/resume/invitation/@item.Customer_id" apply-id="@item.Position_apply_id">
+                                                    @item.Customer_real_name
+                                                </a>
+                                                <span class="u-gentle">@item.Customer_Sex_name</span>
+                                            </p>
+                                            <p class="u-user-detail">
+                                                @item.Intentional_city_name / @item.Education / @item.Major / @item.University
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="job mianshi" colspan="2">
+                                    <p>邀请应聘职位： <a href="@AppSetting.Student_Url/job/@item.Position_id" target="_blank">@item.Position_Name</a></p>
+                                    <p>职位所在城市：@item.Position_city_name</p>
+                                    <p>邀请时间：@item.Position_apply_date</p>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <tr style="text-align: center"><td colspan="4"><h2>暂无邀请简历</h2></td></tr>
+                                            }
+            </table>
+            <div class="page-row tbl-page-row">
+                @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
+            </div>
+        </div>
+        <!-- 空列表 -->
+    </div>
+</div>
+</div>
+<div id="g-mask"></div>
+</div>
+
+
+<script>
+    $(".etp-header .nav-bar li").removeClass("current");
+    $(".etp-header .nav-bar li").eq(2).addClass("current");
+</script>
+
+<style>
+    #textwidth {
+        width: 334px;
+    }
+
+    .disappears {
+        display: none;
+    }
+
+    .appear {
+        border: 1px solid #B6B6B6;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 152px;
+        width: 352px;
+        position: absolute;
+        left: 85px;
+        top: 40px;
+        z-index: 1000;
+        background-color: #fff;
+    }
+
+    .selectUl ul .ui-text:hover {
+        background-color: #ededed;
+        cursor: pointer;
+    }
+</style>

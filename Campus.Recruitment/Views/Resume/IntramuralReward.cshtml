@@ -1,4 +1,5 @@
-﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerIntramuralReward
+﻿@using Campus.Recruitment.Helper
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerIntramuralReward
 
 <div class="form-holder">
     <div class="resume-form">
@@ -49,7 +50,7 @@
                         描述
                     </label>
                     <div class="fieldgroup">
-                        <textarea class="resume-area" cols="50" id="scholarshipDesc" placeholder="描述奖励的获得过程以及感想等（限400字）" name="RewardDesc" rows="8">@Model.Scholarship_desc</textarea>
+                        <textarea class="resume-area" cols="50" id="scholarshipDesc" placeholder="描述奖励的获得过程以及感想等（限400字）" name="RewardDesc" rows="8">@Html.CreateHtmlForTextAreaText(Model.Scholarship_desc)</textarea>
                     </div>
                 </li>
             </ul>

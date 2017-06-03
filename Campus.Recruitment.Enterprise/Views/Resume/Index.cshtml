@@ -1,5 +1,7 @@
 ﻿@using Campus.Recruitment.Enterprise.Models;
-
+@using Campus.Recruitment.Enterprise.Helper;
+@using Campus.Recruitment.Entities.Entity;
+@model PageList<List<ResumeManage>>
 @{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,13 +9,13 @@
 }
 
 <!-- css for resume -->
-<link href="/content/static/css/corp/resume-manage.css" rel="stylesheet">
-<link href="/content/static/css/corp/showBox.css" rel="stylesheet">
-<link href="/content/static/css/corp/dialog.css" rel="stylesheet">
-<link href="/content/static/js/jquery/plugin/Pikaday/pikaday.css" rel="stylesheet">
-<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
-<script src="/content/static/js/corp/init.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/corp/resume-manage.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/showBox.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/js/jquery/plugin/Pikaday/pikaday.css" rel="stylesheet">
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/init.js"></script>
 <script type="text/javascript">
     seajs.config({
         alias: {
@@ -24,52 +26,26 @@
         }
     });
 </script>
-<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
-<script src="/content/static/zheyibu/components/validate/jquery.validate.min.js"></script>
-<script src="/content/static/js/corp/jquery.from.3.49.0.js"></script>
-<script src="/content/static/zheyibu/components/cuplayer/images/swfobject.js"></script>
-<script src="/content/static/js/corp/formui.js"></script>
-<script src="/content/static/js/corp/showBox.js"></script>
-<script src="/content/static/js/corp/dialog.js"></script>
-<script src="/content/static/js/jquery/plugin/Pikaday/pikaday.js"></script>
-<script src="/content/static/js/corp/resume-manage.js"></script>
-<script src="/content/static/js/corp/jquery.nicescroll.min.js"></script>
-<script src="/content/static/js/corp/pageCode.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/validate/jquery.validate.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/jquery.from.3.49.0.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/cuplayer/images/swfobject.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/formui.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/showBox.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/dialog.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/jquery/plugin/Pikaday/pikaday.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/resume-manage.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/jquery.nicescroll.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/pageCode.js"></script>
 <!-- js for resume -->
 <script type="text/javascript">
-    $(function() {
-        $('.u-back-icon').click(function() {
+    $(function () {
+        $('.u-back-icon').click(function () {
             $(this).prev('.select-result').trigger('click');
         });
     });
 </script>
 
-<script>
-    $(document).ready(function() {
-        $(".u-all a").click(function() {
-            $(this).addClass("active");
-            $(this).parent().siblings().children().removeClass("active");
-        });
-        $(".u-undeal a").click(function() {
-            $(this).addClass("active");
-            $(this).parent().siblings().children().removeClass("active");
-        });
-        $(".u-interview a").click(function() {
-            $(this).addClass("active");
-            $(this).parent().siblings().children().removeClass("active");
-        });
-        $(".u-interest a").click(function() {
-            $(this).addClass("active");
-            $(this).parent().siblings().children().removeClass("active");
-        });
-        $('.toggle-p').click(function() {
-            var hgt = $(this).parent().height();
-            $(this).parents('.u-user-salary').animate({
-                'height': hgt
-            }, 300).end().remove();
-        });
-    });
-</script>
 <div class="container">
     <div id="new-position-content">
         <div class="tab-panels clearfix">
@@ -78,26 +54,26 @@
                     <li class="posi-li current">
                         <div class="pos-item">
                             <div class="pos subitem">
-                                <a href="/application">应聘简历<b class="count">3</b></a>
+                                <a href="/resume/search">应聘简历<b class="count">@Model.Total</b></a>
                             </div>
                         </div>
                     </li>
                     <li class="posi-li ">
                         <div class="pos-item">
                             <div class="pos">
-                                <a href="/application?IsPush=1">
-                                    推荐简历
-                                    <b class="count">0</b>
+                                <a href="/resume/search-invitation">
+                                    邀请简历
+                                    <b class="count">@ViewBag.InvitationTotal</b>
                                 </a>
                             </div>
                         </div>
                     </li>
                 </ul>
-                <a href="/application?IsRecycleBin=1" class="bins ">
-                    <div class="pos-item">
-                        <i></i>简历回收箱
-                    </div>
-                </a>
+                @*<a href="/application?IsRecycleBin=1" class="bins ">
+                        <div class="pos-item">
+                            <i></i>简历回收箱
+                        </div>
+                    </a>*@
             </div>
         </div>
         <div class="wrapper-1000 clearfix">
@@ -108,122 +84,21 @@
                     <div class="data-filter clearfix">
                         <div class="m-resumeStatus">
                             <ul class="u-rest">
-                                <li class="u-super"><i class="u-icon-down"></i><a href="javascript:;" class="u-u-super-down">高级筛选</a></li>
-                                <li class="u-onlyStar ">
-                                    <i></i>
-                                    <a href="/application?IsFavorites=1">
-                                        只看星标简历
-                                    </a>
-                                </li>
+
                                 <li class="u-all">
-                                    <a class="active" href="/application">全部</a>
+                                    <a href="/resume/search">全部</a>
                                 </li>
                                 <li class="u-undeal">
-                                    <a class="" href="/application?currentStatus=21">未处理</a>
+                                    <a class="" href="/resume/search?state=1">待处理</a>
                                 </li>
-                                <li class="u-interest">
-                                    <a class="" href="/application?currentStatus=28">感兴趣</a>
-                                </li>
+                                @*<li class="u-interest">
+                                        <a class="" href="/application?currentStatus=28">感兴趣</a>
+                                    </li>*@
                                 <li class="u-interviewed">
-                                    <a class="" href="/application?currentStatus=31">已安排面试</a>
+                                    <a class="" href="/resume/search?state=2">已安排面试</a>
                                 </li>
                             </ul>
                         </div>
-                        <form action="/application" method="get" id="formFilter" class="disappear">
-                            <input id="posId" name="posId" type="hidden" value="">
-                            <input id="IsPush" name="IsPush" type="hidden" value="">
-                            <input id="IsFavorites" name="IsFavorites" type="hidden" value="">
-                            <input id="IgnoreFiltedOut" name="IgnoreFiltedOut" type="hidden" value="">
-                            <input id="currentstatus" name="currentstatus" type="hidden" value="">
-                            <div class="select category-select u-no-beaf m-city">
-                                <i class="u-icon-position"></i>
-                                <input class="select-result" readonly="readonly" value="所在城市">
-                                <input id="city" name="city" type="hidden" value="">
-                                <ul style="display: none;">
-                                    <li class="u-li">
-                                        <div class="u-li-content">不限</div>
-                                    </li>
-                                    <li class="u-unit" data-id="2014001">
-                                        <div class="u-li-content">武汉</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="select category-select u-no-beaf m-certificate">
-                                <i class="u-icon-position"></i>
-                                <input class="select-result" readonly="readonly" value="最高学历">
-                                <input id="degree" name="degree" type="hidden" value="">
-                                <ul style="display: none;">
-                                    <li class="u-li">
-                                        <div class="u-li-content">不限</div>
-                                    </li>
-                                    <li class="u-unit" data-id="1">
-                                        <div class="u-li-content">大专</div>
-                                    </li>
-                                    <li class="u-unit" data-id="2">
-                                        <div class="u-li-content">本科</div>
-                                    </li>
-                                    <li class="u-unit" data-id="3">
-                                        <div class="u-li-content">硕士</div>
-                                    </li>
-                                    <li class="u-unit" data-id="4">
-                                        <div class="u-li-content">博士</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="select category-select u-no-beaf m-college">
-                                <i class="u-icon-position"></i>
-                                <input class="select-result" readonly="readonly" value="毕业院校">
-                                <input id="school" name="school" type="hidden" value="">
-                                <ul style="display: none;">
-                                    <li class="u-li">
-                                        <div class="u-li-content">不限</div>
-                                    </li>
-                                    <li class="u-unit" data-id="江汉大学">
-                                        <div class="u-li-content">江汉大学</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="select category-select u-no-beaf m-profession">
-                                <i class="u-icon-position"></i>
-                                <input class="select-result" readonly="readonly" value="专业类别">
-                                <input id="major" name="major" type="hidden" value="">
-                                <ul style="display: none;">
-                                    <li class="u-li">
-                                        <div class="u-li-content">不限</div>
-                                    </li>
-                                    <li class="u-unit" data-id="计算机科学与技术">
-                                        <div class="u-li-content">计算机科学与技术</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="select category-select u-no-beaf m-applyTime">
-                                <i class="u-icon-position"></i>
-                                <input class="select-result" readonly="readonly" value="申请时间">
-                                <input id="dtime" name="dtime" type="hidden" value="">
-                                <ul style="display: none;">
-                                    <li class="u-li">
-                                        <div class="u-li-content">不限</div>
-                                    </li>
-                                    <li class="u-unit" data-id="1">
-                                        <div class="u-li-content">近1天</div>
-                                    </li>
-                                    <li class="u-unit" data-id="2">
-                                        <div class="u-li-content">近2天</div>
-                                    </li>
-                                    <li class="u-unit" data-id="4">
-                                        <div class="u-li-content">近1周</div>
-                                    </li>
-                                    <li class="u-unit" data-id="6">
-                                        <div class="u-li-content">近1月</div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="data-filter-field">
-                                <input type="text" class="data-filter-words" placeholder="姓名关键词搜索" name="keyword">
-                                <input type="submit" class="data-quick-submit" value="">
-                            </div>
-                            <a href="/application" class="data-filter-reset">重置</a>
-                        </form>
                     </div>
                     <table class="corp-tbl-1 corp-tbl-resume ">
                         <colgroup>
@@ -232,262 +107,107 @@
                             <col width="220">
                             <col width="160">
                         </colgroup>
-                        <thead>
-                            <tr class="tool-bar">
-                                <td colspan="3">
-                                    <label class="mr25">
-                                        <input type="checkbox" class="item-check-all"> 全选
-                                    </label>
-                                    <!-- 批量操作 开始 -->
-                                    <!-- 下载、转发 除了回收箱 、 未处理 页面，都需要 -->
-                                    <a href="http://upload.zheyibu.com/api/stuupload/downloadresume?key=A8FEEE2CF60914F3&amp;applyIds=" class="multi-action multi-action-diabled" data-action="download">下载简历</a>
-                                    <a href="javascript:;" class="multi-action multi-action-diabled" data-action="forward">转发简历</a>
-                                    <!-- 删除批操作 除了回收箱页面，都需要 -->
-                                    <a href="javascript:;" class="multi-action multi-action-diabled" data-action="mDelete">删除</a>
-                                    <!-- 批量操作 结束 -->
-                                </td>
-                                <td colspan="1">
-                                    <a class="filter-out" href="/application?IgnoreFiltedOut=1">
-                                        <input type="checkbox"> 只显示符合要求的简历
-                                    </a>
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody class="t-row ">
-                            <tr class="interval">
-                                <td colspan="4" class="noborder"></td>
-                            </tr>
-                            <tr class="row-hd" id="303114" data-ispush="0" data-index="1">
-                                <td class="first">
-                                    <!-- 处理过的简历 或者当前为回收箱 才提供批操作 -->
-                                    <input type="checkbox" class="item-check">
-                                </td>
-                                <!-- 应聘信息start -->
-                                <td colspan="2" class="column">
-                                    <div class="user-info-top">
-                                        <span>应聘：</span>
-                                        <span class="u-spanl">
-                                            <a href="@AppSetting.Student_Url/job/0" target="_blank">
-                                                计算机
-                                            </a>
-                                        </span>
-                                        <span>
-                                            武汉
-                                        </span>
-                                    </div>
-                                    <div class="user-info-top-right">
-                                        <span>投递时间：</span>
-                                        <span>2017-05-11</span>
-                                    </div>
-                                </td>
-                                <!-- 应聘信息end -->
-                                <td colspan="2" class="last">
-                                    <div style="position:relative">
-                                        <div class="applicant-operates">
-                                            <a href="javascript:;" class="solo-action-link legend-btn" data-action="legend" title="备注">
-                                                <i class="a-o-legend">
-                                                </i><span class="u-meto">备注</span>
-                                            </a>
-                                            <a href="javascript:;" class="solo-action-link legend-collect" data-action="collect" title="非星标简历"><i class="a-o-collect"></i><span class="u-meto">星标</span></a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="tbl-row">
-                                <td class="check"></td>
-                                <!-- 学生信息start -->
-                                <td class="user">
-                                    <a target="_blank" href="/resume/0" class="user-avatar userUrl">
-                                        <img src="/content/static/images/avatar/avatar-s-1.jpg" alt="" title="">
-                                    </a>
-                                    <div class="user-info">
-                                        <div class="user-info-row">
-                                            <p class="u-user-name">
-                                                <a target="_blank" href="/resume/0" apply-id="303114">
-                                                    孙振宇
-                                                </a>
-                                                <span class="u-gentle">男</span>
-                                            </p>
-                                            <p class="u-user-detail">
-                                                武汉 / 大专 / 计算机科学与技术 / 江汉大学 （普通二本院校）
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- 学生信息end -->
-                                <td class="job">
-                                    <span>已感兴趣</span>
-                                </td>
-                                <!-- 处理操作start -->
-                                <td class="actions">
-                                    <a href="javascript:;" class="solo-action m-solo-action solo-action-iv u-positive-style">通知面试</a>
-                                    <a href="javascript:;" class="solo-action m-solo-action u-negative-style" data-action="unsuitable">不合适</a>
-                                </td>
-                                <!-- 处理操作end -->
-                            </tr>
-                        </tbody>
-                        <tbody class="t-row ">
-                            <tr class="interval">
-                                <td colspan="4" class="noborder"></td>
-                            </tr>
-                            <tr class="row-hd" id="303113" data-ispush="0" data-index="2">
-                                <td class="first">
-                                    <!-- 处理过的简历 或者当前为回收箱 才提供批操作 -->
-                                    <input type="checkbox" class="item-check">
-                                </td>
-                                <!-- 应聘信息start -->
-                                <td colspan="2" class="column">
-                                    <div class="user-info-top">
-                                        <span>应聘：</span>
-                                        <span class="u-spanl">
-                                            <a href="@AppSetting.Student_Url/job/0" target="_blank">
-                                                计算机
-                                            </a>
-                                        </span>
-                                        <span>
-                                            武汉
-                                        </span>
-                                    </div>
-                                    <div class="user-info-top-right">
-                                        <span>投递时间：</span>
-                                        <span>2017-05-11</span>
-                                    </div>
-                                </td>
-                                <!-- 应聘信息end -->
-                                <td colspan="2" class="last">
-                                    <div style="position:relative">
-                                        <div class="applicant-operates">
-                                            <a href="javascript:;" class="solo-action-link legend-btn" data-action="legend" title="备注">
-                                                <i class="a-o-legend">
-                                                </i><span class="u-meto">备注</span>
-                                            </a>
-                                            <a href="javascript:;" class="solo-action-link legend-collect" data-action="collect" title="非星标简历"><i class="a-o-collect"></i><span class="u-meto">星标</span></a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="tbl-row">
-                                <td class="check"></td>
-                                <!-- 学生信息start -->
-                                <td class="user">
-                                    <a target="_blank" href="/resume/0" class="user-avatar userUrl">
-                                        <img src="/content/static/images/avatar/avatar-s-1.jpg" alt="" title="">
-                                    </a>
-                                    <div class="user-info">
-                                        <div class="user-info-row">
-                                            <p class="u-user-name">
-                                                <a target="_blank" href="/resume/0" apply-id="303113">
-                                                    孙振宇
-                                                </a>
-                                                <span class="u-gentle">男</span>
-                                            </p>
-                                            <p class="u-user-detail">
-                                                武汉 / 大专 / 计算机科学与技术 / 江汉大学 （普通二本院校）
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- 学生信息end -->
-                                <td class="job mianshi" colspan="2">
-                                    <p>面试时间：2017-05-12 10:30</p>
-                                    <p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:96%" title="江汉大学">面试地点：江汉大学</p>
-                                    <p>联系人：邱涛（027-84222716）</p>
-                                    <p>学生反馈：<span style="color:#f90">已拒绝</span></p>
-                                </td>
-                                <!-- 处理操作start -->
-                                <!-- 处理操作end -->
-                            </tr>
-                        </tbody>
-                        <tbody class="t-row ">
-                            <tr class="interval">
-                                <td colspan="4" class="noborder"></td>
-                            </tr>
-                            <tr class="row-hd" id="303093" data-ispush="0" data-index="3">
-                                <td class="first">
-                                    <!-- 处理过的简历 或者当前为回收箱 才提供批操作 -->
-                                    <input type="checkbox" class="item-check">
-                                </td>
-                                <!-- 应聘信息start -->
-                                <td colspan="2" class="column">
-                                    <div class="user-info-top">
-                                        <span>应聘：</span>
-                                        <span class="u-spanl">
-                                            <a href="@AppSetting.Student_Url/job/0" target="_blank">
-                                                运营
-                                            </a>
-                                        </span>
-                                        <span>
-                                            武汉
-                                        </span>
-                                    </div>
-                                    <div class="user-info-top-right">
-                                        <span>投递时间：</span>
-                                        <span>2017-05-11</span>
-                                    </div>
-                                </td>
-                                <!-- 应聘信息end -->
-                                <td colspan="2" class="last">
-                                    <div style="position:relative">
-                                        <div class="applicant-operates">
-                                            <a href="javascript:;" class="solo-action-link u-legend-btn" data-action="legend">
-                                                <i class="a-o-legend">
-                                                    <span class="legend-count">1</span>
-                                                </i>
-                                                <span class="u-meto u-hasStar">备注</span>
-                                            </a>
-                                            <a href="javascript:;" class="solo-action-link legend-collect" data-action="collect" title="非星标简历"><i class="a-o-collect"></i><span class="u-meto">星标</span></a>
-                                        </div>
-                                        <div class="m-boxHover" style="position:absolute;line-height:20px;width:396px;top:50px;right:50px;background-color:#FFFBF3;z-index:3;border:1px solid #f5cb39;display:none;">
-                                            <div class="m-hoverHead" style="font-size:14px;color:#333;height:30px;">
-                                                <span style="float:left;margin-left:20px;margin-top:8px;">简历备注<span style="color:#999;">（只显示最新三条）</span></span>
+
+                        @if (Model.Data != null && Model.Data.Count > 0)
+                        {
+                            foreach (var item in Model.Data)
+                            {
+                                <tbody class="t-row ">
+                                    <tr class="interval">
+                                        <td colspan="4" class="noborder"></td>
+                                    </tr>
+                                    <tr class="row-hd" id="@item.Position_apply_id" data-ispush="0" data-index="1">
+                                        <td class="first">
+                                            <!-- 处理过的简历 或者当前为回收箱 才提供批操作 -->
+                                            @*<input type="checkbox" class="item-check">*@
+                                        </td>
+                                        <!-- 应聘信息start -->
+                                        <td colspan="2" class="column">
+                                            <div class="user-info-top">
+                                                <span>应聘：</span>
+                                                <span class="u-spanl">
+                                                    <a href="@AppSetting.Student_Url/job/@item.Position_id" target="_blank">
+                                                        @item.Position_Name
+                                                    </a>
+                                                </span>
+                                                <span>
+                                                    @item.Position_city_name
+                                                </span>
                                             </div>
-                                            <div class="m-memu" data-ld-id="">
-                                                <div class="m-minH">2017-05-11 16:28</div>
-                                                <div class="m-minC">需要提前面试</div>
+                                            <div class="user-info-top-right">
+                                                <span>投递时间：</span>
+                                                <span>@item.Position_apply_date</span>
                                             </div>
-                                        </div>
-                                        <div class="m-utrian" style="position:absolute;z-index:3;top:30px;right:137px;border-width:10px;border-style:solid;border-color:transparent transparent #f5cb39 transparent;line-height: 0; display:none;"></div>
-                                        <div class="m-utrian" style="position:absolute;z-index:4;top:31px;right:137px;border-width:10px;border-style:solid;border-color: transparent transparent #FFFBF3 transparent;line-height: 0;display:none;"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="tbl-row">
-                                <td class="check"></td>
-                                <!-- 学生信息start -->
-                                <td class="user">
-                                    <a target="_blank" href="/resume/0" class="user-avatar userUrl">
-                                        <img src="/content/static/images/avatar/avatar-s-1.jpg" alt="" title="">
-                                    </a>
-                                    <div class="user-info">
-                                        <div class="user-info-row">
-                                            <p class="u-user-name">
-                                                <a target="_blank" href="/resume/0" apply-id="303093">
-                                                    孙振宇
-                                                </a>
-                                                <span class="u-gentle">男</span>
-                                            </p>
-                                            <p class="u-user-detail">
-                                                武汉 / 大专 / 计算机科学与技术 / 江汉大学 （普通二本院校）
-                                            </p>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- 学生信息end -->
-                                <td class="job mianshi" colspan="2">
-                                    <p>面试时间：2017-05-15 10:30</p>
-                                    <p style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:96%" title="江汉大学">面试地点：江汉大学</p>
-                                    <p>联系人：邱涛（027-84222716）</p>
-                                    <p>学生反馈：<span style="color:#338be3">已接受</span></p>
-                                </td>
-                                <!-- 处理操作start -->
-                                <!-- 处理操作end -->
-                            </tr>
-                        </tbody>
+                                        </td>
+                                        <!-- 应聘信息end -->
+                                        <td colspan="2" class="last"></td>
+                                    </tr>
+                                    <tr class="tbl-row">
+                                        <td class="check"></td>
+                                        <!-- 学生信息start -->
+                                        <td class="user">
+                                            <a target="_blank" href="/resume/@item.Position_apply_id" class="user-avatar userUrl">
+                                                @{
+                                                    var imgIcon = string.IsNullOrWhiteSpace(item.Customer_head_logo)
+                                                        ? $"{AppSetting.Rss_Image}/content/static/images/avatar/avatar-s-1.jpg"
+                                                        : $"{AppSetting.Rss_Image}{item.Customer_head_logo}";
+                                                }
+                                                <img src="@imgIcon" alt="" title="">
+                                            </a>
+                                            <div class="user-info">
+                                                <div class="user-info-row">
+                                                    <p class="u-user-name">
+                                                        <a target="_blank" href="/resume/@item.Position_apply_id" apply-id="@item.Position_apply_id">
+                                                            @item.Customer_real_name
+                                                        </a>
+                                                        <span class="u-gentle">@item.Customer_Sex_name</span>
+                                                    </p>
+                                                    <p class="u-user-detail">
+                                                        @item.Intentional_city_name / @item.Education / @item.Major / @item.University
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <!-- 学生信息end -->
+                                        @if (item.Position_apply_state != 1 && item.Position_apply_state != 3)
+                                        {
+                                            <td class="job mianshi" colspan="2">
+                                                <p>面试时间：@item.Interview_date @item.Interview_hour : @item.Interview_munites</p>
+                                                <p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 96%" title="@item.Interview_address">面试地点：@item.Interview_address</p>
+                                                <p>联系人：@item.Interview_contact_people（@item.Interview_contact_mobile）</p>
+                                                <p>状态：@item.Position_apply_state_name</p>
+                                            </td>
+                                        }
+                                        else if (item.Position_apply_state == 1)
+                                        {
+                                            <td class="job">
+                                                <span>@item.Position_apply_state_name</span>
+                                            </td>
+                                            <!-- 处理操作start -->
+                                            <td class="actions">
+                                                <a href="javascript:;" class="solo-action m-solo-action solo-action-iv u-positive-style">通知面试</a>
+                                                <a href="javascript:;" class="solo-action m-solo-action u-negative-style" data-action="unsuitable">不合适</a>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="job" colspan="2">
+                                                <span>@item.Position_apply_state_name</span>
+                                            </td>
+                                        }
+
+                                        <!-- 处理操作end -->
+                                    </tr>
+                                </tbody>
+                            }
+                        }
+                        else
+                        {
+                            <tr style="text-align: center"><td colspan="4"><h2>暂无应聘简历</h2></td></tr>
+                        }
                     </table>
                     <div class="page-row tbl-page-row">
-                        <div class="page-bottom-r">
-                            <span class="page-cur">1</span>
-                        </div>
+                        @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
                     </div>
                 </div>
                 <!-- 空列表 -->
@@ -501,4 +221,33 @@
 <script>
     $(".etp-header .nav-bar li").removeClass("current");
     $(".etp-header .nav-bar li").eq(2).addClass("current");
+    $(".m-resumeStatus .u-rest li a").eq(@ViewBag.State).addClass("active");
 </script>
+
+<style>
+    #textwidth {
+        width: 334px;
+    }
+
+    .disappears {
+        display: none;
+    }
+
+    .appear {
+        border: 1px solid #B6B6B6;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 152px;
+        width: 352px;
+        position: absolute;
+        left: 85px;
+        top: 40px;
+        z-index: 1000;
+        background-color: #fff;
+    }
+
+    .selectUl ul .ui-text:hover {
+        background-color: #ededed;
+        cursor: pointer;
+    }
+</style>

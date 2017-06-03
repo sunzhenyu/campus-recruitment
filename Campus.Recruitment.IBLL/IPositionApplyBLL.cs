@@ -11,6 +11,8 @@ namespace Campus.Recruitment.IBLL
     {
         string Create(PositionApply entity);
 
-        bool IsApplyByUser(string user_id);
+        bool IsApplyByUser(string user_id,string position_id);
+
+        bool UpdateState(string customer_id, string position_id, int state);
     }
 }

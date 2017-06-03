@@ -11,6 +11,6 @@ namespace Campus.Recruitment.IBLL
     {
         string Create(PositionFire entity);
 
-        bool IsFireByUser(string user_id);
+        bool IsFireByUser(string user_id,string position_id);
     }
 }

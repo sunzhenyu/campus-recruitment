@@ -1,4 +1,5 @@
-﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
+﻿@using Campus.Recruitment.Helper
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
 
 <div class="form-holder">
     <div class="resume-form">
@@ -9,7 +10,7 @@
                 <li class="text ui-form-item">
                     <label for="specialityDesc"><em>*</em>描述</label>
                     <div class="fieldgroup">
-                        <textarea class="resume-area speciality-area" cols="50" id="specialityDesc" name="Speciality" placeholder="请填写你的个人特长，多个特长之间用逗号分隔。如演讲，唱歌，书法，篮球等（限5-400字）" rows="8">@Model.Specialty_desc</textarea>
+                        <textarea class="resume-area speciality-area" cols="50" id="specialityDesc" name="Speciality" placeholder="请填写你的个人特长，多个特长之间用逗号分隔。如演讲，唱歌，书法，篮球等（限5-400字）" rows="8">@Html.Raw(Model.Specialty_desc)</textarea>
                     </div>
                 </li>
             </ul>

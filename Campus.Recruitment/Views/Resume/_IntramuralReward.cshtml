@@ -1,4 +1,5 @@
 ﻿@using Campus.Recruitment.Entities.Entity.Customers;
+@using Campus.Recruitment.Helper
 @model List<CustomerIntramuralReward>
 
 <div id="info-scholarship" class="info-holder" style="display: block;">
@@ -18,7 +19,7 @@
                         <a title="删除" href="javascript:;" rel="delete" itemid="@item.Id" itemtype="scholarship" class="del-btn J_ActionBtn"></a>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="desc">@item.Scholarship_desc</div>
+                    <div class="desc">@Html.CreateHtmlForTextAreaText(item.Scholarship_desc)</div>
                 </div>
             </div>
         }

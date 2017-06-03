@@ -1,4 +1,5 @@
-﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
+﻿@using Campus.Recruitment.Helper
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase
 
 <div class="form-holder">
     <div class="resume-form">
@@ -9,7 +10,7 @@
                 <li class="text ui-form-item">
                     <label for="evalDesc"><em>*</em>描述</label>
                     <div class="fieldgroup">
-                        <textarea class="resume-area eval-area" cols="50" id="evalDesc" name="SelfEvaluation" rows="8" placeholder="自我评价（限20-400字）">@Model.Eval_desc</textarea>
+                        <textarea class="resume-area eval-area" cols="50" id="evalDesc" name="SelfEvaluation" rows="8" placeholder="自我评价（限20-400字）">@Html.Raw(Model.Eval_desc)</textarea>
                         <div class="ui-form-explain"></div>
                     </div>
                 </li>

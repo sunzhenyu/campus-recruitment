@@ -1,20 +1,21 @@
-﻿@{
+﻿@using Campus.Recruitment.Enterprise.Models
+@{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "企业-首页";
 }
-<link href="/content/static/css/corp/etp-gb.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="/content/static/lib/css/normalize.css">
-<link rel="stylesheet" href="/content/static/enterprise/css/homepage/index.css">
-<link rel="stylesheet" href="/content/static/enterprise/css/lib/homepage_search.css">
-<link rel="stylesheet" href="/content/static/enterprise/css/lib/majorPicker.css">
-<link rel="stylesheet" href="/content/static/zheyibu/static/css/dialog.css">
-<link rel="stylesheet" href="/content/static/css/corp/profile.css">
-<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/corp/etp-gb.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/lib/css/normalize.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/enterprise/css/homepage/index.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/enterprise/css/lib/homepage_search.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/enterprise/css/lib/majorPicker.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/dialog.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/css/corp/profile.css">
+<script async="" src="@AppSetting.Rss_Image/content/static/zheyibu/components/google/gtm.js"></script>
 
-<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
-<script src="/content/static/js/corp/init.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/init.js"></script>
 <script type="text/javascript">
     seajs.config({
         alias: {
@@ -25,15 +26,12 @@
         }
     });
 </script>
-<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
-<script type="text/javascript">
-    var BaofengUrl = "http://vod.baofengcloud.com/player3/cloud.swf?"
-</script>
-<script src="/content/static/zheyibu/components/jQuery/jquery.signalR-2.0.0.min.js"></script>
-<script src="http://www.zheyibu.com/signalr/hubs"></script>
-<script src="/content/static/lib/js/base/jquery-1.11.3.min.js"></script>
-<script src="/content/static/zheyibu/components/layer/layer.js?u=fa3adb66-18cf-40cd-a1f7-f308beac9ed9"></script>
-<script src="/content/static/html/demo/quickmark/jquery.qrcode.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.signalR-2.0.0.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery-1.11.3.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/layer/layer.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/html/demo/quickmark/jquery.qrcode.min.js"></script>
 
 <!-- Banner start -->
 <div id="logo-banner">
@@ -51,8 +49,7 @@
     </div>
 </div>
 <!-- Banner end -->
-<div class="container cf">
-    <!-- 高校信息查询工具 start -->
+@*<div class="container cf">
     <div class="part8">
         <div class="part8-header">
             <p>高校专业信息查询<span>Beta</span></p>
@@ -74,8 +71,7 @@
         <input type="hidden" name="schoolLevel">
         <input type="hidden" name="schoolArea">
     </div>
-    <!-- 高校信息查询工具 end -->
-</div>
+</div>*@
 <div class="outerDiv">
     <div class="container cf">
         <!-- 学生简历 start -->
@@ -210,440 +206,7 @@
                         </div>
                     </a>
                 </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=D5F0ED6BE918E4E2" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/136036/150x150.jpg" alt="吴炫">
-                            <div class="item-content">
-                                <p class="photoName">吴炫</p>
-                                <p>女/23/广州</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/汉语言文学/华南师范大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=BB5C9425D51EBE00" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/136020/150x150.jpg" alt="杨超">
-                            <div class="item-content">
-                                <p class="photoName">杨超</p>
-                                <p>男/28/沈阳</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/数量经济学/东北大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=88ACCB2C1EB9C6BF" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135999/150x150.jpg" alt="柯秋月">
-                            <div class="item-content">
-                                <p class="photoName">柯秋月</p>
-                                <p>女/24/南京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/MTI/南京大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=EFA1E0D10A30DBA4" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135941/150x150.jpg" alt="颜瑾">
-                            <div class="item-content">
-                                <p class="photoName">颜瑾</p>
-                                <p>女/25/长沙</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/新闻学/湖南大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=A1DA493360D52D98" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/123551/150x150.jpg" alt="陈莹">
-                            <div class="item-content">
-                                <p class="photoName">陈莹</p>
-                                <p>女/23/成都</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/基础医学/四川大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=9486A7985F923A3B" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135486/150x150.jpg" alt="梁志婷">
-                            <div class="item-content">
-                                <p class="photoName">梁志婷</p>
-                                <p>女/24/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/测控技术与仪器/北京化工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=A53BD9382B3C5697" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135748/150x150.jpg" alt="雷文龙">
-                            <div class="item-content">
-                                <p class="photoName">雷文龙</p>
-                                <p>男/26/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/化学工程/华东理工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=C095F3FA473FC312" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/132337/150x150.jpg" alt="邓淋丹">
-                            <div class="item-content">
-                                <p class="photoName">邓淋丹</p>
-                                <p>女/26/南京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/化学/南京大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=E77DB8879BF0C571" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135680/150x150.jpg" alt="赵新宇">
-                            <div class="item-content">
-                                <p class="photoName">赵新宇</p>
-                                <p>男/25/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/企业管理/中国科学院大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=DAF506360BC44463" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135656/150x150.jpg" alt="梁临利">
-                            <div class="item-content">
-                                <p class="photoName">梁临利</p>
-                                <p>女/28/广州</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/行政管理/华南理工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=92AB89B1EABFFAAF" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135138/150x150.jpg" alt="赵伊人">
-                            <div class="item-content">
-                                <p class="photoName">赵伊人</p>
-                                <p>女/26/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/传媒音乐研究/中国传媒大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=A49595E882527D8F" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/134435/150x150.jpg" alt="陈玥">
-                            <div class="item-content">
-                                <p class="photoName">陈玥</p>
-                                <p>女/24/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/新闻学/上海财经大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=6CFDEB1370F68401" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135560/150x150.jpg" alt="林煜钧">
-                            <div class="item-content">
-                                <p class="photoName">林煜钧</p>
-                                <p>男/27/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/数量经济学/上海财经大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=B98F7F34DCDC05E8" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135549/150x150.jpg" alt="杨露">
-                            <div class="item-content">
-                                <p class="photoName">杨露</p>
-                                <p>女/25/郑州</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/管理科学与工程（物流与供应链管理方向）/郑州大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=E381C5362557A47F" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135538/150x150.jpg" alt="贾锐">
-                            <div class="item-content">
-                                <p class="photoName">贾锐</p>
-                                <p>女/27/南通</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/食品科学与工程/南京农业大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=C67B2318B2ABEFEB" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135352/150x150.jpg" alt="任广慧">
-                            <div class="item-content">
-                                <p class="photoName">任广慧</p>
-                                <p>女/22/沈阳</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/会计学/东北大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=14E4C564EFD5974E" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135273/150x150.jpg" alt="赵薇">
-                            <div class="item-content">
-                                <p class="photoName">赵薇</p>
-                                <p>女/24/天津</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/工业工程/天津大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=84B69A05BEB1E421" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135279/150x150.jpg" alt="黄晓娜">
-                            <div class="item-content">
-                                <p class="photoName">黄晓娜</p>
-                                <p>女/22/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/人力资源管理/南京师范大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=CF5EDB636ABA4F80" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/112607/150x150.jpg" alt="董昊达">
-                            <div class="item-content">
-                                <p class="photoName">董昊达</p>
-                                <p>男/25/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/会计学/东华大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=ED75FFBF5A3CB4EE" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135185/150x150.jpg" alt="于凡洋">
-                            <div class="item-content">
-                                <p class="photoName">于凡洋</p>
-                                <p>男/29/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/外国语言文学/北京交通大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=09751979543BCB9D" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135168/150x150.jpg" alt="邵宇航">
-                            <div class="item-content">
-                                <p class="photoName">邵宇航</p>
-                                <p>男/22/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/基础心理学/北京大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=41611C72C1285239" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135165/150x150.jpg" alt="文桃">
-                            <div class="item-content">
-                                <p class="photoName">文桃</p>
-                                <p>女/26/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/应用机电工程/Harper Adams University</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=A2FEC872D6207977" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135152/150x150.jpg" alt="李聪">
-                            <div class="item-content">
-                                <p class="photoName">李聪</p>
-                                <p>男/27/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/化学工程/中国石油大学（北京）</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=B315E88BD049FAE7" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/132859/150x150.jpg" alt="李宛若">
-                            <div class="item-content">
-                                <p class="photoName">李宛若</p>
-                                <p>女/21/深圳</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/电子商务/华南理工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=937B288234ED97A0" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/133080/150x150.jpg" alt="袁胜强">
-                            <div class="item-content">
-                                <p class="photoName">袁胜强</p>
-                                <p>男/25/武汉</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/系统工程/华中科技大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=E5CAA2F6398933A0" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/131916/150x150.jpg" alt="雷崇惠">
-                            <div class="item-content">
-                                <p class="photoName">雷崇惠</p>
-                                <p>女/22/广州</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/生物医学工程/南方医科大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=68AFCABD60B444C6" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/133088/150x150.jpg" alt="范天馨">
-                            <div class="item-content">
-                                <p class="photoName">范天馨</p>
-                                <p>女/27/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/物理学/上海大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=4D43C8938C7F51E4" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/128592/150x150.jpg" alt="汤越">
-                            <div class="item-content">
-                                <p class="photoName">汤越</p>
-                                <p>女/23/武汉</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/会计学/武汉科技大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=4B4CA144F0C05234" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/127564/150x150.jpg" alt="代晓维">
-                            <div class="item-content">
-                                <p class="photoName">代晓维</p>
-                                <p>女/24/宿州</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/会计/黑龙江八一农垦大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=90393CA71913DAC9" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/111636/150x150.jpg" alt="姚子豪">
-                            <div class="item-content">
-                                <p class="photoName">姚子豪</p>
-                                <p>男/25/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/机械工程/华东理工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=C5C9D2A009FDD580" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/102280/150x150.jpg" alt="陈阳">
-                            <div class="item-content">
-                                <p class="photoName">陈阳</p>
-                                <p>女/26/北京</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/自然资源学/中国科学院大学</p>
-                        </div>
-                    </a>
-                </li>
+              
             </ul>
         </div>
         <!-- 学生简历 end -->
@@ -662,7 +225,7 @@
                 <div class="item-dateR">2015年09月16日</div>
                 <a href="/extension/0" target="_blank">
                     <div class="item-content">
-                        <img src="/content/admin/Scripts/Ueditor/net/upload/2015-12-14/d6b30507-0f10-4176-afd2-4a4bc028f90c.jpg" alt="企业宣讲会/推广活动">
+                        <img src="@AppSetting.Rss_Image/content/admin/Scripts/Ueditor/net/upload/2015-12-14/d6b30507-0f10-4176-afd2-4a4bc028f90c.jpg" alt="企业宣讲会/推广活动">
                         <p>
                             北京拓优&amp;新起点2016西北大学联合宣讲会
                         </p>
@@ -673,7 +236,7 @@
                 <div class="item-dateL">2015年09月14日</div>
                 <a href="/extension/0" target="_blank">
                     <div class="item-content">
-                        <img src="/content/admin/Scripts/Ueditor/net/upload/2015-12-14/1f55a4f7-39fd-4731-8a68-99cf8bf2c9ca.jpg" alt="企业宣讲会/推广活动">
+                        <img src="@AppSetting.Rss_Image/content/admin/Scripts/Ueditor/net/upload/2015-12-14/1f55a4f7-39fd-4731-8a68-99cf8bf2c9ca.jpg" alt="企业宣讲会/推广活动">
                         <p>
                             拓优顾问、新起点2016武汉大学联合宣讲会
                         </p>
@@ -684,7 +247,7 @@
                 <div class="item-dateR">2015年09月12日</div>
                 <a href="/extension/0" target="_blank">
                     <div class="item-content">
-                        <img src="/content/admin/Scripts/Ueditor/net/upload/2015-12-14/81f48d39-7bd1-44f7-8852-cf2ea9e77772.jpg" alt="企业宣讲会/推广活动">
+                        <img src="@AppSetting.Rss_Image/content/admin/Scripts/Ueditor/net/upload/2015-12-14/81f48d39-7bd1-44f7-8852-cf2ea9e77772.jpg" alt="企业宣讲会/推广活动">
                         <p>
                             拓优顾问2016山东大学校园宣讲会纪实
                         </p>
@@ -695,7 +258,7 @@
                 <div class="item-dateL">2015年09月11日</div>
                 <a href="/extension/0" target="_blank">
                     <div class="item-content">
-                        <img src="/content/admin/Scripts/Ueditor/net/upload/2015-12-14/bf7c06be-bdab-41f8-bbb2-529cafe9b7e3.jpg" alt="企业宣讲会/推广活动">
+                        <img src="@AppSetting.Rss_Image/content/admin/Scripts/Ueditor/net/upload/2015-12-14/bf7c06be-bdab-41f8-bbb2-529cafe9b7e3.jpg" alt="企业宣讲会/推广活动">
                         <p>
                             拓优青岛分公司2016青岛科技大学校园宣讲会
                         </p>
@@ -707,7 +270,7 @@
     </div>
     <!-- 企业进校宣讲/推广活动 end -->
 </div>
-<div class="outerDiv" style="background-color:#f5f5f5">
+@*<div class="outerDiv" style="background-color:#f5f5f5">
     <div class="container cf" style="width:1000px;margin:0 auto;background-color:#f5f5f5">
         <!-- 企业照片墙 start -->
         <div class="part6">
@@ -741,7 +304,7 @@
         <!-- 免费开通企业招聘服务 start -->
         <!-- 免费开通企业招聘服务 end -->
     </div>
-</div>
+</div>*@
 <script src="/content/static/enterprise/js/lib/cycleBanner.js"></script>
 <script src="/content/static/enterprise/js/lib/homepage_search.js"></script>
 <script src="/content/static/lib/js/enterprise/js/jquery.slimscroll.min.js"></script>

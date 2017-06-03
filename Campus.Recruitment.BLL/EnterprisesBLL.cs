@@ -77,10 +77,10 @@ namespace Campus.Recruitment.BLL
         public Enterprises GetEntityById(string id)
         {
             var result = _enterprisesRepository.Value.LoadEntities(x => x.Id == id && x.State == 1).FirstOrDefault() ?? new Enterprises();
-            var scale = !string.IsNullOrWhiteSpace(result.Scale)
+            result.Scale = !string.IsNullOrWhiteSpace(result.Scale)
                 ? _sysDictionaryRepository.Value.LoadEntities(x => x.State == 1 && x.Dic_key.ToString() == (result.Scale ?? "0") && x.Dic_type == "scale_type").FirstOrDefault().Dic_value : "";
 
-            var mode =  !string.IsNullOrWhiteSpace(result.Mode)
+            result.Scale =  !string.IsNullOrWhiteSpace(result.Mode)
                 ? _sysDictionaryRepository.Value.LoadEntities(x => x.State == 1 && x.Dic_key.ToString() == (result.Mode ?? "0") && x.Dic_type == "mode_type").FirstOrDefault().Dic_value : "";
 
 

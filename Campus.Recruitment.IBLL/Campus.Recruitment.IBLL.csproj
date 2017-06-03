@@ -44,10 +44,13 @@
     <Compile Include="Home\IFeedbackBLL.cs" />
     <Compile Include="ICustomerBLL.cs" />
     <Compile Include="IEnterprisesBLL.cs" />
+    <Compile Include="INotificationInterviewBLL.cs" />
     <Compile Include="IPositionApplyBLL.cs" />
     <Compile Include="IPositionBLL.cs" />
     <Compile Include="IPositionCollectBLL.cs" />
     <Compile Include="IPositionFireBLL.cs" />
+    <Compile Include="IPositionInvitationBLL.cs" />
+    <Compile Include="IResumeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

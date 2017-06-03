@@ -1,7 +1,7 @@
 ﻿@using Campus.Recruitment.Models
 @model Campus.Recruitment.Entities.Entity.Customers.CustomerAll
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
     ViewBag.Title = "在线简历";
 }
 
@@ -670,15 +670,18 @@
             })
             $this.change(function () {
                 $.ajax({
-                    url: "/resume/updatejobstatus/",
+                    url: "/resume/update-work-state",
                     data: {
-                        id: "136526",
-                        JobStatus: $("input[name=JobStatus]:checked").val()
+                        flag: $("input[name=JobStatus]:checked").val()
                     },
                     type: "post",
                     success: function (a) {
-                        if (!a.code)
-                            alert("求职状态修改失败，请重试 ")
+                        if (a) {
+                            window.location.href = "/resume/@Model.customerBase.Customer_id";
+                        } else {
+                            alert("求职状态修改失败，请重试 ");
+                        }
+
                     }
                 })
             })

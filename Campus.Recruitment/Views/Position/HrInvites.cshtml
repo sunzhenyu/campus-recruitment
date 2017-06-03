@@ -1,7 +1,7 @@
 ﻿@using Campus.Recruitment.Models
 @{
     //判断是否登录
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
     ViewBag.Title = "HR邀请";
 }
 
@@ -81,7 +81,7 @@
                 </p>
             </div>
             <div class="nodata pt50">
-                <p class="nodata-img"><img src="/content/static/Images/avatar/hr-invite.png"></p>
+                <p class="nodata-img"><img src="@AppSetting.Rss_Image/content/static/Images/avatar/hr-invite.png"></p>
                 <p class="font-one">暂无HR邀请你投递职位</p>
                 <p class="font-two">一份完整的简历可增加HR邀请的几率</p>
             </div>

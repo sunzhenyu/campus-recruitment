@@ -61,7 +61,7 @@ namespace Campus.Recruitment.DAL
 
         public bool UpdateWorkState(string id, bool is_work)
         {
-            var cmd = DataCommandManager.GetCommand("Account.UpdateWorkState");
+            var cmd = DataCommandManager.GetCommand("Customer.UpdateWorkState");
 
             cmd.SetParameterValue("@is_work", is_work ? 1 : 0);
             cmd.SetParameterValue("@id", id);

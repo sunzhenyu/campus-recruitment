@@ -73,9 +73,9 @@ namespace Campus.Recruitment.Controllers.WWW
                 ViewBag.FireState = "";
             }
             else {
-                ViewBag.ApplyState = _positionApplyBll.IsApplyByUser(user_id) ? "1" : "";
-                ViewBag.CollectState = _positionCollectBll.IsCollectByUser(user_id) ? "1" : "";
-                ViewBag.FireState = _positionFireBll.IsFireByUser(user_id) ? "1" : "";
+                ViewBag.ApplyState = _positionApplyBll.IsApplyByUser(user_id,result.PositionInfo.Id) ? "1" : "";
+                ViewBag.CollectState = _positionCollectBll.IsCollectByUser(user_id, result.PositionInfo.Id) ? "1" : "";
+                ViewBag.FireState = _positionFireBll.IsFireByUser(user_id, result.PositionInfo.Id) ? "1" : "";
 
             }
             return View(result);
@@ -96,43 +96,39 @@ namespace Campus.Recruitment.Controllers.WWW
         }
 
         [Route("apply")]
-        public ActionResult PositionApply(string position_id)
+        public ActionResult PositionApply(PositionApply entity)
         {
             string user_id = SessionHelper.Instance().GetSessionValue("UserId");
-            PositionApply entity = new PositionApply()
-            {
-                Customer_id = user_id,
-                Position_id = position_id
-            };
-            string position_apply = _positionApplyBll.Create(entity);
+            entity.Customer_id = user_id;
+            entity.Update_id = user_id;
+            entity.Create_id = user_id;
+           
+            _positionApplyBll.Create(entity);
 
             return Json(true);
         }
 
         [Route("collect")]
-        public ActionResult PositionCollect(string position_id)
+        public ActionResult PositionCollect(PositionCollect entity)
         {
             string user_id = SessionHelper.Instance().GetSessionValue("UserId");
-            PositionCollect entity = new PositionCollect()
-            {
-                Customer_id = user_id,
-                Position_id = position_id
-            };
-            string position_apply = _positionCollectBll.Create(entity);
+            entity.Customer_id = user_id;
+            entity.Update_id = user_id;
+            entity.Create_id = user_id;
+            _positionCollectBll.Create(entity);
 
             return Json(true);
         }
 
         [Route("fire")]
-        public ActionResult PositionFire(string position_id)
+        public ActionResult PositionFire(PositionFire entity)
         {
             string user_id = SessionHelper.Instance().GetSessionValue("UserId");
-            PositionFire entity = new PositionFire()
-            {
-                Customer_id = user_id,
-                Position_id = position_id
-            };
-            string position_apply = _positionFireBll.Create(entity);
+            entity.Customer_id = user_id;
+            entity.Update_id = user_id;
+            entity.Create_id = user_id;
+
+            _positionFireBll.Create(entity);
 
             return Json(true);
         }

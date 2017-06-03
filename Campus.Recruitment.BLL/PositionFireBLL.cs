@@ -27,9 +27,9 @@ namespace Campus.Recruitment.BLL
             return entity.Id;
         }
 
-        public bool IsFireByUser(string user_id)
+        public bool IsFireByUser(string user_id,string position_id)
         {
-            return _positionFireRepository.Count(x => x.Customer_id == user_id && x.State == 1) > 0;
+            return _positionFireRepository.Count(x => x.Customer_id == user_id && x.State == 1 && x.Position_id == position_id) > 0;
         }
 
     }

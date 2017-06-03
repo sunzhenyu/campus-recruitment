@@ -738,9 +738,9 @@
                         $.ajax({
                             type: 'get',
                             dataType: 'html',
-                            url: '/Pop/PtlViewInterview',
+                            url: '/resume/notification-interview',
                             data: {
-                                applyid: applyId
+                                position_apply_id: applyId
                             },
                             success: function (data) {
                                 var dialog = new Dialog();

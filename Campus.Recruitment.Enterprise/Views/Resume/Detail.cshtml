@@ -1,21 +1,22 @@
-﻿@{
+﻿@using Campus.Recruitment.Enterprise.Models
+@{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "简历管理详情";
 }
 
 <!-- css for resume -->
-<link href="/content/static/css/corp/resume-manage.css" rel="stylesheet">
-<link href="/content/static/css/corp/showBox.css" rel="stylesheet">
-<link href="/content/static/css/corp/dialog.css" rel="stylesheet">
-<link href="/content/static/js/jquery/plugin/Pikaday/pikaday.css" rel="stylesheet">
-<link href="/content/static/css/corp/resumeViewer.css" rel="stylesheet">
-<link href="/content/static/enterprise/debug/css/style.css" rel="stylesheet" type="text/css">
-<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/corp/resume-manage.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/showBox.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/js/jquery/plugin/Pikaday/pikaday.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/resumeViewer.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/enterprise/debug/css/style.css" rel="stylesheet" type="text/css">
+<script async="" src="@AppSetting.Rss_Image/content/static/zheyibu/components/google/gtm.js"></script>
 
-<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
-<script src="/content/static/js/corp/init.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/init.js"></script>
 <script type="text/javascript">
     seajs.config({
         alias: {
@@ -26,18 +27,18 @@
         }
     });
 </script>
-<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
-<script src="/content/static/zheyibu/components/validate/jquery.validate.min.js"></script>
-<script src="/content/static/js/corp/jquery.from.3.49.0.js"></script>
-<script src="/content/static/zheyibu/components/cuplayer/images/swfobject.js"></script>
-<script src="/content/static/js/corp/formui.js"></script>
-<script src="/content/static/js/corp/showBox.js"></script>
-<script src="/content/static/js/corp/dialog.js"></script>
-<script src="/content/static/js/jquery/plugin/Pikaday/pikaday.js"></script>
-<script src="/content/static/js/corp/resume-manage.js"></script>
-<script src="/content/static/js/corp/jquery.nicescroll.min.js"></script>
-<script src="/content/static/js/corp/resumeViewer.js"></script>
-<script src="/content/static/enterprise/debug/js/slider.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/validate/jquery.validate.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/jquery.from.3.49.0.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/cuplayer/images/swfobject.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/formui.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/showBox.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/dialog.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/jquery/plugin/Pikaday/pikaday.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/resume-manage.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/jquery.nicescroll.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/resumeViewer.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/enterprise/debug/js/slider.js"></script>
 
 <div id="hidContainer" style="display:none;"></div>
 <div id="containerDiv">
@@ -136,3 +137,10 @@
         </div>
     </div>
 </div>
+
+<style>
+    #textwidth{width:334px;}
+    .disappears {display: none;}
+    .appear {border: 1px solid #B6B6B6;overflow-y: scroll;overflow-x: hidden;max-height: 152px;width: 352px;position: absolute;left: 85px;top: 40px;z-index: 1000;background-color: #fff;} 
+    .selectUl ul .ui-text:hover {background-color: #ededed;cursor: pointer;}
+</style>

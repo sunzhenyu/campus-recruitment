@@ -18,6 +18,7 @@ namespace Campus.Recruitment.BLL
         private Lazy<IBaseRepository<Enterprises>> _enterprisesRepository;
         private Lazy<IBaseRepository<PositionApply>> _positionApplyRepository;
         private Lazy<IBaseRepository<PositionCollect>> _positionCollectRepository;
+        private Lazy<IBaseRepository<NotificationInterview>> _notificationInterviewRepository;
         private IPositionDAL _positionDal;
         public PositionBLL(IPositionDAL positionDal)
         {
@@ -25,6 +26,7 @@ namespace Campus.Recruitment.BLL
             _enterprisesRepository = new Lazy<IBaseRepository<Enterprises>>(() => new BaseRepository<Enterprises>());
             _positionApplyRepository = new Lazy<IBaseRepository<PositionApply>>(() => new BaseRepository<PositionApply>());
             _positionCollectRepository = new Lazy<IBaseRepository<PositionCollect>>(() => new BaseRepository<PositionCollect>());
+            _notificationInterviewRepository = new Lazy<IBaseRepository<NotificationInterview>>(() => new BaseRepository<NotificationInterview>());
             _positionDal = positionDal;
         }
 
@@ -318,7 +320,7 @@ namespace Campus.Recruitment.BLL
         {
             PageList<List<SearchPosition>> result = new PageList<List<SearchPosition>>();
             int total = 0;
-            List<PositionApply> positionApply = _positionApplyRepository.Value.LoadPageEntities(x => x.State == 1 && x.Customer_id == user_id, y => y.Update_at, pageSize, pageIndex, out total, false).ToList();
+            List<PositionApply> positionApply = _positionApplyRepository.Value.LoadPageEntities(x => x.State >0 && x.Customer_id == user_id, y => y.Update_at, pageSize, pageIndex, out total, false).ToList();
             positionApply.ForEach(x => {
                 SearchPosition entity = new SearchPosition();
                 var positionEntity = _baseRepository.Value.LoadEntities(y => y.Id == x.Position_id && y.State == 1).FirstOrDefault() ?? new Position();
@@ -330,7 +332,16 @@ namespace Campus.Recruitment.BLL
                 entity.Id = positionEntity.Id;
                 entity.Logo_icon = enterpriseEntity.Icon_logo;
                 entity.Name = positionEntity.Name;
+                entity.Create_at = x.Create_at.ToString("yyyy-MM-dd");
                 entity.Update_at = x.Update_at.ToString("yyyy-MM-dd");
+                entity.State = x.State;
+                if (x.State == 2 || x.State == 4)
+                {
+                    entity.NotificationInterviewEntity =
+                        _notificationInterviewRepository.Value
+                            .LoadEntities(y => y.Position_id == x.Position_id && y.Customer_id == x.Customer_id)
+                            .FirstOrDefault() ?? new NotificationInterview();
+                }
                 result.Data.Add(entity);
             });
 

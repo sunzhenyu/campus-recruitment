@@ -190,7 +190,7 @@ namespace Campus.Recruitment.Helper.Back
             pagingButtonsHtml.AppendLine();
             //pagingButtonsHtml.Append("<cite class=\"FormNum\">直接到第<input type=\"text\" maxlength=\"8\" name=\"PageNum\" id=\"PageNum\">页</cite><a href=\"" + GetPagingNavigateUrl(html, PageIndex, ajaxUrl) + "\" class=\"PageNumOK\" id=\"PageNumOK\">确定</a>");
             pagingButtonsHtml.AppendLine();
-            pagingButtonsHtml.AppendFormat("<span>共<b>{0}</b>条，共<b>{1}</b>页</span>", TotalRecords, totalPages);
+            //pagingButtonsHtml.AppendFormat("<span>共<b>{0}</b>条，共<b>{1}</b>页</span>", TotalRecords, totalPages);
             pagingButtonsHtml.Append("</div>");
             return MvcHtmlString.Create(pagingButtonsHtml.ToString());
         }

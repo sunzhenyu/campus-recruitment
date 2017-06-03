@@ -11,6 +11,7 @@ namespace Campus.Recruitment.Enterprise.Controllers
         [Route("")]
         public ActionResult Index()
         {
+            ///获取学生简历
             return View();
         }
 

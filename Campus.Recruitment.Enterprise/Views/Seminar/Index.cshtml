@@ -1,19 +1,20 @@
-﻿@{
+﻿@using Campus.Recruitment.Enterprise.Models
+@{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "宣讲会";
 }
 
-<link rel="stylesheet" href="/content/static/zheyibu/static/css/dialog.css">
-<link rel="stylesheet" type="text/css" href="/content/static/css/corp/showBox.css">
-<link rel="stylesheet" type="text/css" href="/content/static/css/corp/dialog.css">
-<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-v2.css">
-<link rel="stylesheet" type="text/css" href="/content/static/css/corp/position-manage.css">
-<link rel="stylesheet" type="text/css" href="/content/static/css/corp/global-corp.css">
-<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
-<script src="/content/static/js/corp/init.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/dialog.css">
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/content/static/css/corp/showBox.css">
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css">
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/content/static/css/corp/position-v2.css">
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/content/static/css/corp/position-manage.css">
+<link rel="stylesheet" type="text/css" href="@AppSetting.Rss_Image/content/static/css/corp/global-corp.css">
+<script async="" src="@AppSetting.Rss_Image/content/static/zheyibu/components/google/gtm.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/init.js"></script>
 <script type="text/javascript">
     seajs.config({
         alias: {
@@ -24,7 +25,7 @@
         }
     });
 </script>
-<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
 
 <div class="container">
     <div id="new-position-content">
@@ -84,7 +85,7 @@
         </div>
     </div>
 </div>
-<script src="/content/static/js/corp/showBox.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/showBox.js"></script>
 <script type="text/javascript">
     $(".etp-header .nav-bar li").removeClass("current");
     $(".etp-header .nav-bar li").eq(3).addClass("current");

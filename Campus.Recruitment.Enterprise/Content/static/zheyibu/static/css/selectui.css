@@ -1,9 +1,0 @@
-﻿.selectUi{position:relative;width:220px}
-.selectUi .select-result{line-height:16px;padding:6px 10px;border:1px solid #d9d9d9;background-color:#fff;border-radius:3px;position:relative;font-size:12px;cursor:pointer}
-.selectUi .select-result:before{content:'';display:inline-block;position:absolute;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid #999;top:10px;right:10px}
-.selectUi .select-result:after{content:'';display:inline-block;position:absolute;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid #FFF;top:9px;right:10px}
-.fn-hide ul{display:none}
-.selectUi ul{position:absolute;top:29px;left:0;right:0;margin:0;padding:0;border:1px solid #cdcdcd;max-height:162px;overflow:auto;white-space:nowrap;z-index:1}
-.selectUi ul li{height:29px;background-color:#fff;padding:0 27px 0 10px;color:#666;line-height:29px;font-size:12px;list-style:none;cursor:pointer}
-.selectUi ul li:hover{background-color:#7cbf59;color:#fff}
-/*.selectUi ul li.selected{background-color:#5db664;color:#fff}*/

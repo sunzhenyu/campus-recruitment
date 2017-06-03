@@ -71,6 +71,7 @@
     <Content Include="content\admin\Scripts\Ueditor\net\upload\2015-12-14\bf7c06be-bdab-41f8-bbb2-529cafe9b7e3.jpg" />
     <Content Include="content\admin\Scripts\Ueditor\net\upload\2015-12-14\d6b30507-0f10-4176-afd2-4a4bc028f90c.jpg" />
     <Content Include="content\admin\Scripts\Ueditor\net\upload\2017-05-05\17f2d9d2-b134-442f-9a64-cc0ac16667d0.png" />
+    <Content Include="content\jquery.form.js" />
     <Content Include="content\static\css\base\base.css" />
     <Content Include="content\static\css\corp\accont.css" />
     <Content Include="content\static\css\corp\dialog.css" />

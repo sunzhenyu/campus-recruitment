@@ -1,4 +1,5 @@
 ﻿@using Campus.Recruitment.Models
+@using Campus.Recruitment.Helper;
 @model Campus.Recruitment.Entities.Entity.Customers.CustomerAll
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,8 +18,8 @@
             <div class="user-info pRel">
                 @{
                     var imgIcon = string.IsNullOrWhiteSpace(Model.customerBase.Head_icon)
-                        ? "/content/static/images/avatar/avatar-s-1.jpg?t=208"
-                        : $"/content/Upload/s/{Model.customerBase.Customer_id}/{Model.customerBase.Head_icon}";
+                        ? $"{AppSetting.Rss_Image}/content/static/images/avatar/avatar-s-1.jpg?t=208"
+                        : $"{AppSetting.Rss_Image}/{Model.customerBase.Head_icon}";
                 }
                 <img src="@imgIcon">
                 <p>@Model.customerBase.Real_name</p>
@@ -78,7 +79,7 @@
                                 <div class="fl">
                                     <span class="fl mr">@item.School_name</span>
                                     <span class="fl">@item.Position_name</span>
-                                    <span class="db clearfix" style="color: #999;">@item.Position_desc</span>
+                                    <span class="db clearfix" style="color: #999;">@Html.CreateHtmlForTextAreaText(item.Position_desc)</span>
                                 </div>
                             </div>
                         }
@@ -97,7 +98,7 @@
                                 <div class="fl">
                                     <span class="fl mr">@item.Scholarship_name</span>
                                     <span class="fl">@item.Reward_school_ext</span>
-                                    <p class="clearfix">@item.Scholarship_desc</p>
+                                    <p class="clearfix">@Html.CreateHtmlForTextAreaText(item.Scholarship_desc)</p>
                                 </div>
                             </div>
                         }
@@ -117,7 +118,7 @@
                                 </div>
                                 <div class="fl">
                                     <p class="c43b41b">@item.Units_position<span class="mr">(@item.Units)</span><span>@item.Units_dept</span></p>
-                                    <p>@item.Units_work_desc</p>
+                                    <p>@Html.CreateHtmlForTextAreaText(item.Units_work_desc)</p>
                                 </div>
                             </div>
                         }
@@ -137,7 +138,7 @@
                                 <div class="fl">
                                     <span class="fl mr">@item.Project_name</span>
                                     <span class="fl">@item.Project_job_name</span>
-                                    <p class="clearfix">@item.Project_job_desc</p>
+                                    <p class="clearfix">@Html.CreateHtmlForTextAreaText(item.Project_job_desc)</p>
                                 </div>
                             </div>
                         }
@@ -203,7 +204,7 @@
 
                     <li>
                         <h3>个人特长</h3>
-                        <p><span>@Model.customerBase.Specialty_desc</span></p>
+                        <p><span>@Html.CreateHtmlForTextAreaText(Model.customerBase.Specialty_desc)</span></p>
                     </li>
                 }
 
@@ -212,7 +213,7 @@
 
                     <li>
                         <h3>自我评价</h3>
-                        <p><span>@Model.customerBase.Eval_desc</span></p>
+                        <p><span>@Html.CreateHtmlForTextAreaText(Model.customerBase.Eval_desc)</span></p>
                     </li>
                 }
             </ul>

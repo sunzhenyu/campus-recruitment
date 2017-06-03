@@ -1,4 +1,5 @@
-﻿@model Campus.Recruitment.Entities.Entity.Customers.CustomerExperience
+﻿@using Campus.Recruitment.Helper
+@model Campus.Recruitment.Entities.Entity.Customers.CustomerExperience
 
 <div class="form-holder">
     <div class="resume-form">
@@ -45,7 +46,7 @@
                 <li class="text ui-form-item">
                     <label>工作描述</label>
                     <div class="fieldgroup">
-                        <textarea class="resume-area" cols="50" id="UnitsWorkDesc" name="UnitsWorkDesc" placeholder="描述职务的具体工作以及获得的成就等（限400字）" rows="8">@Model.Units_work_desc</textarea>
+                        <textarea class="resume-area" cols="50" id="UnitsWorkDesc" name="UnitsWorkDesc" placeholder="描述职务的具体工作以及获得的成就等（限400字）" rows="8">@Html.CreateHtmlForTextAreaText(Model.Units_work_desc)</textarea>
                     </div>
                 </li>
             </ul>

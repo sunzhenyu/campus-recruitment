@@ -56,5 +56,9 @@ namespace Campus.Recruitment.DAL
         public DbSet<PositionCollect> PositionCollect { get; set; }
 
         public DbSet<PositionFire> PositionFire { get; set; }
+
+        public DbSet<NotificationInterview> NotificationInterview { get; set; }
+
+        public DbSet<PositionInvitation> PositionInvitation { get; set; }
     }
 }

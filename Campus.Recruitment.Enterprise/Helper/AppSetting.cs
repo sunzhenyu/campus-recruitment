@@ -23,5 +23,28 @@ namespace Campus.Recruitment.Enterprise.Models
                 return (System.Configuration.ConfigurationManager.AppSettings["imagePath"] ?? "").ToString();
             }
         }
+
+
+        /// <summary>
+        /// 站点路径
+        /// </summary>
+        public static string Rss_Image
+        {
+            get
+            {
+                return (System.Configuration.ConfigurationManager.AppSettings["RssImage"] ?? "").ToString();
+            }
+        }
+
+        /// <summary>
+        /// 当前站点路径
+        /// </summary>
+        public static string Current_Path
+        {
+            get
+            {
+                return (System.Configuration.ConfigurationManager.AppSettings["current_path"] ?? "").ToString();
+            }
+        }
     }
 }

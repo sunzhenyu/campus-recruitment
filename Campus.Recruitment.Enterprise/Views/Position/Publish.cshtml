@@ -1,20 +1,21 @@
-﻿@model Campus.Recruitment.Entities.Entity.Position
+﻿@using Campus.Recruitment.Enterprise.Models
+@model Campus.Recruitment.Entities.Entity.Position
 @{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "职位管理-发布职位";
 }
-<link href="/content/static/zheyibu/static/css/dialog.css" rel="stylesheet" type="text/css">
-<link href="/content/static/css/corp/dialog.css" rel="stylesheet" type="text/css">
-<link href="/content/static/zheyibu/static/css/layer2.css" rel="stylesheet" type="text/css">
-<link href="/content/static/css/corp/showBox.css" rel="stylesheet" type="text/css">
-<link href="/content/static/zheyibu/static/css/blue-skin.css" rel="stylesheet" type="text/css">
-<link href="/content/static/css/corp/position-v2.css" rel="stylesheet" type="text/css">
-<link href="/content/static/js/sea-modules/jquery/autocomplete/1.11.4/jquery-ui.css" rel="stylesheet" type="text/css">
-<script async="" src="/content/static/zheyibu/components/google/gtm.js"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
-<script src="/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
-<script src="/content/static/js/corp/init.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/dialog.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/layer2.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/showBox.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/blue-skin.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/position-v2.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/js/sea-modules/jquery/autocomplete/1.11.4/jquery-ui.css" rel="stylesheet" type="text/css">
+<script async="" src="@AppSetting.Rss_Image/content/static/zheyibu/components/google/gtm.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs/2.1.1/sea.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/sea-modules/seajs/seajs-style/1.0.2/seajs-style.js" type="text/javascript"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/init.js"></script>
 <script type="text/javascript">
     seajs.config({
         alias: {
@@ -25,8 +26,8 @@
         }
     });
 </script>
-<script src="/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
-<script src="/content/static/js/corp/publisher.js?d=20170523"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/js/corp/publisher.js?d=20170523"></script>
 <style>
     .ui-dialog {
         padding: 0;

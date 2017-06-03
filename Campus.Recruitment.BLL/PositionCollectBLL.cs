@@ -28,9 +28,9 @@ namespace Campus.Recruitment.BLL
         }
 
 
-        public bool IsCollectByUser(string user_id)
+        public bool IsCollectByUser(string user_id,string position_id)
         {
-            return _positionCollectRepository.Count(x => x.Customer_id == user_id && x.State == 1) > 0;
+            return _positionCollectRepository.Count(x => x.Customer_id == user_id && x.State == 1 && x.Position_id == position_id) > 0;
         }
     }
 }
