@@ -60,5 +60,7 @@ namespace Campus.Recruitment.DAL
         public DbSet<NotificationInterview> NotificationInterview { get; set; }
 
         public DbSet<PositionInvitation> PositionInvitation { get; set; }
+
+        public DbSet<PromoteDiploma> PromoteDiploma { get; set; }
     }
 }

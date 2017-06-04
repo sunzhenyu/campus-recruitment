@@ -1,4 +1,5 @@
 ﻿@using Campus.Recruitment.Enterprise.Models
+@model List<Campus.Recruitment.Entities.Entity.Customers.CustomerAndBase>
 @{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -79,134 +80,34 @@
             <div class="part3-header">
                 <p>您可能感兴趣的学生简历</p>
             </div>
-            <ul style="width:1032px;margin:0 auto">
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=FB50B8012544652D" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/98816/150x150.jpg" alt="王君慧">
-                            <div class="item-content">
-                                <p class="photoName">王君慧</p>
-                                <p>女/23/吉林</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/汉语国际教育/北华大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=E35FD788823AA0DD" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/118555/150x150.jpg" alt="陶翀">
-                            <div class="item-content">
-                                <p class="photoName">陶翀</p>
-                                <p>女/22/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/工商管理类（创业方向）/上海理工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=0012F5841FB82A8F" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/101185/150x150.jpg" alt="黄兴">
-                            <div class="item-content">
-                                <p class="photoName">黄兴</p>
-                                <p>男/25/武汉</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/信息管理学院/华中师范大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=A12197F4D3A7E9C4" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/136178/150x150.jpg" alt="刘彭薇">
-                            <div class="item-content">
-                                <p class="photoName">刘彭薇</p>
-                                <p>女/25/上海</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/应用化学/华东理工大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=0B87833C56808C42" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/136141/150x150.jpg" alt="乔羽">
-                            <div class="item-content">
-                                <p class="photoName">乔羽</p>
-                                <p>女/23/长春</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>本科/社会学/中山大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=0E925282835BC6F2" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/135385/150x150.jpg" alt="郭瑞">
-                            <div class="item-content">
-                                <p class="photoName">郭瑞</p>
-                                <p>男/23/西安</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/计算机科学与技术/西安交通大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=EC78676BE99219B7" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/136075/150x150.jpg" alt="陈昱昱">
-                            <div class="item-content">
-                                <p class="photoName">陈昱昱</p>
-                                <p>女/25/青岛</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/社会学/中国海洋大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=3DAF95F0876246DC" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/136059/150x150.jpg" alt="鞠晓燕">
-                            <div class="item-content">
-                                <p class="photoName">鞠晓燕</p>
-                                <p>女/27/青岛</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/国际贸易学/中国海洋大学</p>
-                        </div>
-                    </a>
-                </li>
-                <li class="part3-list">
-                    <a href="/resume/invitation/0?key=A683E6A6E9AB491C" target="_blank">
-                        <div class="item-header">
-                            <img src=""/content/Upload/s/103278/150x150.jpg" alt="王会春">
-                            <div class="item-content">
-                                <p class="photoName">王会春</p>
-                                <p>男/28/广州</p>
-                            </div>
-                        </div>
-                        <div class="item-footer">
-                            <p>硕士/化学工程/华南理工大学</p>
-                        </div>
-                    </a>
-                </li>
-              
+            <ul style="width: 1032px; margin: 0 auto">
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <li class="part3-list">
+                            @{
+                                var imgIcon = string.IsNullOrWhiteSpace(item.Head_icon)
+                                    ? $"{AppSetting.Rss_Image}/content/static/images/avatar/avatar-s-1.jpg?t=208"
+                                    : $"{AppSetting.Rss_Image}/{item.Head_icon}";
+                                int customer_age = DateTime.Now.Year - item.Birthday.Year;
+                                var sex = item.Sex == 1 ? "男" : "女";
+                            }
+                            <a href="/resume/invitation/@item.Customer_id" target="_blank">
+                                <div class="item-header">
+                                    <img src="@imgIcon" alt="@item.Real_name">
+                                    <div class="item-content">
+                                        <p class="photoName">@item.Real_name</p>
+                                        <p>@sex/@customer_age/@item.Intentional_city_name</p>
+                                    </div>
+                                </div>
+                                <div class="item-footer">
+                                    <p>@item.Education/@item.Major/@item.University</p>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
             </ul>
         </div>
         <!-- 学生简历 end -->
@@ -214,7 +115,7 @@
         <!-- HR说 end -->
     </div>
 </div>
-<div class="container cf" style="width: 1000px; margin: 0 auto">
+@*<div class="container cf" style="width: 1000px; margin: 0 auto">
     <!-- 企业进校宣讲/推广活动 start -->
     <div class="part4">
         <div class="part4-header">
@@ -269,7 +170,7 @@
         <div id="front-line"></div>
     </div>
     <!-- 企业进校宣讲/推广活动 end -->
-</div>
+</div>*@
 @*<div class="outerDiv" style="background-color:#f5f5f5">
     <div class="container cf" style="width:1000px;margin:0 auto;background-color:#f5f5f5">
         <!-- 企业照片墙 start -->

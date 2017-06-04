@@ -1,0 +1,64 @@
+﻿*{margin:0;padding:0}
+ul{list-style:none}
+a{text-decoration:none}
+.common-width{width:1000px;margin:0 auto;overflow:hidden}
+.clearfix{zoom:1}
+.clearfix:after{content:"";display:block;clear:both}
+#banner{height:360px;position:relative;overflow:hidden;border-top:1px solid #e9e7e9;cursor:pointer}
+#banner .bg{position:absolute;left:0;top:0;width:100%;height:100%;color:#fff}
+#banner .bg1{background:url(../../enterprise/images/background/part1-bg1.jpg) center center no-repeat;z-index:4}
+#banner .bg1.login{background:url(../../enterprise/images/background/part1-bg5.jpg) center center no-repeat}
+#banner .bg2{background:url(../../enterprise/images/background/part1-bg2.jpg) center center no-repeat;z-index:3}
+#banner .bg3{background:url(../../enterprise/images/background/part1-bg3.jpg) center center no-repeat;z-index:2}
+#banner .bg4{background:url(../../enterprise/images/background/part1-bg4.jpg) center center no-repeat;z-index:1}
+#banner .bg1,#banner .bg2,#banner .bg3,#banner .bg4{display:none}
+#banner .banner-topic{font-size:36px;padding-top:38px;height:36px;line-height:36px}
+#banner .banner-tips{font-size:18px;padding-top:18px}
+#banner .common-width{display:block;position:relative;height:100%}
+#banner .link{position:absolute;left:0;font-size:18px;text-indent:36px;width:240px;height:40px;line-height:40px;background:#f90;bottom:43px;border-radius:5px}
+#banner .link:hover{background:#f60}
+#banner .bg1 .link{text-indent:30px}
+#banner .bg3 .link{text-indent:20px}
+#banner .link a{color:#fff}
+#banner .common-width{position:relative}
+#banner .banner-counter{position:absolute;bottom:20px;right:0;margin-left:-70px;z-index:5}
+#banner .banner-counter li{float:left;width:10px;margin-right:16px;height:10px;border-radius:5px;background:#fff;cursor:pointer;opacity:.7;filter:alpha(opacity=70)}
+#banner .banner-counter li.active{opacity:1;filter:alpha(opacity=100)}
+.qr-code-box .text{color:#000;text-align:center}
+.qr-code-box{position:absolute;right:10px;top:26px;height:150px;background:#fff;padding:6px 6px 20px 6px}
+#content{position:relative}
+#content .nav .common-width{position:relative}
+.onlineVideo{position:fixed;bottom:100px;right:0;height:40px;width:70px;font-size:14px;line-height:20px;color:#666;padding-top:34px;background:url(img/icon/xjh-corp.png) center 0 no-repeat;-webkit-transition:all ease 0.5s;-moz-transition:all ease 0.5s;transition:all ease 0.5s}
+.onlineVideo:hover{background-position:center -98px}
+.onlineVideo span{display:block;text-align:center}
+#content .nav-list{padding:30px 13px 35px;margin-right:-102px;min-width:1000px;clear:both}
+#content .nav-list li{float:left;margin-right:10px;text-align:center;display:inline}
+#content .nav-list .nav-title{width:130px;font-size:18px;color:#333}
+#content .nav-list .add-job{display:block;margin:25px auto 30px;width:75px;height:75px;border-radius:50%;background:#f90;position:relative}
+#content .nav-list .add-job:hover{background:#f60}
+#content .nav-list .add-job::before{content:'';position:absolute;left:20px;top:36px;width:35px;height:3px;background:#fff}
+#content .nav-list .add-job::after{content:'';position:absolute;left:36px;top:20px;width:3px;height:35px;background:#fff}
+#content .nav-list .nav-num{display:block;margin:25px auto 30px;width:75px;height:75px;line-height:74px;background:url(../../Images/corp/nav-num-bg.png) no-repeat;font-size:24px;color:#F90}
+#content .nav-list .nav-btn{display:inline-block;width:110px;border-radius:5px;height:28px;line-height:30px;border:1px solid #F90;color:#F90;font-size:14px}
+#content .nav-list .nav-btn:hover{border:1px solid #F60;color:#F60}
+#content .nav-list .nav-num:hover{color:#f60}
+#content .qr-code-box{position:fixed;top:160px;right:0;z-index:10}
+#qr-code,#qr-trigger{position:absolute}
+#qr-code:after{content:"";display:block;position:absolute;border-left:8px solid #dde0e5;border-top:8px solid transparent;border-bottom:8px solid transparent;top:183px;right:-8px}
+#qr-code:before{content:"";display:block;position:absolute;border-left:7px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;top:184px;right:-7px;z-index:1}
+#qr-trigger{background:#cdcdcd url(../../Images/corp/qr-trigger-bg.png) center center no-repeat;right:0;top:118px;width:40px;height:40px}
+#qr-code{right:54px;top:-52px;text-align:center;z-index:8;background:#fff;border:1px solid #dde0e5}
+#qr-code .qr-code{width:162px;height:162px;padding:12px 14px 0}
+#qr-code .text{margin:10px 0 12px;font-size:12px;color:#888;width:190px}
+#content .service{background:#fafafa;padding:50px 0 58px}
+#content .service-item{height:166px;float:left}
+#content .service-item img{float:left}
+#content .service-item .info{margin-left:20px;float:left}
+#content .service-item .info h2{line-height:52px;font-size:30px;color:#333}
+#content .service-item .info p{font-size:16px;padding-top:14px;line-height:30px}
+#content .service-item .info a{line-height:38px;color:#2466b2;font-size:14px}
+.ui-form-item{padding:0}
+.txtBox{width:106px;padding:0 90px 20px 80px}
+.txtBox .tips-icon{width:34px;height:34px;display:inline-block;float:left}
+.txtBox .icon-success{background:url(../../enterprise/static/img/profile/tips-icons.png) no-repeat}
+.txtBox p{margin-left:45px;line-height:40px}

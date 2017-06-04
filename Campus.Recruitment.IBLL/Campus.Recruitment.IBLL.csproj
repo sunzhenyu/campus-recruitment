@@ -45,6 +45,7 @@
     <Compile Include="ICustomerBLL.cs" />
     <Compile Include="IEnterprisesBLL.cs" />
     <Compile Include="INotificationInterviewBLL.cs" />
+    <Compile Include="IPomoteDiplomaBLL.cs" />
     <Compile Include="IPositionApplyBLL.cs" />
     <Compile Include="IPositionBLL.cs" />
     <Compile Include="IPositionCollectBLL.cs" />

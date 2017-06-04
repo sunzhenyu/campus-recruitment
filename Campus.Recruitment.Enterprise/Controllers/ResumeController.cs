@@ -18,13 +18,15 @@ namespace Campus.Recruitment.Enterprise.Controllers
         private readonly ICustomerBLL _customerBLL;
         private readonly IResumeBLL _resumeBLL;
         private readonly IPositionApplyBLL _positionApplyBll;
+        private readonly IPositionBLL _positionBll;
 
-        public ResumeController(INotificationInterviewBLL notificationInterviewBLL,ICustomerBLL customerBLL,IResumeBLL resumeBLL,IPositionApplyBLL positionApplyBll)
+        public ResumeController(INotificationInterviewBLL notificationInterviewBLL,ICustomerBLL customerBLL,IResumeBLL resumeBLL,IPositionApplyBLL positionApplyBll,IPositionBLL positionBll)
         {
             _notificationInterviewBLL = notificationInterviewBLL;
             _customerBLL = customerBLL;
             _resumeBLL = resumeBLL;
             _positionApplyBll = positionApplyBll;
+            _positionBll = positionBll;
         }
 
         /// <summary>
@@ -59,7 +61,11 @@ namespace Campus.Recruitment.Enterprise.Controllers
         /// <returns></returns>
         [Route("{id}")]
         public ActionResult Detail(string id) {
-            return View();
+            ResumeAndApllyDetail result = new ResumeAndApllyDetail();
+            result.SearchPosition = _positionBll.GetSearchPositionByPositionApplyId(id);
+            result.CustomerAll = _customerBLL.GetAllCustomerInfo(result.SearchPosition.Customer_id);
+            ViewBag.PositionApplyId = id;
+            return View(result);
         }
 
         /// <summary>
@@ -69,9 +75,15 @@ namespace Campus.Recruitment.Enterprise.Controllers
         /// <returns></returns>
         [Route("invitation/{id}")]
         public ActionResult Invitation(string id) {
-            return View();
+            var result  = _customerBLL.GetAllCustomerInfo(id);
+            return View(result);
         }
 
+        /// <summary>
+        /// 同志简历弹窗
+        /// </summary>
+        /// <param name="position_apply_id"></param>
+        /// <returns></returns>
         [Route("notification-interview")]
         public ActionResult NotificationInterview(string position_apply_id)
         {
@@ -81,6 +93,11 @@ namespace Campus.Recruitment.Enterprise.Controllers
             return PartialView("NotificationInterview",entity);
         }
 
+        /// <summary>
+        /// 保存通知简历
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         [Route("save-interview")]
         public ActionResult SaveInterview(NotificationInterview entity)
         {
@@ -88,6 +105,53 @@ namespace Campus.Recruitment.Enterprise.Controllers
             entity.Update_id = entity.Create_id;
             var id = _notificationInterviewBLL.Create(entity);
             _positionApplyBll.UpdateState(entity.Customer_id, entity.Position_id, 2);
+
+            return Json(true);
+        }
+
+        /// <summary>
+        /// 更新简历状态
+        /// </summary>
+        /// <param name="customer_id"></param>
+        /// <param name="position_id"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        [Route("update-apply-state")]
+        public ActionResult UpdateApplyState(string customer_id,string position_id, int state)
+        {
+            _positionApplyBll.UpdateState(customer_id, position_id, state);
+            return Json(true);
+        }
+
+        /// <summary>
+        /// 获取职位集合
+        /// </summary>
+        /// <returns></returns>
+        [Route("position-list")]
+        public ActionResult GetPositionList()
+        {
+            string enterprise_id = SessionHelper.Instance().GetSessionValue("EnterpriseId");
+            
+            List<Position> result = _positionBll.GetPositionList(enterprise_id);
+            return Json(result);
+        }
+
+        [Route("position-apply")]
+        public ActionResult PositionApply(string user_id,string position_ids)
+        {
+
+            string enterprise_id = SessionHelper.Instance().GetSessionValue("EnterpriseId");
+            foreach (var item in position_ids.Split(','))
+            {
+                PositionApply entity = new PositionApply();
+
+                entity.Enterprise_id = enterprise_id;
+                entity.Position_id = item;
+                entity.Customer_id = user_id;
+                entity.Update_id = user_id;
+                entity.Create_id = user_id;
+                _positionApplyBll.Create(entity);
+            }
 
             return Json(true);
         }

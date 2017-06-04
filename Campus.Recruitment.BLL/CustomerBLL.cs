@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Campus.Recruitment.Entities;
 using Campus.Recruitment.IDAL;
 using Campus.Recruitment.DAL;
+using Campus.Recruitment.Entities.Condition;
 using Campus.Recruitment.Entities.Entity.Customers;
 using Campus.Recruitment.Entities.Entity;
 
@@ -137,7 +138,7 @@ namespace Campus.Recruitment.BLL
             result.customerBase.Family_name = customerinfo.Family_name;
             result.customerBase.High_school_name = customerinfo.High_school_name;
             result.customerBase.Email = customer.Email;
-            result.customerBase.Policital_status = !string.IsNullOrWhiteSpace(result.customerBase.Policital_status)
+            result.customerBase.Policital_status = !string.IsNullOrWhiteSpace(customerinfo.Policital_status)
                 ? _sysDictionaryRepository.Value.LoadEntities(x => x.State == 1 && x.Dic_key.ToString() == (customerinfo.Policital_status ?? "0") && x.Dic_type == "policital_status_type").FirstOrDefault().Dic_value : "";
             result.customerBase.Height = customerinfo.Height;
             result.customerBase.Is_work = customer.Is_work;
@@ -175,7 +176,7 @@ namespace Campus.Recruitment.BLL
 
             result.customerItSkillList.ForEach(x =>
             {
-                x.Skill_level = !string.IsNullOrWhiteSpace(x.Skill_level) ? _sysDictionaryRepository.Value.LoadEntities(y => y.State == 1 && y.Dic_key.ToString() == (x.Skill_level ?? "0") && y.Dic_type == "language_type").FirstOrDefault().Dic_value : "";
+                x.Skill_level = !string.IsNullOrWhiteSpace(x.Skill_level) ? _sysDictionaryRepository.Value.LoadEntities(y => y.State == 1 && y.Dic_key.ToString() == (x.Skill_level ?? "0") && y.Dic_type == "skill_level_type").FirstOrDefault().Dic_value : "";
             });
 
             //获取语言能力集合
@@ -191,6 +192,49 @@ namespace Campus.Recruitment.BLL
 
             //获取项目经历集合
             result.customerProjectList = _customerProjectRepository.Value.LoadEntities(x => x.Customer_id == id).ToList();
+
+            return result;
+        }
+
+
+        public List<CustomerAndBase> GetCustomerInfoList(BasePageCondition condition)
+        {
+            List<CustomerAndBase> result = new List<CustomerAndBase>();
+            int total = 0;
+            //获取customer表信息
+            List<Customer> customerList = _customerRepository.Value.LoadPageEntities(x => x.State == 1,
+                x => x.Update_at, condition.PageSize, condition.PageIndex, out total, false).ToList();
+            customerList.ForEach(x =>
+            {
+                var customerinfo = _customerBaseRepository.Value.LoadEntities(y => y.Customer_id == x.Id).FirstOrDefault() ?? new CustomerBase();
+                CustomerAndBase entity = new CustomerAndBase();
+
+                //获取基本信息
+                entity.Id = customerinfo.Id;
+                entity.Customer_id = customerinfo.Customer_id;
+                entity.Real_name = x.Real_name;
+                entity.Sex = x.Sex;
+                entity.Birthday = customerinfo.Birthday;
+                entity.Current_location = customerinfo.Current_location;
+                entity.Family_location = customerinfo.Family_location;
+                entity.High_school_location = customerinfo.High_school_location;
+                entity.Current_name = customerinfo.Current_name;
+                entity.Family_name = customerinfo.Family_name;
+                entity.High_school_name = customerinfo.High_school_name;
+                entity.Email = x.Email;
+                entity.Height = customerinfo.Height;
+                entity.Is_work = x.Is_work;
+                entity.Head_icon = x.Head_icon;
+                entity.Eval_desc = customerinfo.Eval_desc;
+                entity.Specialty_desc = customerinfo.Specialty_desc;
+                entity.Mobile = x.Mobile;
+                entity.Intentional_city = x.Intentional_city;
+                entity.Intentional_city_name = x.Intentional_city_name;
+                entity.University = x.University;
+                entity.Major = x.Major;
+                entity.Education = x.Major;
+                result.Add(entity);
+            });
 
             return result;
         }

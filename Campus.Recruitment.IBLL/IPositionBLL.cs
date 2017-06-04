@@ -27,5 +27,9 @@ namespace Campus.Recruitment.IBLL
         PageList<List<SearchPosition>> GetPageByCollect(string user_id, int pageIndex, int pageSize);
 
         PageList<List<SearchPosition>> GetPageByApply(string user_id, int pageIndex, int pageSize);
+
+        SearchPosition GetSearchPositionByPositionApplyId(string position_apply_id);
+
+        List<Position> GetPositionList(string enterprise_id);
     }
 }

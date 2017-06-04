@@ -10,6 +10,8 @@ namespace Campus.Recruitment.Entities.Entity
     {
         public string Id { get; set; } = "";
 
+        public string Customer_id { get; set; }
+
         /// <summary>
         /// 职位名称
         /// </summary>
@@ -63,7 +65,7 @@ namespace Campus.Recruitment.Entities.Entity
                     case 1:
                         return "待处理";
                     case 2:
-                        return "通知面试";
+                        return "已通知面试";
                     case 3:
                         return "不合适";
                     case 4:

@@ -603,6 +603,7 @@
     <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\181af1f1-db4e-4e0a-aa99-22ba37e6b496" />
     <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\38eaf2de-8dca-416d-9e97-f9137351fc15" />
     <Content Include="content\Upload\s\f4b5b0b5-275a-4fba-b940-1f5496b5ed79\ace0c6e8-cc2c-416c-b21b-86874cda5bce" />
+    <None Include="Properties\PublishProfiles\Sun.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

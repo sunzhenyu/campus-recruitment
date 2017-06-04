@@ -121,11 +121,10 @@
 </style>
 <div class="feedback-wrap">
     <div class="feedback-box">
-        <img class="feekback-img" src="/content/static/student/images/icon/feedback.png">
+        @*<img class="feekback-img" src="@AppSetting.Rss_Image/content/static/student/images/icon/feedback.png">*@
         <form action="/feedback/create" method="post" id="feedback">
-            <input type="hidden" name="URL" value="file:///D:/Recruitment website/Campus Recruitment/职业锚.html" />
             <p class="feedback-title">意见反馈</p>
-            <div class="feed-list">
+            <div class="feed-list" style="margin-top: 30px;">
                 <label for="Email">联系邮箱：</label>
                 <input type="text" name="Email" id="Email" />
             </div>

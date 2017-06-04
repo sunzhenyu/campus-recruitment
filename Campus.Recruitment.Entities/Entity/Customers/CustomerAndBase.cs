@@ -94,5 +94,11 @@ namespace Campus.Recruitment.Entities.Entity.Customers
         /// 意向城市
         /// </summary>
         public string Intentional_city_name { get; set; }
+
+        public string University { get; set; }
+
+        public string Education { get; set; }
+
+        public string Major { get; set; }
     }
 }

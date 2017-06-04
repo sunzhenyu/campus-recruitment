@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Campus.Recruitment.Entities.Condition;
 
 namespace Campus.Recruitment.IBLL
 {
@@ -70,6 +71,12 @@ namespace Campus.Recruitment.IBLL
         /// <returns></returns>
         CustomerAndBase GetCustomerAndBase(string id);
 
+        /// <summary>
+        /// 获取用户集合
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        List<CustomerAndBase> GetCustomerInfoList(BasePageCondition condition);
         /// <summary>
         /// 获取证书
         /// </summary>

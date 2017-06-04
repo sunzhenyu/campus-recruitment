@@ -208,6 +208,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Student\BackController.cs" />
     <Compile Include="Controllers\Student\PositionController.cs" />
+    <Compile Include="Controllers\Student\PromoteDiplomaController.cs" />
     <Compile Include="Controllers\Student\ResumeController.cs" />
     <Compile Include="Controllers\WWW\SiteController.cs" />
     <Compile Include="Controllers\WWW\JobController.cs" />
@@ -343,6 +344,8 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_FooterLogin.cshtml" />
+    <Content Include="Views\PromoteDiploma\Index.cshtml" />
+    <Content Include="Views\PromoteDiploma\Back.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

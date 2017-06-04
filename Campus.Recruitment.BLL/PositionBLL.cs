@@ -88,23 +88,27 @@ namespace Campus.Recruitment.BLL
             int total = 0;
             var whereLambda = PredicateBuilder.True<Position>();
             whereLambda = whereLambda.And(x => x.State == condition.State && x.Create_id == condition.EnterpriseId);
-            if (condition.FunxtionId != null) {
+            if (condition.FunxtionId != null)
+            {
                 whereLambda = whereLambda.And(x => x.Function_ids.Split(',').Contains(condition.FunxtionId.ToString()));
             }
 
-            if (condition.CityId != null) {
+            if (condition.CityId != null)
+            {
                 whereLambda = whereLambda.And(x => x.City_ids.Split(',').Contains(condition.CityId.ToString()));
             }
 
-            if (!string.IsNullOrWhiteSpace(condition.Name)) {
-                whereLambda = whereLambda.And(x => x.Name == condition.Name);
+            if (!string.IsNullOrWhiteSpace(condition.Name))
+            {
+                whereLambda = whereLambda.And(x => x.Name.Contains(condition.Name));
             }
 
-            if (condition.PositionType != null) {
+            if (condition.PositionType != null)
+            {
                 whereLambda = whereLambda.And(x => x.Position_type == condition.PositionType);
             }
 
-            result.Data = _baseRepository.Value.LoadPageEntities(whereLambda, t=>t.Create_at,condition.PageSize,condition.PageIndex,out total,false).ToList();
+            result.Data = _baseRepository.Value.LoadPageEntities(whereLambda, t => t.Create_at, condition.PageSize, condition.PageIndex, out total, false).ToList();
             result.Total = total;
             result.PageIndex = condition.PageIndex;
             result.PageSize = condition.PageSize;
@@ -163,9 +167,12 @@ namespace Campus.Recruitment.BLL
                 switch (condition.Salary)
                 {
                     case 1:
-                        if (condition.Position_type == 1){
+                        if (condition.Position_type == 1)
+                        {
                             whereLambda = whereLambda.And(x => x.Salary_min <= 0);
-                        }else{
+                        }
+                        else
+                        {
                             whereLambda = whereLambda.And(x => x.Daily_salary <= 0 && x.Intern_salary_min <= 0 && x.Hour_salary <= 0);
                         }
                         break;
@@ -239,7 +246,8 @@ namespace Campus.Recruitment.BLL
 
             List<Position> temp = _baseRepository.Value.LoadPageEntities(whereLambda, t => t.Update_at, condition.PageSize, condition.PageIndex, out total, false).ToList();
 
-            temp.ForEach(x => {
+            temp.ForEach(x =>
+            {
                 SearchPosition entity = new SearchPosition();
                 var enterpriseEntity = _enterprisesRepository.Value.LoadEntities(y => y.Id == x.Create_id).FirstOrDefault() ?? new Enterprises();
                 entity.City_ids = x.City_ids;
@@ -250,14 +258,17 @@ namespace Campus.Recruitment.BLL
                 entity.Logo_icon = enterpriseEntity.Icon_logo;
                 entity.Name = x.Name;
                 entity.Update_at = x.Update_at.ToString("yyyy-MM-dd");
-                if (x.Position_type == 1) {
+                if (x.Position_type == 1)
+                {
                     entity.Salary = x.Salary_min <= 0 ? "面议" : $"{x.Salary_min}-{x.Salary_max}元/月";
-                } else {
+                }
+                else
+                {
                     if (x.Intern_salary_type == 1)
                     {
                         entity.Salary = x.Intern_salary_min <= 0 ? "面议" : $"{x.Intern_salary_min}-{x.Intern_salary_max}元/月";
                     }
-                    else if(x.Intern_salary_type == 2)
+                    else if (x.Intern_salary_type == 2)
                     {
                         entity.Salary = x.Daily_salary <= 0 ? "面议" : $"{x.Daily_salary}元/日";
                     }
@@ -283,14 +294,17 @@ namespace Campus.Recruitment.BLL
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public PageList<List<SearchPosition>> GetPageByCollect(string user_id,int pageIndex,int pageSize) {
+        public PageList<List<SearchPosition>> GetPageByCollect(string user_id, int pageIndex, int pageSize)
+        {
             PageList<List<SearchPosition>> result = new PageList<List<SearchPosition>>();
             int total = 0;
             List<PositionCollect> positionCollect = _positionCollectRepository.Value.LoadPageEntities(x => x.State == 1 && x.Customer_id == user_id, y => y.Update_at, pageSize, pageIndex, out total, false).ToList();
-            positionCollect.ForEach(x => {
+            positionCollect.ForEach(x =>
+            {
                 SearchPosition entity = new SearchPosition();
                 var positionEntity = _baseRepository.Value.LoadEntities(y => y.Id == x.Position_id && y.State == 1).FirstOrDefault() ?? new Position();
                 var enterpriseEntity = _enterprisesRepository.Value.LoadEntities(y => y.Id == positionEntity.Create_id).FirstOrDefault() ?? new Enterprises();
+                entity.Customer_id = x.Customer_id;
                 entity.City_ids = positionEntity.City_ids;
                 entity.City_names = positionEntity.City_names;
                 entity.Enterprise_id = enterpriseEntity.Id;
@@ -320,11 +334,13 @@ namespace Campus.Recruitment.BLL
         {
             PageList<List<SearchPosition>> result = new PageList<List<SearchPosition>>();
             int total = 0;
-            List<PositionApply> positionApply = _positionApplyRepository.Value.LoadPageEntities(x => x.State >0 && x.Customer_id == user_id, y => y.Update_at, pageSize, pageIndex, out total, false).ToList();
-            positionApply.ForEach(x => {
+            List<PositionApply> positionApply = _positionApplyRepository.Value.LoadPageEntities(x => x.State > 0 && x.Customer_id == user_id, y => y.Update_at, pageSize, pageIndex, out total, false).ToList();
+            positionApply.ForEach(x =>
+            {
                 SearchPosition entity = new SearchPosition();
                 var positionEntity = _baseRepository.Value.LoadEntities(y => y.Id == x.Position_id && y.State == 1).FirstOrDefault() ?? new Position();
                 var enterpriseEntity = _enterprisesRepository.Value.LoadEntities(y => y.Id == positionEntity.Create_id).FirstOrDefault() ?? new Enterprises();
+                entity.Customer_id = x.Customer_id;
                 entity.City_ids = positionEntity.City_ids;
                 entity.City_names = positionEntity.City_names;
                 entity.Enterprise_id = enterpriseEntity.Id;
@@ -350,6 +366,44 @@ namespace Campus.Recruitment.BLL
             result.PageSize = pageSize;
 
             return result;
+        }
+
+        /// <summary>
+        /// 获取职位信息
+        /// </summary>
+        /// <param name="position_apply_id"></param>
+        /// <returns></returns>
+        public SearchPosition GetSearchPositionByPositionApplyId(string position_apply_id)
+        {
+            SearchPosition result = new SearchPosition();
+            PositionApply positionApply = _positionApplyRepository.Value.LoadEntities(x => x.Id == position_apply_id).FirstOrDefault() ?? new PositionApply();
+
+            var positionEntity = _baseRepository.Value.LoadEntities(y => y.Id == positionApply.Position_id && y.State == 1).FirstOrDefault() ?? new Position();
+            var enterpriseEntity = _enterprisesRepository.Value.LoadEntities(y => y.Id == positionEntity.Create_id).FirstOrDefault() ?? new Enterprises();
+            result.City_ids = positionEntity.City_ids;
+            result.Customer_id = positionApply.Customer_id;
+            result.City_names = positionEntity.City_names;
+            result.Enterprise_id = enterpriseEntity.Id;
+            result.Enterprise_name = enterpriseEntity.Name;
+            result.Id = positionEntity.Id;
+            result.Logo_icon = enterpriseEntity.Icon_logo;
+            result.Name = positionEntity.Name;
+            result.Create_at = positionApply.Create_at.ToString("yyyy-MM-dd HH:mm");
+            result.Update_at = positionApply.Update_at.ToString("yyyy-MM-dd");
+            result.State = positionApply.State;
+
+
+            return result;
+        }
+
+        /// <summary>
+        /// 获取职位集合
+        /// </summary>
+        /// <param name="enterprise_id"></param>
+        /// <returns></returns>
+        public List<Position> GetPositionList(string enterprise_id)
+        {
+            return _baseRepository.Value.LoadEntities(x => x.Create_id == enterprise_id && x.State == 1).ToList();
         }
     }
 }

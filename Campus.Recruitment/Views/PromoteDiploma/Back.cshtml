@@ -1,0 +1,120 @@
+﻿@using Campus.Recruitment.Helper
+@using Campus.Recruitment.Models
+@model Campus.Recruitment.Entities.Entity.PromoteDiploma
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = "提升学历";
+}
+
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/jQuery/jquery.min.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/global.js"></script>
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/components/mCustomScrollbar/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/global.css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-new20150121.css" rel="stylesheet" type="text/css">
+<script src="@AppSetting.Rss_Image/content/static/zheyibu/static/js/coding.js"></script>
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-user.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/zyb-resume-new.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/css/zyb/resumeform/zyb-resume-form.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/dialog.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/layer.css" rel="stylesheet" type="text/css">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/DatePicker.new.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/zheyibu/static/css/selectui.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/css/corp/dialog.css" rel="stylesheet">
+<link href="@AppSetting.Rss_Image/content/static/student/css/landpage/userCenter.css" rel="stylesheet">
+<div class="content">
+    <div class="content-in">
+        <!--左侧功能栏开始-->
+        <div class="user-left">
+            <div class="resume-all" style="margin-top:0px;">
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的简历
+                    </li>
+                    <li class="resume-module-item ">
+                        <a href="/resume/0">在线简历</a>
+                    </li>
+                </ul>
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        提升学历
+                    </li>
+                    <li class="resume-module-item active ">
+                        <a href="/promote-diploma/back">提升学历</a>
+                    </li>
+                </ul>
+                
+                <ul class="left-resume">
+                    <li class="resume-module-title">
+                        我的求职
+                    </li>
+                    <li class="resume-module-item  apply">
+                        <a href="/position/apply">申请的职位</a>
+                        <i class="num"></i>
+                    </li>
+                    @*<li class="resume-module-item  push">
+                            <a href="/position/recommend">推荐的职位</a>
+                            <i class="num"></i>
+                        </li>*@
+                    <li class="resume-module-item  hrinvite">
+                        <a href="/position/hr-invintes">HR邀请</a>
+                        <i class="num"></i>
+                    </li>
+                    <li class="resume-module-item ">
+                        <a href="/position/collection-post">收藏的职位</a>
+                        <i class="num"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--左侧功能栏结束-->
+        <div class="right-resume">
+            <div class="resume-display clearfix">
+                <div id="base-anchor"></div>
+
+                <div class="main">
+                    <div id="edit-resume">
+                        <div class="resume-section" id="section-base">
+                            <div class="section-mask">
+                                <div class="resume-section-wrap">
+                                    @*<i class="section-ico section-ico-base"></i>*@
+                                    <h2><span>提升学历</span></h2>
+                                    <div class="container clearfix">
+                                        <div id="info-base" class="info-holder" style="display: block;">
+                                            <div class="base-info-col">
+                                                <ul>
+                                                    <li><span>提升级别：</span>@Model.Name</li>
+                                                    @if (Model.State == 1)
+                                                    {
+                                                        <li><span>处理状态：</span>待处理</li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li><span>处理状态：</span>已处理</li>
+                                                    }
+                                                    <li><span>提交时间：</span>@Model.Create_at.ToString("yyyy-MM-dd HH:mm:ss")</li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="base-info-col">
+                                                <ul>
+                                                    <li><div style="float: left"><span>特别提示：</span></div>
+                                                    <div style="float: left">@Html.CreateHtmlForTextAreaText(Model.Note)</div></li>
+                                                  
+                                                </ul>
+                                            </div>
+                                            
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

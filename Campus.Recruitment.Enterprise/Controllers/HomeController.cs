@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Campus.Recruitment.Entities.Condition;
+using Campus.Recruitment.IBLL;
 
 namespace Campus.Recruitment.Enterprise.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICustomerBLL _customerBLL;
+        public HomeController(ICustomerBLL customerBLL)
+        {
+            _customerBLL = customerBLL;
+        }
         [Route("")]
         public ActionResult Index()
         {
-            ///获取学生简历
-            return View();
+            //获取学生简历
+            BasePageCondition condition=new BasePageCondition() {PageSize = 100};
+            var customer = _customerBLL.GetCustomerInfoList(condition);
+            return View(customer);
         }
 
         /// <summary>

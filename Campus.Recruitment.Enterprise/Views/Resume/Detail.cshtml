@@ -1,4 +1,8 @@
-﻿@using Campus.Recruitment.Enterprise.Models
+﻿@using Campus.Recruitment.Enterprise.Helper
+@using Campus.Recruitment.Enterprise.Models
+
+@model Campus.Recruitment.Entities.Entity.ResumeAndApllyDetail
+
 @{
     //判断是否登录
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -40,107 +44,448 @@
 <script src="@AppSetting.Rss_Image/content/static/js/corp/resumeViewer.js"></script>
 <script src="@AppSetting.Rss_Image/content/static/enterprise/debug/js/slider.js"></script>
 
+<input type="hidden" name="RequestApplyId" value="@ViewBag.PositionApplyId">
+<input type="hidden" name="RequestUserId" value="@Model.CustomerAll.customerBase.Customer_id">
 <div id="hidContainer" style="display:none;"></div>
 <div id="containerDiv">
     <div id="g-container">
         <div class="resume-section-head" data-id="303093">
             <ul>
-                <li class="head-part1">当前简历：孙振宇</li>
-                <li class="head-part2">应聘职位：运营</li>
-                <li class="head-part3">投递时间：2017-05-11 13:08</li>
+                <li class="head-part1">当前简历：@Model.CustomerAll.customerBase.Real_name</li>
+                <li class="head-part2">应聘职位：@Model.SearchPosition.Name</li>
+                <li class="head-part3">投递时间：@Model.SearchPosition.Create_at</li>
             </ul>
         </div>
         <div class="resume-section-content">
             <div class="content-left">
                 <div class="content-left-head">
-                    <div class="left-head-title"><span class="title-name">孙振宇</span><span class="title-other">男 21</span></div>
+                    @{
+                        int Customer_age = DateTime.Now.Year - Model.CustomerAll.customerBase.Birthday.Year;
+                        var current_location = Model.CustomerAll.customerBase.Current_name ?? "";
+                        var family_location = Model.CustomerAll.customerBase.Family_name ?? "";
+                        var high_school_location = Model.CustomerAll.customerBase.High_school_name ?? "";
+                        var policital_status = Model.CustomerAll.customerBase.Policital_status ?? "";
+                        var height = Model.CustomerAll.customerBase.Height == 0 ? "" : Model.CustomerAll.customerBase.Height + "cm";
+                        var sex = Model.CustomerAll.customerBase.Sex == 1 ? "男" : "女";
+                    }
+                    <div class="left-head-title">
+                        <span class="title-name">@Model.CustomerAll.customerBase.Real_name</span><span class="title-other">@sex @Customer_age</span>
+                    </div>
                     <div class="left-head-content">
-                        <div class="content-photo"><img src="/content/static/images/avatar/avatar-s-1.jpg" alt="photo"></div>
+                        <div class="content-photo">
+                            @{
+                                var imgIcon = string.IsNullOrWhiteSpace(Model.CustomerAll.customerBase.Head_icon)
+                                    ? $"{AppSetting.Rss_Image}/content/static/images/avatar/avatar-s-1.jpg?t=208"
+                                    : $"{AppSetting.Rss_Image}/{Model.CustomerAll.customerBase.Head_icon}";
+                            }
+                            <img src="@imgIcon" alt="photo">
+                        </div>
                         <div class="content-list">
                             <ul>
-                                <li class="content-part"><span class="list-label">现居住地：</span>武汉</li>
-                                <li class="content-part"><span class="list-label">政治面貌：</span>团员</li>
-                                <li class="content-part"><span class="list-label">户口地：</span>咸宁</li>
-                                <li class="content-part"><span class="list-label">身高：</span>175cm</li>
-                                <li class="content-part"><span class="list-label">生源地：</span>咸宁</li>
+                                <li class="content-part"><span class="list-label">现居住地：</span>@current_location</li>
+                                <li class="content-part"><span class="list-label">政治面貌：</span>@policital_status</li>
+                                <li class="content-part"><span class="list-label">户口地：</span>@family_location</li>
+                                <li class="content-part"><span class="list-label">身高：</span>@height</li>
+                                <li class="content-part"><span class="list-label">生源地：</span>@high_school_location</li>
                                 <li class="content-part">
-                                    <span class="list-label">手机：</span><span class="u-mobile">18217454933<span> (已验证)</span></span>
+                                    <span class="list-label">手机：</span><span class="u-mobile">@Model.CustomerAll.customerBase.Mobile<span> (已验证)</span></span>
                                 </li>
-                                <li class="content-part"><span class="list-label">职业锚类型：</span>未测试</li>
-                                <li class="content-part"><span class="list-label">邮箱：</span><span class="u-email">675125116@qq.com</span></li>
+                                <li class="content-part"><span class="list-label">邮箱：</span><span class="u-email">@Model.CustomerAll.customerBase.Email</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="content-left-stuPhoto">
-                    <h3 class="resume-section-hd">生活相册</h3>
-                    <div style="margin: 0 auto;width: 672px;">
-                        <div style="width:30px;display: inline-block;height: 70px;cursor: pointer;margin-right:3px;" id="btn-left"></div>
-                        <div style="width:596px;height: 70px;overflow: hidden;display: inline-block;" class="leftLoop">
-                            <ul id="slide-pic" style="position: relative; -webkit-margin-before: 0px; -webkit-margin-after: 0px; font-size: 0px; -webkit-padding-start: 0px; line-height: 70px; width: 240px;">
-                                <li style="width: 110px;height: 70px;margin-right: 10px;text-align: center;display: inline-block;vertical-align: middle;text-align: center;cursor:pointer;"><img src="http://upload.zheyibu.com/Upload/s/136526/lifephoto/2017050917184019861641_108xauto.jpg" alt="" style="max-width: 100%;max-height: 100%;vertical-align: middle"></li>
-                                <li style="width: 110px;height: 70px;margin-right: 10px;text-align: center;display: inline-block;vertical-align: middle;text-align: center;cursor:pointer;"><img src="http://upload.zheyibu.com/Upload/s/136526/lifephoto/2017050917183182313731_108xauto.jpg" alt="" style="max-width: 100%;max-height: 100%;vertical-align: middle"></li>
-                            </ul>
-                        </div>
-                        <div style="width:30px;display: inline-block;height: 70px;cursor: pointer;margin-left:3px;" id="btn-right"></div>
-                    </div>
-                </div>
-                <div class="content-left-career">
+                @*<div class="content-left-career">
                     <h3 class="resume-section-hd">职业理想</h3>
                     <div class="container">
                         <div class="intention-block">
                             <p><span class="color-999">期望工作：</span><span class="right-content">全职</span></p>
-                            <p><span class="color-999">期望城市：</span><span class="right-content">上海,武汉,西安,昆明</span></p>
+                            <p><span class="color-999">期望城市：</span><span class="right-content">@Model.CustomerAll.customerBase.Intentional_city_name</span></p>
                             <p><span class="color-999">期望薪资：</span><span class="right-content">不限</span></p>
-                            <p><span class="color-999">期望职位：</span><span class="right-content">未填写</span></p>
+                                <p><span class="color-999">期望职位：</span><span class="right-content">未填写</span></p>
                         </div>
                     </div>
-                </div>
-                <div class="content-left-education">
-                    <h3 class="resume-section-hd">教育经历</h3>
-                    <div class="container">
-                        <div class="intention-block">
-                            <div class="block-left color-999">2014.9 - 2017.6</div>
-                            <p><span class="block-right-top">江汉大学</span><span>计算机科学与技术</span></p>
-                            <p><span class="block-right-bottom">大专</span><span class="block-right-padding color-999">班级排名 未填写</span></p>
+                </div>*@
+                @if (Model.CustomerAll.customerEducationList != null && Model.CustomerAll.customerEducationList.Count > 0)
+                {
+
+                    <div class="content-left-education">
+                        <h3 class="resume-section-hd">教育经历</h3>
+                        @foreach (var item in Model.CustomerAll.customerEducationList)
+                        {
+                            <div class="container">
+                                <div class="intention-block">
+                                    <div class="block-left color-999"> @item.Start_edu.ToString("yyyy.MM") - @item.End_edu.ToString("yyyy.MM")</div>
+                                    <p>
+                                        <span class="block-right-top">@item.School_name</span><span>@item.Major</span>
+                                    </p>
+                                    <p>
+                                        <span class="block-right-bottom">(@item.Degree)</span><span class="block-right-padding color-999">@item.Class_rank</span>
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                @if (Model.CustomerAll.customerIntramuralJobList != null && Model.CustomerAll.customerIntramuralJobList.Count > 0)
+                {
+                    <div class="content-left-postition">
+                        <h3 class="resume-section-hd">校内职务</h3>
+                        @foreach (var item in Model.CustomerAll.customerIntramuralJobList)
+                                {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Start_campus.ToString("yyyy.MM") - @item.End_campus.ToString("yyyy.MM")</div>
+                                        <p>@item.Position_name @item.School_name</p>
+                                        <p class="color-999">@Html.CreateHtmlForTextAreaText(item.Position_desc)</p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+                @if (Model.CustomerAll.customerIntramuralRewardList != null && Model.CustomerAll.customerIntramuralRewardList.Count > 0)
+                {
+                    <div class="content-left-reward">
+                        <h3 class="resume-section-hd">校内奖励</h3>
+                        @foreach (var item in Model.CustomerAll.customerIntramuralRewardList)
+                                {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Start_reward.ToString("yyyy.MM")</div>
+                                        <p>@item.Scholarship_name @item.Reward_school_ext</p>
+                                        <p class="color-999">@Html.CreateHtmlForTextAreaText(item.Scholarship_desc)</p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+                @if (Model.CustomerAll.customerExperienceList != null && Model.CustomerAll.customerExperienceList.Count > 0)
+                {
+                    <div class="content-left-job">
+                        <h3 class="resume-section-hd">实习/工作经历</h3>
+                        @foreach (var item in Model.CustomerAll.customerExperienceList)
+                                {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Start_intership.ToString("yyyy.MM") -@item.End_intership.ToString("yyyy.MM")</div>
+                                        <p>@item.Units @item.Units_position</p>
+                                        <p class="color-999">@Html.CreateHtmlForTextAreaText(item.Units_work_desc)</p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+                @if (Model.CustomerAll.customerProjectList != null && Model.CustomerAll.customerProjectList.Count > 0)
+                {
+                    <div class="content-left-job">
+                        <h3 class="resume-section-hd">项目经历</h3>
+                        @foreach (var item in Model.CustomerAll.customerProjectList)
+                                {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Start_project.ToString("yyyy.MM") - @item.End_project.ToString("yyyy.MM")</div>
+                                        <p>@item.Project_name @item.Project_job_name</p>
+                                        <p class="color-999">@Html.CreateHtmlForTextAreaText(item.Project_job_desc)</p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+                @if (Model.CustomerAll.customerLanguageList != null && Model.CustomerAll.customerLanguageList.Count > 0)
+                {
+                    <div class="content-left-language">
+                        <h3 class="resume-section-hd">语言能力</h3>
+                        @foreach (var item in Model.CustomerAll.customerLanguageList)
+                                {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Name</div>
+                                        <p>
+                                            <span class="color-999">听说：</span>@item.Hear<span class="block-right-padding color-999">读写：</span>@item.Read_write<span class="block-right-padding color-999">证书：</span>@item.Certifications
+                                        </p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+                @if (Model.CustomerAll.customerItSkillList != null && Model.CustomerAll.customerItSkillList.Count > 0)
+                {
+                    <div class="content-left-itskill">
+                        <h3 class="resume-section-hd">IT技能</h3>
+                        @foreach (var item in Model.CustomerAll.customerItSkillList)
+                               {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Skill_name_txt</div>
+                                        <p>
+                                            <span class="color-999">掌握程度：</span>@item.Skill_level
+                                        </p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+
+                @if (Model.CustomerAll.customerCertificateList != null && Model.CustomerAll.customerCertificateList.Count > 0)
+                {
+                    <div class="content-left-rewardCer">
+                        <h3 class="resume-section-hd">获奖证书</h3>
+                        @foreach (var item in Model.CustomerAll.customerCertificateList)
+                                {
+                                <div class="container">
+                                    <div class="intention-block">
+                                        <div class="block-left color-999">@item.Start_certificate.ToString("yyyy.MM")</div>
+                                        <p>@item.Certificate_name</p>
+                                    </div>
+                                </div>
+                                }
+                    </div>
+                }
+
+
+                @if (!string.IsNullOrWhiteSpace(Model.CustomerAll.customerBase.Specialty_desc))
+                {
+                    <div class="content-left-selfreview">
+                        <h3 class="resume-section-hd">个人特长</h3>
+                        <div class="container">
+                            <div class="intention-block">
+                                <p class="p-para">@Html.CreateHtmlForTextAreaText(Model.CustomerAll.customerBase.Specialty_desc)</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="content-left-job">
-                    <h3 class="resume-section-hd">实习/工作经历</h3>
-                    <div class="container">
-                        <div class="intention-block">
-                            <div class="block-left color-999">2015.05-2017.07</div>
-                            <p>测试 无</p>
-                            <p class="color-999">如果投了简历，请忽略</p>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model.CustomerAll.customerBase.Eval_desc))
+                {
+                    <div class="content-left-selfreview">
+                        <h3 class="resume-section-hd">自我评价</h3>
+                        <div class="container">
+                            <div class="intention-block">
+                                <p class="p-para">@Html.CreateHtmlForTextAreaText(Model.CustomerAll.customerBase.Eval_desc)</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="content-left-language">
-                    <h3 class="resume-section-hd">语言能力</h3>
-                    <div class="container">
-                        <div class="intention-block">
-                            <div class="block-left color-999">英语</div>
-                            <p><span class="color-999">听说：</span>良好<span class="block-right-padding color-999">读写：</span>一般<span class="block-right-padding color-999">证书：</span>全国公共英语三级</p>
-                        </div>
-                    </div>
+                }
+            <div class="content-right">
+                
+                <div class="right-title-unit">@Model.SearchPosition.State_name</div>
+                <ul>
+                    @if (Model.SearchPosition.State == 1)
+                    {
+                        <li class="right-click-btn1 m-interview">面试</li>
+                        <li class="right-click-btn2 m-inproper" onclick="javascript: $('#dvMsgBox').show();">不合适</li>
+                    }
+                </ul>
+                <div class="applicant-operates">
+                    <a href="javascript:;" class="solo-action-link m-download" title="下载">
+                        <i class="a-o-download"></i>下载简历
+                    </a>
+                    <a href="@AppSetting.Student_Url/resume/preview?id=@Model.CustomerAll.customerBase.Customer_id" class="solo-action-link " target="_blank"><i class="a-o-legend"></i>预览简历</a>
                 </div>
             </div>
-            <div class="content-right">
-                <div class="right-title-unit">感兴趣</div>
-                <ul>
-                    <li class="right-click-btn1 m-interview">面试</li>
-                    <li class="right-click-btn2 m-inproper">不合适</li>
-                </ul>
-                <div class="applicant-operates"><a href="http://upload.zheyibu.com/api/stuupload/downloadresume?applyIds=303093&amp;key=A8FEEE2CF60914F3" class="solo-action-link m-download" title="下载"><i class="a-o-download"></i>下载简历</a><a href="javascript:;" class="solo-action-link" id="forward-btn" data-url="" title="转发"><i class="a-o-transpond"></i>转发简历</a><a href="javascript:;" class="solo-action-link legend-btn" id="legend-btn" data-action="legend" title="备注"><i class="a-o-legend"></i>备注简历</a><a href="javascript:;" class="solo-action-link legend-btn" data-action="collect" title="星标简历"><i class="a-o-collect"></i><span class="">星标简历</span></a><a href="javascript:;" class="solo-action-link" data-action="delete" title="删除"><i class="a-o-delete"></i>删除简历</a></div>
+            </div>
+        </div>
+
+    <div id="dvMsgBox" style="width: 350px; display: none; top: 237px; left: 309px;">
+        <div class="top">
+            <div class="title" id="dvMsgTitle">提示</div>
+            <a href="javascript:;" class="closeBtn" id="dvCloseBtn"  onclick="javascript: $('#dvMsgBox').hide();"></a>
+        </div>
+        <div class="body">
+            <div class="ct" id="dvMsgCT">
+                <div class="icon warning"></div>
+                <h2>确认该简历不符合职位要求？</h2>
+                <div class="d-tips"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="bottom" id="dvMsgBottom" style="height: 65px;">
+            <div class="btn" id="dvMsgBtns">
+                <div class="height"></div>
+                <input type="button" class="ui-btn ui-btn-ok-s" value="确认" onclick="operated()">
+                <input type="button" class="ui-btn ui-btn-cancel-s" value="取消"  onclick="javascript: $('#dvMsgBox').hide();">
             </div>
         </div>
     </div>
-</div>
+    @*<div id="ShowBolightBox" style="display: none; width: 1002px; height: 1979px;"></div>*@
 
-<style>
-    #textwidth{width:334px;}
-    .disappears {display: none;}
-    .appear {border: 1px solid #B6B6B6;overflow-y: scroll;overflow-x: hidden;max-height: 152px;width: 352px;position: absolute;left: 85px;top: 40px;z-index: 1000;background-color: #fff;} 
-    .selectUl ul .ui-text:hover {background-color: #ededed;cursor: pointer;}
-</style>
+    <script>
+        // 面试操作
+        $(document).on('click', '.m-interview', function () {
+            var applyId = "@ViewBag.PositionApplyId";
+            //弹层通知面试
+            var $this = $(this);
+            $.ajax({
+                type: 'get',
+                dataType: 'html',
+                url: '/resume/notification-interview',
+                data: {
+                    position_apply_id: applyId
+                },
+                success: function(data) {
+                    var dialog = new Dialog();
+                    dialog.init({
+                        target: data,
+                        trigger: $(this),
+                        mask: true,
+                        title: '',
+                        animate: false,
+                        closeTpl: null
+                    });
+                    dialog.show();
+
+                    $('#close-dialog').click(function() {
+                        dialog.dispose();
+                    })
+                    $('.m-cancel').click(function() {
+                        dialog.dispose();
+                    });
+                    $('#interview-form').validate({
+                        debug: false,
+                        errorClass: 'error-explain',
+                        errorElement: 'div',
+                        groups: {
+                            username: "InterviewTime InterviewHour InterivewMinute"
+                        },
+                        rules: {
+                            InterviewInvitation: {
+                                required: true
+                            },
+                            InterviewPlace: {
+                                required: true
+                            },
+                            InterviewTime: {
+                                required: true
+                            },
+                            InterviewHour: {
+                                required: true,
+                                checkInterivewHour: true
+                            },
+                            InterivewMinute: {
+                                required: true,
+                                checkInterivewMinute: true
+                            },
+                            ContactMan: {
+                                required: true
+                            },
+                            ContactTelephone: {
+                                required: true
+                            }
+                        },
+                        messages: {
+                            InterviewInvitation: {
+                                required: '主题不能为空'
+                            },
+                            InterviewPlace: {
+                                required: '面试地址不能为空'
+                            },
+                            InterviewTime: {
+                                required: '面试日期不能为空'
+                            },
+                            InterviewHour: {
+                                required: '面试时间不能为空'
+                            },
+                            InterivewMinute: {
+                                required: '面试时间不能为空'
+                            },
+                            ContactMan: {
+                                required: '联系人不能为空'
+                            },
+                            ContactTelephone: {
+                                required: '联系电话不能为空'
+                            }
+                        }
+                    });
+
+                    jQuery.validator.addMethod("checkInterivewHour",
+                        function(value, element) {
+                            var reg = /^(([1-9]{1})|([0-1][0-9])|([1-2][0-3]))$/;
+                            return this.optional(element) || reg.test(value);
+                        },
+                        "请输入合理的面试时间");
+                    jQuery.validator.addMethod("checkInterivewMinute",
+                        function(value, element) {
+                            var reg = /^([0-9]|[0-5][0-9]|59)$/;
+                            return this.optional(element) || reg.test(value);
+                        },
+                        "请输入合理的面试时间");
+                    Date.prototype.Format = function(fmt) { //author: meizz
+                        var o = {
+                            "M+": this.getMonth() + 1, //月份
+                            "d+": this.getDate(), //日
+                            "h+": this.getHours(), //小时
+                            "m+": this.getMinutes(), //分
+                            "s+": this.getSeconds(), //秒
+                            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                            "S": this.getMilliseconds() //毫秒
+                        };
+                        if (/(y+)/.test(fmt))
+                            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                        for (var k in o)
+                            if (new RegExp("(" + k + ")").test(fmt))
+                                fmt = fmt.replace(RegExp.$1,
+                                    (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                        return fmt;
+                    }
+                    var curDay = new Date().Format("yyyy-MM-dd");
+                    var picker = new Pikaday({
+                        field: document.getElementById('day'),
+                        firstDay: 1,
+                        minDate: new Date(curDay),
+                        maxDate: new Date('2020-12-31'),
+                        yearRange: [2000, 2020]
+                    });
+                    $('#interview-form').ajaxForm({
+                        success: function(data) {
+                            if (data.code == 0) {
+                                dialog.dispose();
+                                //动态操作弹层
+                                var interviewTips = '<div id="m-interview-tip">' +
+                                    '<ul>' +
+                                    '<li class="m-tip-interview">面试时间：' +
+                                    data.interviewTime +
+                                    '</li>' +
+                                    '<li class="m-tip-interview">联系人：' +
+                                    data.contact +
+                                    '</li>' +
+                                    '<li class="m-tip-address">面试地址：' +
+                                    data.interviewPlace +
+                                    '</li>' +
+                                    '</ul>' +
+                                    '</div>';
+                                $('.resume-section-content').prepend(interviewTips);
+                                $('.right-title-unit').html('已通知面试');
+                                //处理面试->已通知面试
+                                $('.content-right ul').remove();
+                                $.alert('通知面试成功！');
+                                setPositionA();
+                            }
+                        }
+                    })
+                }
+            });
+        });
+
+        //不合适||按钮操作请求链接
+        function operated() {
+            var data = {};
+            data.state = 3;
+            data.position_id = "@Model.SearchPosition.Id";
+            data.customer_id = "@Model.CustomerAll.customerBase.Customer_id";
+            $.ajax({
+                type: 'POST',
+                url: "/resume/update-apply-state",
+                data: data,
+                dataType: 'json',
+                success: function(data) {
+                    if (data) {
+                        window.location.href = "/resume/@ViewBag.PositionApplyId";
+                    } else {
+                        alert("操作失败");
+                    }
+                }
+            });
+        }
+
+    </script>
+        

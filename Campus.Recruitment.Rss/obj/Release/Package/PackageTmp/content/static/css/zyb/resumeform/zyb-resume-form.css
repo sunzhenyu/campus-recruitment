@@ -1,0 +1,210 @@
+﻿/****error***/
+.ui-form-item { 
+    margin: 0; 
+    position: relative; *zoom: 1; 
+}
+.ui-form-explain {
+    position:absolute;
+    margin: 5px 0;
+    padding:2px 0;
+    color: #666;
+    display:block;
+    top:28px;
+    left:100px;
+}
+.ui-form-item-error .ui-form-explain{
+    color: #FF5243;
+    padding: 0 0 1px 20px;
+    background: url(../img/icon/warning-icon.png) no-repeat 0 -63px;
+    vertical-align: baseline;
+    line-height:18px;
+    width: 100%;
+}
+.ui-form-item-error div.ui-form-explain{
+    top:122px;
+}
+
+.stu-name .ui-form-explain{
+    left:0;
+}
+.stu-sex .ui-form-explain{
+    left:0;
+}
+
+.selectui{
+    float:left;
+    vertical-align: middle;
+    position: relative;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.selectui input{
+    height:30px;
+    position: relative;
+    color: #666;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    border-radius: 2px;
+    text-indent:10px;
+    cursor:pointer;
+}
+
+    .selectui .select-result {width:218px;}
+
+.selectui-active {
+    z-index: 10;
+}
+
+.resume-form .selectui{
+    width:220px;
+    margin-right:10px;
+}
+.resume-form .birth-date{
+    width:60px;
+}
+.resume-form .birth-date-year{
+    width:80px;
+}
+
+.resume-form .birth-date-year input{
+    width:78px;
+}
+
+.resume-form .study-date input{
+    width:103px!important;
+}
+
+.resume-form .study-date{
+    width:105px!important;
+}
+
+.resume-form .birth-date input{
+    width:58px;
+}
+
+.resume-form .sorted{
+    width:105px;
+}
+
+.selectui .selectui-head {
+    position: relative;
+    color: #666;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.selectui .select-hover{
+    border:1px solid #7ac980;
+}
+
+
+.selectui .selectui-head .selectui-result{
+    padding: 0 10px;
+    font-size: 12px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color:#333;
+    _height: auto;
+}
+.selectui-drop {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 20px;
+    height: 26px;
+    cursor: pointer;
+    background: #fff;
+}
+.selectui-drop:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #999;
+    top: 9px;
+    left: -1px;
+}
+.selectui-drop:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #FFF;
+    top: 8px;
+    left: -1px;
+}
+.radioui, .checkboxui {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    line-height: 0;
+    font-size: 0;
+    background: url(../img/icon/checkui.png) no-repeat;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.radioui {
+    background-position: -5px -5px;
+}
+.radioui-checked {
+    background-position: -29px -5px;
+}
+
+.selectui ul{
+    display: none;
+    position: absolute;
+    top: 31px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border: 1px solid #cdcdcd;
+    max-height:162px;
+    *height:162px;
+    overflow:auto;
+    white-space: nowrap;
+    z-index:1;
+}
+
+.selectui-active ul {
+    display: block;
+}
+.selectui-active .selectui-head{
+    border:1px solid #7ac980;
+}
+.selectui ul li{
+    height:29px;
+}
+.selectui ul li a {
+    display: block;
+    background-color: #fff;
+    text-decoration: none;
+    padding: 0 27px 0 10px;
+    color: #666;
+    line-height: 29px;
+    font-size: 12px;
+    _zoom: 1;
+}
+.selectui ul li a:hover,.selectui ul li a.selected{
+    background-color:#5db664;
+    color:#fff;
+}
+.select-to{
+    float:left;
+    line-height:30px;
+    margin:0 4px 0 4px;
+}
+
+.ui-date-wrap.ui-date-exp .ui-input-date{
+    width: 81px;
+}

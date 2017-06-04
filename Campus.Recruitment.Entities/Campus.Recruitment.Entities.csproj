@@ -72,6 +72,8 @@
     <Compile Include="Entity\PositionApply.cs" />
     <Compile Include="Entity\PositionCollect.cs" />
     <Compile Include="Entity\PositionInvitation.cs" />
+    <Compile Include="Entity\PromoteDiploma.cs" />
+    <Compile Include="Entity\ResumeAndApllyDetail.cs" />
     <Compile Include="Entity\SearchPosition.cs" />
     <Compile Include="Entity\SysDictionary.cs" />
     <Compile Include="Entity\PositionFire.cs" />

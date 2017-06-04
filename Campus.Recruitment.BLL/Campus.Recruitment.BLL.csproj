@@ -46,6 +46,7 @@
     <Compile Include="FeedbackBLL.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="NotificationInterviewBLL.cs" />
+    <Compile Include="PomoteDiplomaBLL.cs" />
     <Compile Include="PositionApplyBLL.cs" />
     <Compile Include="PositionBLL.cs" />
     <Compile Include="PositionCollectBLL.cs" />

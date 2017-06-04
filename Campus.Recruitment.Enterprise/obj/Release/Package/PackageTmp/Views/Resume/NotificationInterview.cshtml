@@ -1,0 +1,168 @@
+﻿@model Campus.Recruitment.Entities.Entity.NotificationInterview
+<style>
+    #textwidth{width:334px;}
+    .disappears {display: none;}
+    .appear {border: 1px solid #B6B6B6;overflow-y: scroll;overflow-x: hidden;max-height: 152px;width: 352px;position: absolute;left: 85px;top: 40px;z-index: 1000;background-color: #fff;} 
+    .selectUl ul .ui-text:hover {background-color: #ededed;cursor: pointer;}
+</style>
+<div class="g-all">
+    <div class="g-hd-second">
+        <div class="m-center">通知面试</div>
+    </div>
+    <div class="g-new">
+        <div class="interview-dailog">
+            <form action="/resume/save-interview" id="interview-form" class="ui-form" method="post">
+                <input data-val="true"  id="EnterpriseId" name="enterprise_id" type="hidden" value="@Model.Enterprise_id" />
+                <input data-val="true"  id="ApplyId" name="position_id" type="hidden" value="@Model.Position_id" />
+                <input data-val="true"  id="UserId" name="customer_id" type="hidden" value="@Model.Customer_id" />
+                <input data-val="true"  id="Id" name="Id" type="hidden" value="" />
+               
+                <div class="ui-form-item">
+                    <label for="" class="ui-label">面试人员</label>
+                    <span class="candidate">@Model.Customer_name</span>
+                </div>
+                <div class="ui-form-item">
+                    <label for="subject" class="ui-label">面试职位</label>
+                    <input type="text" name="InterviewInvitation" id="Name" class="ui-text" value="@Model.Name">
+                </div>
+                <div class="ui-form-item">
+                    <label for="day" class="ui-label">面试时间</label>
+                    <input type="text" name="Interview_date" id="day" class="ui-text-m" value="@Model.Interview_date">
+                    <input type="text" name="Interview_hour" id="interviewHour" class="ui-text-s" value="@Model.Interview_hour">
+                    <span class="ui-tip">时</span>
+                    <input type="text" name="Interview_minutes" id="interivewMinute" class="ui-text-s" value="@Model.Interview_minutes">
+                    <span class="ui-tip">分</span>
+                </div>
+                <div class="ui-form-item">
+                    <label for="location" class="ui-label">面试地点</label>
+                    <input type="text" name="Interview_address" id="location" class="ui-text" value="@Model.Interview_address">
+                </div>
+                <div class="ui-form-item">
+                    <label for="linkman" class="ui-label">联系人</label>
+                    <input type="text" name="Contact_people" id="linkman" class="ui-text" value="@Model.Contact_people">
+                </div>
+                <div class="ui-form-item">
+                    <label for="tel" class="ui-label">联系电话</label>
+                    <input type="text" name="Cantact_mobile" id="tel" class="ui-text" value="@Model.Cantact_mobile">
+                </div>
+                @*<div class="ui-form-item">
+                    <label for="" class="ui-label">其他信息</label>
+                    <textarea name="note" id="textwidth" class="ui-area-s"></textarea>
+                </div>*@
+                <div class="ui-form-item">
+                    <button type="button" class="ui-btn ui-btn-ok-s mr10" onclick="SaveInterviemData()">确认</button>
+                    <button type="button" id="close-dialog" class="ui-btn ui-btn-cancel-s">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Select(option) {
+        this._option = {
+            form: "interview-form",
+            target: "location",
+            toggleClass: "disappears",
+            listClass: "appear",
+            data: [],
+            readOnly: false
+        }
+        for (var i in option) {
+            if (option[i]) {
+                this._option[i] = option[i];
+            }
+        }
+        option = this._option;
+        option.select = option.target + "_selected";
+        this.option = option;
+        var _this = this;
+        this.bindSelected = function(option) {
+            var $form = $("#" + option.form);
+            var $target = $("#" + option.target, $form);
+            var $select = $("#" + option.select, $form);
+            $target.click(function(e) {
+                var $select = $("#" + option.select, $form);
+                var $selects = $("." + option.listClass, $form);
+                $selects.not($select).addClass(option.toggleClass);
+                $select.toggleClass(option.toggleClass);
+
+                e = e || event;
+                e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+            });
+            $select.click(function(e) {
+                e = e || event;
+                e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+            });
+            $('li', $select).click(function() {
+                $target.val($(this).text());
+                $select.addClass(option.toggleClass);
+            });
+            $("body").not("." + option.listClass).click(function() {
+                $select.addClass(option.toggleClass);
+            });
+            if (option.readOnly) {
+                $target.attr("readOnly", "readOnly");
+            } else {
+                $target.removeAttr("readOnly");
+            }
+        }
+        this.createList = function(option) {
+            var $form = $("#" + option.form);
+            var $target = $("#" + option.target, $form);
+            var html = "";
+            if (option.data.length > 0) {
+                html = '<div id="' +
+                    option.select +
+                    '"  class="' +
+                    option.listClass +
+                    ' ' +
+                    option.toggleClass +
+                    ' selectUl"><ul>';
+                for (var i = 0; i < option.data.length; i++) {
+                    html += '<li class="ui-text" style="border-style:none">' + option.data[i] + '</li>';
+                }
+                html += ' </ul ></div>';
+            }
+            $target.after(html);
+        }
+        this.init = function() {
+            _this.createList(_this.option);
+            _this.bindSelected(_this.option);
+        }
+        this.init();
+    }
+
+    //地址下拉
+    var locationaArray = new Array();
+    locationaArray.push('江汉大学');
+    //时间下拉
+    var interviewHourArray = new Array();
+    for (var i = 8; i <= 18; i++) {
+        interviewHourArray.push(i);
+    }
+
+
+    var locationSelected = new Select({ target: "location", data: locationaArray });
+    var interviewHourSelected = new Select({ target: "interviewHour", data: interviewHourArray, readOnly: true });
+    var interivewMinuteSelected = new Select({
+        target: "interivewMinute",
+        data: new Array("00", '15', '30', '45'),
+        readOnly: true
+    });
+
+    function SaveInterviemData() {
+        $.ajax({
+            type: "POST",
+            url: "/resume/save-interview",
+            data: $("#interview-form").serialize(),
+            success:function(data) {
+                if (data) {
+                    window.location.href = "/resume/search";
+                } else {
+                    alert("操作失败！");
+                }
+            }
+        });
+    }
+</script>
