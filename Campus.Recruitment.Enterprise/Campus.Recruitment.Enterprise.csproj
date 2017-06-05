@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PositionController.cs" />
+    <Compile Include="Controllers\PromoteDiplomaController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\SeminarController.cs" />
     <Compile Include="Global.asax.cs">
@@ -287,6 +288,7 @@
     <Content Include="Views\Home\CollegesInfo.cshtml" />
     <Content Include="Views\Resume\NotificationInterview.cshtml" />
     <Content Include="Views\Resume\InvitationSearch.cshtml" />
+    <Content Include="Views\PromoteDiploma\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

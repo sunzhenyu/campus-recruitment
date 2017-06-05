@@ -68,6 +68,10 @@
 /Campus.Recruitment.BLL/obj/Debug/Campus.Recruitment.BLL.dll
 /Campus.Recruitment.BLL/obj/Debug/Campus.Recruitment.BLL.csprojResolveAssemblyReference.cache
 /Campus.Recruitment.BLL/obj/Debug/Campus.Recruitment.BLL.csproj.FileListAbsolute.txt
+/Campus.Recruitment.IBLL/bin/Release
+/Campus.Recruitment.IBLL/bin/Debug
+/Campus.Recruitment.Entities/bin/Debug
+/Campus.Recruitment.Entities/bin/Release
 /Campus.Recruitment.DAL/bin/Release/MySql.Data.dll
 /Campus.Recruitment.DAL/bin/Release/KeChong.Framework.pdb
 /Campus.Recruitment.DAL/bin/Release/KeChong.Framework.dll
@@ -1652,3 +1656,5 @@
 /Campus.Recruitment/obj/Debug/Campus.Recruitment.dll
 /Campus.Recruitment/obj/Debug/Campus.Recruitment.csprojResolveAssemblyReference.cache
 /Campus.Recruitment/obj/Debug/Campus.Recruitment.csproj.FileListAbsolute.txt
+/Campus.Recruitment.Enterprise/obj/Release/Package/PackageTmp/Views/PromoteDiploma/Index.cshtml
+

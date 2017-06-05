@@ -46,6 +46,7 @@
     <Compile Include="Condition\BasePageCondition.cs" />
     <Compile Include="Condition\CustomerCondition.cs" />
     <Compile Include="Condition\EnterpriseCondition.cs" />
+    <Compile Include="Condition\PomoteDiplomaCondition.cs" />
     <Compile Include="Condition\PositionCondition.cs" />
     <Compile Include="Condition\PositionPageCondition.cs" />
     <Compile Include="Condition\ResumeManageCondition.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Entity\PositionCollect.cs" />
     <Compile Include="Entity\PositionInvitation.cs" />
     <Compile Include="Entity\PromoteDiploma.cs" />
+    <Compile Include="Entity\PromoteDiplomaAndCustomer.cs" />
     <Compile Include="Entity\ResumeAndApllyDetail.cs" />
     <Compile Include="Entity\SearchPosition.cs" />
     <Compile Include="Entity\SysDictionary.cs" />

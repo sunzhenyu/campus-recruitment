@@ -49,25 +49,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2017 07:11:18</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.BLL.dll">
-      <publishTime>06/04/2017 23:50:24</publishTime>
+      <publishTime>06/06/2017 01:06:49</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.DAL.dll">
-      <publishTime>06/04/2017 23:14:39</publishTime>
+      <publishTime>06/06/2017 01:06:49</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Enterprise.dll">
-      <publishTime>06/04/2017 23:55:24</publishTime>
+      <publishTime>06/06/2017 01:07:08</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Entities.dll">
-      <publishTime>06/04/2017 23:14:38</publishTime>
+      <publishTime>06/06/2017 01:06:47</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.IBLL.dll">
-      <publishTime>06/04/2017 23:14:39</publishTime>
+      <publishTime>06/06/2017 01:06:48</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.IDAL.dll">
-      <publishTime>06/04/2017 23:14:38</publishTime>
+      <publishTime>06/06/2017 01:06:48</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Utility.dll">
-      <publishTime>06/04/2017 23:14:38</publishTime>
+      <publishTime>06/06/2017 01:06:48</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -1734,6 +1734,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Position/PublishTwo.cshtml">
       <publishTime>05/17/2017 21:47:43</publishTime>
     </File>
+    <File Include="Views/PromoteDiploma/Index.cshtml">
+      <publishTime>06/06/2017 01:05:29</publishTime>
+    </File>
     <File Include="Views/Resume/Detail.cshtml">
       <publishTime>06/04/2017 18:11:44</publishTime>
     </File>
@@ -1756,13 +1759,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/03/2017 16:58:05</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>06/03/2017 17:26:27</publishTime>
+      <publishTime>06/05/2017 22:51:57</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>06/03/2017 16:58:13</publishTime>
     </File>
     <File Include="Views/Shared/_LoginHeader.cshtml">
-      <publishTime>06/03/2017 16:58:53</publishTime>
+      <publishTime>06/05/2017 23:55:33</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>05/16/2017 22:17:40</publishTime>
