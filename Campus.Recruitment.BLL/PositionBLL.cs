@@ -162,6 +162,11 @@ namespace Campus.Recruitment.BLL
                 whereLambda = whereLambda.And(x => x.Industry_id == condition.Industry_id);
             }
 
+            if (!string.IsNullOrWhiteSpace((condition.Major_name)))
+            {
+                whereLambda = whereLambda.And(x => x.Major_name.Split('+').Contains(condition.Major_name));
+            }
+
             if (condition.Salary != null)
             {
                 switch (condition.Salary)

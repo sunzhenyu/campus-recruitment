@@ -6,16 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Campus.Recruitment.Entities.Condition;
+using Campus.Recruitment.Entities.Entity;
+using Campus.Recruitment.IBLL;
 
 namespace Campus.Recruitment.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IFeedbackBLL _feedbackBll;
-
-        public HomeController(IFeedbackBLL feedbackBll)
+        private readonly IPositionBLL _positionBll;
+        public HomeController(IFeedbackBLL feedbackBll,IPositionBLL positionBll)
         {
             _feedbackBll = feedbackBll;
+            _positionBll = positionBll;
         }
         /// <summary>
         /// 首页
@@ -24,7 +28,11 @@ namespace Campus.Recruitment.Controllers
         [Route("")]
         public ActionResult Index()
         {
-            return View();
+            SearchPositionCondition condition = new SearchPositionCondition();
+            condition.Position_type = 1;
+            condition.PageSize = 16;
+            PageList<List<SearchPosition>> result = _positionBll.GetPageBySearch(condition);
+            return View(result);
         }
 
         /// <summary>
