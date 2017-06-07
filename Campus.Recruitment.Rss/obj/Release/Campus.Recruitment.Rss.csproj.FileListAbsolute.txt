@@ -17,3 +17,4 @@ D:\Recruitment website\Campus Recruitment\Git_Campus_Recruitment\Campus.Recruitm
 D:\Recruitment website\Campus Recruitment\Git_Campus_Recruitment\Campus.Recruitment.Rss\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Recruitment website\Campus Recruitment\Git_Campus_Recruitment\Campus.Recruitment.Rss\obj\Release\Campus.Recruitment.Rss.dll
 D:\Recruitment website\Campus Recruitment\Git_Campus_Recruitment\Campus.Recruitment.Rss\obj\Release\Campus.Recruitment.Rss.pdb
+D:\Recruitment website\Campus Recruitment\Git_Campus_Recruitment\Campus.Recruitment.Rss\obj\Release\Campus.Recruitment.Rss.csprojResolveAssemblyReference.cache

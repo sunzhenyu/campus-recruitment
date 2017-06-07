@@ -39,6 +39,14 @@ namespace Campus.Recruitment.Controllers.WWW
         {
             condition.Position_type = 1;
             var result = _positionBll.GetPageBySearch(condition);
+            ViewBag.Name = condition.Name;
+            ViewBag.Function_id = condition.Function_id;
+            ViewBag.Industry_id = condition.Industry_id;
+            ViewBag.Degree_id = condition.Degree_id;
+            ViewBag.Salary = condition.Salary;
+            ViewBag.City = condition.City;
+            ViewBag.Major_name = condition.Major_name;
+            ViewBag.CityName = condition.CityName;
             return View(result);
         }
 
@@ -51,6 +59,14 @@ namespace Campus.Recruitment.Controllers.WWW
         {
             condition.Position_type = 2;
             var result = _positionBll.GetPageBySearch(condition);
+            ViewBag.Name = condition.Name;
+            ViewBag.Function_id = condition.Function_id;
+            ViewBag.Industry_id = condition.Industry_id;
+            ViewBag.Degree_id = condition.Degree_id;
+            ViewBag.Salary = condition.Salary;
+            ViewBag.City = condition.City;
+            ViewBag.Major_name = condition.Major_name;
+            ViewBag.CityName = condition.CityName;
             return View(result);
         }
 

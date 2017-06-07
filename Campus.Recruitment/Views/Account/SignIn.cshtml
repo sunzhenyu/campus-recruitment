@@ -8,7 +8,7 @@
 
 <div id="homepage-container">
     <div class="lg-reg-bg">
-        <p class="reg-title">大学生找工作，赢在新起点！</p>
+        <p class="reg-title">大学生找工作，赢在就业联盟8！</p>
         <form action='/account/sign-in-check' id="register-form" method="post">
             <p class="reg-name">学生用户登录</p>
             <div class="reg-info">
@@ -20,7 +20,7 @@
             </div>
             <div class="reg-other">
                 <div class="reg-top">
-                    <p>还没有新起点帐号？</p>
+                    <p>还没有就业联盟8帐号？</p>
                     <a href="/account/register-one">立即注册</a>
                     @*<a href="http://www.zheyibu.com/account/findaccount/" class="for-account">账号找回</a>*@
                 </div>
@@ -38,6 +38,10 @@
 <script src="@AppSetting.Rss_Image/content/static/lib/js/base/jquery.validate.min.js"></script>
 
 <script>
+    if ("@ViewBag.Error" != "" && "@ViewBag.Error" != null) {
+        alert("@ViewBag.Error");
+    }
+
     $(function() {
         $('#register-form').on('click', '.auto-login span', function() {
             var _this = $(this);

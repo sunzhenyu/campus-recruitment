@@ -25,7 +25,9 @@ namespace Campus.Recruitment.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("sign-in")]
-        public ActionResult SignIn() {
+        public ActionResult SignIn()
+        {
+            ViewBag.Error = "";
             return View();
         }
 
@@ -44,6 +46,7 @@ namespace Campus.Recruitment.Controllers
                 Session.SetDataInSession("HeadIcon", customer.Head_icon, 10800);
                 return RedirectToAction("Index", "resume", new { id= customer.Id });
             }
+            ViewBag.Error = "用户名或者密码不正确";
             return View();
         }
 

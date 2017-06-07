@@ -141,6 +141,10 @@ namespace Campus.Recruitment.BLL
             #region  筛选条件
             var whereLambda = PredicateBuilder.True<Position>();
             whereLambda = whereLambda.And(x => x.State == 1 && x.Position_type == condition.Position_type);
+            if (!string.IsNullOrWhiteSpace(condition.Name))
+            {
+                whereLambda = whereLambda.And(x => x.Name.Contains(condition.Name));
+            }
 
             if (condition.City > 0)
             {

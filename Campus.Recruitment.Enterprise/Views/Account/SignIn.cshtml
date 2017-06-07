@@ -8,7 +8,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>企业用户登录-新起点校园招聘</title>
+    <title>企业用户登录-就业联盟8校园招聘</title>
     <link rel="shortcut icon" type="image/x-icon" href="@AppSetting.Rss_Image/content/static/Images/favicon.ico">
     <link href="@AppSetting.Rss_Image/content/static/css/base/base.css" rel="stylesheet" type="text/css" />
     <link href="@AppSetting.Rss_Image/content/static/css/corp/global-corp.css" rel="stylesheet" type="text/css" />
@@ -78,7 +78,12 @@
         </div>
     </div>
     <script>
-    $(function() {
+
+        if ("@ViewBag.Error" != "" && "@ViewBag.Error" != null) {
+            alert("@ViewBag.Error");
+        }
+
+        $(function () {
         //验证登录信息
         var $login = $('#login-content');
         $login.on('click', '.login-auto', function() {

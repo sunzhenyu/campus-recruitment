@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>@ViewBag.Title</title>
     <meta name="keywords" content="找实习,校园招聘,2017校园招聘，校园招聘网,实习招聘,大学生实习网,求职导师,应届毕业生,大学生招聘网">
-    <meta name="description" content="新起点是覆盖全国的校园招聘一站式服务平台,为大学生求职提供最新最全的校园招聘信息和专业的职位推送服务,立志解决中国的大学生就业问题。">
+    <meta name="description" content="就业联盟8是覆盖全国的校园招聘一站式服务平台,为大学生求职提供最新最全的校园招聘信息和专业的职位推送服务,立志解决中国的大学生就业问题。">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
     <!--<meta http-equiv="mobile-agent" content="format=html5; url=http://m.zheyibu.com">
@@ -37,14 +37,14 @@
     </div>
     <div id="footer">
         <div class="ref-footer">
-            @*<p class="ref-footer-links">
+            <p class="ref-footer-links">
                 <a href="/site/about">关于我们</a> |
-                <a href="/site/news">新闻报道</a> |
-                <a href="/site/employee-life">员工生活</a> |
+                @*<a href="/site/news">新闻报道</a> |
+                <a href="/site/employee-life">员工生活</a> |*@
                 <a href="/site/user-protocol">联系我们</a> |
                 <a href="/site/user-protocol">用户协议</a> |
                 <a href="@AppSetting.Enterprise_Url">企业入口</a>
-            </p>*@
+            </p>
             <p class="copyright">
                 Copyright © 2016&nbsp;zheyibu.com All Rights Reserved&nbsp;<a href="http://www.beianbeian.com/search/zheyibu.com">沪ICP备16040702号-1</a> 未经许可，不得转载本网站所有招聘信息及作品
             </p>
@@ -56,7 +56,7 @@
     <script src="@AppSetting.Rss_Image/content/static/lib/js/student/layerAlertMask.js"></script>
 
     <script>
-        $("#warning-detail").click(function () { var a = $('<div id="layer-mask" class="fade"><div id="warning-content"><div class="warning-header">关于防范虚假招聘的提醒<i></i></div><p class="notice">近来，有不法个人或组织利用各大招聘网站发布虚假招聘信息，通过假冒、伪装知名企业或高薪诱导等手段欺骗学生求职，从而诈骗钱财或从事非法传销！为保护各位同学的利益，新起点将强化招聘公司和职位的审核并建立虚假信息举报机制；同时，也请同学们在求职过程中提高警惕，切勿上当受骗！</p><p class="notice-2">以下是虚假招聘的一般特征，请同学多留意并提高警惕：</p><p>1、招聘单位只有手机单一联系方式；</p><p>2、凡收取“服装费、伙食费、体检费、报名费、办卡费、押金”等各种费用；</p><p>3、几乎不面试就给出录取通知，且到外地就职（警惕卷入任何形式的传销活动）；</p><p>4、薪资明显高于同职位同工种薪资水平；</p><p>5、通知面试职位明显与实际工作岗位不相同，上岗期间索要烟、酒等礼品； </p><p>6、公司地址含糊不清，面试场所不正规，类似临时租借来的宾馆等地； </p><p>7、非正常工作时间段预约面试或者面试地点在很偏远的地方； </p><p>8、扣押或是以保管为名索要身份证、毕业证等证件。</p></div></div>'); a.appendTo("body"); $("#layer-mask").css("display", "block"); setTimeout(delayIn, 100); $("#layer-mask i").click(function () { $("#layer-mask").removeClass("in"); $("#warning-content").removeClass("fadeInDown").addClass("fadeOutUp"); setTimeout(delayOut, 300) }) }); function delayIn() { $("#layer-mask").addClass("in"); $("#warning-content").removeClass("fadeOutUp").addClass("fadeInDown") } function delayOut() { $("#layer-mask").css("display", "none").remove() };
+        $("#warning-detail").click(function () { var a = $('<div id="layer-mask" class="fade"><div id="warning-content"><div class="warning-header">关于防范虚假招聘的提醒<i></i></div><p class="notice">近来，有不法个人或组织利用各大招聘网站发布虚假招聘信息，通过假冒、伪装知名企业或高薪诱导等手段欺骗学生求职，从而诈骗钱财或从事非法传销！为保护各位同学的利益，就业联盟8将强化招聘公司和职位的审核并建立虚假信息举报机制；同时，也请同学们在求职过程中提高警惕，切勿上当受骗！</p><p class="notice-2">以下是虚假招聘的一般特征，请同学多留意并提高警惕：</p><p>1、招聘单位只有手机单一联系方式；</p><p>2、凡收取“服装费、伙食费、体检费、报名费、办卡费、押金”等各种费用；</p><p>3、几乎不面试就给出录取通知，且到外地就职（警惕卷入任何形式的传销活动）；</p><p>4、薪资明显高于同职位同工种薪资水平；</p><p>5、通知面试职位明显与实际工作岗位不相同，上岗期间索要烟、酒等礼品； </p><p>6、公司地址含糊不清，面试场所不正规，类似临时租借来的宾馆等地； </p><p>7、非正常工作时间段预约面试或者面试地点在很偏远的地方； </p><p>8、扣押或是以保管为名索要身份证、毕业证等证件。</p></div></div>'); a.appendTo("body"); $("#layer-mask").css("display", "block"); setTimeout(delayIn, 100); $("#layer-mask i").click(function () { $("#layer-mask").removeClass("in"); $("#warning-content").removeClass("fadeInDown").addClass("fadeOutUp"); setTimeout(delayOut, 300) }) }); function delayIn() { $("#layer-mask").addClass("in"); $("#warning-content").removeClass("fadeOutUp").addClass("fadeInDown") } function delayOut() { $("#layer-mask").css("display", "none").remove() };
         //右侧底部公共三页签
         var shortcut = $("body").shortcut();
         shortcut.gotop.init();
@@ -69,7 +69,7 @@
 
     <script>
         $("#warning-detail").click(function () {
-            var a = $('<div id="layer-mask" class="fade"><div id="warning-content"><div class="warning-header">关于防范虚假招聘的提醒<i></i></div><p class="notice">近来，有不法个人或组织利用各大招聘网站发布虚假招聘信息，通过假冒、伪装知名企业或高薪诱导等手段欺骗学生求职，从而诈骗钱财或从事非法传销！为保护各位同学的利益，新起点将强化招聘公司和职位的审核并建立虚假信息举报机制；同时，也请同学们在求职过程中提高警惕，切勿上当受骗！</p><p class="notice-2">以下是虚假招聘的一般特征，请同学多留意并提高警惕：</p><p>1、招聘单位只有手机单一联系方式；</p><p>2、凡收取“服装费、伙食费、体检费、报名费、办卡费、押金”等各种费用；</p><p>3、几乎不面试就给出录取通知，且到外地就职（警惕卷入任何形式的传销活动）；</p><p>4、薪资明显高于同职位同工种薪资水平；</p><p>5、通知面试职位明显与实际工作岗位不相同，上岗期间索要烟、酒等礼品； </p><p>6、公司地址含糊不清，面试场所不正规，类似临时租借来的宾馆等地； </p><p>7、非正常工作时间段预约面试或者面试地点在很偏远的地方； </p><p>8、扣押或是以保管为名索要身份证、毕业证等证件。</p></div></div>');
+            var a = $('<div id="layer-mask" class="fade"><div id="warning-content"><div class="warning-header">关于防范虚假招聘的提醒<i></i></div><p class="notice">近来，有不法个人或组织利用各大招聘网站发布虚假招聘信息，通过假冒、伪装知名企业或高薪诱导等手段欺骗学生求职，从而诈骗钱财或从事非法传销！为保护各位同学的利益，就业联盟8将强化招聘公司和职位的审核并建立虚假信息举报机制；同时，也请同学们在求职过程中提高警惕，切勿上当受骗！</p><p class="notice-2">以下是虚假招聘的一般特征，请同学多留意并提高警惕：</p><p>1、招聘单位只有手机单一联系方式；</p><p>2、凡收取“服装费、伙食费、体检费、报名费、办卡费、押金”等各种费用；</p><p>3、几乎不面试就给出录取通知，且到外地就职（警惕卷入任何形式的传销活动）；</p><p>4、薪资明显高于同职位同工种薪资水平；</p><p>5、通知面试职位明显与实际工作岗位不相同，上岗期间索要烟、酒等礼品； </p><p>6、公司地址含糊不清，面试场所不正规，类似临时租借来的宾馆等地； </p><p>7、非正常工作时间段预约面试或者面试地点在很偏远的地方； </p><p>8、扣押或是以保管为名索要身份证、毕业证等证件。</p></div></div>');
             a.appendTo("body");
             $("#layer-mask").css("display", "block");
             setTimeout(delayIn, 100);

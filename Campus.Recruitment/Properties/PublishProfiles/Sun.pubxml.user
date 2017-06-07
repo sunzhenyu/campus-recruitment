@@ -31,22 +31,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/22/2017 07:11:18</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.BLL.dll">
-      <publishTime>06/06/2017 01:06:49</publishTime>
+      <publishTime>06/07/2017 23:23:47</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.DAL.dll">
-      <publishTime>06/06/2017 01:06:49</publishTime>
+      <publishTime>06/07/2017 23:23:47</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.dll">
-      <publishTime>06/06/2017 01:06:54</publishTime>
+      <publishTime>06/07/2017 23:23:51</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Entities.dll">
-      <publishTime>06/06/2017 01:06:47</publishTime>
+      <publishTime>06/07/2017 23:23:46</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.IBLL.dll">
-      <publishTime>06/06/2017 01:06:48</publishTime>
+      <publishTime>06/07/2017 23:23:46</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.IDAL.dll">
-      <publishTime>06/06/2017 01:06:48</publishTime>
+      <publishTime>06/07/2017 23:23:46</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Utility.dll">
       <publishTime>06/06/2017 01:06:48</publishTime>
@@ -1627,7 +1627,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:45</publishTime>
     </File>
     <File Include="error.html">
-      <publishTime>05/25/2017 23:38:30</publishTime>
+      <publishTime>06/07/2017 23:10:47</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/12/2017 21:47:43</publishTime>
@@ -1693,37 +1693,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/26/2017 20:21:08</publishTime>
     </File>
     <File Include="Views/Account/Password.cshtml">
-      <publishTime>05/26/2017 22:45:01</publishTime>
+      <publishTime>06/07/2017 21:08:31</publishTime>
     </File>
     <File Include="Views/Account/RegisterOne.cshtml">
-      <publishTime>05/25/2017 23:22:27</publishTime>
+      <publishTime>06/07/2017 21:08:31</publishTime>
     </File>
     <File Include="Views/Account/RegisterThree.cshtml">
-      <publishTime>05/25/2017 23:22:38</publishTime>
+      <publishTime>06/07/2017 21:08:31</publishTime>
     </File>
     <File Include="Views/Account/RegisterTwo.cshtml">
-      <publishTime>05/25/2017 23:22:52</publishTime>
+      <publishTime>06/07/2017 21:08:31</publishTime>
     </File>
     <File Include="Views/Account/Setting.cshtml">
-      <publishTime>05/26/2017 22:45:36</publishTime>
+      <publishTime>06/07/2017 21:08:31</publishTime>
     </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>06/04/2017 21:09:04</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Back/Index.cshtml">
       <publishTime>05/26/2017 22:45:53</publishTime>
     </File>
     <File Include="Views/Home/EnterpriseHr.cshtml">
-      <publishTime>05/26/2017 22:46:04</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Home/EnterpriseInterviewComment.cshtml">
-      <publishTime>05/26/2017 22:46:09</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Home/EnterpriseJob.cshtml">
-      <publishTime>05/26/2017 22:46:15</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Home/EnterpriseRecommend.cshtml">
-      <publishTime>05/26/2017 23:20:42</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Home/Feedback.cshtml">
       <publishTime>06/04/2017 21:37:40</publishTime>
@@ -1732,7 +1732,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/25/2017 23:27:03</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/04/2017 23:50:09</publishTime>
+      <publishTime>06/06/2017 23:15:11</publishTime>
     </File>
     <File Include="Views/Home/Model.cshtml">
       <publishTime>05/26/2017 22:47:03</publishTime>
@@ -1741,16 +1741,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/26/2017 23:20:47</publishTime>
     </File>
     <File Include="Views/Job/Apply.cshtml">
-      <publishTime>06/03/2017 16:15:39</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Job/Detail.cshtml">
-      <publishTime>06/04/2017 01:44:52</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Job/FullTime.cshtml">
-      <publishTime>06/04/2017 23:51:26</publishTime>
+      <publishTime>06/07/2017 22:41:11</publishTime>
     </File>
     <File Include="Views/Job/Practice.cshtml">
-      <publishTime>06/04/2017 23:51:35</publishTime>
+      <publishTime>06/07/2017 22:41:19</publishTime>
     </File>
     <File Include="Views/Play/Index.cshtml">
       <publishTime>05/26/2017 22:47:52</publishTime>
@@ -1762,7 +1762,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2017 22:50:16</publishTime>
     </File>
     <File Include="Views/Position/HrInvites.cshtml">
-      <publishTime>06/04/2017 22:50:21</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Position/Recommend.cshtml">
       <publishTime>06/04/2017 22:51:14</publishTime>
@@ -1771,7 +1771,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2017 23:14:31</publishTime>
     </File>
     <File Include="Views/PromoteDiploma/Index.cshtml">
-      <publishTime>06/05/2017 22:54:12</publishTime>
+      <publishTime>06/06/2017 01:20:25</publishTime>
     </File>
     <File Include="Views/Raiders/Detail.cshtml">
       <publishTime>05/26/2017 22:48:24</publishTime>
@@ -1867,22 +1867,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/12/2017 21:47:45</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
-      <publishTime>06/03/2017 16:06:53</publishTime>
+      <publishTime>06/07/2017 21:54:04</publishTime>
     </File>
     <File Include="Views/Shared/_FooterLogin.cshtml">
-      <publishTime>06/03/2017 16:07:08</publishTime>
+      <publishTime>06/07/2017 20:33:12</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>06/05/2017 22:52:35</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>06/03/2017 16:14:55</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutLogin.cshtml">
-      <publishTime>06/03/2017 16:02:30</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Shared/_LoginHeader.cshtml">
-      <publishTime>06/05/2017 22:53:08</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Shared/_LoginLayout.cshtml">
       <publishTime>05/16/2017 22:20:26</publishTime>
@@ -1891,25 +1891,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/25/2017 23:32:30</publishTime>
     </File>
     <File Include="Views/Shared/_OldLayout.cshtml">
-      <publishTime>05/25/2017 23:39:21</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Site/About.cshtml">
-      <publishTime>05/26/2017 22:53:28</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Site/ContactUs.cshtml">
-      <publishTime>05/26/2017 22:44:41</publishTime>
+      <publishTime>06/07/2017 21:02:33</publishTime>
     </File>
     <File Include="Views/Site/EmployeeLife.cshtml">
-      <publishTime>05/26/2017 22:44:36</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Site/Join.cshtml">
       <publishTime>05/26/2017 22:42:20</publishTime>
     </File>
     <File Include="Views/Site/News.cshtml">
-      <publishTime>05/26/2017 22:44:30</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Site/UserProtocol.cshtml">
-      <publishTime>05/26/2017 22:44:25</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>05/12/2017 21:47:43</publishTime>

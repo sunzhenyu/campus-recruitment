@@ -10,7 +10,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Campus.Recruitment.Rss.dll">
-      <publishTime>06/04/2017 23:16:45</publishTime>
+      <publishTime>06/07/2017 23:02:57</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>
@@ -91,7 +91,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:40</publishTime>
     </File>
     <File Include="content/static/css/corp/img/etp/zheyibu-etp.png">
-      <publishTime>05/20/2017 10:44:40</publishTime>
+      <publishTime>06/07/2017 21:31:06</publishTime>
     </File>
     <File Include="content/static/css/corp/img/etp/zheyibu-etp1.png">
       <publishTime>05/20/2017 10:44:40</publishTime>
@@ -349,7 +349,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:41</publishTime>
     </File>
     <File Include="content/static/enterprise/images/icon/homepage-icon.png">
-      <publishTime>05/24/2017 21:26:49</publishTime>
+      <publishTime>06/07/2017 21:34:30</publishTime>
     </File>
     <File Include="content/static/enterprise/images/icon/homepage-icon1.png">
       <publishTime>05/20/2017 10:44:41</publishTime>
@@ -358,7 +358,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:41</publishTime>
     </File>
     <File Include="content/static/enterprise/images/icon/zheyibu-etp.png">
-      <publishTime>05/20/2017 10:44:41</publishTime>
+      <publishTime>06/07/2017 21:36:10</publishTime>
     </File>
     <File Include="content/static/enterprise/images/icon/zheyibu-etp1.png">
       <publishTime>05/20/2017 10:44:41</publishTime>
@@ -664,7 +664,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 13:44:10</publishTime>
     </File>
     <File Include="content/static/js/sea-modules/zyb/resume/1.0.3/resume.js">
-      <publishTime>05/22/2017 21:54:33</publishTime>
+      <publishTime>06/07/2017 21:08:33</publishTime>
     </File>
     <File Include="content/static/js/webuploader/webuploader.css">
       <publishTime>05/20/2017 10:44:42</publishTime>
@@ -703,13 +703,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:42</publishTime>
     </File>
     <File Include="content/static/lib/css/student/header-footer.css">
-      <publishTime>05/20/2017 10:44:42</publishTime>
+      <publishTime>06/06/2017 23:17:23</publishTime>
     </File>
     <File Include="content/static/lib/css/student/layerAlertMask.css">
-      <publishTime>05/20/2017 10:44:42</publishTime>
+      <publishTime>06/07/2017 21:08:33</publishTime>
     </File>
     <File Include="content/static/lib/css/student/login-layer.css">
-      <publishTime>05/20/2017 10:44:42</publishTime>
+      <publishTime>06/07/2017 21:08:33</publishTime>
     </File>
     <File Include="content/static/lib/img/loading.gif">
       <publishTime>05/20/2017 10:44:42</publishTime>
@@ -799,13 +799,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:42</publishTime>
     </File>
     <File Include="content/static/lib/js/student/login-layer.js">
-      <publishTime>05/27/2017 11:36:55</publishTime>
+      <publishTime>06/07/2017 21:08:33</publishTime>
     </File>
     <File Include="content/static/lib/js/student/shortcutMenu.js">
       <publishTime>05/20/2017 10:44:42</publishTime>
     </File>
     <File Include="content/static/student/css/about/index.css">
-      <publishTime>05/20/2017 10:44:42</publishTime>
+      <publishTime>06/07/2017 23:02:14</publishTime>
     </File>
     <File Include="content/static/student/css/advice/advice.css">
       <publishTime>05/20/2017 10:44:42</publishTime>
@@ -889,13 +889,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:42</publishTime>
     </File>
     <File Include="content/static/student/images/background/B-1.jpg">
-      <publishTime>05/20/2017 10:44:42</publishTime>
+      <publishTime>06/06/2017 23:01:35</publishTime>
     </File>
     <File Include="content/static/student/images/background/B-2.jpg">
-      <publishTime>05/20/2017 10:44:42</publishTime>
+      <publishTime>06/06/2017 23:03:14</publishTime>
     </File>
     <File Include="content/static/student/images/background/B-3.jpg">
-      <publishTime>05/20/2017 10:44:43</publishTime>
+      <publishTime>06/06/2017 23:05:04</publishTime>
     </File>
     <File Include="content/static/student/images/background/B-4.jpg">
       <publishTime>05/20/2017 10:44:43</publishTime>
@@ -904,13 +904,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:43</publishTime>
     </File>
     <File Include="content/static/student/images/background/footer-banner.jpg">
-      <publishTime>05/20/2017 10:44:43</publishTime>
+      <publishTime>06/06/2017 22:19:42</publishTime>
     </File>
     <File Include="content/static/student/images/background/footer-rg-banner.png">
       <publishTime>05/20/2017 10:44:43</publishTime>
     </File>
     <File Include="content/static/student/images/background/homepage-banner-footer.jpg">
-      <publishTime>05/20/2017 10:44:43</publishTime>
+      <publishTime>06/06/2017 22:06:21</publishTime>
+    </File>
+    <File Include="content/static/student/images/background/jiuyelianmeng8-map.png">
+      <publishTime>06/07/2017 23:00:21</publishTime>
     </File>
     <File Include="content/static/student/images/background/left-footer-reg.jpg">
       <publishTime>05/20/2017 10:44:43</publishTime>
@@ -937,7 +940,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:43</publishTime>
     </File>
     <File Include="content/static/student/images/icon/about-logo.png">
-      <publishTime>05/20/2017 10:44:43</publishTime>
+      <publishTime>06/07/2017 21:16:20</publishTime>
     </File>
     <File Include="content/static/student/images/icon/about-logo11.png">
       <publishTime>05/20/2017 10:44:43</publishTime>
@@ -970,7 +973,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:43</publishTime>
     </File>
     <File Include="content/static/student/images/icon/homepage_icon.png">
-      <publishTime>05/20/2017 10:44:43</publishTime>
+      <publishTime>06/07/2017 21:17:26</publishTime>
     </File>
     <File Include="content/static/student/images/icon/homepage_icon1.png">
       <publishTime>05/20/2017 10:44:43</publishTime>
@@ -1063,7 +1066,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:43</publishTime>
     </File>
     <File Include="content/static/student/js/company/company.js">
-      <publishTime>05/20/2017 10:44:43</publishTime>
+      <publishTime>06/07/2017 21:08:33</publishTime>
     </File>
     <File Include="content/static/student/js/homepage/homepage.js">
       <publishTime>05/20/2017 10:44:43</publishTime>
@@ -1075,7 +1078,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2017 10:44:43</publishTime>
     </File>
     <File Include="content/static/student/js/searchJob/searchJob.js">
-      <publishTime>05/25/2017 23:09:01</publishTime>
+      <publishTime>06/07/2017 21:59:40</publishTime>
     </File>
     <File Include="content/static/student/js/searchJob/uiSelect.js">
       <publishTime>05/20/2017 10:44:43</publishTime>

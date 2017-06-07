@@ -26,29 +26,32 @@
                     <input type="hidden" name="J_Type" id="J_Type" value="2" />*@
             </div>
             <div class="search-location">
-                <input id="cityName" class="cityName" value='' readonly placeholder="全国" />
-                <input type="hidden" id="hCity" name="city" value="0" />
+                @{
+                    string cityName = string.IsNullOrWhiteSpace(ViewBag.CityName) ? "全国" : ViewBag.CityName;
+                }
+                <input id="cityName" class="cityName" value='@cityName' readonly placeholder="全国" />
+                <input type="hidden" id="hCity" name="city" value="@ViewBag.City" />
             </div>
             <div class="s-key">
-                <input type="text" id="keys" placeholder="请输入职位或公司关键词" />
-                <div class="s-btn s-btn-practice">
+                <input type="text" id="keys"  value="@ViewBag.Name"  placeholder="请输入职位关键词" />
+                <div class="s-btn s-btn-practice" onclick="search()">
                     <i></i>
                     <span style="font-weight:800">找工作</span>
                 </div>
                 <div class="hot-link clearfix dN">
                     <div class="mb5">热搜职位:</div>
-                    <a href="javascript:;">管培生</a>
-                    <a href="javascript:;">会计</a>
-                    <a href="javascript:;">财务</a>
-                    <a href="javascript:;">金融</a>
-                    <a href="javascript:;">Java</a>
-                    <a href="javascript:;">测试</a>
-                    <a href="javascript:;">产品经理</a>
-                    <a href="javascript:;">运营</a>
-                    <a href="javascript:;">销售</a>
-                    <a href="javascript:;">编辑</a>
-                    <a href="javascript:;">人力资源</a>
-                    <a href="javascript:;">行政</a>
+                    <a href="/job/practice?name=管培生">管培生</a>
+                    <a href="/job/practice?name=会计">会计</a>
+                    <a href="/job/practice?name=财务">财务</a>
+                    <a href="/job/practice?name=金融">金融</a>
+                    <a href="/job/practice?name=Java">Java</a>
+                    <a href="/job/practice?name=测试">测试</a>
+                    <a href="/job/practice?name=产品经理">产品经理</a>
+                    <a href="/job/practice?name=运营">运营</a>
+                    <a href="/job/practice?name=销售">销售</a>
+                    <a href="/job/practice?name=编辑">编辑</a>
+                    <a href="/job/practice?name=人力资源">人力资源</a>
+                    <a href="/job/practice?name=行政">行政</a>
                 </div>
             </div>
             @*<ul class="s-job dN">
@@ -60,15 +63,19 @@
         <!-- 功能栏 start -->
         <div class="search-layout">
             <div class="clearfix search-content">
-                <input type="hidden" name="func" value="0" />
-                <input type="hidden" name="Occupation" value="0" />
-                <input type="hidden" name="degree" value="0" />
-                <input type="hidden" name="salary" value="0" />
+                <input type="hidden" name="func" value="@ViewBag.Function_id" />
+                <input type="hidden" name="Occupation" value="@ViewBag.Industry_id" />
+                <input type="hidden" name="degree" value="@ViewBag.Degree_id" />
+                <input type="hidden" name="salary" value="@ViewBag.Salary" />
+                @{
+                    string func_name = string.IsNullOrWhiteSpace(ViewBag.Function_id) ? "职能" : ViewBag.Function_id;
+                    string occupation_name = string.IsNullOrWhiteSpace(ViewBag.Industry_id) ? "行业" : ViewBag.Industry_id;
+                }
                 <div class="selectlist selectO">
-                    <div class="input-select" data-select="select" id="func" style="width:300px;">职能</div><i></i>
+                    <div class="input-select" data-select="select" id="func" style="width:300px;">@func_name</div><i></i>
                 </div>
                 <div class="selectlist selectC">
-                    <div class="input-select" data-select="selectN" id="Occupation" style="width:300px;">行业</div><i></i>
+                    <div class="input-select" data-select="selectN" id="Occupation" style="width:300px;">@occupation_name</div><i></i>
                 </div>
                 <div class="selectlist">
                     <div class="input-select" data-widget="ui-selectD" id="degree">
@@ -122,7 +129,7 @@
                                         </div>
                                         <a href="javascript:;" target="_blank" class="com-name">@item.Enterprise_name</a>
                                         <a href="javascript:;" target="_blank" class="com-name"></a>
-                                        @*<i title="新起点认证企业"></i>*@
+                                        @*<i title="就业联盟8认证企业"></i>*@
                                         <span class="white-space">@item.City_names</span><span>@item.Update_at</span>
                                     </div>
                                     <div class="result-salary">@item.Salary</div>
@@ -135,9 +142,9 @@
                 @Html.PagingButton(Model.PageIndex, Model.PageSize, Model.Total)
             </div>
             <div class="result-right">
-                <a class="photo-right1" href="http://www.zheyibu.com/xuanjianghui/" target="_blank">
+                @*<a class="photo-right1" href="http://www.zheyibu.com/xuanjianghui/" target="_blank">
                     <label>宣讲会<span>（1828）</span></label>
-                </a>
+                </a>*@
                 <div class="week-hot-position">
                     <div class="article-header">
                         <span>每周热推职位</span>
@@ -199,24 +206,52 @@
         //    }
         //});
 
-        $('.left-result').on('click', '.city-list-item span', function () {
-            if ($(this).hasClass('active')) {
-                $(this).text('收起城市列表').removeClass('active');
-                $(this).parent().next('.citylist-details').animate({
-                    height: 22
-                }, 300);
-            } else {
-                $(this).text('展开城市列表').addClass('active');
-                $(this).parent().next('.citylist-details').animate({
-                    height: 0
-                }, 300);
-            }
-        })
+        $('.left-result').on('click',
+            '.city-list-item span',
+            function () {
+                if ($(this).hasClass('active')) {
+                    $(this).text('收起城市列表').removeClass('active');
+                    $(this).parent().next('.citylist-details').animate({
+                        height: 22
+                    },
+                        300);
+                } else {
+                    $(this).text('展开城市列表').addClass('active');
+                    $(this).parent().next('.citylist-details').animate({
+                        height: 0
+                    },
+                        300);
+                }
+            });
     });
+
+    function Search() {
+        var city = $("#hCity").val();
+        var name = $("#keys").val();
+        var function_id = $("[name=func]").val();
+        var industry_id = $("[name=Occupation]").val();
+        var degree_id = $("[name=degree]").val();
+        var salary = $("[name=salary]").val();
+        var cityName = $("#cityName").val();
+        window.location.href = "/job/practice?city=" +
+            city +
+            "&name=" +
+            name +
+            "&function_id=" +
+            function_id +
+            "&industry_id=" +
+            industry_id +
+            "&degree_id=" +
+            degree_id +
+            "&salary=" +
+            salary +
+            "&cityName=" +
+            cityName;
+    }
 </script>
 
 <script src="@AppSetting.Rss_Image/Content/static/lib/js/student/city-picker.js"></script>
 <script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/func.js"></script>
 <script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/industry.js"></script>
-<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/searchJob.js"></script>
+<script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/searchJob.js?t=20170607"></script>
 <script src="@AppSetting.Rss_Image/Content/static/student/js/searchJob/uiSelect.js"></script>

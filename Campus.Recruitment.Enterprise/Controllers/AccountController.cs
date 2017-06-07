@@ -28,6 +28,7 @@ namespace Campus.Recruitment.Enterprise.Controllers
         [Route("sign-in")]
         public ActionResult SignIn()
         {
+            ViewBag.Error = "";
             return View();
         }
 
@@ -48,6 +49,7 @@ namespace Campus.Recruitment.Enterprise.Controllers
                 Session.SetDataInSession("LogoIcon", enterprise.Icon_logo, 10800);
                 return RedirectToAction("Index", "Position");
             }
+            ViewBag.Error = "账号或者密码错误";
             return View();
         }
 

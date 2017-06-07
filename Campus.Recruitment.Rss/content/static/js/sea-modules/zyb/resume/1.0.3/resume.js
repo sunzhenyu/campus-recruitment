@@ -681,7 +681,7 @@ define('zyb/resume/1.0.3/resume', ['$', 'jquery/form/3.49.0/form'], function (re
         if (!deleteBtn.hasClass('disable')) {
             if (itemType == "education" && !itemRow.siblings().length) {
                 var oConfirmDialog = deleteBtn.createDialog({
-                    title: "来自新起点的提示：",
+                    title: "来自就业联盟8的提示：",
                     btnType: "confirm",
                     btnText: {
                         yes: "确定",
@@ -698,7 +698,7 @@ define('zyb/resume/1.0.3/resume', ['$', 'jquery/form/3.49.0/form'], function (re
                 oConfirmDialog.showDialog();
             } else {
                 var oConfirmDialog = deleteBtn.createDialog({
-                    title: "来自新起点的提示：",
+                    title: "来自就业联盟8的提示：",
                     btnType: "confirm",
                     btnText: {
                         yes: "确定",

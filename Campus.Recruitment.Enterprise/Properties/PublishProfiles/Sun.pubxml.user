@@ -52,19 +52,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/06/2017 01:06:49</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.DAL.dll">
-      <publishTime>06/06/2017 01:06:49</publishTime>
+      <publishTime>06/07/2017 22:42:48</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Enterprise.dll">
-      <publishTime>06/06/2017 01:07:08</publishTime>
+      <publishTime>06/07/2017 22:43:28</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Entities.dll">
       <publishTime>06/06/2017 01:06:47</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.IBLL.dll">
-      <publishTime>06/06/2017 01:06:48</publishTime>
+      <publishTime>06/07/2017 22:42:47</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.IDAL.dll">
-      <publishTime>06/06/2017 01:06:48</publishTime>
+      <publishTime>06/07/2017 22:42:47</publishTime>
     </File>
     <File Include="bin/Campus.Recruitment.Utility.dll">
       <publishTime>06/06/2017 01:06:48</publishTime>
@@ -1696,7 +1696,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/03/2017 16:49:26</publishTime>
     </File>
     <File Include="Views/Account/RegisterOne.cshtml">
-      <publishTime>06/03/2017 16:51:11</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Account/RegisterThree.cshtml">
       <publishTime>06/03/2017 16:51:36</publishTime>
@@ -1708,16 +1708,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/03/2017 16:52:51</publishTime>
     </File>
     <File Include="Views/Account/SignIn.cshtml">
-      <publishTime>06/03/2017 16:53:06</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Home/CollegesInfo.cshtml">
       <publishTime>06/03/2017 16:53:17</publishTime>
     </File>
     <File Include="Views/Home/Extension.cshtml">
-      <publishTime>06/03/2017 16:59:01</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/04/2017 19:44:00</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Position/Index.cshtml">
       <publishTime>06/04/2017 11:04:06</publishTime>
@@ -1756,16 +1756,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/03/2017 16:57:47</publishTime>
     </File>
     <File Include="Views/Seminar/Index.cshtml">
-      <publishTime>06/03/2017 16:58:05</publishTime>
+      <publishTime>06/05/2017 23:49:05</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>06/05/2017 22:51:57</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>06/03/2017 16:58:13</publishTime>
+      <publishTime>06/07/2017 21:08:32</publishTime>
     </File>
     <File Include="Views/Shared/_LoginHeader.cshtml">
-      <publishTime>06/05/2017 23:55:33</publishTime>
+      <publishTime>06/07/2017 21:08:50</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>05/16/2017 22:17:40</publishTime>

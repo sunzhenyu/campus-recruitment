@@ -8,6 +8,8 @@ namespace Campus.Recruitment.Entities.Condition
 {
     public class SearchPositionCondition : BasePageCondition
     {
+        public string Name { get; set; }
+
         /// <summary>
         /// 1=全职，2=实习
         /// </summary>
@@ -34,6 +36,8 @@ namespace Campus.Recruitment.Entities.Condition
         public int? Salary { get; set; }
 
         public int City { get; set; }
+
+        public string CityName { get; set; }
 
         public string Major_name { get; set; }
     }

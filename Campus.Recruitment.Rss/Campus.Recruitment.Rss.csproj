@@ -353,13 +353,13 @@
     <Content Include="content\static\student\images\background\footer-banner.jpg" />
     <Content Include="content\static\student\images\background\footer-rg-banner.png" />
     <Content Include="content\static\student\images\background\homepage-banner-footer.jpg" />
+    <Content Include="content\static\student\images\background\jiuyelianmeng8-map.png" />
     <Content Include="content\static\student\images\background\left-footer-reg.jpg" />
     <Content Include="content\static\student\images\background\lg-reg-bg.jpg" />
     <Content Include="content\static\student\images\background\pageside.png" />
     <Content Include="content\static\student\images\background\profession-banner.jpg" />
     <Content Include="content\static\student\images\background\profession-footer-login.jpg" />
     <Content Include="content\static\student\images\background\reg-banner.png" />
-    <Content Include="content\static\student\images\background\zheyibu-map.png" />
     <Content Include="content\static\student\images\icon\404.png" />
     <Content Include="content\static\student\images\icon\about-logo.png" />
     <Content Include="content\static\student\images\icon\about-logo11.png" />
